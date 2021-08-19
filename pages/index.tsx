@@ -2,9 +2,9 @@ import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 
-import * as Styled from "./style"
+import * as Styled from "../styles/style"
 
-export default function Home() {
+const Home: React.FC = () => {
   return (
     <Styled.StyledContainer>
       <Head>
@@ -211,3 +211,5 @@ export default function Home() {
     </Styled.StyledContainer>
   )
 }
+
+export default Home
