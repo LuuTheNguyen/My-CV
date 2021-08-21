@@ -1,4 +1,4 @@
-import { Layout } from "@components/Layout"
+import { Layout } from "@components/layout/Layout"
 import { StyledMain, StyledContainer } from '@containers/home/styles'
 
 import { Info } from '@components/info/Info'

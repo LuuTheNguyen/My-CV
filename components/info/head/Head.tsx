@@ -1,6 +1,6 @@
 import {
     StyledAboutHead, StyledWrapperImage, StyledIcon, StyledWrapperHead,
-    StyledName, StyledDescription, StyledAboutBody, StyledContact,    
+    StyledName, StyledDescription, StyledAboutBody,    
     StyledDownloadCV, StyledAboutFooter,
 } from './styles'
 
@@ -9,8 +9,14 @@ import {About} from './about/About'
 import {Language} from './language/Language'
 import {Skill} from './skill/Skill'
 import {Lib} from './lib/Lib'
+import {Contact} from './contact/Contact'
 
 export const Head: React.FC = () => {
+    const languageData = [{label: 'Viet Nam', percent:100}, {label:'City', percent:50}]
+    const contactData = [{label: 'Phone', content:'(+84)829549118'}, {label:'Skype', content:'nguyenluu121094'}]
+    const libData = [{label: 'Boostrap'}, {label:'SCSS'}, {label:'Webpack'}, {label:'Git knowledge'}, {label:'Nextjs'}, {label:'Reactjs/ React Native'}]
+    const aboutData = [{label: 'Residence', content:'Viet Nam'}, {label:'City', content:'Ho Chi Minh'}, {label:'Age', content:'27'}]
+    const skillData = [{label: 'HTML', percent:80}, {label:'CSS', percent:70}, {label:'JS', percent:70}, {label:'TS', percent:60}]
     return(
         <StyledWrapperHead className="col-sm-3">
                                 <StyledAboutHead>
@@ -21,27 +27,20 @@ export const Head: React.FC = () => {
                                     <StyledDescription>Frontend Dev</StyledDescription>
                                 </StyledAboutHead>
                                 <StyledAboutBody>
-                                    <About array={[{label: 'Residence', content:'Viet Nam'}, {label:'City', content:'Ho Chi Minh'}, {label:'Age', content:'27'}]} />
+                                    <About array={aboutData} />
                                     <hr />
-                                    <Language array={[{label: 'Viet Nam', percent:100}, {label:'City', percent:50}]}/>
+                                    <Language array={languageData}/>
                                     <hr />
-                                    <Skill array={[{label: 'HTML', percent:80}, {label:'CSS', percent:70}, {label:'JS', percent:70}, {label:'TS', percent:60}]}/>
+                                    <Skill array={skillData}/>
                                     <hr />
-                                    <Lib array={[{label: 'Boostrap'}, {label:'SCSS'}, {label:'Webpack'}, {label:'Git knowledge'}, {label:'Nextjs'}, {label:'Reactjs/ React Native'}]} />
+                                    <Lib array={libData} />
                                     {/* <hr/> */}
                                     {/* <StyledDownloadCV>
                     <span>Download CV</span>&nbsp;<i className="bi bi-triangle-fill"></i>
                   </StyledDownloadCV> */}
                                 </StyledAboutBody>
                                 <StyledAboutFooter>
-                                    <StyledContact>
-                                        <span>Phone:</span>
-                                        <span>(+84)829549118</span>
-                                    </StyledContact>
-                                    <StyledContact>
-                                        <span>Skype:</span>
-                                        <span>nguyenluu121094</span>
-                                    </StyledContact>
+                                    <Contact array={contactData}/>
                                 </StyledAboutFooter>
                             </StyledWrapperHead>
 
