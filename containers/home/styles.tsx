@@ -1,9 +1,7 @@
 import { BackGroundColor, FontColor, GridBreakpoints } from '@components/style'
 import styled from 'styled-components'
 
-import Link from 'next/link'
-
-const StyledMain = styled.main`
+export const StyledMain = styled.main`
 height: auto;
 width: 100%;
 background-color: ${BackGroundColor.default};
@@ -17,7 +15,7 @@ max-width: 1990px;
 }
 `
 
-const StyledContainer = styled.div`  
+export const StyledContainer = styled.div`  
   min-height: 100vh;
   height: 100%;
   display: flex;
@@ -25,4 +23,3 @@ const StyledContainer = styled.div`
   align-items: center;
   background-color: ${BackGroundColor.default};
 `
-export { StyledMain, StyledContainer }

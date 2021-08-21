@@ -1,11 +1,14 @@
 import {
     StyledAboutHead, StyledWrapperImage, StyledIcon, StyledWrapperHead,
-    StyledName, StyledDescription, StyledAboutBody, StyledAbout, StyledContact,
-    StyledLanguage, StlyedProcessRing, StyledWrapperProcessRing, StlyedTitleProcessRing,
-    StyledSkill, StyledProcessBar, StyledLib, StyledListLib, StyledDownloadCV, StyledAboutFooter,
+    StyledName, StyledDescription, StyledAboutBody, StyledContact,    
+    StyledDownloadCV, StyledAboutFooter,
 } from './styles'
 
 import { BackGroundColor, FontColor, GridBreakpoints } from '@components/style'
+import {About} from './about/About'
+import {Language} from './language/Language'
+import {Skill} from './skill/Skill'
+import {Lib} from './lib/Lib'
 
 export const Head: React.FC = () => {
     return(
@@ -18,40 +21,13 @@ export const Head: React.FC = () => {
                                     <StyledDescription>Frontend Dev</StyledDescription>
                                 </StyledAboutHead>
                                 <StyledAboutBody>
-                                    <StyledAbout>
-                                        <span>Residence</span> <span>Viet Nam</span>
-                                        <br />
-                                        <span>City</span> <span>Ho Chi Minh</span>
-                                        <br></br>
-                                        <span>Age</span> <span>27</span>
-                                    </StyledAbout>
+                                    <About array={[{label: 'Residence', content:'Viet Nam'}, {label:'City', content:'Ho Chi Minh'}, {label:'Age', content:'27'}]} />
                                     <hr />
-                                    <StyledLanguage>
-                                        <StyledWrapperProcessRing>
-                                            <StlyedProcessRing width={40} stroke={FontColor.secondary} strokeWidth={2} />
-                                            <StlyedTitleProcessRing>VietNamese</StlyedTitleProcessRing>
-                                        </StyledWrapperProcessRing>
-                                        <StyledWrapperProcessRing>
-                                            <StlyedProcessRing width={40} stroke={FontColor.secondary} strokeWidth={2} percent={50} />
-                                            <StlyedTitleProcessRing>English</StlyedTitleProcessRing>
-                                        </StyledWrapperProcessRing>
-                                    </StyledLanguage>
+                                    <Language array={[{label: 'Viet Nam', percent:100}, {label:'City', percent:50}]}/>
                                     <hr />
-                                    <StyledSkill>
-                                        <StyledProcessBar label='HTML' percent={80} height={5} />
-                                        <StyledProcessBar label='CSS' percent={70} height={5} />
-                                        <StyledProcessBar label='JS' percent={75} height={5} />
-                                        <StyledProcessBar label='TS' percent={60} height={5} />
-                                    </StyledSkill>
+                                    <Skill array={[{label: 'HTML', percent:80}, {label:'CSS', percent:70}, {label:'JS', percent:70}, {label:'TS', percent:60}]}/>
                                     <hr />
-                                    <StyledLib>
-                                        <StyledListLib text="Boostrap" />
-                                        <StyledListLib text="SCSS" />
-                                        <StyledListLib text="Webpack" />
-                                        <StyledListLib text="Git knowledge" />
-                                        <StyledListLib text="Reactjs/ React Native" />
-                                        <StyledListLib text="Nextjs" />
-                                    </StyledLib>
+                                    <Lib array={[{label: 'Boostrap'}, {label:'SCSS'}, {label:'Webpack'}, {label:'Git knowledge'}, {label:'Nextjs'}, {label:'Reactjs/ React Native'}]} />
                                     {/* <hr/> */}
                                     {/* <StyledDownloadCV>
                     <span>Download CV</span>&nbsp;<i className="bi bi-triangle-fill"></i>

@@ -1,0 +1,25 @@
+import styled from "styled-components"
+import { BackGroundColor, FontColor, GridBreakpoints } from '@components/style'
+
+export const StyledAbout = styled.div`
+display: flex;
+justify-content: space-between;
+width: 100%;
+flex-wrap: wrap;
+
+@media(min-width: ${GridBreakpoints.sm}) and (max-width: ${GridBreakpoints.lg}){
+  width: 50%;
+  padding: 10px;
+}
+
+& span{
+  color: ${FontColor.default};
+  width: 40%;
+}
+
+& span + span{
+  color: ${FontColor.primary};
+  width: 60%;
+  text-align: right;
+}
+`
