@@ -55,10 +55,10 @@ const StyledAboutHead = styled.div`
 `
 
 const StyledWrapperImage = styled.div`
-    width: auto;
-    height: auto;
+    width: 80px;
+    height: 80px;
     position: relative;
-  & ::before{
+  /* & ::before{
     content:"";
     width: 10px;
     height: 10px;
@@ -70,11 +70,16 @@ const StyledWrapperImage = styled.div`
     right: 10px;
     z-index: 1;
     box-shadow: 0 0 2px 2px ${FontColor.primary};
-}
+  } */
 `
 
 const StyledIcon = styled(Image)`
   border-radius: 40px;
+  img{
+    width: 100px;
+    height: 100px;
+  }
+  position: relative;
 `
 
 const StyledLink = (props: any) =>{
@@ -291,7 +296,9 @@ const ListLib = (props:PropsListLib) => {
   const color = props.color || FontColor.secondary
   return (
     <p className={props.className}>
-      <i className="bi bi-check" style={{ color: color }}></i>
+    <span className="material-icons" style={{ color: color }}>
+      done
+    </span>
       <span>{props.text}</span>
     </p>
   )
@@ -330,8 +337,9 @@ const StyledDownloadCV = styled.div`
 const StyledAboutFooter = styled.div`
   background-color: ${BackGroundColor.primary};
   display: flex;
-  justify-content: space-around;
+  /* justify-content: space-around; */
   align-items: center;
+  flex-wrap: wrap;
 `
 
 const StyledHeaderMenu = styled.div`
@@ -523,6 +531,20 @@ const StyledWrapperInfo = styled.div`
   }
 `
 
+const StyledContact = styled.div`
+  display: flex;
+  flex-direction: row;
+  padding: 10px;
+  
+  span{
+    font-weight: 600;
+  }
+  span + span{
+    margin-left: 10px;
+    font-weight: normal;
+  }
+`
+
 export { StyledContainer, StyledMain, StyledAboutHead, StyledWrapperImage, StyledIcon,  
     StyledMenuList, StyledName, StyledDescription, StyledAboutBody, StyledAbout,
     StyledLanguage, StlyedProcessRing, FontColor, StyledWrapperProcessRing,
@@ -533,5 +555,5 @@ export { StyledContainer, StyledMain, StyledAboutHead, StyledWrapperImage, Style
     StyledAchievement, StyledContainerService, StyledWrapperService, StyledService,
     StyledHeaderService, StyledContentService, StyledFooterService, StyledContainerMenuList,
     StyledHeaderSubTitleService, StyledHeaderTitleService, StyledMenuItem, StyledInfo,
-    StyledWrapperMain, StyledWrapperInfo
+    StyledWrapperMain, StyledWrapperInfo, StyledContact
 }
