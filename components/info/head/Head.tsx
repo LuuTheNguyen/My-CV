@@ -5,18 +5,24 @@ import {
 } from './styles'
 
 import { BackGroundColor, FontColor, GridBreakpoints } from '@components/style'
-import {About} from './about/About'
-import {Language} from './language/Language'
-import {Skill} from './skill/Skill'
-import {Lib} from './lib/Lib'
-import {Contact} from './contact/Contact'
+import {About, AboutProps} from './about/About'
+import {Language, LanguageProps} from './language/Language'
+import {Skill, SkillProps} from './skill/Skill'
+import {Lib, LibProps} from './lib/Lib'
+import {Contact, ContactProps} from './contact/Contact'
 
-export const Head: React.FC = () => {
-    const languageData = [{label: 'Viet Nam', percent:100}, {label:'City', percent:50}]
-    const contactData = [{label: 'Phone', content:'(+84)829549118'}, {label:'Skype', content:'nguyenluu121094'}]
-    const libData = [{label: 'Boostrap'}, {label:'SCSS'}, {label:'Webpack'}, {label:'Git knowledge'}, {label:'Nextjs'}, {label:'Reactjs/ React Native'}]
-    const aboutData = [{label: 'Residence', content:'Viet Nam'}, {label:'City', content:'Ho Chi Minh'}, {label:'Age', content:'27'}]
-    const skillData = [{label: 'HTML', percent:80}, {label:'CSS', percent:70}, {label:'JS', percent:70}, {label:'TS', percent:60}]
+export interface DataHeadProps {    
+    languages: Array<LanguageProps>,
+    contacts: Array<ContactProps>,
+    libs: Array<LibProps>,
+    abouts: Array<AboutProps>,
+    skills: Array<SkillProps>,
+}
+export interface HeadProps {
+    data: DataHeadProps
+}
+
+export const Head: React.FC<HeadProps> = ({data}) => {    
     return(
         <StyledWrapperHead className="col-sm-3">
                                 <StyledAboutHead>
@@ -27,20 +33,20 @@ export const Head: React.FC = () => {
                                     <StyledDescription>Frontend Dev</StyledDescription>
                                 </StyledAboutHead>
                                 <StyledAboutBody>
-                                    <About array={aboutData} />
+                                    <About array={data.abouts} />
                                     <hr />
-                                    <Language array={languageData}/>
+                                    <Language array={data.languages}/>
                                     <hr />
-                                    <Skill array={skillData}/>
+                                    <Skill array={data.skills}/>
                                     <hr />
-                                    <Lib array={libData} />
+                                    <Lib array={data.libs} />
                                     {/* <hr/> */}
                                     {/* <StyledDownloadCV>
                     <span>Download CV</span>&nbsp;<i className="bi bi-triangle-fill"></i>
                   </StyledDownloadCV> */}
                                 </StyledAboutBody>
                                 <StyledAboutFooter>
-                                    <Contact array={contactData}/>
+                                    <Contact array={data.contacts}/>
                                 </StyledAboutFooter>
                             </StyledWrapperHead>
 

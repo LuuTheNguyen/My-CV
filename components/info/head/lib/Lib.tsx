@@ -4,15 +4,15 @@ import {
 } from "./styles"
 import { BackGroundColor, FontColor, GridBreakpoints } from '@components/style'
 
-interface Lib {
+export interface LibProps {
     label: string,
 }
 
-export interface Prop {
-    array: Array<Lib>
+interface Props {
+    array: Array<LibProps>
 }
 
-export const Lib:React.FC<Prop> = ({array}) => {
+export const Lib:React.FC<Props> = ({array}) => {
     return (
         <StyledLib>
             {array.map(

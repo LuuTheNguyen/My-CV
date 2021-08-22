@@ -1,16 +1,16 @@
 import { Fragment } from "react"
 import { StyledAbout } from "./styles"
 
-interface About {
+export interface AboutProps {
     label: string,
     content: string,
 }
 
-export interface Prop {
-    array: Array<About>
+interface Props {
+    array: Array<AboutProps>
 }
 
-export const About:React.FC<Prop> = ({array}) => {
+export const About:React.FC<Props> = ({array}) => {
     return (
         <StyledAbout>
             {array.map(

@@ -1,16 +1,16 @@
 import { Fragment } from "react"
 import { StyledContainerAchievement, StyledAchievement } from "./styles"
 
-interface Achieve {
+export interface AchieveProps {
     label: string,
     content: string,
 }
 
-export interface AchieveProps {
-    array: Array<Achieve>
+interface Props {
+    array: Array<AchieveProps>
 }
 
-export const Achievement: React.FC<AchieveProps> = ({array}) => {
+export const Achievement: React.FC<Props> = ({array}) => {
     return (
         <Fragment>           
             {array.map(

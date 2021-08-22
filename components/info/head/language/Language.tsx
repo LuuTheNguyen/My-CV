@@ -4,16 +4,16 @@ import {
 } from "./styles"
 import { BackGroundColor, FontColor, GridBreakpoints } from '@components/style'
 
-interface Language {
+export interface LanguageProps {
     label: string,
     percent: number,
 }
 
-export interface Prop {
-    array: Array<Language>
+interface Props {
+    array: Array<LanguageProps>
 }
 
-export const Language:React.FC<Prop> = ({array}) => {
+export const Language:React.FC<Props> = ({array}) => {
     return (
         <StyledLanguage>
             {array.map(

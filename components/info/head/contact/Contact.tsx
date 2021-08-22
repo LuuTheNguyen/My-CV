@@ -1,16 +1,16 @@
 import { Fragment } from "react"
 import { StyledContact } from "./styles"
 
-interface About {
+export interface ContactProps {
     label: string,
     content: string,
 }
 
-export interface Prop {
-    array: Array<About>
+export interface Props {
+    array: Array<ContactProps>
 }
 
-export const Contact: React.FC<Prop> = ({array}) => {
+export const Contact: React.FC<Props> = ({array}) => {
     return (
         <Fragment>           
             {array.map(

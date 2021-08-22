@@ -4,7 +4,7 @@ import {  StyledWrapperService, StyledService,
     StyledHeaderSubTitleService, StyledHeaderTitleService
 } from "./styles"
 
-interface Service {
+export interface ServiceProps {
     time: string,
     project: string,
     responsibilities?: string,
@@ -13,11 +13,11 @@ interface Service {
     company?: string,
 }
 
-export interface Prop {
-    array: Array<Service>
+interface Props {
+    array: Array<ServiceProps>
 }
 
-export const Service: React.FC<Prop> = ({array}) => {
+export const Service: React.FC<Props> = ({array}) => {
     return (
         <StyledWrapperService>
             {array.map(

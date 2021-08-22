@@ -4,16 +4,16 @@ import {
 } from "./styles"
 import { BackGroundColor, FontColor, GridBreakpoints } from '@components/style'
 
-interface Skill {
+export interface SkillProps {
     label: string,
     percent: number,
 }
 
-export interface Prop {
-    array: Array<Skill>
+interface Props {
+    array: Array<SkillProps>
 }
 
-export const Skill:React.FC<Prop> = ({array}) => {
+export const Skill:React.FC<Props> = ({array}) => {
     return (
         <StyledSkill>
             {array.map(
