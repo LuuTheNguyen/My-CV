@@ -7,13 +7,13 @@ export interface AchieveProps {
 }
 
 interface Props {
-    array: Array<AchieveProps>
+    achieves: AchieveProps[]
 }
 
-export const Achievement: React.FC<Props> = ({array}) => {
+export const Achievement: React.FC<Props> = ({achieves}) => {
     return (
-        <Fragment>           
-            {array.map(
+        <>           
+            {achieves.map(
                 (item, index) => (                    
                     <StyledContainerAchievement key={index}>
                         <StyledAchievement>
@@ -23,6 +23,6 @@ export const Achievement: React.FC<Props> = ({array}) => {
                     </StyledContainerAchievement>
                 )
             )}
-        </Fragment>
+        </>
     )
 }

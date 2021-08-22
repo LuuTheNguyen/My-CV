@@ -2,20 +2,20 @@ import { Fragment } from "react"
 import { 
     StyledLib, StyledListLib
 } from "./styles"
-import { BackGroundColor, FontColor, GridBreakpoints } from '@components/style'
+import { BackGroundColor, FontColor, GridBreakpoints } from 'style/Theme'
 
 export interface LibProps {
     label: string,
 }
 
 interface Props {
-    array: Array<LibProps>
+    libs: LibProps[]
 }
 
-export const Lib:React.FC<Props> = ({array}) => {
+export const Lib:React.FC<Props> = ({libs}) => {
     return (
         <StyledLib>
-            {array.map(
+            {libs.map(
                 (item, index) => (                                                                                            
                     <StyledListLib text={item.label} key={index} />
                 )

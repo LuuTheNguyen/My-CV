@@ -1,4 +1,4 @@
-import { BackGroundColor, FontColor, GridBreakpoints } from '@components/style'
+import { BackGroundColor, FontColor, GridBreakpoints } from 'style/Theme'
 
 interface PropsProcessRing {
     width: number;
@@ -8,26 +8,34 @@ interface PropsProcessRing {
     stroke: string;
 }
 
-export const ProcessRing = (props: PropsProcessRing) => {
+export const ProcessRing:React.FC<PropsProcessRing> = (
+    {
+        width = 10,
+        strokeWidth = 10,
+        percent,
+        className,
+        stroke= "10",
+    }
+) => {
 
     /* https://codepen.io/jeremenichelli/pen/vegymB */
-    const radius: number = (props.width / 2) - (props.strokeWidth * 2);
+    const radius: number = (width / 2) - (strokeWidth * 2);
     const circumference: number = radius * 2 * Math.PI;
-    const percent: number = (props.percent && props.percent > 0 && props.percent < 101) ? props.percent : 100
-    const offset: number = circumference - percent / 100 * circumference;
+    const percentValue: number = (percent && percent > 0 && percent < 101) ? percent : 100
+    const offset: number = circumference - percentValue / 100 * circumference;
     return (
         <svg
-            className={props.className}
-            width={props.width}
-            height={props.width}>
-            <text x={props.width / 2} y={props.width / 2 + props.width / 10} fontSize={props.width / 4} fill={`${FontColor.default}`}>{props.percent ? props.percent : 100}%</text>
+            className={className}
+            width={width}
+            height={width}>
+            <text x={width / 2} y={width / 2 + width / 10} fontSize={width / 4} fill={`${FontColor.default}`}>{percentValue}%</text>
             <circle
-                stroke={props.stroke}
-                strokeWidth={props.strokeWidth}
+                stroke={stroke}
+                strokeWidth={strokeWidth}
                 fill="transparent"
                 r={radius}
-                cx={props.width / 2}
-                cy={props.width / 2}
+                cx={width / 2}
+                cy={width / 2}
                 strokeDasharray={`${circumference} ${circumference}`}
                 strokeDashoffset={`${offset}`}
             />

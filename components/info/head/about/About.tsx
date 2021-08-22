@@ -7,18 +7,18 @@ export interface AboutProps {
 }
 
 interface Props {
-    array: Array<AboutProps>
+    abouts: AboutProps[]
 }
 
-export const About:React.FC<Props> = ({array}) => {
+export const About:React.FC<Props> = ({abouts}) => {
     return (
         <StyledAbout>
-            {array.map(
+            {abouts.map(
                 (item, index) => (
-                    <Fragment key={index}>
+                    <div key={index}>
                         <span>{item.label}</span> <span>{item.content}</span>
                         <br />
-                    </Fragment>
+                    </div>
                 )
             )}
         </StyledAbout>

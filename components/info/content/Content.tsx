@@ -3,19 +3,19 @@ import {
     StyledTitleContent, StyledSubTitleContent, StyledContainerService 
 } from './styles'
 
-import { BackGroundColor, FontColor, GridBreakpoints } from '@components/style'
+import { BackGroundColor, FontColor, GridBreakpoints } from 'style/Theme'
 import {Achievement, AchieveProps} from './achieve/Achieve'
 import {Service, ServiceProps} from './service/Service'
 
-export interface DataHeadProps {    
-    achieves: Array<AchieveProps>,
-    services: Array<ServiceProps>,
+export interface DataContentProps {    
+    achieves:AchieveProps[],
+    services:ServiceProps[],
 }
-interface HeadProps {
-    data: DataHeadProps
+interface ContentProps {
+    data: DataContentProps
 }
 
-export const Content: React.FC<HeadProps> = ({data}) => {
+export const Content: React.FC<ContentProps> = ({data}) => {
     return(
         <StyledWrapperContent className="col-sm-9">
         <StyleBanner className="row">
@@ -32,11 +32,11 @@ export const Content: React.FC<HeadProps> = ({data}) => {
             </StyledBannerContent>
         </StyleBanner>
 
-        <Achievement array={data.achieves}/>
+        <Achievement achieves={data.achieves}/>
 
         <StyledContainerService id="service">
             <p>WORKS EXPERIENCE</p>
-            <Service array={data.services} />
+            <Service services={data.services} />
         </StyledContainerService>
     </StyledWrapperContent>
 

@@ -14,13 +14,13 @@ export interface ServiceProps {
 }
 
 interface Props {
-    array: Array<ServiceProps>
+    services: ServiceProps[]
 }
 
-export const Service: React.FC<Props> = ({array}) => {
+export const Service: React.FC<Props> = ({services}) => {
     return (
         <StyledWrapperService>
-            {array.map(
+            {services.map(
                 (item, index) => (
                     <StyledService key={index}>
                         <StyledHeaderService>

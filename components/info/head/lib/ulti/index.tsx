@@ -1,4 +1,4 @@
-import { BackGroundColor, FontColor, GridBreakpoints } from '@components/style'
+import { BackGroundColor, FontColor, GridBreakpoints } from 'style/Theme'
 
 interface PropsListLib {
     color?: string;
@@ -6,14 +6,13 @@ interface PropsListLib {
     className?: string;
   }
   
-  export const ListLib = (props:PropsListLib) => {
-    const color = props.color || FontColor.secondary
+  export const ListLib:React.FC<PropsListLib> = ({className, text="-"}) => {
     return (
-      <p className={props.className}>
-      <span className="material-icons" style={{ color: color }}>
-        done
-      </span>
-        <span>{props.text}</span>
+      <p className={className}>
+        <span className="material-icons">
+          done
+        </span>
+        <span>{text}</span>
       </p>
     )
   }

@@ -2,7 +2,7 @@ import { Fragment } from "react"
 import { 
     StyledSkill, StyledProcessBar
 } from "./styles"
-import { BackGroundColor, FontColor, GridBreakpoints } from '@components/style'
+import { BackGroundColor, FontColor, GridBreakpoints } from 'style/Theme'
 
 export interface SkillProps {
     label: string,
@@ -10,13 +10,13 @@ export interface SkillProps {
 }
 
 interface Props {
-    array: Array<SkillProps>
+    skills: SkillProps[]
 }
 
-export const Skill:React.FC<Props> = ({array}) => {
+export const Skill:React.FC<Props> = ({skills}) => {
     return (
         <StyledSkill>
-            {array.map(
+            {skills.map(
                 (item, index) => (                                                                                            
                         <StyledProcessBar label={item.label} percent={item.percent} height={5} key={index} />
                 )

@@ -1,4 +1,4 @@
-import { BackGroundColor, FontColor, GridBreakpoints } from '@components/style'
+import { BackGroundColor, FontColor, GridBreakpoints } from 'style/Theme'
 import styled from 'styled-components'
 
 export const StyledMain = styled.main`

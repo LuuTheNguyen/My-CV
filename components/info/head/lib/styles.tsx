@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { BackGroundColor, FontColor, GridBreakpoints } from '@components/style'
+import { BackGroundColor, FontColor, GridBreakpoints } from 'style/Theme'
 import {ListLib} from './ulti'
 
 export const StyledLib = styled.div`
@@ -16,6 +16,9 @@ export const StyledLib = styled.div`
 export const StyledListLib = styled(ListLib) `
   margin-bottom: 5px;
   display: flex;
+  & .material-icons{
+    color: ${props => props.color || FontColor.secondary}
+  }
 
   @media(min-width: ${GridBreakpoints.sm}) and (max-width: ${GridBreakpoints.lg}){
       justify-content: flex-start;

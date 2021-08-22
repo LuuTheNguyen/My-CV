@@ -7,22 +7,22 @@ export interface ContactProps {
 }
 
 export interface Props {
-    array: Array<ContactProps>
+    contacts: ContactProps[]
 }
 
-export const Contact: React.FC<Props> = ({array}) => {
+export const Contact: React.FC<Props> = ({contacts}) => {
     return (
-        <Fragment>           
-            {array.map(
+        <>           
+            {contacts.map(
                 (item, index) => (
-                    <Fragment key={index}>
+                    <div key={index}>
                          <StyledContact>
                             <span>{item.label}:</span>
                             <span>{item.content}</span>
                         </StyledContact>
-                    </Fragment>
+                    </div>
                 )
             )}
-        </Fragment>
+        </>
     )
 }

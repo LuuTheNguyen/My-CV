@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { BackGroundColor, FontColor, GridBreakpoints } from '@components/style'
+import { BackGroundColor, FontColor, GridBreakpoints } from 'style/Theme'
 import { ProcessRing } from './ulti'
 
 export const StyledLanguage = styled.div`

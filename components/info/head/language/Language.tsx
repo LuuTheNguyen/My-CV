@@ -2,7 +2,7 @@ import { Fragment } from "react"
 import { 
  StyledLanguage, StlyedProcessRing, StyledWrapperProcessRing, StlyedTitleProcessRing
 } from "./styles"
-import { BackGroundColor, FontColor, GridBreakpoints } from '@components/style'
+import { BackGroundColor, FontColor, GridBreakpoints } from 'style/Theme'
 
 export interface LanguageProps {
     label: string,
@@ -10,20 +10,20 @@ export interface LanguageProps {
 }
 
 interface Props {
-    array: Array<LanguageProps>
+    languages: LanguageProps[]
 }
 
-export const Language:React.FC<Props> = ({array}) => {
+export const Language:React.FC<Props> = ({languages}) => {
     return (
         <StyledLanguage>
-            {array.map(
+            {languages.map(
                 (item, index) => (
-                    <Fragment key={index}>                        
+                    <div key={index}>                        
                         <StyledWrapperProcessRing>
                             <StlyedProcessRing width={40} stroke={FontColor.secondary} strokeWidth={2} percent={item.percent} />
                             <StlyedTitleProcessRing>{item.label}</StlyedTitleProcessRing>
                         </StyledWrapperProcessRing>
-                    </Fragment>
+                    </div>
                 )
             )}
         </StyledLanguage>
