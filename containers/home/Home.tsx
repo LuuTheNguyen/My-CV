@@ -1,7 +1,7 @@
 import { Layout } from "@components/layout/Layout"
 import { StyledMain, StyledContainer } from '@containers/home/styles'
 
-import { Info } from '@components/info/Info'
+import { Info } from '@components/info/info/Info'
 import { Menu } from '@components/menu/Menu'
 
 export const HomePage: React.FC = () => {

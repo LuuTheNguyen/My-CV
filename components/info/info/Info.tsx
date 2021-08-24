@@ -1,8 +1,8 @@
 import { StyledInfo, StyledWrapperInfo } from './styles'
 
 import { BackGroundColor, FontColor, GridBreakpoints } from 'style/Theme'
-import {Head, DataHeadProps} from './head/Head'
-import {Content, DataContentProps} from './content/Content'
+import {Head, DataHeadProps} from '../head/head/Head'
+import {Content, DataContentProps} from '../content/content/Content'
 import {AchieveProps} from '@components/info/content/achieve/Achieve'
 import {ServiceProps} from '@components/info/content/service/Service'
 import {AboutProps} from '@components/info/head/about/About'
