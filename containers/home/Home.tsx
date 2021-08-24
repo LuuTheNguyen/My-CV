@@ -4,8 +4,7 @@ import { StyledMain, StyledContainer } from '@containers/Home/styles'
 import { Info } from '@components/Info/Info/Info'
 import { Menu } from '@components/Menu/Menu'
 
-export const HomePage: React.FC = () => {
-    
+export const HomePage: React.FC = () => {    
     const achieveData = [
         { label: '2 +', content: 'Years Experience' },
         { label: '9', content: 'Complete Projects' }
