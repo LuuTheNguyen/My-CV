@@ -10,6 +10,7 @@ export const HomePage: React.FC = () => {
         { label: '2 +', content: 'Years Experience' },
         { label: '9', content: 'Complete Projects' }
     ]
+    
     const serviceData = [
         {
             time: 'April 2017 - February 2018',
