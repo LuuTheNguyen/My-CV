@@ -1,5 +1,5 @@
 import { Layout } from "@components/Layout/Layout"
-import { StyledMain, StyledContainer } from '@containers/home/styles'
+import { StyledMain, StyledContainer } from '@containers/Home/styles'
 
 import { Info } from '@components/Info/Info/Info'
 import { Menu } from '@components/Menu/Menu'

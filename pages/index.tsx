@@ -1,4 +1,4 @@
-import {HomePage} from '@containers/home/Home'
+import {HomePage} from '@containers/Home/Home'
 
 const Home: React.FC = () => {
   return (
