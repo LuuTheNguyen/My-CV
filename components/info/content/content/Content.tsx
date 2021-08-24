@@ -4,8 +4,8 @@ import {
 } from './styles'
 
 import { BackGroundColor, FontColor, GridBreakpoints } from 'style/Theme'
-import {Achievement, AchieveProps} from '../achieve/Achieve'
-import {Service, ServiceProps} from '../service/Service'
+import {Achievement, AchieveProps} from '@components/Info/Content/Achieve/Achieve'
+import {Service, ServiceProps} from '@components/Info/Content/Service/Service'
 
 export interface DataContentProps {    
     achieves:AchieveProps[],

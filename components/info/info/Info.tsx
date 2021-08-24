@@ -1,15 +1,15 @@
 import { StyledInfo, StyledWrapperInfo } from './styles'
 
 import { BackGroundColor, FontColor, GridBreakpoints } from 'style/Theme'
-import {Head, DataHeadProps} from '../head/head/Head'
-import {Content, DataContentProps} from '../content/content/Content'
-import {AchieveProps} from '@components/info/content/achieve/Achieve'
-import {ServiceProps} from '@components/info/content/service/Service'
-import {AboutProps} from '@components/info/head/about/About'
-import {LanguageProps} from '@components/info/head/language/Language'
-import {SkillProps} from '@components/info/head/skill/Skill'
-import {LibProps} from '@components/info/head/lib/Lib'
-import {ContactProps} from '@components/info/head/contact/Contact'
+import {Head, DataHeadProps} from '@components/Info/Head/Head/Head'
+import {Content, DataContentProps} from '@components/Info/Content/Content/Content'
+import {AchieveProps} from '@components/Info/Content/Achieve/Achieve'
+import {ServiceProps} from '@components/Info/Content/Service/Service'
+import {AboutProps} from '@components/Info/Head/About/About'
+import {LanguageProps} from '@components/Info/Head/Language/Language'
+import {SkillProps} from '@components/Info/Head/Skill/Skill'
+import {LibProps} from '@components/Info/Head/Lib/Lib'
+import {ContactProps} from '@components/Info/Head/Contact/Contact'
 
 export interface InfoProps {
     achieves: AchieveProps[],

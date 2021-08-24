@@ -1,8 +1,8 @@
-import { Layout } from "@components/layout/Layout"
+import { Layout } from "@components/Layout/Layout"
 import { StyledMain, StyledContainer } from '@containers/home/styles'
 
-import { Info } from '@components/info/info/Info'
-import { Menu } from '@components/menu/Menu'
+import { Info } from '@components/Info/Info/Info'
+import { Menu } from '@components/Menu/Menu'
 
 export const HomePage: React.FC = () => {
     

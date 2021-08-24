@@ -5,11 +5,11 @@ import {
 } from './styles'
 
 import { BackGroundColor, FontColor, GridBreakpoints } from 'style/Theme'
-import {About, AboutProps} from '../about/About'
-import {Language, LanguageProps} from '../language/Language'
-import {Skill, SkillProps} from '../skill/Skill'
-import {Lib, LibProps} from '../lib/Lib'
-import {Contact, ContactProps} from '../contact/Contact'
+import {About, AboutProps} from '@components/Info/Head/About/About'
+import {Language, LanguageProps} from '@components/Info/Head/Language/Language'
+import {Skill, SkillProps} from '@components/Info/Head/Skill/Skill'
+import {Lib, LibProps} from '@components/Info/Head/Lib/Lib'
+import {Contact, ContactProps} from '@components/Info/Head/Contact/Contact'
 
 export interface DataHeadProps {    
     languages: LanguageProps[],
