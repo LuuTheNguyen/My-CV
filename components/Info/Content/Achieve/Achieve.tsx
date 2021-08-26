@@ -11,18 +11,16 @@ interface Props {
 }
 
 export const Achievement: React.FC<Props> = ({achieves}) => {
-    return (
-        <>           
+    return (        
+        <StyledContainerAchievement>
             {achieves.map(
                 (item, index) => (                    
-                    <StyledContainerAchievement key={index}>
-                        <StyledAchievement>
+                        <StyledAchievement key={index}>
                             <span>{item.label}</span>
                             <span>{item.content}</span>
                         </StyledAchievement>
-                    </StyledContainerAchievement>
                 )
             )}
-        </>
+        </StyledContainerAchievement>
     )
 }

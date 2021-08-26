@@ -34,7 +34,10 @@ export const Info: React.FC<InfoProps> = ({achieves, services, languages, contac
         skills: skills
     }
     return(
-        <StyledInfo className="col-11">
+        <StyledInfo 
+            // className="col-11"
+            className="col-12"
+        >
                         <StyledWrapperInfo className="container">
                             <Head data={headData} />
                             <Content data={contentData}/>                        

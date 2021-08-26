@@ -1,9 +1,10 @@
 import { Fragment } from "react"
 import {  StyledWrapperService, StyledService,
-    StyledHeaderService, StyledContentService, StyledFooterService,
+    StyledHeaderService, StyledContentService, StyledCompany,
     StyledHeaderSubTitleService, StyledHeaderTitleService
 } from "./styles"
 
+import Link from 'next/link'
 export interface ServiceProps {
     time: string,
     project: string,
@@ -11,6 +12,7 @@ export interface ServiceProps {
     tech?: string,
     description?: string,
     company?: string,
+    companyHref: string,
 }
 
 interface Props {
@@ -29,16 +31,23 @@ export const Service: React.FC<Props> = ({services}) => {
                             </StyledHeaderTitleService>
                             <StyledHeaderSubTitleService>
                                 {item.project}
-                            </StyledHeaderSubTitleService>
+                            </StyledHeaderSubTitleService>                            
+                            {item.company && <StyledCompany>
+                                <span>{item.company}</span>
+                                <a target="_blank" href={item.companyHref} >
+                                    <span className="material-icons">
+                                        open_in_new                                    
+                                    </span>
+                                </a>
+                            </StyledCompany>}
                         </StyledHeaderService>
                         <StyledContentService>
                             {item.responsibilities && <div><span>Main responsibilities:</span> <span>{item.responsibilities}</span></div>}
+                            <hr />
                             {item.tech && <div><span>Tech stack:</span> <span>{item.tech}</span></div>}
+                            <hr />
                             {item.description && <div><span>Description:</span> <span>{item.description}</span></div>}
                         </StyledContentService>
-                        <StyledFooterService>
-                            <span>{item.company||""}</span>
-                        </StyledFooterService>
                     </StyledService>
                 )
             )}

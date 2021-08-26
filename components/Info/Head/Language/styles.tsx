@@ -3,7 +3,7 @@ import { BackGroundColor, FontColor, GridBreakpoints } from 'style/Theme'
 import { ProcessRing } from './ulti'
 
 export const StyledLanguage = styled.div`
-  justify-content: space-between;
+  justify-content: space-evenly;
   color: ${FontColor.default};
   display: flex;
 

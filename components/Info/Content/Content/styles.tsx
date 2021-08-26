@@ -59,3 +59,22 @@ export const StyledWrapperMain = styled.div`
     display: flex;
   }
 `
+
+export const StyledContainerEducation = styled.div`
+ display: flex;
+ flex-direction: column;
+`
+
+export const StyledEducationItem = styled.span`
+ font-size: 16px;
+ color: ${FontColor.default};
+`
+
+export const StyledEducations = styled.div`
+ display: flex;
+ flex-direction: row;
+ margin-bottom: 30px;
+ ${StyledEducationItem} + ${StyledEducationItem} {
+   margin-left: 20px;
+ }
+`

@@ -1,9 +1,8 @@
 import styled from "styled-components";
 import { BackGroundColor, FontColor, GridBreakpoints } from 'style/Theme'
+import { StyledLink } from './util'
 
-import Link from 'next/link'
-
-const StyledMenuList = styled.div`
+export const StyledMenuList = styled.div`
   display: flex;
   justify-content: flex-end;
 
@@ -13,16 +12,7 @@ const StyledMenuList = styled.div`
   }
 `
 
-
-const StyledLink = (props: any) =>{
-    return (
-      <div className={props.className}>
-        <Link href={props.href}><a>{props.text}</a></Link>
-      </div>
-    )
-  }
-
-const StyledMenuItem = styled(StyledLink)`
+export const StyledMenuItem = styled(StyledLink)`
 transform: rotate(90deg);  
 margin-top: 30px;
 a {
@@ -31,16 +21,14 @@ a {
 }
 `
 
-
-
-const StyledWrapperMenuList = styled.div`
+export const StyledWrapperMenuList = styled.div`
   position: relative;
   background-color: ${BackGroundColor.secondary};
   width: 100%;
   height: 100%;
 `
 
-const StyledContainerMenuList = styled.div`
+export const StyledContainerMenuList = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-end;
@@ -50,7 +38,7 @@ const StyledContainerMenuList = styled.div`
 `
 
 
-const StyledHeaderMenu = styled.div`
+export const StyledHeaderMenu = styled.div`
   min-width: 50px;
   min-height: 50px;
   display: flex;
@@ -61,6 +49,3 @@ const StyledHeaderMenu = styled.div`
     cursor: pointer;
   }
 `
-
-export { StyledMenuList, StyledWrapperMenuList, StyledHeaderMenu,
-    StyledContainerMenuList, StyledMenuItem }

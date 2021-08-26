@@ -7,7 +7,6 @@ width: 100%;
 background-color: ${BackGroundColor.default};
 color: ${FontColor.default};
 padding: 10px;
-max-width: 1990px;
 
 @media(max-width: ${GridBreakpoints.lg}){
   flex-direction: row;

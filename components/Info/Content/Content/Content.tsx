@@ -1,6 +1,7 @@
 import {
     StyledWrapperContent, StyleBanner, StyledBannerContent,
-    StyledTitleContent, StyledSubTitleContent, StyledContainerService 
+    StyledTitleContent, StyledSubTitleContent, StyledContainerService,
+    StyledContainerEducation, StyledEducations, StyledEducationItem
 } from './styles'
 
 import { BackGroundColor, FontColor, GridBreakpoints } from 'style/Theme'
@@ -33,6 +34,15 @@ export const Content: React.FC<ContentProps> = ({data}) => {
         </StyleBanner>
 
         <Achievement achieves={data.achieves}/>
+
+        <StyledContainerEducation id="education">
+            <p>EDUCATION</p>
+            <StyledEducations>
+                <StyledEducationItem>October 2013 - April 2017</StyledEducationItem>
+                <StyledEducationItem>University Ho Chi Minh City - University of Science</StyledEducationItem>
+                <StyledEducationItem>Information Technology</StyledEducationItem>
+            </StyledEducations>
+        </StyledContainerEducation>
 
         <StyledContainerService id="service">
             <p>WORKS EXPERIENCE</p>

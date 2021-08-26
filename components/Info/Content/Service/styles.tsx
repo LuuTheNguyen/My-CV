@@ -4,7 +4,7 @@ import { BackGroundColor, FontColor, GridBreakpoints } from 'style/Theme'
 export const StyledWrapperService = styled.div`  
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-evenly;
+  justify-content: flex-start;
   align-items: flex-start;
 
   @media(max-width: ${GridBreakpoints.lg}){
@@ -48,6 +48,7 @@ export const StyledHeaderSubTitleService = styled.span`
 export const StyledContentService = styled.div`
   color: ${FontColor.primary};
   font-size: 14px;
+  margin-top: 10px;
   span {
     text-transform: capitalize;
     font-style: italic;
@@ -60,12 +61,20 @@ export const StyledContentService = styled.div`
   }
 `
 
-export const StyledFooterService = styled.div`
+export const StyledCompany = styled.div`
   color: ${FontColor.secondary};  
   font-weight: 600px;
   text-transform: uppercase;
   & button {
     border: none;
     padding: 0;
+  }
+  & .material-icons {
+    font-size: 1rem;
+    cursor: pointer;
+  }
+  & a{
+    margin-left: 5px;
+    color: ${FontColor.secondary}
   }
 `
