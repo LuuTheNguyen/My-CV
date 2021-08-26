@@ -17,7 +17,8 @@ export const StyledListLib = styled(ListLib) `
   margin-bottom: 5px;
   display: flex;
   & .material-icons{
-    color: ${props => props.color || FontColor.secondary}
+    color: ${props => props.color || FontColor.secondary};
+    margin-right: 8px;
   }
 
   @media(min-width: ${GridBreakpoints.sm}) and (max-width: ${GridBreakpoints.lg}){

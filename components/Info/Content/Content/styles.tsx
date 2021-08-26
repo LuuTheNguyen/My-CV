@@ -4,7 +4,7 @@ import Image from 'next/image'
 
 
 export const StyledWrapperContent = styled.div`
-  padding: 30px 20px;
+  padding: 30px 0 20px 30px;
   @media(min-width: ${GridBreakpoints.sm}) and (max-width: ${GridBreakpoints.lg}){
     width: auto;
   }
@@ -71,10 +71,17 @@ export const StyledEducationItem = styled.span`
 `
 
 export const StyledEducations = styled.div`
- display: flex;
- flex-direction: row;
+ display: grid;
+ grid-template-columns: auto auto auto;
+ grid-column-gap: 30px;
+ grid-row-gap: 30px;
  margin-bottom: 30px;
- ${StyledEducationItem} + ${StyledEducationItem} {
-   margin-left: 20px;
- }
+
+ @media(max-width: ${GridBreakpoints.lg}){
+    grid-template-columns: auto auto;
+  }
+
+ @media(max-width: ${GridBreakpoints.md}){
+    grid-template-columns: auto;
+  }
 `

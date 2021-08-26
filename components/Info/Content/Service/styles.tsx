@@ -2,13 +2,16 @@ import styled from "styled-components"
 import { BackGroundColor, FontColor, GridBreakpoints } from 'style/Theme'
 
 export const StyledWrapperService = styled.div`  
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: auto auto;
   justify-content: flex-start;
-  align-items: flex-start;
+  align-items: flex-start;  
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
 
   @media(max-width: ${GridBreakpoints.lg}){
     justify-content: center;
+  grid-template-columns: auto;
   }
 `
 
@@ -20,8 +23,6 @@ export const StyledService = styled.div`
   background-color: ${BackGroundColor.primary};
   width: 300px;
   min-height: 250px;
-  margin-bottom: 20px;
-  margin-right: 20px;
 
   @media(max-width: ${GridBreakpoints.lg}){
     width: 100%;
@@ -65,6 +66,8 @@ export const StyledCompany = styled.div`
   color: ${FontColor.secondary};  
   font-weight: 600px;
   text-transform: uppercase;
+  display: flex;
+  align-items: center;
   & button {
     border: none;
     padding: 0;
@@ -75,6 +78,9 @@ export const StyledCompany = styled.div`
   }
   & a{
     margin-left: 5px;
-    color: ${FontColor.secondary}
+    color: ${FontColor.secondary};
+    display: flex;
+    align-items: center;
+    text-decoration: none;
   }
 `
