@@ -34,7 +34,7 @@ export const Service: React.FC<Props> = ({services}) => {
                             </StyledHeaderSubTitleService>                            
                             {item.company && <StyledCompany>
                                 <span>{item.company}</span>
-                                <a target="_blank" href={item.companyHref} >
+                                <a target="_blank" rel="noreferrer" href={item.companyHref} >
                                     <span className="material-icons">
                                         open_in_new                                    
                                     </span>
