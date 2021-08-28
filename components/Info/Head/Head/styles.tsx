@@ -3,8 +3,9 @@ import { BackGroundColor, FontColor, GridBreakpoints } from 'style/Theme'
 import Image from 'next/image'
 
 export const StyledWrapperHead = styled.div`
-  @media(min-width: ${GridBreakpoints.sm}) and (max-width: ${GridBreakpoints.lg}){
+  @media(max-width: ${GridBreakpoints.lg}){
     width: auto;
+    display: none;
   }
 `
 
@@ -86,4 +87,23 @@ export const StyledAboutFooter = styled.div`
   /* justify-content: space-around; */
   align-items: center;
   flex-wrap: wrap;
+`
+
+export const StyledNavBar = styled.div`
+  display: none;
+  background-color: ${BackGroundColor.default};
+  
+  @media(max-width: ${GridBreakpoints.lg}){
+    display: block;
+  }
+
+  .offcanvas{    
+    background-color: ${BackGroundColor.primary};
+    .material-icons {
+      color: ${FontColor.default}
+    }
+    .text-reset{
+      text-align: end;
+    }
+  }
 `

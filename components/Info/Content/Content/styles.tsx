@@ -4,7 +4,7 @@ import Image from 'next/image'
 
 
 export const StyledWrapperContent = styled.div`
-  padding: 30px 0 20px 30px;
+  padding: 30px 30px 30px 30px;
   @media(min-width: ${GridBreakpoints.sm}) and (max-width: ${GridBreakpoints.lg}){
     width: auto;
   }
@@ -73,15 +73,15 @@ export const StyledEducationItem = styled.span`
 export const StyledEducations = styled.div`
  display: grid;
  grid-template-columns: auto auto auto;
- grid-column-gap: 30px;
- grid-row-gap: 30px;
+ grid-column-gap: 50px;
+ grid-row-gap: 20px;
  margin-bottom: 30px;
 
- @media(max-width: ${GridBreakpoints.lg}){
+ @media(max-width: ${GridBreakpoints.md}){
     grid-template-columns: auto auto;
   }
 
- @media(max-width: ${GridBreakpoints.md}){
+  @media(max-width: ${GridBreakpoints.sm}){
     grid-template-columns: auto;
   }
 `

@@ -6,7 +6,10 @@ height: auto;
 width: 100%;
 background-color: ${BackGroundColor.default};
 color: ${FontColor.default};
+margin: 0;
 padding: 10px;
+align-items: center;
+justify-content: center;
 
 @media(max-width: ${GridBreakpoints.lg}){
   flex-direction: row;

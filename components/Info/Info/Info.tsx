@@ -38,12 +38,11 @@ export const Info: React.FC<InfoProps> = ({achieves, services, languages, contac
             // className="col-11"
             className="col-12"
         >
-                        <StyledWrapperInfo className="container">
-                            <Head data={headData} />
-                            <Content data={contentData}/>                        
-                        </StyledWrapperInfo>
-
-                    </StyledInfo>
+            <StyledWrapperInfo className="row">
+                <Head data={headData} />
+                <Content data={contentData}/>                        
+            </StyledWrapperInfo>
+        </StyledInfo>
                     
     )
 }

@@ -61,7 +61,7 @@ export const HomePage: React.FC = () => {
 
     return <Layout name="Home">
         <StyledContainer>
-            <StyledMain className="container">
+            <StyledMain className="container-xxl">
                 <div className="row">
                     <Info {...data} />
                     {/* <Menu /> */}

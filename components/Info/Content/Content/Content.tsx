@@ -18,9 +18,9 @@ interface ContentProps {
 
 export const Content: React.FC<ContentProps> = ({data}) => {
     return(
-        <StyledWrapperContent className="col-sm-9">
+        <StyledWrapperContent className="col-sm-12 col-lg-9">
         <StyleBanner className="row">
-            <StyledBannerContent className="col-6">
+            <StyledBannerContent className="col-sm-12 col-lg-12">
                 <StyledTitleContent>
                     Discoverd my Amazing Art Space!
                 </StyledTitleContent>

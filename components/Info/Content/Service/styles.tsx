@@ -4,14 +4,13 @@ import { BackGroundColor, FontColor, GridBreakpoints } from 'style/Theme'
 export const StyledWrapperService = styled.div`  
   display: grid;
   grid-template-columns: auto auto;
-  justify-content: flex-start;
+    justify-content: center;
   align-items: flex-start;  
   grid-column-gap: 20px;
   grid-row-gap: 20px;
 
-  @media(max-width: ${GridBreakpoints.lg}){
-    justify-content: center;
-  grid-template-columns: auto;
+  @media(max-width: ${GridBreakpoints.sm}){
+    grid-template-columns: auto;
   }
 `
 
@@ -21,7 +20,6 @@ export const StyledService = styled.div`
   flex-direction: column;
   justify-content: flex-start;
   background-color: ${BackGroundColor.primary};
-  width: 300px;
   min-height: 250px;
 
   @media(max-width: ${GridBreakpoints.lg}){
