@@ -9,17 +9,11 @@
     Screenshot or GIF if available, you can use https://imgur.com/ for hosting
 
 ### Checklist
- [ ] Tested on Desktop
- 
- [ ] Tested on Tablet
- 
- [ ] Tested on Mobile
- 
- [ ] Tested `Print mode`
- 
- [ ] Covered with test cases
- 
- [ ] Added proper tags
- 
- [ ] Performed self-review
+ - [ ] Tested on Desktop
+ - [ ] Tested on Tablet
+ - [ ] Tested on Mobile
+ - [ ] Tested `Print mode`
+ - [ ] Covered with test cases
+ - [ ] Added proper label
+ - [ ] Performed self-review
  
