@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { BackGroundColor, FontColor, GridBreakpoints } from 'style/Theme'
-import { StyledLink } from './util'
+import { StyledLink } from '../util'
 
 export const StyledMenuList = styled.div`
   display: flex;

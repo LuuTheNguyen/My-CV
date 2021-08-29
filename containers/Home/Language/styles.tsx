@@ -1,6 +1,6 @@
 import styled from "styled-components"
 import { BackGroundColor, FontColor, GridBreakpoints } from 'style/Theme'
-import { ProcessRing } from './ulti'
+import { ProcessRing } from '../styles/ProcessRing'
 
 export const StyledLanguage = styled.div`
   justify-content: space-evenly;
