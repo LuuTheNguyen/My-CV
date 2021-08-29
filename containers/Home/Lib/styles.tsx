@@ -1,6 +1,6 @@
 import styled from "styled-components"
 import { BackGroundColor, FontColor, GridBreakpoints } from 'style/Theme'
-import {ListLib} from './ulti'
+import {ListLib} from '../styles/ListLib'
 
 export const StyledLib = styled.div`
   @media(min-width: ${GridBreakpoints.sm}) and (max-width: ${GridBreakpoints.lg}){

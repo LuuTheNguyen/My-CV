@@ -10,7 +10,7 @@ interface Props {
     achieves: AchieveProps[]
 }
 
-export const Achievement: React.FC<Props> = ({achieves}) => {
+export const Achieve: React.FC<Props> = ({achieves}) => {
     return (        
         <StyledContainerAchievement>
             {achieves.map(

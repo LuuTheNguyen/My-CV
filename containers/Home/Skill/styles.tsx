@@ -1,6 +1,6 @@
 import styled from "styled-components"
 import { BackGroundColor, FontColor, GridBreakpoints } from 'style/Theme'
-import { ProcessBar } from './ulti'
+import { ProcessBar } from '../styles/ProcessBar'
 
 export const StyledSkill = styled.div`
   @media(min-width: ${GridBreakpoints.sm}) and (max-width: ${GridBreakpoints.lg}){
