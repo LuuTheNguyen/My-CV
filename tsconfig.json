@@ -17,7 +17,7 @@
     "paths": {
       "@components/*": ["components/*"],
       "@containers/*": ["containers/*"]
-    },
+    }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules"]

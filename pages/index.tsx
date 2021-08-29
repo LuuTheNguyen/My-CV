@@ -1,9 +1,7 @@
-import {HomePage} from '@containers/Home/Home'
+import { HomePage } from "@containers/Home/Home";
 
 const Home: React.FC = () => {
-  return (
-    <HomePage />
-  )
-}
+  return <HomePage />;
+};
 
-export default Home
+export default Home;

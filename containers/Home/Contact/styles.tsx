@@ -1,17 +1,16 @@
-import styled from "styled-components"
-import { BackGroundColor, FontColor, GridBreakpoints } from 'style/Theme'
-
+import styled from "styled-components";
+import { BackGroundColor, FontColor, GridBreakpoints } from "style/Theme";
 
 export const StyledContact = styled.div`
   display: flex;
   flex-direction: row;
   padding: 10px;
-  
-  span{
+
+  span {
     font-weight: 600;
   }
-  span + span{
+  span + span {
     margin-left: 10px;
     font-weight: normal;
   }
-`
+`;

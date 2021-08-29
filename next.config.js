@@ -1,4 +1,4 @@
-const path = require('path')
+const path = require("path");
 
 module.exports = {
   reactStrictMode: true,
@@ -9,11 +9,11 @@ module.exports = {
         ...config.resolve,
         alias: {
           ...config.resolve.alias,
-          "@components": path.resolve((__dirname, 'components/')),
-          "@containers": path.resolve((__dirname, 'containers/')),
-          "@utils": path.resolve((__dirname, 'utils/'))
-        }
-      }
-    }
-  }
-}
+          "@components": path.resolve((__dirname, "components/")),
+          "@containers": path.resolve((__dirname, "containers/")),
+          "@utils": path.resolve((__dirname, "utils/")),
+        },
+      },
+    };
+  },
+};
