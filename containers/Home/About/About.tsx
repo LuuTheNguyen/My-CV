@@ -1,24 +1,16 @@
-import { Fragment } from "react";
-import { StyledAbout } from "./styles";
+import { StyledAbout } from './styles'
 
-export interface AboutProps {
-  label: string;
-  content: string;
+import { AboutProps, Prop } from './interface'
+
+export const About: React.FC<Prop> = ({ abouts }) => {
+    return (
+        <StyledAbout>
+            {abouts.map((item, index) => (
+                <div key={index}>
+                    <span>{item.label}</span> <span>{item.content}</span>
+                    <br />
+                </div>
+            ))}
+        </StyledAbout>
+    )
 }
-
-interface Props {
-  abouts: AboutProps[];
-}
-
-export const About: React.FC<Props> = ({ abouts }) => {
-  return (
-    <StyledAbout>
-      {abouts.map((item, index) => (
-        <div key={index}>
-          <span>{item.label}</span> <span>{item.content}</span>
-          <br />
-        </div>
-      ))}
-    </StyledAbout>
-  );
-};

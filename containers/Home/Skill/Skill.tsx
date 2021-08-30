@@ -1,27 +1,18 @@
-import { Fragment } from "react";
-import { StyledSkill, StyledProcessBar } from "./styles";
-import { BackGroundColor, FontColor, GridBreakpoints } from "style/Theme";
+import { StyledSkill, StyledProcessBar } from './styles'
 
-export interface SkillProps {
-  label: string;
-  percent: number;
+import { SkillProps, Prop} from './interface'
+
+export const Skill: React.FC<Prop> = ({ skills }) => {
+    return (
+        <StyledSkill>
+            {skills.map((item, index) => (
+                <StyledProcessBar
+                    label={item.label}
+                    percent={item.percent}
+                    height={5}
+                    key={index}
+                />
+            ))}
+        </StyledSkill>
+    )
 }
-
-interface Props {
-  skills: SkillProps[];
-}
-
-export const Skill: React.FC<Props> = ({ skills }) => {
-  return (
-    <StyledSkill>
-      {skills.map((item, index) => (
-        <StyledProcessBar
-          label={item.label}
-          percent={item.percent}
-          height={5}
-          key={index}
-        />
-      ))}
-    </StyledSkill>
-  );
-};

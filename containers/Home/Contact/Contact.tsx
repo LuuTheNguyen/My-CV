@@ -1,26 +1,17 @@
-import { Fragment } from "react";
-import { StyledContact } from "./styles";
+import { StyledContact } from './styles'
+import { ContactProps, Prop } from './interface'
 
-export interface ContactProps {
-  label: string;
-  content: string;
+export const Contact: React.FC<Prop> = ({ contacts }) => {
+    return (
+        <>
+            {contacts.map((item, index) => (
+                <div key={index}>
+                    <StyledContact>
+                        <span>{item.label}:</span>
+                        <span>{item.content}</span>
+                    </StyledContact>
+                </div>
+            ))}
+        </>
+    )
 }
-
-export interface Props {
-  contacts: ContactProps[];
-}
-
-export const Contact: React.FC<Props> = ({ contacts }) => {
-  return (
-    <>
-      {contacts.map((item, index) => (
-        <div key={index}>
-          <StyledContact>
-            <span>{item.label}:</span>
-            <span>{item.content}</span>
-          </StyledContact>
-        </div>
-      ))}
-    </>
-  );
-};

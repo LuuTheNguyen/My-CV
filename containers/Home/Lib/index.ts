@@ -1,1 +1,1 @@
-export { Lib } from "./Lib";
+export { Lib } from './Lib'
