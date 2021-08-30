@@ -28,8 +28,7 @@ export const ProcessRing: React.FC<ProcessRingProp> = ({
                 x={width / 2}
                 y={width / 2 + width / 10}
                 fontSize={width / 4}
-                fill={`${FontColor.default}`}
-            >
+                fill={`${FontColor.default}`}>
                 {percentValue}%
             </text>
             <circle

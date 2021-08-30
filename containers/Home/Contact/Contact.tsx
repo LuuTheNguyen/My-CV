@@ -5,12 +5,10 @@ export const Contact: React.FC<Prop> = ({ contacts }) => {
     return (
         <>
             {contacts.map((item, index) => (
-                <div key={index}>
-                    <StyledContact>
-                        <span>{item.label}:</span>
-                        <span>{item.content}</span>
-                    </StyledContact>
-                </div>
+                <StyledContact key={index}>
+                    <span>{item.label}:</span>
+                    <span>{item.content}</span>
+                </StyledContact>
             ))}
         </>
     )

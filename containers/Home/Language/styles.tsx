@@ -1,5 +1,10 @@
 import styled from 'styled-components'
-import { BackGroundColor, FontColor, GridBreakpoints } from 'style/Theme'
+import {
+    BackGroundColor,
+    FontColor,
+    GridBreakpoints,
+    FontSize,
+} from 'style/Theme'
 import { ProcessRing } from './ProcessRing'
 
 export const StyledLanguage = styled.div`
@@ -13,7 +18,7 @@ export const StyledLanguage = styled.div`
     }
 `
 
-export const StlyedProcessRing = styled(ProcessRing)`
+export const StyledProcessRing = styled(ProcessRing)`
     text {
         text-anchor: middle;
     }
@@ -31,8 +36,8 @@ export const StyledWrapperProcessRing = styled.div`
     align-items: center;
 `
 
-export const StlyedTitleProcessRing = styled.div`
+export const StyledTitleProcessRing = styled.div`
     color: ${FontColor.default};
     margin: auto auto;
-    font-size: 10px;
+    font-size: ${FontSize.xs};
 `

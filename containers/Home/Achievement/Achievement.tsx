@@ -1,6 +1,6 @@
 import { StyledContainerAchievement, StyledAchievement } from './styles'
 
-import { AchieveProps, Prop } from './interface'
+import { AchievementProps, Prop } from './interface'
 
 export const Achievement: React.FC<Prop> = ({ achieves }) => {
     return (

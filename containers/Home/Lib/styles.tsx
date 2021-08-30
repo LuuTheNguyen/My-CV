@@ -1,9 +1,9 @@
 import styled from 'styled-components'
-import { FontColor, GridBreakpoints } from 'style/Theme'
+import { FontColor, GridBreakpoints, Responsive } from 'style/Theme'
 import { ListLib } from './ListLib'
 
 export const StyledLib = styled.div`
-    @media (min-width: ${GridBreakpoints.sm}) and (max-width: ${GridBreakpoints.lg}) {
+    ${Responsive('sm', 'lg')} {
         width: 50%;
         justify-content: flex-start;
         display: flex;

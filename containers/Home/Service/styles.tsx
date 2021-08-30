@@ -1,5 +1,10 @@
 import styled from 'styled-components'
-import { BackGroundColor, FontColor, GridBreakpoints } from 'style/Theme'
+import {
+    BackGroundColor,
+    FontColor,
+    GridBreakpoints,
+    FontSize,
+} from 'style/Theme'
 
 export const StyledWrapperService = styled.div`
     display: grid;
@@ -45,7 +50,7 @@ export const StyledHeaderSubTitleService = styled.span`
 
 export const StyledContentService = styled.div`
     color: ${FontColor.primary};
-    font-size: 14px;
+    font-size: ${FontSize.sm};
     margin-top: 10px;
     span {
         text-transform: capitalize;
@@ -70,7 +75,7 @@ export const StyledCompany = styled.div`
         padding: 0;
     }
     & .material-icons {
-        font-size: 1rem;
+        font-size: ${FontSize.md};
         cursor: pointer;
     }
     & a {

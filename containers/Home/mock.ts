@@ -67,6 +67,12 @@ export const skillData = [
     { label: 'TS', percent: 60 },
 ]
 
+export const educationsData = {
+    graduated: 'October 2013 - April 2017',
+    university: 'University Ho Chi Minh City - University of Science',
+    majors: 'Information Technology',
+}
+
 export const data = {
     achieves: achieveData,
     services: serviceData,
@@ -75,11 +81,13 @@ export const data = {
     libs: libData,
     abouts: aboutData,
     skills: skillData,
+    educations: educationsData,
 }
 
 export const contentData = {
     achieves: data.achieves,
     services: data.services,
+    educations: data.educations,
 }
 export const headData = {
     languages: data.languages,

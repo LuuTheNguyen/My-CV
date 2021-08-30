@@ -28,8 +28,7 @@ export const Service: React.FC<Prop> = ({ services }) => {
                                 <a
                                     target="_blank"
                                     rel="noreferrer"
-                                    href={item.companyHref}
-                                >
+                                    href={item.companyHref}>
                                     <span className="material-icons">
                                         open_in_new
                                     </span>

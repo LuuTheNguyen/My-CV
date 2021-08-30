@@ -6,6 +6,13 @@ export const FontColor = {
     secondary: '#f5c147',
 }
 
+export const FontSize = {
+    xs: '12px',
+    sm: '14px',
+    md: '16px',
+    lg: '20px',
+}
+
 export const BackGroundColor = {
     default: '#212529',
     primary: '#252531',
@@ -21,3 +28,8 @@ export const GridBreakpoints = {
     xl: '1200px',
     xxl: '1400px',
 }
+
+type GridList = keyof typeof GridBreakpoints
+
+export const Responsive = (from: GridList, to: GridList) =>
+    `@media (min-width: ${GridBreakpoints[from]}) and (max-width: ${GridBreakpoints[to]})`

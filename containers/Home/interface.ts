@@ -1,4 +1,4 @@
-import type { AchieveProps } from '@containers/Home/Achievement/interface'
+import type { AchievementProps } from '@containers/Home/Achievement/interface'
 import type { ServiceProps } from '@containers/Home/Service/interface'
 import type { AboutProps } from '@containers/Home/About/interface'
 import type { LanguageProps } from '@containers/Home/Language/interface'
@@ -18,7 +18,7 @@ export interface HeadProps {
 }
 
 export interface DataContentProps {
-    achieves: AchieveProps[]
+    achieves: AchievementProps[]
     services: ServiceProps[]
 }
 export interface ContentProps {

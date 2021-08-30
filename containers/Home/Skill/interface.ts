@@ -1,4 +1,4 @@
-export interface PropsProcessBar {
+export interface ProcessBarProps {
     percent: number
     label: string
     className?: string

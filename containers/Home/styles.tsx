@@ -1,4 +1,9 @@
-import { BackGroundColor, FontColor, GridBreakpoints } from 'style/Theme'
+import {
+    BackGroundColor,
+    FontColor,
+    GridBreakpoints,
+    FontSize,
+} from 'style/Theme'
 import styled from 'styled-components'
 import Image from 'next/image'
 
@@ -78,19 +83,19 @@ export const StyledIcon = styled(Image)`
     position: relative;
 `
 export const StyledName = styled.span`
-    font-size: 14px;
+    font-size: ${FontSize.sm};
     color: ${FontColor.default};
     font-weight: 600;
 `
 
 export const StyledDescription = styled.span`
-    font-size: 12px;
+    font-size: ${FontSize.xs};
     color: ${FontColor.primary};
 `
 
 export const StyledAboutBody = styled.div`
     background-color: ${BackGroundColor.secondary};
-    padding: 20px 20px 20px 20px;
+    padding: 20px;
 
     @media (min-width: ${GridBreakpoints.sm}) and (max-width: ${GridBreakpoints.lg}) {
         display: flex;
@@ -108,7 +113,7 @@ export const StyledDownloadCV = styled.div`
     }
 
     i {
-        font-size: 10px;
+        font-size: ${FontSize.xs};
     }
 `
 
@@ -139,7 +144,7 @@ export const StyledNavBar = styled.div`
 `
 
 export const StyledWrapperContent = styled.div`
-    padding: 30px 30px 30px 30px;
+    padding: 30px;
     @media (min-width: ${GridBreakpoints.sm}) and (max-width: ${GridBreakpoints.lg}) {
         width: auto;
     }
@@ -147,9 +152,6 @@ export const StyledWrapperContent = styled.div`
 
 export const StyleBanner = styled.div`
     display: flex;
-    @include media-breakpoint-down(lg) {
-        flex-direction: column-reverse;
-    }
 `
 
 export const StyledBannerContent = styled.div`
@@ -158,9 +160,8 @@ export const StyledBannerContent = styled.div`
     justify-content: space-around;
 `
 
-export const StyledTitleContent = styled.div`
+export const StyledTitleContent = styled.h4`
     color: ${FontColor.default};
-    font-size: 24px;
     text-transform: uppercase;
     font-weight: 600;
 `
@@ -196,25 +197,4 @@ export const StyledWrapperMain = styled.div`
 export const StyledContainerEducation = styled.div`
     display: flex;
     flex-direction: column;
-`
-
-export const StyledEducationItem = styled.span`
-    font-size: 16px;
-    color: ${FontColor.default};
-`
-
-export const StyledEducations = styled.div`
-    display: grid;
-    grid-template-columns: auto auto auto;
-    grid-column-gap: 50px;
-    grid-row-gap: 20px;
-    margin-bottom: 30px;
-
-    @media (max-width: ${GridBreakpoints.md}) {
-        grid-template-columns: auto auto;
-    }
-
-    @media (max-width: ${GridBreakpoints.sm}) {
-        grid-template-columns: auto;
-    }
 `

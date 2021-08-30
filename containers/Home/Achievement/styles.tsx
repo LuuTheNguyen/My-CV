@@ -1,5 +1,10 @@
 import styled from 'styled-components'
-import { BackGroundColor, FontColor, GridBreakpoints } from 'style/Theme'
+import {
+    BackGroundColor,
+    FontColor,
+    GridBreakpoints,
+    FontSize,
+} from 'style/Theme'
 
 export const StyledContainerAchievement = styled.div`
     display: flex;
@@ -12,13 +17,13 @@ export const StyledAchievement = styled.div`
     padding: 20px 0;
 
     span {
-        font-size: 20px;
+        font-size: ${FontSize.lg};
         color: ${FontColor.secondary};
         font-weight: 600;
     }
 
     span + span {
-        font-size: 16px;
+        font-size: ${FontSize.md};
         color: ${FontColor.default};
         margin-left: 0.4rem;
     }

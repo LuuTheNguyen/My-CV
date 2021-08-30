@@ -1,6 +1,6 @@
-import { PropsProcessBar } from './interface'
+import { ProcessBarProps } from './interface'
 
-export const ProcessBar: React.FC<PropsProcessBar> = ({
+export const ProcessBar: React.FC<ProcessBarProps> = ({
     className,
     label = '-',
     percent = 100,
@@ -18,8 +18,7 @@ export const ProcessBar: React.FC<PropsProcessBar> = ({
                     role="progressbar"
                     aria-valuenow={percent}
                     aria-valuemin={0}
-                    aria-valuemax={100}
-                ></div>
+                    aria-valuemax={100}></div>
             </div>
         </div>
     )

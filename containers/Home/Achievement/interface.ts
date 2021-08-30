@@ -1,8 +1,8 @@
-export interface AchieveProps {
+export interface AchievementProps {
     label: string
     content: string
 }
 
 export interface Prop {
-    achieves: AchieveProps[]
+    achieves: AchievementProps[]
 }

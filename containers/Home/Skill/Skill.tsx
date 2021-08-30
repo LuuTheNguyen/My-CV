@@ -1,6 +1,6 @@
 import { StyledSkill, StyledProcessBar } from './styles'
 
-import { SkillProps, Prop} from './interface'
+import { SkillProps, Prop } from './interface'
 
 export const Skill: React.FC<Prop> = ({ skills }) => {
     return (

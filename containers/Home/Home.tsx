@@ -21,8 +21,6 @@ import {
     StyledSubTitleContent,
     StyledContainerService,
     StyledContainerEducation,
-    StyledEducations,
-    StyledEducationItem,
 } from './styles'
 
 import { Menu } from '@components/Menu/Menu'
@@ -35,6 +33,7 @@ import {
     Skill,
     Lib,
     Contact,
+    Education,
 } from './index'
 
 import { HeadProps } from './interface'
@@ -89,8 +88,7 @@ export const HomePage: React.FC = () => {
                                             type="button"
                                             data-bs-toggle="offcanvas"
                                             data-bs-target="#offcanvasTop"
-                                            aria-controls="offcanvasTop"
-                                        >
+                                            aria-controls="offcanvasTop">
                                             <span className="material-icons">
                                                 more_vert
                                             </span>
@@ -100,14 +98,12 @@ export const HomePage: React.FC = () => {
                                             className="offcanvas offcanvas-start"
                                             tabIndex={-1}
                                             id="offcanvasTop"
-                                            aria-labelledby="offcanvasTopLabel"
-                                        >
+                                            aria-labelledby="offcanvasTopLabel">
                                             <button
                                                 type="button"
                                                 className="btn text-reset"
                                                 data-bs-dismiss="offcanvas"
-                                                aria-label="Close"
-                                            >
+                                                aria-label="Close">
                                                 <span className="material-icons">
                                                     more_vert
                                                 </span>
@@ -127,7 +123,6 @@ export const HomePage: React.FC = () => {
                                             </StyledTitleContent>
                                             <StyledSubTitleContent>
                                                 <p>
-                                                    {' '}
                                                     &lt;
                                                     <span className="code">
                                                         code
@@ -140,8 +135,7 @@ export const HomePage: React.FC = () => {
                                                 </p>
                                                 <button
                                                     type="button"
-                                                    className="btn"
-                                                >
+                                                    className="btn">
                                                     <a href="#service">
                                                         Explore Now
                                                     </a>
@@ -156,18 +150,9 @@ export const HomePage: React.FC = () => {
 
                                     <StyledContainerEducation id="education">
                                         <p>EDUCATION</p>
-                                        <StyledEducations>
-                                            <StyledEducationItem>
-                                                October 2013 - April 2017
-                                            </StyledEducationItem>
-                                            <StyledEducationItem>
-                                                University Ho Chi Minh City -
-                                                University of Science
-                                            </StyledEducationItem>
-                                            <StyledEducationItem>
-                                                Information Technology
-                                            </StyledEducationItem>
-                                        </StyledEducations>
+                                        <Education
+                                            educations={contentData.educations}
+                                        />
                                     </StyledContainerEducation>
 
                                     <StyledContainerService id="service">
@@ -179,7 +164,7 @@ export const HomePage: React.FC = () => {
                                 </StyledWrapperContent>
                             </StyledWrapperInfo>
                         </StyledInfo>
-                        /**TODO: Refactor Menu */
+                        {/**TODO: Refactor Menu */}
                         {/* <Menu /> */}
                     </div>
                 </StyledMain>
