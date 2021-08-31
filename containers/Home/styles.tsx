@@ -3,6 +3,9 @@ import {
     FontColor,
     GridBreakpoints,
     FontSize,
+    ResponsiveBetween,
+    ResponsiveMax,
+    ResponsiveMin,
 } from 'style/Theme'
 import styled from 'styled-components'
 import Image from 'next/image'
@@ -17,7 +20,7 @@ export const StyledMain = styled.main`
     align-items: center;
     justify-content: center;
 
-    @media (max-width: ${GridBreakpoints.lg}) {
+    ${ResponsiveMax('lg')} {
         flex-direction: row;
         display: flex;
     }
@@ -36,7 +39,7 @@ const StyledInfo = styled.div`
     display: flex;
     flex-direction: row;
 
-    @media (max-width: ${GridBreakpoints.lg}) {
+    ${ResponsiveMax('lg')} {
         flex-direction: column;
     }
 `
@@ -45,7 +48,7 @@ const StyledWrapperInfo = styled.div`
     display: flex;
     flex-direction: row;
 
-    @media (max-width: ${GridBreakpoints.lg}) {
+    ${ResponsiveMax('lg')} {
         flex-direction: column;
     }
 `
@@ -53,7 +56,7 @@ const StyledWrapperInfo = styled.div`
 export { StyledInfo, StyledWrapperInfo }
 
 export const StyledWrapperHead = styled.div`
-    @media (max-width: ${GridBreakpoints.lg}) {
+    ${ResponsiveMax('lg')} {
         width: auto;
         display: none;
     }
@@ -97,7 +100,7 @@ export const StyledAboutBody = styled.div`
     background-color: ${BackGroundColor.secondary};
     padding: 20px;
 
-    @media (min-width: ${GridBreakpoints.sm}) and (max-width: ${GridBreakpoints.lg}) {
+    ${ResponsiveBetween('sm', 'lg')} {
         display: flex;
         flex-wrap: wrap;
     }
@@ -108,7 +111,7 @@ export const StyledDownloadCV = styled.div`
     text-transform: uppercase;
     font-weight: 600;
 
-    @media (min-width: ${GridBreakpoints.sm}) and (max-width: ${GridBreakpoints.lg}) {
+    ${ResponsiveBetween('sm', 'lg')} {
         padding: 10px;
     }
 
@@ -128,7 +131,7 @@ export const StyledNavBar = styled.div`
     display: none;
     background-color: ${BackGroundColor.default};
 
-    @media (max-width: ${GridBreakpoints.lg}) {
+    ${ResponsiveMax('lg')} {
         display: block;
     }
 
@@ -145,7 +148,7 @@ export const StyledNavBar = styled.div`
 
 export const StyledWrapperContent = styled.div`
     padding: 30px;
-    @media (min-width: ${GridBreakpoints.sm}) and (max-width: ${GridBreakpoints.lg}) {
+    ${ResponsiveBetween('sm', 'lg')} {
         width: auto;
     }
 `
@@ -188,7 +191,7 @@ export const StyledContainerService = styled.div`
 `
 
 export const StyledWrapperMain = styled.div`
-    @media (max-width: ${GridBreakpoints.lg}) {
+    ${ResponsiveMax('lg')} {
         flex-direction: row;
         display: flex;
     }

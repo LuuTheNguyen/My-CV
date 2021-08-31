@@ -57,7 +57,7 @@ export const libData = [
 ]
 export const aboutData = [
     { label: 'Residence', content: 'Viet Nam' },
-    { label: 'City', content: 'Ho Chi Minh' },
+    { label: 'City', content: 'Ho Chi Minh City' },
     { label: 'Age', content: '27' },
 ]
 export const skillData = [

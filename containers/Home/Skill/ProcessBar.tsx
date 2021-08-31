@@ -18,7 +18,8 @@ export const ProcessBar: React.FC<ProcessBarProps> = ({
                     role="progressbar"
                     aria-valuenow={percent}
                     aria-valuemin={0}
-                    aria-valuemax={100}></div>
+                    aria-valuemax={100}
+                />
             </div>
         </div>
     )

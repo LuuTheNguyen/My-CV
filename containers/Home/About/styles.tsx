@@ -1,5 +1,10 @@
 import styled from 'styled-components'
-import { BackGroundColor, FontColor, GridBreakpoints } from 'style/Theme'
+import {
+    BackGroundColor,
+    FontColor,
+    GridBreakpoints,
+    ResponsiveBetween,
+} from 'style/Theme'
 
 export const StyledAbout = styled.div`
     display: flex;
@@ -7,19 +12,21 @@ export const StyledAbout = styled.div`
     width: 100%;
     flex-wrap: wrap;
 
-    @media (min-width: ${GridBreakpoints.sm}) and (max-width: ${GridBreakpoints.lg}) {
+    ${ResponsiveBetween('sm', 'lg')} {
         width: 50%;
         padding: 10px;
     }
 
+    & div {
+        display: flex;
+        justify-content: space-between;
+    }
+
     & span {
         color: ${FontColor.default};
-        width: 40%;
     }
 
     & span + span {
         color: ${FontColor.primary};
-        width: 60%;
-        text-align: right;
     }
 `

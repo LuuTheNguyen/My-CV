@@ -8,7 +8,6 @@ export const About: React.FC<Prop> = ({ abouts }) => {
             {abouts.map((item, index) => (
                 <div key={index}>
                     <span>{item.label}</span> <span>{item.content}</span>
-                    <br />
                 </div>
             ))}
         </StyledAbout>

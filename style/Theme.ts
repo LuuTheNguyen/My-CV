@@ -31,5 +31,11 @@ export const GridBreakpoints = {
 
 type GridList = keyof typeof GridBreakpoints
 
-export const Responsive = (from: GridList, to: GridList) =>
+export const ResponsiveBetween = (from: GridList, to: GridList) =>
     `@media (min-width: ${GridBreakpoints[from]}) and (max-width: ${GridBreakpoints[to]})`
+
+export const ResponsiveMax = (to: GridList) =>
+    `@media (max-width: ${GridBreakpoints[to]})`
+
+export const ResponsiveMin = (from: GridList) =>
+    `@media (min-width: ${GridBreakpoints[from]})`

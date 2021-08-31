@@ -1,12 +1,17 @@
 import styled from 'styled-components'
-import { BackGroundColor, FontColor, GridBreakpoints } from 'style/Theme'
+import {
+    BackGroundColor,
+    FontColor,
+    GridBreakpoints,
+    ResponsiveMax,
+} from 'style/Theme'
 import { StyledLink } from './StyledLink'
 
 export const StyledMenuList = styled.div`
     display: flex;
     justify-content: flex-end;
 
-    @media (max-width: ${GridBreakpoints.lg}) {
+    ${ResponsiveMax('lg')} {
         padding: 0;
     }
 `

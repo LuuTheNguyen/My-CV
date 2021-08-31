@@ -1,4 +1,4 @@
-import { useIsPrintMode } from 'hooks/useIsPrintMode'
+import { useIsPrintMode } from 'hooks'
 import type { AppProps } from 'next/app'
 
 function MyApp({ Component, pageProps }: AppProps) {

@@ -4,6 +4,7 @@ import {
     FontColor,
     GridBreakpoints,
     FontSize,
+    ResponsiveMax,
 } from 'style/Theme'
 
 export const StyledWrapperService = styled.div`
@@ -14,7 +15,7 @@ export const StyledWrapperService = styled.div`
     grid-column-gap: 20px;
     grid-row-gap: 20px;
 
-    @media (max-width: ${GridBreakpoints.sm}) {
+    ${ResponsiveMax('sm')} {
         grid-template-columns: auto;
     }
 `
@@ -27,7 +28,7 @@ export const StyledService = styled.div`
     background-color: ${BackGroundColor.primary};
     min-height: 250px;
 
-    @media (max-width: ${GridBreakpoints.lg}) {
+    ${ResponsiveMax('lg')} {
         width: 100%;
         max-width: 400px;
     }

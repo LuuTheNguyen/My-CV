@@ -25,16 +25,14 @@ import {
 
 import { Menu } from '@components/Menu/Menu'
 
-import {
-    Achievement,
-    Service,
-    About,
-    Language,
-    Skill,
-    Lib,
-    Contact,
-    Education,
-} from './index'
+import { About } from './About'
+import { Contact } from './Contact'
+import { Language } from './Language'
+import { Lib } from './Lib'
+import { Skill } from './Skill'
+import { Achievement } from './Achievement'
+import { Service } from './Service'
+import { Education } from './Education'
 
 import { HeadProps } from './interface'
 

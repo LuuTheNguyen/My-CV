@@ -1,5 +1,10 @@
 import styled from 'styled-components'
-import { FontColor, GridBreakpoints, Responsive, FontSize } from 'style/Theme'
+import {
+    FontColor,
+    GridBreakpoints,
+    ResponsiveMax,
+    FontSize,
+} from 'style/Theme'
 
 export const StyledEducationItem = styled.span`
     font-size: ${FontSize.md};
@@ -13,11 +18,11 @@ export const StyledEducations = styled.div`
     grid-row-gap: 20px;
     margin-bottom: 30px;
 
-    @media (max-width: ${GridBreakpoints.md}) {
+    ${ResponsiveMax('md')} {
         grid-template-columns: auto auto;
     }
 
-    @media (max-width: ${GridBreakpoints.sm}) {
+    ${ResponsiveMax('sm')} {
         grid-template-columns: auto;
     }
 `

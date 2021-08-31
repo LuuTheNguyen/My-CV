@@ -1,9 +1,9 @@
 import styled from 'styled-components'
-import { FontColor, GridBreakpoints, Responsive } from 'style/Theme'
+import { FontColor, GridBreakpoints, ResponsiveBetween } from 'style/Theme'
 import { ListLib } from './ListLib'
 
 export const StyledLib = styled.div`
-    ${Responsive('sm', 'lg')} {
+    ${ResponsiveBetween('sm', 'lg')} {
         width: 50%;
         justify-content: flex-start;
         display: flex;
@@ -21,7 +21,7 @@ export const StyledListLib = styled(ListLib)`
         margin-right: 8px;
     }
 
-    @media (min-width: ${GridBreakpoints.sm}) and (max-width: ${GridBreakpoints.lg}) {
+    ${ResponsiveBetween('sm', 'lg')} {
         justify-content: flex-start;
         display: flex;
         flex-direction: row;

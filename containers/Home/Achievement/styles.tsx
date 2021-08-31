@@ -4,6 +4,7 @@ import {
     FontColor,
     GridBreakpoints,
     FontSize,
+    ResponsiveMax,
 } from 'style/Theme'
 
 export const StyledContainerAchievement = styled.div`
@@ -28,7 +29,7 @@ export const StyledAchievement = styled.div`
         margin-left: 0.4rem;
     }
 
-    @media (max-width: ${GridBreakpoints.lg}) {
+    ${ResponsiveMax('lg')} {
         padding: 10px 0;
         margin-right: 10px;
     }

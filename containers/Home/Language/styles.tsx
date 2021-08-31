@@ -4,6 +4,7 @@ import {
     FontColor,
     GridBreakpoints,
     FontSize,
+    ResponsiveBetween,
 } from 'style/Theme'
 import { ProcessRing } from './ProcessRing'
 
@@ -12,7 +13,7 @@ export const StyledLanguage = styled.div`
     color: ${FontColor.default};
     display: flex;
 
-    @media (min-width: ${GridBreakpoints.sm}) and (max-width: ${GridBreakpoints.lg}) {
+    ${ResponsiveBetween('sm', 'lg')} {
         width: 50%;
         padding: 10px;
     }
