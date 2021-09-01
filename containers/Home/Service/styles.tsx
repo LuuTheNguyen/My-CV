@@ -30,7 +30,6 @@ export const StyledService = styled.div`
 
     ${ResponsiveMax('lg')} {
         width: 100%;
-        max-width: 400px;
     }
 `
 

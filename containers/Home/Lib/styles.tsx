@@ -4,8 +4,7 @@ import { ListLib } from './ListLib'
 
 export const StyledLib = styled.div`
     ${ResponsiveBetween('sm', 'lg')} {
-        width: 50%;
-        justify-content: flex-start;
+        justify-content: center;
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
@@ -26,7 +25,7 @@ export const StyledListLib = styled(ListLib)`
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
-        margin-right: 10px;
+        margin-right: 15px;
     }
 
     i {

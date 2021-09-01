@@ -6,6 +6,7 @@ import {
     ResponsiveBetween,
     ResponsiveMax,
     ResponsiveMin,
+    MediaPrint,
 } from 'style/Theme'
 import styled from 'styled-components'
 import Image from 'next/image'
@@ -23,6 +24,11 @@ export const StyledMain = styled.main`
     ${ResponsiveMax('lg')} {
         flex-direction: row;
         display: flex;
+    }
+
+    ${MediaPrint}{        
+        background-color: ${BackGroundColor.default};
+        color: ${FontColor.default};
     }
 `
 
@@ -59,6 +65,10 @@ export const StyledWrapperHead = styled.div`
     ${ResponsiveMax('lg')} {
         width: auto;
         display: none;
+
+        &.show{
+            display: block;
+        }
     }
 `
 
@@ -99,10 +109,9 @@ export const StyledDescription = styled.span`
 export const StyledAboutBody = styled.div`
     background-color: ${BackGroundColor.secondary};
     padding: 20px;
-
+    display: grid;
     ${ResponsiveBetween('sm', 'lg')} {
-        display: flex;
-        flex-wrap: wrap;
+        grid-template-columns: 50% 50%
     }
 `
 

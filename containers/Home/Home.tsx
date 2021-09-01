@@ -37,6 +37,7 @@ import { Education } from './Education'
 import { HeadProps } from './interface'
 
 import { contentData, headData } from './mock'
+import { useIsPrintMode } from 'hooks'
 
 export const HomePage: React.FC = () => {
     const ViewSideBar: React.FC<HeadProps> = ({ data }) => (
@@ -54,11 +55,11 @@ export const HomePage: React.FC = () => {
             </StyledAboutHead>
             <StyledAboutBody>
                 <About abouts={data.abouts} />
-                <hr />
+                
                 <Language languages={data.languages} />
-                <hr />
+                
                 <Skill skills={data.skills} />
-                <hr />
+                
                 <Lib libs={data.libs} />
                 {/** TODO: Add donwload action */}
                 {/* <hr/> */}
@@ -80,7 +81,7 @@ export const HomePage: React.FC = () => {
                         <StyledInfo className="col-12">
                             <StyledWrapperInfo className="row">
                                 <>
-                                    <StyledNavBar className="col-12">
+                                    { !useIsPrintMode() && <StyledNavBar className="col-12">
                                         <button
                                             className="btn text-reset"
                                             type="button"
@@ -108,8 +109,8 @@ export const HomePage: React.FC = () => {
                                             </button>
                                             <ViewSideBar data={headData} />
                                         </div>
-                                    </StyledNavBar>
-                                    <StyledWrapperHead className="col-sm-12 col-lg-3">
+                                    </StyledNavBar>}
+                                    <StyledWrapperHead className={`col-sm-12 col-lg-3 ${useIsPrintMode() && 'show'}`}>
                                         <ViewSideBar data={headData} />
                                     </StyledWrapperHead>
                                 </>

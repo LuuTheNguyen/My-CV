@@ -9,7 +9,6 @@ import { ProcessBar } from './ProcessBar'
 
 export const StyledSkill = styled.div`
     ${ResponsiveBetween('sm', 'lg')} {
-        width: 50%;
         padding: 10px;
     }
 `

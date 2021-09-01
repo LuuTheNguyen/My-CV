@@ -14,7 +14,6 @@ export const StyledLanguage = styled.div`
     display: flex;
 
     ${ResponsiveBetween('sm', 'lg')} {
-        width: 50%;
         padding: 10px;
     }
 `

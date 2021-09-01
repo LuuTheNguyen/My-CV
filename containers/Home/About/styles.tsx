@@ -13,7 +13,6 @@ export const StyledAbout = styled.div`
     flex-wrap: wrap;
 
     ${ResponsiveBetween('sm', 'lg')} {
-        width: 50%;
         padding: 10px;
     }
 

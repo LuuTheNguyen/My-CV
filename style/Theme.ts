@@ -39,3 +39,6 @@ export const ResponsiveMax = (to: GridList) =>
 
 export const ResponsiveMin = (from: GridList) =>
     `@media (min-width: ${GridBreakpoints[from]})`
+    
+export const MediaPrint = () =>
+    `@media print`
