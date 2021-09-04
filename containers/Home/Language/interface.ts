@@ -3,6 +3,15 @@ export interface LanguageProps {
     percent: number
 }
 
-export interface Prop {
-    languages: LanguageProps[]
+export interface Props {
+    language: LanguageProps[]
+}
+
+export interface ProcessRingProp {
+    width: number
+    strokeWidth: number
+    percent?: number
+    className?: string
+    stroke: string,
+    strokeBackground: string,
 }

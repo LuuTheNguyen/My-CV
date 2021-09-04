@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { FontColor, GridBreakpoints, ResponsiveBetween } from 'style/Theme'
+import { FontColor, GridBreakpoints, ResponsiveBetween, ResponsiveMax } from 'style/Theme'
 import { ListLib } from './ListLib'
 
 export const StyledLib = styled.div`
@@ -10,11 +10,18 @@ export const StyledLib = styled.div`
         flex-wrap: wrap;
         padding: 10px;
     }
+
+    ${ResponsiveMax('sm')}{
+        display: grid;
+        grid-template-columns: 50% 50%;
+        grid-gap: 10px;
+    }
 `
 
 export const StyledListLib = styled(ListLib)`
     margin-bottom: 5px;
     display: flex;
+    color: ${FontColor.primary};
     & .material-icons {
         color: ${(props) => props.color || FontColor.secondary};
         margin-right: 8px;

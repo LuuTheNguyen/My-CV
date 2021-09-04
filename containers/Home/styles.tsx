@@ -7,6 +7,7 @@ import {
     ResponsiveMax,
     ResponsiveMin,
     MediaPrint,
+    Hover,
 } from 'style/Theme'
 import styled from 'styled-components'
 import Image from 'next/image'
@@ -119,13 +120,32 @@ export const StyledDownloadCV = styled.div`
     color: ${FontColor.primary};
     text-transform: uppercase;
     font-weight: 600;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-gap: 10px;
 
     ${ResponsiveBetween('sm', 'lg')} {
         padding: 10px;
     }
 
+    a {
+        text-decoration: none;
+        color: ${FontColor.primary};
+        display: flex;
+        align-items: center;
+        font-size: ${FontSize.xs};
+    }
+
+    a:hover{
+        ${Hover.Font.default}
+    }
+
     i {
         font-size: ${FontSize.xs};
+    }
+
+    .material-icons{
+        font-size: ${FontSize.md}
     }
 `
 
@@ -145,12 +165,34 @@ export const StyledNavBar = styled.div`
     }
 
     .offcanvas {
+        height: 100vh;
+        overflow-y: auto;
         background-color: ${BackGroundColor.primary};
         .material-icons {
-            color: ${FontColor.default};
+            color: ${FontColor.secondary};
         }
-        .text-reset {
-            text-align: end;
+
+        ${StyledAboutBody}{
+            ${ResponsiveBetween('sm', 'lg')} {
+                grid-template-columns: auto;
+            }
+        }
+    }
+
+    ${StyledDownloadCV}{
+
+        a {
+            color: ${FontColor.primary};
+            font-size: ${FontSize.xs};
+        }
+        
+
+        a:hover{
+            ${Hover.Font.default}
+        }
+
+        .material-icons {
+            color: ${FontColor.primary};
         }
     }
 `
@@ -187,6 +229,10 @@ export const StyledSubTitleContent = styled.div`
         background-color: ${BackGroundColor.third};
     }
 
+    button:hover{
+        ${Hover.Button.default}
+    }
+
     a {
         text-decoration: none;
         color: inherit;
@@ -209,4 +255,8 @@ export const StyledWrapperMain = styled.div`
 export const StyledContainerEducation = styled.div`
     display: flex;
     flex-direction: column;
+`
+export const StyledWrapperCloseButtonOffCanvas = styled.div`
+    display: flex;
+    justify-content: flex-end;
 `

@@ -1,12 +1,6 @@
 import { BackGroundColor, FontColor, GridBreakpoints } from 'style/Theme'
 
-interface ProcessRingProp {
-    width: number
-    strokeWidth: number
-    percent?: number
-    className?: string
-    stroke: string
-}
+import type { ProcessRingProp } from '.'
 
 export const ProcessRing: React.FC<ProcessRingProp> = ({
     width = 10,
@@ -14,6 +8,7 @@ export const ProcessRing: React.FC<ProcessRingProp> = ({
     percent,
     className,
     stroke = '10',
+    strokeBackground,
 }) => {
     /**TODO: link for example processRing */
     /* https://codepen.io/jeremenichelli/pen/vegymB */
@@ -28,10 +23,21 @@ export const ProcessRing: React.FC<ProcessRingProp> = ({
                 x={width / 2}
                 y={width / 2 + width / 10}
                 fontSize={width / 4}
-                fill={`${FontColor.default}`}>
+                fill={`${FontColor.primary}`}>
                 {percentValue}%
             </text>
+            
             <circle
+                stroke={strokeBackground}
+                strokeWidth={strokeWidth}
+                fill="transparent"
+                r={radius}
+                cx={width / 2}
+                cy={width / 2}
+            />
+            
+            <circle
+                className="processCircle"
                 stroke={stroke}
                 strokeWidth={strokeWidth}
                 fill="transparent"

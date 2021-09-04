@@ -1,10 +1,10 @@
-import { StyledLib, StyledListLib } from './styles'
-import { LibProps, Prop } from './interface'
+import { StyledLib, StyledListLib } from '.'
+import type { Props } from '.'
 
-export const Lib: React.FC<Prop> = ({ libs }) => {
+export const Lib: React.FC<Props> = ({ lib }) => {
     return (
         <StyledLib>
-            {libs.map((item, index) => (
+            {lib.map((item, index) => (
                 <StyledListLib text={item.label} key={index} />
             ))}
         </StyledLib>

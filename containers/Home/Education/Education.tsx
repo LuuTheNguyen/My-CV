@@ -1,12 +1,12 @@
-import { StyledEducations, StyledEducationItem } from './styles'
-import { Prop } from './interface'
+import { StyledEducations, StyledEducationItem } from '.'
+import type { Props } from '.'
 
-export const Education: React.FC<Prop> = ({ educations }) => {
+export const Education: React.FC<Props> = ({ education }) => {
     return (
         <StyledEducations>
-            <StyledEducationItem>{educations.graduated}</StyledEducationItem>
-            <StyledEducationItem>{educations.university}</StyledEducationItem>
-            <StyledEducationItem>{educations.majors}</StyledEducationItem>
+            <StyledEducationItem>{education.graduated}</StyledEducationItem>
+            <StyledEducationItem>{education.university}</StyledEducationItem>
+            <StyledEducationItem>{education.majors}</StyledEducationItem>
         </StyledEducations>
     )
 }

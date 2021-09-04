@@ -4,15 +4,7 @@ import {
     StyledContainer,
     StyledInfo,
     StyledWrapperInfo,
-    StyledAboutHead,
-    StyledWrapperImage,
-    StyledIcon,
     StyledWrapperHead,
-    StyledName,
-    StyledDescription,
-    StyledAboutBody,
-    StyledDownloadCV,
-    StyledAboutFooter,
     StyledNavBar,
     StyledWrapperContent,
     StyleBanner,
@@ -21,58 +13,23 @@ import {
     StyledSubTitleContent,
     StyledContainerService,
     StyledContainerEducation,
-} from './styles'
+    StyledWrapperCloseButtonOffCanvas
+} from '.'
 
 import { Menu } from '@components/Menu/Menu'
 
-import { About } from './About'
-import { Contact } from './Contact'
-import { Language } from './Language'
-import { Lib } from './Lib'
-import { Skill } from './Skill'
 import { Achievement } from './Achievement'
 import { Service } from './Service'
 import { Education } from './Education'
+import { SideBar } from '.'
 
-import { HeadProps } from './interface'
+import type { HeadProps } from './interface'
 
 import { contentData, headData } from './mock'
 import { useIsPrintMode } from 'hooks'
 
-export const HomePage: React.FC = () => {
-    const ViewSideBar: React.FC<HeadProps> = ({ data }) => (
-        <>
-            <StyledAboutHead>
-                <StyledWrapperImage>
-                    <StyledIcon
-                        src="/logo.jpg"
-                        layout="fill"
-                        objectFit="cover"
-                    />
-                </StyledWrapperImage>
-                <StyledName>Nguyen Luu</StyledName>
-                <StyledDescription>Frontend Dev</StyledDescription>
-            </StyledAboutHead>
-            <StyledAboutBody>
-                <About abouts={data.abouts} />
-                
-                <Language languages={data.languages} />
-                
-                <Skill skills={data.skills} />
-                
-                <Lib libs={data.libs} />
-                {/** TODO: Add donwload action */}
-                {/* <hr/> */}
-                {/* <StyledDownloadCV>
-                <span>Download CV</span>&nbsp;<i className="bi bi-triangle-fill"></i>
-                </StyledDownloadCV> */}
-            </StyledAboutBody>
-            <StyledAboutFooter>
-                <Contact contacts={data.contacts} />
-            </StyledAboutFooter>
-        </>
-    )
 
+export const HomePage: React.FC = () => {  
     return (
         <Layout name="Home">
             <StyledContainer>
@@ -81,13 +38,13 @@ export const HomePage: React.FC = () => {
                         <StyledInfo className="col-12">
                             <StyledWrapperInfo className="row">
                                 <>
-                                    { !useIsPrintMode() && <StyledNavBar className="col-12">
+                                    {!useIsPrintMode() && <StyledNavBar className="col-12">
                                         <button
                                             className="btn text-reset"
                                             type="button"
                                             data-bs-toggle="offcanvas"
-                                            data-bs-target="#offcanvasTop"
-                                            aria-controls="offcanvasTop">
+                                            data-bs-target="#offcanvasLeft"
+                                            aria-controls="offcanvasLeft">
                                             <span className="material-icons">
                                                 more_vert
                                             </span>
@@ -96,22 +53,24 @@ export const HomePage: React.FC = () => {
                                         <div
                                             className="offcanvas offcanvas-start"
                                             tabIndex={-1}
-                                            id="offcanvasTop"
-                                            aria-labelledby="offcanvasTopLabel">
-                                            <button
-                                                type="button"
-                                                className="btn text-reset"
-                                                data-bs-dismiss="offcanvas"
-                                                aria-label="Close">
-                                                <span className="material-icons">
-                                                    more_vert
-                                                </span>
-                                            </button>
-                                            <ViewSideBar data={headData} />
+                                            id="offcanvasLeft"
+                                            aria-labelledby="offcanvasLeftLabel">
+                                            <StyledWrapperCloseButtonOffCanvas>
+                                                <button
+                                                    type="button"
+                                                    className="btn text-reset"
+                                                    data-bs-dismiss="offcanvas"
+                                                    aria-label="Close">
+                                                    <span className="material-icons">
+                                                        more_vert
+                                                    </span>
+                                                </button>
+                                            </StyledWrapperCloseButtonOffCanvas>
+                                            <SideBar data={headData} />
                                         </div>
                                     </StyledNavBar>}
                                     <StyledWrapperHead className={`col-sm-12 col-lg-3 ${useIsPrintMode() && 'show'}`}>
-                                        <ViewSideBar data={headData} />
+                                        <SideBar data={headData} />
                                     </StyledWrapperHead>
                                 </>
                                 <StyledWrapperContent className="col-sm-12 col-lg-9">
@@ -132,32 +91,32 @@ export const HomePage: React.FC = () => {
                                                     </span>
                                                     &gt;
                                                 </p>
-                                                <button
+                                                {!useIsPrintMode() && <button
                                                     type="button"
                                                     className="btn">
                                                     <a href="#service">
                                                         Explore Now
                                                     </a>
-                                                </button>
+                                                </button>}
                                             </StyledSubTitleContent>
                                         </StyledBannerContent>
                                     </StyleBanner>
 
                                     <Achievement
-                                        achieves={contentData.achieves}
+                                        achieve={contentData.achieve}
                                     />
 
                                     <StyledContainerEducation id="education">
                                         <p>EDUCATION</p>
                                         <Education
-                                            educations={contentData.educations}
+                                            education={contentData.education}
                                         />
                                     </StyledContainerEducation>
 
                                     <StyledContainerService id="service">
                                         <p>WORKS EXPERIENCE</p>
                                         <Service
-                                            services={contentData.services}
+                                            service={contentData.service}
                                         />
                                     </StyledContainerService>
                                 </StyledWrapperContent>

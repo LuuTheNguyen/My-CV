@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled, { keyframes } from 'styled-components'
 import {
     BackGroundColor,
     FontColor,
@@ -18,6 +18,18 @@ export const StyledLanguage = styled.div`
     }
 `
 
+const animateProcessCirlce = keyframes`
+    0%{
+        stroke-dasharray: 0% 0%;
+        stroke-dashoffset: 0%;
+    }
+
+    100%{
+        stroke-dasharray: 100% 100%;
+        stroke-dashoffset: 100%;
+    }
+`
+
 export const StyledProcessRing = styled(ProcessRing)`
     text {
         text-anchor: middle;
@@ -25,6 +37,9 @@ export const StyledProcessRing = styled(ProcessRing)`
     circle {
         transform: rotate(-90deg);
         transform-origin: 50% 50%;
+    }
+    circle.processCircle{
+        animation: ${animateProcessCirlce} 0.6s linear 1;
     }
 `
 

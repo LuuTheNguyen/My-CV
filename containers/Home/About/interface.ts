@@ -3,6 +3,6 @@ export interface AboutProps {
     content: string
 }
 
-export interface Prop {
-    abouts: AboutProps[]
+export interface Props {
+    about: AboutProps[]
 }

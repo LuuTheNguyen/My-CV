@@ -4,6 +4,6 @@ export interface EducationProp {
     majors: string
 }
 
-export interface Prop {
-    educations: EducationProp
+export interface Props {
+    education: EducationProp
 }

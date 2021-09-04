@@ -1,11 +1,11 @@
 import { StyledContainerAchievement, StyledAchievement } from './styles'
 
-import { AchievementProps, Prop } from './interface'
+import type { Props } from '.'
 
-export const Achievement: React.FC<Prop> = ({ achieves }) => {
+export const Achievement: React.FC<Props> = ({ achieve }) => {
     return (
         <StyledContainerAchievement>
-            {achieves.map((item, index) => (
+            {achieve.map((item, index) => (
                 <StyledAchievement key={index}>
                     <span>{item.label}</span>
                     <span>{item.content}</span>

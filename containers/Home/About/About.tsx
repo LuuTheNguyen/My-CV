@@ -1,11 +1,11 @@
-import { StyledAbout } from './styles'
+import { StyledAbout } from '.'
 
-import { AboutProps, Prop } from './interface'
+import type { Props } from '.'
 
-export const About: React.FC<Prop> = ({ abouts }) => {
+export const About: React.FC<Props> = ({ about }) => {
     return (
         <StyledAbout>
-            {abouts.map((item, index) => (
+            {about.map((item, index) => (
                 <div key={index}>
                     <span>{item.label}</span> <span>{item.content}</span>
                 </div>

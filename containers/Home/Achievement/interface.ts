@@ -3,6 +3,6 @@ export interface AchievementProps {
     content: string
 }
 
-export interface Prop {
-    achieves: AchievementProps[]
+export interface Props {
+    achieve: AchievementProps[]
 }

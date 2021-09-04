@@ -1,8 +1,4 @@
-interface ListLibProp {
-    color?: string
-    text: string
-    className?: string
-}
+import type { ListLibProp } from '.'
 
 export const ListLib: React.FC<ListLibProp> = ({ className, text = '-' }) => {
     return (

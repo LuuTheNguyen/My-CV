@@ -4,6 +4,7 @@ export const FontColor = {
     default: '#fff',
     primary: '#adaea9',
     secondary: '#f5c147',
+    third: '#e9ecef',
 }
 
 export const FontSize = {
@@ -27,6 +28,20 @@ export const GridBreakpoints = {
     lg: '992px',
     xl: '1200px',
     xxl: '1400px',
+}
+
+export const Hover ={
+    Font: {
+        default: {
+            'color': '#fafafc',
+            'text-shadow': '0 0 3px rgb(250 250 252 / 40%)',
+        }
+    },
+    Button: {
+        default:{
+            'transform': 'translateY(-2px)',
+        }
+    }
 }
 
 type GridList = keyof typeof GridBreakpoints

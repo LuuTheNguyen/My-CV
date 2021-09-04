@@ -4,7 +4,7 @@ import {
     StyledHeaderMenu,
     StyledContainerMenuList,
     StyledMenuItem,
-} from './styles'
+} from '.'
 export const Menu: React.FC = () => {
     return (
         <StyledMenuList className="col-1">

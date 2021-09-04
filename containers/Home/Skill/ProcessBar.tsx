@@ -1,4 +1,4 @@
-import { ProcessBarProps } from './interface'
+import type { ProcessBarProps } from '.'
 
 export const ProcessBar: React.FC<ProcessBarProps> = ({
     className,

@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled, { keyframes } from 'styled-components'
 import {
     BackGroundColor,
     FontColor,
@@ -13,11 +13,27 @@ export const StyledSkill = styled.div`
     }
 `
 
+const animateWidthProcess = keyframes`
+    0% {
+        width: 0;
+    }
+
+    100% {
+        width: 100%;
+    }
+`
+
 export const StyledProcessBar = styled(ProcessBar)`
     margin-bottom: 10px;
     .label {
         display: flex;
         justify-content: space-between;
+        span{
+            color: ${FontColor.default}
+        }
+        span + span{
+            color: ${FontColor.primary}
+        }
     }
     .progress {
         height: ${(props) => `${props.height}px`};
@@ -25,5 +41,7 @@ export const StyledProcessBar = styled(ProcessBar)`
     .progress-bar {
         background-color: ${BackGroundColor.third};
         width: ${(props) => `${props.percent}%`};
+        max-width: ${(props) => `${props.percent}%`};
+        animation: ${animateWidthProcess} 0.6s linear 1;
     }
 `

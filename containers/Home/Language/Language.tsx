@@ -3,19 +3,20 @@ import {
     StyledProcessRing,
     StyledWrapperProcessRing,
     StyledTitleProcessRing,
-} from './styles'
+} from '.'
 import { BackGroundColor, FontColor, GridBreakpoints } from 'style/Theme'
 
-import { LanguageProps, Prop } from './interface'
+import type { Props } from '.'
 
-export const Language: React.FC<Prop> = ({ languages }) => {
+export const Language: React.FC<Props> = ({ language }) => {
     return (
         <StyledLanguage>
-            {languages.map((item, index) => (
+            {language.map((item, index) => (
                 <StyledWrapperProcessRing key={index}>
                     <StyledProcessRing
                         width={40}
                         stroke={FontColor.secondary}
+                        strokeBackground={FontColor.third}
                         strokeWidth={2}
                         percent={item.percent}
                     />

@@ -1,12 +1,10 @@
 import Head from 'next/head'
-
-interface Props {
-    name: string
-}
+import { StyledContainer } from './style'
+import type { Props } from '.'
 
 export const Layout: React.FC<Props> = ({ children, name }) => {
     return (
-        <>
+        <StyledContainer>
             <Head>
                 <title>{name}</title>
                 <meta name="description" content={name} />
@@ -17,6 +15,6 @@ export const Layout: React.FC<Props> = ({ children, name }) => {
             </Head>
             {children}
             <footer />
-        </>
+        </StyledContainer>
     )
 }

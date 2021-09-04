@@ -1,11 +1,11 @@
-import { StyledSkill, StyledProcessBar } from './styles'
+import { StyledSkill, StyledProcessBar } from '.'
 
-import { SkillProps, Prop } from './interface'
+import type { SkillProps, Props } from '.'
 
-export const Skill: React.FC<Prop> = ({ skills }) => {
+export const Skill: React.FC<Props> = ({ skill }) => {
     return (
         <StyledSkill>
-            {skills.map((item, index) => (
+            {skill.map((item, index) => (
                 <StyledProcessBar
                     label={item.label}
                     percent={item.percent}

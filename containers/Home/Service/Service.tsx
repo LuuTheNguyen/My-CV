@@ -6,14 +6,15 @@ import {
     StyledCompany,
     StyledHeaderSubTitleService,
     StyledHeaderTitleService,
-} from './styles'
+} from '.'
 
-import { ServiceProps, Prop } from './interface'
+import type { Props } from '.'
+import { useIsPrintMode } from 'hooks'
 
-export const Service: React.FC<Prop> = ({ services }) => {
+export const Service: React.FC<Props> = ({ service }) => {
     return (
         <StyledWrapperService>
-            {services.map((item, index) => (
+            {service.map((item, index) => (
                 <StyledService key={index}>
                     <StyledHeaderService>
                         <StyledHeaderTitleService>
@@ -25,14 +26,14 @@ export const Service: React.FC<Prop> = ({ services }) => {
                         {item.company && (
                             <StyledCompany>
                                 <span>{item.company}</span>
-                                <a
+                                { !useIsPrintMode() && <a
                                     target="_blank"
                                     rel="noreferrer"
                                     href={item.companyHref}>
                                     <span className="material-icons">
                                         open_in_new
                                     </span>
-                                </a>
+                                </a>}
                             </StyledCompany>
                         )}
                     </StyledHeaderService>

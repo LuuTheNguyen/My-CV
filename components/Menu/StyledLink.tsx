@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { StyledLinkProp } from './interface'
+import type { StyledLinkProp } from '.'
 
 export const StyledLink: React.FC<StyledLinkProp> = (props) => {
     return (
