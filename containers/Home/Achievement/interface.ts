@@ -1,5 +1,5 @@
 export interface AchievementProps {
-    label: string
+    label?: string
     content: string
     counts: number
 }
