@@ -13,7 +13,7 @@ import {
     StyledSubTitleContent,
     StyledContainerService,
     StyledContainerEducation,
-    StyledWrapperCloseButtonOffCanvas
+    StyledWrapperCloseButtonOffCanvas,
 } from '.'
 
 import { Menu } from '@components/Menu/Menu'
@@ -28,8 +28,7 @@ import type { HeadProps } from './interface'
 import { contentData, headData } from './mock'
 import { useIsPrintMode } from 'hooks'
 
-
-export const HomePage: React.FC = () => {  
+export const HomePage: React.FC = () => {
     return (
         <Layout name="Home">
             <StyledContainer>
@@ -38,38 +37,43 @@ export const HomePage: React.FC = () => {
                         <StyledInfo className="col-12">
                             <StyledWrapperInfo className="row">
                                 <>
-                                    {!useIsPrintMode() && <StyledNavBar className="col-12">
-                                        <button
-                                            className="btn text-reset"
-                                            type="button"
-                                            data-bs-toggle="offcanvas"
-                                            data-bs-target="#offcanvasLeft"
-                                            aria-controls="offcanvasLeft">
-                                            <span className="material-icons">
-                                                more_vert
-                                            </span>
-                                        </button>
+                                    {!useIsPrintMode() && (
+                                        <StyledNavBar className="col-12">
+                                            <button
+                                                className="btn text-reset"
+                                                type="button"
+                                                data-bs-toggle="offcanvas"
+                                                data-bs-target="#offcanvasLeft"
+                                                aria-controls="offcanvasLeft">
+                                                <span className="material-icons">
+                                                    more_vert
+                                                </span>
+                                            </button>
 
-                                        <div
-                                            className="offcanvas offcanvas-start"
-                                            tabIndex={-1}
-                                            id="offcanvasLeft"
-                                            aria-labelledby="offcanvasLeftLabel">
-                                            <StyledWrapperCloseButtonOffCanvas>
-                                                <button
-                                                    type="button"
-                                                    className="btn text-reset"
-                                                    data-bs-dismiss="offcanvas"
-                                                    aria-label="Close">
-                                                    <span className="material-icons">
-                                                        more_vert
-                                                    </span>
-                                                </button>
-                                            </StyledWrapperCloseButtonOffCanvas>
-                                            <SideBar data={headData} />
-                                        </div>
-                                    </StyledNavBar>}
-                                    <StyledWrapperHead className={`col-sm-12 col-lg-3 ${useIsPrintMode() && 'show'}`}>
+                                            <div
+                                                className="offcanvas offcanvas-start"
+                                                tabIndex={-1}
+                                                id="offcanvasLeft"
+                                                aria-labelledby="offcanvasLeftLabel">
+                                                <StyledWrapperCloseButtonOffCanvas>
+                                                    <button
+                                                        type="button"
+                                                        className="btn text-reset"
+                                                        data-bs-dismiss="offcanvas"
+                                                        aria-label="Close">
+                                                        <span className="material-icons">
+                                                            more_vert
+                                                        </span>
+                                                    </button>
+                                                </StyledWrapperCloseButtonOffCanvas>
+                                                <SideBar data={headData} />
+                                            </div>
+                                        </StyledNavBar>
+                                    )}
+                                    <StyledWrapperHead
+                                        className={`col-sm-12 col-lg-3 ${
+                                            useIsPrintMode() && 'show'
+                                        }`}>
                                         <SideBar data={headData} />
                                     </StyledWrapperHead>
                                 </>
@@ -91,13 +95,15 @@ export const HomePage: React.FC = () => {
                                                     </span>
                                                     &gt;
                                                 </p>
-                                                {!useIsPrintMode() && <button
-                                                    type="button"
-                                                    className="btn">
-                                                    <a href="#service">
-                                                        Explore Now
-                                                    </a>
-                                                </button>}
+                                                {!useIsPrintMode() && (
+                                                    <button
+                                                        type="button"
+                                                        className="btn">
+                                                        <a href="#service">
+                                                            Explore Now
+                                                        </a>
+                                                    </button>
+                                                )}
                                             </StyledSubTitleContent>
                                         </StyledBannerContent>
                                     </StyleBanner>

@@ -12,6 +12,6 @@ export interface ProcessRingProp {
     strokeWidth: number
     percent?: number
     className?: string
-    stroke: string,
-    strokeBackground: string,
+    stroke: string
+    strokeBackground: string
 }

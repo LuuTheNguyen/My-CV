@@ -7,6 +7,8 @@ import {
     ResponsiveBetween,
 } from 'style/Theme'
 import { ProcessRing } from './ProcessRing'
+import { ProcessRingProp } from '.'
+import { utilProcessCircle } from './util'
 
 export const StyledLanguage = styled.div`
     justify-content: space-evenly;
@@ -18,17 +20,21 @@ export const StyledLanguage = styled.div`
     }
 `
 
-const animateProcessCirlce = keyframes`
+const animateProcessCirlce = (props: ProcessRingProp) => {
+    const { circumference, offset } = utilProcessCircle(props)
+
+    return keyframes`
     0%{
-        stroke-dasharray: 0% 0%;
-        stroke-dashoffset: 0%;
+        stroke-dasharray: 100 100;
+        stroke-dashoffset: 100;
     }
 
     100%{
-        stroke-dasharray: 100% 100%;
-        stroke-dashoffset: 100%;
+        stroke-dasharray: ${circumference} ${circumference};
+        stroke-dashoffset: ${offset};
     }
 `
+}
 
 export const StyledProcessRing = styled(ProcessRing)`
     text {
@@ -38,8 +44,8 @@ export const StyledProcessRing = styled(ProcessRing)`
         transform: rotate(-90deg);
         transform-origin: 50% 50%;
     }
-    circle.processCircle{
-        animation: ${animateProcessCirlce} 0.6s linear 1;
+    circle.processCircle {
+        animation: ${(props) => animateProcessCirlce(props)} 1s linear 1;
     }
 `
 

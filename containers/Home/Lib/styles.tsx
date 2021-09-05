@@ -1,5 +1,10 @@
 import styled from 'styled-components'
-import { FontColor, GridBreakpoints, ResponsiveBetween, ResponsiveMax } from 'style/Theme'
+import {
+    FontColor,
+    GridBreakpoints,
+    ResponsiveBetween,
+    ResponsiveMax,
+} from 'style/Theme'
 import { ListLib } from './ListLib'
 
 export const StyledLib = styled.div`
@@ -11,7 +16,7 @@ export const StyledLib = styled.div`
         padding: 10px;
     }
 
-    ${ResponsiveMax('sm')}{
+    ${ResponsiveMax('sm')} {
         display: grid;
         grid-template-columns: 50% 50%;
         grid-gap: 10px;

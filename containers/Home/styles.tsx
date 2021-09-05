@@ -27,7 +27,7 @@ export const StyledMain = styled.main`
         display: flex;
     }
 
-    ${MediaPrint}{        
+    ${MediaPrint} {
         background-color: ${BackGroundColor.default};
         color: ${FontColor.default};
     }
@@ -67,7 +67,7 @@ export const StyledWrapperHead = styled.div`
         width: auto;
         display: none;
 
-        &.show{
+        &.show {
             display: block;
         }
     }
@@ -112,7 +112,7 @@ export const StyledAboutBody = styled.div`
     padding: 20px;
     display: grid;
     ${ResponsiveBetween('sm', 'lg')} {
-        grid-template-columns: 50% 50%
+        grid-template-columns: 50% 50%;
     }
 `
 
@@ -136,7 +136,7 @@ export const StyledDownloadCV = styled.div`
         font-size: ${FontSize.xs};
     }
 
-    a:hover{
+    a:hover {
         ${Hover.Font.default}
     }
 
@@ -144,8 +144,8 @@ export const StyledDownloadCV = styled.div`
         font-size: ${FontSize.xs};
     }
 
-    .material-icons{
-        font-size: ${FontSize.md}
+    .material-icons {
+        font-size: ${FontSize.md};
     }
 `
 
@@ -172,22 +172,20 @@ export const StyledNavBar = styled.div`
             color: ${FontColor.secondary};
         }
 
-        ${StyledAboutBody}{
+        ${StyledAboutBody} {
             ${ResponsiveBetween('sm', 'lg')} {
                 grid-template-columns: auto;
             }
         }
     }
 
-    ${StyledDownloadCV}{
-
+    ${StyledDownloadCV} {
         a {
             color: ${FontColor.primary};
             font-size: ${FontSize.xs};
         }
-        
 
-        a:hover{
+        a:hover {
             ${Hover.Font.default}
         }
 
@@ -229,7 +227,7 @@ export const StyledSubTitleContent = styled.div`
         background-color: ${BackGroundColor.third};
     }
 
-    button:hover{
+    button:hover {
         ${Hover.Button.default}
     }
 

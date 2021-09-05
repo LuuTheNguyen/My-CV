@@ -14,10 +14,10 @@ export const Language: React.FC<Props> = ({ language }) => {
             {language.map((item, index) => (
                 <StyledWrapperProcessRing key={index}>
                     <StyledProcessRing
-                        width={40}
+                        width={50}
                         stroke={FontColor.secondary}
                         strokeBackground={FontColor.third}
-                        strokeWidth={2}
+                        strokeWidth={3}
                         percent={item.percent}
                     />
                     <StyledTitleProcessRing>

@@ -28,11 +28,11 @@ export const StyledProcessBar = styled(ProcessBar)`
     .label {
         display: flex;
         justify-content: space-between;
-        span{
-            color: ${FontColor.default}
+        span {
+            color: ${FontColor.default};
         }
-        span + span{
-            color: ${FontColor.primary}
+        span + span {
+            color: ${FontColor.primary};
         }
     }
     .progress {
@@ -42,6 +42,6 @@ export const StyledProcessBar = styled(ProcessBar)`
         background-color: ${BackGroundColor.third};
         width: ${(props) => `${props.percent}%`};
         max-width: ${(props) => `${props.percent}%`};
-        animation: ${animateWidthProcess} 0.6s linear 1;
+        animation: ${animateWidthProcess} 1s linear 1;
     }
 `

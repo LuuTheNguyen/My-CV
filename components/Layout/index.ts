@@ -1,2 +1,2 @@
 export { Layout } from './Layout'
-export *  from './interface'
+export * from './interface'

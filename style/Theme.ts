@@ -30,18 +30,18 @@ export const GridBreakpoints = {
     xxl: '1400px',
 }
 
-export const Hover ={
+export const Hover = {
     Font: {
         default: {
-            'color': '#fafafc',
+            color: '#fafafc',
             'text-shadow': '0 0 3px rgb(250 250 252 / 40%)',
-        }
+        },
     },
     Button: {
-        default:{
-            'transform': 'translateY(-2px)',
-        }
-    }
+        default: {
+            transform: 'translateY(-2px)',
+        },
+    },
 }
 
 type GridList = keyof typeof GridBreakpoints
@@ -54,6 +54,5 @@ export const ResponsiveMax = (to: GridList) =>
 
 export const ResponsiveMin = (from: GridList) =>
     `@media (min-width: ${GridBreakpoints[from]})`
-    
-export const MediaPrint = () =>
-    `@media print`
+
+export const MediaPrint = () => `@media print`

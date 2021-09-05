@@ -26,14 +26,16 @@ export const Service: React.FC<Props> = ({ service }) => {
                         {item.company && (
                             <StyledCompany>
                                 <span>{item.company}</span>
-                                { !useIsPrintMode() && <a
-                                    target="_blank"
-                                    rel="noreferrer"
-                                    href={item.companyHref}>
-                                    <span className="material-icons">
-                                        open_in_new
-                                    </span>
-                                </a>}
+                                {!useIsPrintMode() && (
+                                    <a
+                                        target="_blank"
+                                        rel="noreferrer"
+                                        href={item.companyHref}>
+                                        <span className="material-icons">
+                                            open_in_new
+                                        </span>
+                                    </a>
+                                )}
                             </StyledCompany>
                         )}
                     </StyledHeaderService>

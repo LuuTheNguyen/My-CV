@@ -1,6 +1,6 @@
 export const achieveData = [
-    { label: '2 +', content: 'Years Experience' },
-    { label: '9', content: 'Complete Projects' },
+    { counts: 2, label: '+', content: 'Years Experience' },
+    { counts: 9, content: 'Complete Projects' },
 ]
 
 export const serviceData = [
@@ -41,7 +41,7 @@ export const serviceData = [
 
 export const languageData = [
     { label: 'Viet Nam', percent: 100 },
-    { label: 'City', percent: 50 },
+    { label: 'English', percent: 50 },
 ]
 export const contactData = [
     { label: 'Phone', content: '(+84) 829549118' },

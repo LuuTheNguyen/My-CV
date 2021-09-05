@@ -1,6 +1,8 @@
+import { useEffect, useState } from 'react'
 import { BackGroundColor, FontColor, GridBreakpoints } from 'style/Theme'
 
 import type { ProcessRingProp } from '.'
+import { utilProcessCircle } from '.'
 
 export const ProcessRing: React.FC<ProcessRingProp> = ({
     width = 10,
@@ -12,11 +14,30 @@ export const ProcessRing: React.FC<ProcessRingProp> = ({
 }) => {
     /**TODO: link for example processRing */
     /* https://codepen.io/jeremenichelli/pen/vegymB */
-    const radius: number = width / 2 - strokeWidth * 2
-    const circumference: number = radius * 2 * Math.PI
-    const percentValue: number =
-        percent && percent > 0 && percent < 101 ? percent : 100
-    const offset: number = circumference - (percentValue / 100) * circumference
+    const { radius, circumference, percentValue, offset } = utilProcessCircle({
+        width,
+        strokeWidth,
+        percent,
+        className,
+        stroke,
+        strokeBackground,
+    })
+    const [perValue, setPerValue] = useState(0)
+    const [count, setCount] = useState(0)
+
+    useEffect(() => {
+        setPerValue(count)
+
+        const countDown = setTimeout(() => {
+            setCount(count + 1)
+        }, 1000 / percentValue)
+
+        if (count == percentValue) {
+            console.log(`timeout = ${count} === ${percentValue}`)
+            clearTimeout(countDown)
+        }
+    }, [count])
+
     return (
         <svg className={className} width={width} height={width}>
             <text
@@ -24,9 +45,9 @@ export const ProcessRing: React.FC<ProcessRingProp> = ({
                 y={width / 2 + width / 10}
                 fontSize={width / 4}
                 fill={`${FontColor.primary}`}>
-                {percentValue}%
+                {perValue}%
             </text>
-            
+
             <circle
                 stroke={strokeBackground}
                 strokeWidth={strokeWidth}
@@ -35,7 +56,7 @@ export const ProcessRing: React.FC<ProcessRingProp> = ({
                 cx={width / 2}
                 cy={width / 2}
             />
-            
+
             <circle
                 className="processCircle"
                 stroke={stroke}
