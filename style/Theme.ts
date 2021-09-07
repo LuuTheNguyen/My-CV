@@ -1,4 +1,5 @@
-import styled from 'styled-components'
+import { ThemeEnum } from '@enum/index'
+import type { BackgroundColorsProps, ThemeOptions } from './interface'
 
 export const FontColor = {
     default: '#fff',
@@ -14,12 +15,23 @@ export const FontSize = {
     lg: '20px',
 }
 
-export const BackGroundColor = {
-    default: '#212529',
-    primary: '#252531',
-    secondary: '#20202a',
-    third: '#f5c147',
+const BackgroundColors: BackgroundColorsProps = {
+    [ThemeEnum.DARK]: {
+        default: '#212529',
+        primary: '#252531',
+        secondary: '#20202a',
+        third: '#f5c147',
+    },
+    [ThemeEnum.LIGHT]: {
+        default: '#f0f0f6',
+        primary: '#ffffff',
+        secondary: '#c0c0ca',
+        third: '#f46258',
+    }
 }
+
+export const BackgroundColor = BackgroundColors[ThemeEnum.DARK]
+// export const BackgroundColorV2 = (theme: ThemeEnum) => BackgroundColors[theme]
 
 export const GridBreakpoints = {
     xs: 0,
@@ -42,6 +54,29 @@ export const Hover = {
             transform: 'translateY(-2px)',
         },
     },
+}
+
+export const Theme: { [x in ThemeEnum]: ThemeOptions } = {
+    [ThemeEnum.DARK]: {
+        fontSize: FontSize,
+        fontColor: FontColor,
+        Color: {
+            default: '#212529',
+            primary: '#252531',
+            secondary: '#20202a',
+            tertiary: '#f5c147',
+        }
+    },
+    [ThemeEnum.LIGHT]: {
+        fontSize: FontSize,
+        fontColor: FontColor,
+        Color: {
+            default: '#f0f0f6',
+            primary: '#ffffff',
+            secondary: '#c0c0ca',
+            tertiary: '#f46258',
+        }
+    }
 }
 
 type GridList = keyof typeof GridBreakpoints

@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { BackGroundColor, FontColor, GridBreakpoints } from 'style/Theme'
+import { BackgroundColor, FontColor, GridBreakpoints } from 'style/Theme'
 
 import type { ProcessRingProp } from '.'
 import { utilProcessCircle } from '.'
@@ -33,7 +33,6 @@ export const ProcessRing: React.FC<ProcessRingProp> = ({
         }, 1000 / percentValue)
 
         if (count == percentValue) {
-            console.log(`timeout = ${count} === ${percentValue}`)
             clearTimeout(countDown)
         }
     }, [count])

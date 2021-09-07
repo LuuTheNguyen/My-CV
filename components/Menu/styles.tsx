@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import {
-    BackGroundColor,
+    BackgroundColor,
     FontColor,
     GridBreakpoints,
     ResponsiveMax,
@@ -10,6 +10,7 @@ import { StyledLink } from './StyledLink'
 export const StyledMenuList = styled.div`
     display: flex;
     justify-content: flex-end;
+    height: 100vh;
 
     ${ResponsiveMax('lg')} {
         padding: 0;
@@ -18,7 +19,6 @@ export const StyledMenuList = styled.div`
 
 export const StyledMenuItem = styled(StyledLink)`
     transform: rotate(90deg);
-    margin-top: 30px;
     a {
         color: ${FontColor.default};
         text-decoration: none;
@@ -27,9 +27,13 @@ export const StyledMenuItem = styled(StyledLink)`
 
 export const StyledWrapperMenuList = styled.div`
     position: relative;
-    background-color: ${BackGroundColor.secondary};
+    background-color: ${BackgroundColor.secondary};
     width: 100%;
     height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 30px 0;
 `
 
 export const StyledContainerMenuList = styled.div`
@@ -37,7 +41,7 @@ export const StyledContainerMenuList = styled.div`
     flex-direction: column;
     align-items: flex-end;
     width: fit-content;
-    height: 600px;
+    height: 100%;
     position: fixed;
 `
 
@@ -47,8 +51,48 @@ export const StyledHeaderMenu = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: ${BackGroundColor.primary};
+    background-color: ${BackgroundColor.primary};
     i {
         cursor: pointer;
     }
+`
+
+export const StyledContainerMenuItem = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+`
+
+export const StyledContainerSwitchTheme = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+`
+
+interface StyledWrapSwitchThemeProps{
+    isDarkTheme?: boolean
+}
+
+export const StyledWrapSwitchTheme = styled.div<StyledWrapSwitchThemeProps>`
+    width: fit-content;
+    height: fit-content;    
+    border-radius: 20px;
+    background-color: ${BackgroundColor.third};
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    box-shadow: 0 0px 15px ${BackgroundColor.primary};
+    transform: ${props => props.isDarkTheme ? 'translateY(0)' : 'translateY(100%)'}
+`
+
+export const StyledSlider = styled.div`
+    width: 30px;
+    height: 60px;
+    background-color: ${BackgroundColor.primary};
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
 `

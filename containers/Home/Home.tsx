@@ -29,15 +29,16 @@ import { contentData, headData } from './mock'
 import { useIsPrintMode } from 'hooks'
 
 export const HomePage: React.FC = () => {
+    const isPrintMode = useIsPrintMode()
     return (
         <Layout name="Home">
             <StyledContainer>
                 <StyledMain className="container-xxl">
                     <div className="row">
-                        <StyledInfo className="col-12">
+                        <StyledInfo className="col-11">
                             <StyledWrapperInfo className="row">
                                 <>
-                                    {!useIsPrintMode() && (
+                                    {!isPrintMode && (
                                         <StyledNavBar className="col-12">
                                             <button
                                                 className="btn text-reset"
@@ -72,7 +73,7 @@ export const HomePage: React.FC = () => {
                                     )}
                                     <StyledWrapperHead
                                         className={`col-sm-12 col-lg-3 ${
-                                            useIsPrintMode() && 'show'
+                                            isPrintMode && 'show'
                                         }`}>
                                         <SideBar data={headData} />
                                     </StyledWrapperHead>
@@ -95,7 +96,7 @@ export const HomePage: React.FC = () => {
                                                     </span>
                                                     &gt;
                                                 </p>
-                                                {!useIsPrintMode() && (
+                                                {!isPrintMode && (
                                                     <button
                                                         type="button"
                                                         className="btn">
@@ -128,8 +129,7 @@ export const HomePage: React.FC = () => {
                                 </StyledWrapperContent>
                             </StyledWrapperInfo>
                         </StyledInfo>
-                        {/**TODO: Refactor Menu */}
-                        {/* <Menu /> */}
+                        <Menu />
                     </div>
                 </StyledMain>
             </StyledContainer>

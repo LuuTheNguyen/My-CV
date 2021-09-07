@@ -1,6 +1,6 @@
 import styled, { keyframes } from 'styled-components'
 import {
-    BackGroundColor,
+    BackgroundColor,
     FontColor,
     GridBreakpoints,
     ResponsiveBetween,
@@ -39,7 +39,7 @@ export const StyledProcessBar = styled(ProcessBar)`
         height: ${(props) => `${props.height}px`};
     }
     .progress-bar {
-        background-color: ${BackGroundColor.third};
+        background-color: ${BackgroundColor.third};
         width: ${(props) => `${props.percent}%`};
         max-width: ${(props) => `${props.percent}%`};
         animation: ${animateWidthProcess} 1s linear 1;

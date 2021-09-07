@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import {
-    BackGroundColor,
+    BackgroundColor,
     FontColor,
     GridBreakpoints,
     FontSize,
@@ -25,7 +25,7 @@ export const StyledService = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    background-color: ${BackGroundColor.primary};
+    background-color: ${BackgroundColor.primary};
     min-height: 250px;
 
     ${ResponsiveMax('lg')} {

@@ -18,53 +18,57 @@ import type { HeadProps } from '.'
 
 import { useIsPrintMode } from 'hooks'
 
-export const SideBar: React.FC<HeadProps> = ({ data }) => (
-    <>
-        <StyledAboutHead>
-            <StyledWrapperImage>
-                <StyledIcon src="/logo.jpg" layout="fill" objectFit="cover" />
-            </StyledWrapperImage>
-            <StyledName>Nguyen Luu</StyledName>
-            <StyledDescription>Frontend Dev</StyledDescription>
-        </StyledAboutHead>
-        <StyledAboutBody>
-            <About about={data.abouts} />
+export const SideBar: React.FC<HeadProps> = ({ data }) => {
+    const isPrintMode = useIsPrintMode()
 
-            <Language language={data.languages} />
 
-            <Skill skill={data.skills} />
+    return (
+        <>
+            <StyledAboutHead>
+                <StyledWrapperImage>
+                    <StyledIcon src="/logo.jpg" layout="fill" objectFit="cover" />
+                </StyledWrapperImage>
+                <StyledName>Nguyen Luu</StyledName>
+                <StyledDescription>Frontend Dev</StyledDescription>
+            </StyledAboutHead>
+            <StyledAboutBody>
+                <About about={data.abouts} />
 
-            <Lib lib={data.libs} />
-            {/** TODO: Add donwload action */}
+                <Language language={data.languages} />
 
-            {!useIsPrintMode() && (
-                <StyledDownloadCV>
-                    <a
-                        href="https://docs.google.com/document/d/14X8C4riPiht4rjOFozMJyHOeDnpRsScCYbLD8gY-rYA/edit?usp=sharing"
-                        target="_blank"
-                        rel="noreferrer">
-                        <span>Download CV</span>
-                        &nbsp;
-                        <span className="material-icons">file_download</span>
-                    </a>
-                    <a
-                        data-bs-dismiss="offcanvas"
-                        aria-label="Close"
-                        href="#"
-                        onClick={() => {
-                            setTimeout(() => {
-                                window.print()
-                            }, 0)
-                        }}>
-                        <span>Print</span>
-                        &nbsp;
-                        <span className="material-icons">print</span>
-                    </a>
-                </StyledDownloadCV>
-            )}
-        </StyledAboutBody>
-        <StyledAboutFooter>
-            <Contact contact={data.contacts} />
-        </StyledAboutFooter>
-    </>
-)
+                <Skill skill={data.skills} />
+
+                <Lib lib={data.libs} />                
+
+                {!isPrintMode && (
+                    <StyledDownloadCV>
+                        <a
+                            href="https://docs.google.com/document/d/14X8C4riPiht4rjOFozMJyHOeDnpRsScCYbLD8gY-rYA/edit?usp=sharing"
+                            target="_blank"
+                            rel="noreferrer">
+                            <span>Download CV</span>
+                            &nbsp;
+                            <span className="material-icons">file_download</span>
+                        </a>
+                        <a
+                            data-bs-dismiss="offcanvas"
+                            aria-label="Close"
+                            href="#"
+                            onClick={() => {
+                                setTimeout(() => {
+                                    window.print()
+                                }, 0)
+                            }}>
+                            <span>Print</span>
+                            &nbsp;
+                            <span className="material-icons">print</span>
+                        </a>
+                    </StyledDownloadCV>
+                )}
+            </StyledAboutBody>
+            <StyledAboutFooter>
+                <Contact contact={data.contacts} />
+            </StyledAboutFooter>
+        </>
+    )
+}

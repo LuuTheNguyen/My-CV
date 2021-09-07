@@ -4,7 +4,7 @@ import {
     StyledWrapperProcessRing,
     StyledTitleProcessRing,
 } from '.'
-import { BackGroundColor, FontColor, GridBreakpoints } from 'style/Theme'
+import { BackgroundColor, FontColor, GridBreakpoints } from 'style/Theme'
 
 import type { Props } from '.'
 

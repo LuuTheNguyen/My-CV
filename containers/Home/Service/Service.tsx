@@ -12,6 +12,7 @@ import type { Props } from '.'
 import { useIsPrintMode } from 'hooks'
 
 export const Service: React.FC<Props> = ({ service }) => {
+    const isPrintMode = useIsPrintMode()
     return (
         <StyledWrapperService>
             {service.map((item, index) => (
@@ -26,7 +27,7 @@ export const Service: React.FC<Props> = ({ service }) => {
                         {item.company && (
                             <StyledCompany>
                                 <span>{item.company}</span>
-                                {!useIsPrintMode() && (
+                                {!isPrintMode && (
                                     <a
                                         target="_blank"
                                         rel="noreferrer"

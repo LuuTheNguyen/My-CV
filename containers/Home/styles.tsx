@@ -1,5 +1,5 @@
 import {
-    BackGroundColor,
+    BackgroundColor,
     FontColor,
     GridBreakpoints,
     FontSize,
@@ -15,7 +15,7 @@ import Image from 'next/image'
 export const StyledMain = styled.main`
     height: auto;
     width: 100%;
-    background-color: ${BackGroundColor.default};
+    background-color: ${BackgroundColor.default};
     color: ${FontColor.default};
     margin: 0;
     padding: 10px;
@@ -28,7 +28,7 @@ export const StyledMain = styled.main`
     }
 
     ${MediaPrint} {
-        background-color: ${BackGroundColor.default};
+        background-color: ${BackgroundColor.default};
         color: ${FontColor.default};
     }
 `
@@ -39,7 +39,7 @@ export const StyledContainer = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: ${BackGroundColor.default};
+    background-color: ${BackgroundColor.default};
 `
 
 const StyledInfo = styled.div`
@@ -74,7 +74,7 @@ export const StyledWrapperHead = styled.div`
 `
 
 export const StyledAboutHead = styled.div`
-    background-color: ${BackGroundColor.primary};
+    background-color: ${BackgroundColor.primary};
     display: flex;
     align-items: center;
     justify-content: center;
@@ -108,7 +108,7 @@ export const StyledDescription = styled.span`
 `
 
 export const StyledAboutBody = styled.div`
-    background-color: ${BackGroundColor.secondary};
+    background-color: ${BackgroundColor.secondary};
     padding: 20px;
     display: grid;
     ${ResponsiveBetween('sm', 'lg')} {
@@ -150,7 +150,7 @@ export const StyledDownloadCV = styled.div`
 `
 
 export const StyledAboutFooter = styled.div`
-    background-color: ${BackGroundColor.primary};
+    background-color: ${BackgroundColor.primary};
     display: flex;
     align-items: center;
     flex-wrap: wrap;
@@ -158,7 +158,7 @@ export const StyledAboutFooter = styled.div`
 
 export const StyledNavBar = styled.div`
     display: none;
-    background-color: ${BackGroundColor.default};
+    background-color: ${BackgroundColor.default};
 
     ${ResponsiveMax('lg')} {
         display: block;
@@ -167,7 +167,7 @@ export const StyledNavBar = styled.div`
     .offcanvas {
         height: 100vh;
         overflow-y: auto;
-        background-color: ${BackGroundColor.primary};
+        background-color: ${BackgroundColor.primary};
         .material-icons {
             color: ${FontColor.secondary};
         }
@@ -224,7 +224,7 @@ export const StyledSubTitleContent = styled.div`
         color: ${FontColor.secondary};
     }
     button {
-        background-color: ${BackGroundColor.third};
+        background-color: ${BackgroundColor.third};
     }
 
     button:hover {

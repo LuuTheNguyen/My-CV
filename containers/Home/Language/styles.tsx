@@ -1,6 +1,6 @@
 import styled, { keyframes } from 'styled-components'
 import {
-    BackGroundColor,
+    BackgroundColor,
     FontColor,
     GridBreakpoints,
     FontSize,
