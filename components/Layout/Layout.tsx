@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import { StyledContainer } from './style'
-import type { Props } from '.'
+import type { Props } from './interface'
 
 export const Layout: React.FC<Props> = ({ children, name }) => {
     return (

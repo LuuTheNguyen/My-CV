@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import type { ProcessBarProps } from '.'
+import type { ProcessBarProps } from './interface'
 
 export const ProcessBar: React.FC<ProcessBarProps> = ({
     className,

@@ -1,5 +1,4 @@
-
-import { useContext, useMemo } from 'react'
+import React, { useContext, useMemo } from 'react'
 import {
     StyledMenuList,
     StyledWrapperMenuList,
@@ -9,23 +8,24 @@ import {
     StyledContainerMenuItem,
     StyledContainerSwitchTheme,
     StyledWrapSwitchTheme,
-    StyledSlider
-} from '.'
+    StyledSlider,
+} from './styles'
 
 import { ThemeEnum } from '@enum/index'
 import { ThemeContext } from '@context/ThemeContext'
 
 export const Menu: React.FC = () => {
     const { toggleTheme, theme } = useContext(ThemeContext)
-    const themeIcon = useMemo(() => theme === ThemeEnum.DARK ? 'dark_mode' : 'light_mode', [theme])
+    const themeIcon = useMemo(
+        () => (theme === ThemeEnum.DARK ? 'dark_mode' : 'light_mode'),
+        [theme]
+    )
 
     return (
         <StyledMenuList className="col-1">
             <StyledContainerMenuList>
                 <StyledHeaderMenu>
-                    <span className="material-icons">
-                        menu
-                    </span>
+                    <span className="material-icons">menu</span>
                 </StyledHeaderMenu>
                 <StyledWrapperMenuList>
                     <StyledContainerMenuItem>
@@ -34,7 +34,7 @@ export const Menu: React.FC = () => {
 
                     <StyledContainerSwitchTheme>
                         <StyledSlider>
-                            <StyledWrapSwitchTheme onClick={toggleTheme} isDarkTheme={theme === ThemeEnum.DARK} >
+                            <StyledWrapSwitchTheme onClick={toggleTheme}>
                                 <span className="material-icons">
                                     {themeIcon}
                                 </span>

@@ -1,22 +1,13 @@
-import {
-    BackgroundColor,
-    FontColor,
-    GridBreakpoints,
-    FontSize,
-    ResponsiveBetween,
-    ResponsiveMax,
-    ResponsiveMin,
-    MediaPrint,
-    Hover,
-} from 'style/Theme'
+import { ResponsiveBetween, ResponsiveMax, MediaPrint } from 'style/Theme'
 import styled from 'styled-components'
 import Image from 'next/image'
+import { CreateStyledComponent, dynamicTheme } from 'style/ultis'
 
-export const StyledMain = styled.main`
+export const StyledMain = CreateStyledComponent(styled.main`
     height: auto;
     width: 100%;
-    background-color: ${BackgroundColor.default};
-    color: ${FontColor.default};
+    background-color: ${dynamicTheme((theme) => theme.color.secondary)};
+    color: ${dynamicTheme((theme) => theme.fontColor.default)};
     margin: 0;
     padding: 10px;
     align-items: center;
@@ -28,21 +19,35 @@ export const StyledMain = styled.main`
     }
 
     ${MediaPrint} {
-        background-color: ${BackgroundColor.default};
-        color: ${FontColor.default};
+        background-color: ${dynamicTheme((theme) => theme.color.default)};
+        color: ${dynamicTheme((theme) => theme.fontColor.default)};
     }
-`
 
-export const StyledContainer = styled.div`
+    .row {
+        margin: 0;
+    }
+`)
+
+export const StyledContainer = CreateStyledComponent(styled.div`
     min-height: 100vh;
     height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: ${BackgroundColor.default};
+    background-color: ${dynamicTheme((theme) => theme.color.default)};
+`)
+
+export const StyledInfo = styled.div`
+    display: flex;
+    flex-direction: row;
+    padding: 0;
+
+    ${ResponsiveMax('lg')} {
+        flex-direction: column;
+    }
 `
 
-const StyledInfo = styled.div`
+export const StyledWrapperInfo = styled.div`
     display: flex;
     flex-direction: row;
 
@@ -50,19 +55,10 @@ const StyledInfo = styled.div`
         flex-direction: column;
     }
 `
-
-const StyledWrapperInfo = styled.div`
-    display: flex;
-    flex-direction: row;
-
-    ${ResponsiveMax('lg')} {
-        flex-direction: column;
-    }
-`
-
-export { StyledInfo, StyledWrapperInfo }
 
 export const StyledWrapperHead = styled.div`
+    box-shadow: 0 3px 8px 0 rgb(15 15 20 / 20%);
+    padding: 0;
     ${ResponsiveMax('lg')} {
         width: auto;
         display: none;
@@ -73,14 +69,14 @@ export const StyledWrapperHead = styled.div`
     }
 `
 
-export const StyledAboutHead = styled.div`
-    background-color: ${BackgroundColor.primary};
+export const StyledAboutHead = CreateStyledComponent(styled.div`
+    background-color: ${dynamicTheme((theme) => theme.color.primary)};
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 20px;
     flex-direction: column;
-`
+`)
 
 export const StyledWrapperImage = styled.div`
     width: 80px;
@@ -96,28 +92,28 @@ export const StyledIcon = styled(Image)`
     }
     position: relative;
 `
-export const StyledName = styled.span`
-    font-size: ${FontSize.sm};
-    color: ${FontColor.default};
+export const StyledName = CreateStyledComponent(styled.span`
+    font-size: ${dynamicTheme((theme) => theme.fontSize.sm)};
+    color: ${dynamicTheme((theme) => theme.fontColor.default)};
     font-weight: 600;
-`
+`)
 
-export const StyledDescription = styled.span`
-    font-size: ${FontSize.xs};
-    color: ${FontColor.primary};
-`
+export const StyledDescription = CreateStyledComponent(styled.span`
+    font-size: ${dynamicTheme((theme) => theme.fontSize.xs)};
+    color: ${dynamicTheme((theme) => theme.fontColor.primary)};
+`)
 
-export const StyledAboutBody = styled.div`
-    background-color: ${BackgroundColor.secondary};
+export const StyledAboutBody = CreateStyledComponent(styled.div`
+    background-color: ${dynamicTheme((theme) => theme.color.secondary)};
     padding: 20px;
     display: grid;
     ${ResponsiveBetween('sm', 'lg')} {
         grid-template-columns: 50% 50%;
     }
-`
+`)
 
-export const StyledDownloadCV = styled.div`
-    color: ${FontColor.primary};
+export const StyledDownloadCV = CreateStyledComponent(styled.div`
+    color: ${dynamicTheme((theme) => theme.fontColor.primary)};
     text-transform: uppercase;
     font-weight: 600;
     display: grid;
@@ -130,35 +126,38 @@ export const StyledDownloadCV = styled.div`
 
     a {
         text-decoration: none;
-        color: ${FontColor.primary};
+        color: ${dynamicTheme((theme) => theme.fontColor.primary)};
         display: flex;
         align-items: center;
-        font-size: ${FontSize.xs};
+        font-size: ${dynamicTheme((theme) => theme.fontSize.xs)};
     }
 
     a:hover {
-        ${Hover.Font.default}
+        color: ${dynamicTheme((theme) => theme.hover.Font.default.color)};
+        text-shadow: ${dynamicTheme(
+            (theme) => theme.hover.Font.default.textShadow
+        )};
     }
 
     i {
-        font-size: ${FontSize.xs};
+        font-size: ${dynamicTheme((theme) => theme.fontSize.xs)};
     }
 
     .material-icons {
-        font-size: ${FontSize.md};
+        font-size: ${dynamicTheme((theme) => theme.fontSize.md)};
     }
-`
+`)
 
-export const StyledAboutFooter = styled.div`
-    background-color: ${BackgroundColor.primary};
+export const StyledAboutFooter = CreateStyledComponent(styled.div`
+    background-color: ${dynamicTheme((theme) => theme.color.primary)};
     display: flex;
     align-items: center;
     flex-wrap: wrap;
-`
+`)
 
-export const StyledNavBar = styled.div`
+export const StyledNavBar = CreateStyledComponent(styled.div`
     display: none;
-    background-color: ${BackgroundColor.default};
+    background-color: ${dynamicTheme((theme) => theme.color.default)};
 
     ${ResponsiveMax('lg')} {
         display: block;
@@ -167,9 +166,9 @@ export const StyledNavBar = styled.div`
     .offcanvas {
         height: 100vh;
         overflow-y: auto;
-        background-color: ${BackgroundColor.primary};
+        background-color: ${dynamicTheme((theme) => theme.color.primary)};
         .material-icons {
-            color: ${FontColor.secondary};
+            color: ${dynamicTheme((theme) => theme.fontColor.secondary)};
         }
 
         ${StyledAboutBody} {
@@ -181,19 +180,22 @@ export const StyledNavBar = styled.div`
 
     ${StyledDownloadCV} {
         a {
-            color: ${FontColor.primary};
-            font-size: ${FontSize.xs};
+            color: ${dynamicTheme((theme) => theme.fontColor.primary)};
+            font-size: ${dynamicTheme((theme) => theme.fontSize.xs)};
         }
 
         a:hover {
-            ${Hover.Font.default}
+            color: ${dynamicTheme((theme) => theme.hover.Font.default.color)};
+            text-shadow: ${dynamicTheme(
+                (theme) => theme.hover.Font.default.textShadow
+            )};
         }
 
         .material-icons {
-            color: ${FontColor.primary};
+            color: ${dynamicTheme((theme) => theme.fontColor.primary)};
         }
     }
-`
+`)
 
 export const StyledWrapperContent = styled.div`
     padding: 30px;
@@ -212,23 +214,25 @@ export const StyledBannerContent = styled.div`
     justify-content: space-around;
 `
 
-export const StyledTitleContent = styled.h4`
-    color: ${FontColor.default};
+export const StyledTitleContent = CreateStyledComponent(styled.h4`
+    color: ${dynamicTheme((theme) => theme.fontColor.default)};
     text-transform: uppercase;
     font-weight: 600;
-`
+`)
 
-export const StyledSubTitleContent = styled.div`
-    color: ${FontColor.default};
+export const StyledSubTitleContent = CreateStyledComponent(styled.div`
+    color: ${dynamicTheme((theme) => theme.fontColor.default)};
     .code {
-        color: ${FontColor.secondary};
+        color: ${dynamicTheme((theme) => theme.fontColor.secondary)};
     }
     button {
-        background-color: ${BackgroundColor.third};
+        background-color: ${dynamicTheme((theme) => theme.color.tertiary)};
     }
 
     button:hover {
-        ${Hover.Button.default}
+        transform: ${dynamicTheme(
+            (theme) => theme.hover.Button.default.transform
+        )};
     }
 
     a {
@@ -236,7 +240,7 @@ export const StyledSubTitleContent = styled.div`
         color: inherit;
         font-weight: 600;
     }
-`
+`)
 
 export const StyledContainerService = styled.div`
     display: flex;

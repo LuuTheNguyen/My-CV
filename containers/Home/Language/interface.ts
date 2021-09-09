@@ -1,3 +1,5 @@
+import { ThemeEnum } from '@enum'
+
 export interface LanguageProps {
     label: string
     percent: number
@@ -14,4 +16,5 @@ export interface ProcessRingProp {
     className?: string
     stroke: string
     strokeBackground: string
+    fontColor: string
 }

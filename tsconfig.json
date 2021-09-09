@@ -19,7 +19,7 @@
             "@containers/*": ["containers/*"],
             "@enum": ["enum"],
             "@enum/*": ["enum/*"],
-            "@context/*": ["context/*"],
+            "@context/*": ["context/*"]
         }
     },
     "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],

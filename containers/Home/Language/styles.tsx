@@ -1,24 +1,21 @@
 import styled, { keyframes } from 'styled-components'
-import {
-    BackgroundColor,
-    FontColor,
-    GridBreakpoints,
-    FontSize,
-    ResponsiveBetween,
-} from 'style/Theme'
+import { ResponsiveBetween } from 'style/Theme'
 import { ProcessRing } from './ProcessRing'
-import { ProcessRingProp } from '.'
+import { ProcessRingProp } from './interface'
 import { utilProcessCircle } from './util'
+import { CreateStyledComponent, dynamicTheme, setTheme } from 'style/ultis'
+import { TransitionEnum } from '@enum'
 
-export const StyledLanguage = styled.div`
+export const StyledLanguage = CreateStyledComponent(styled.div`
     justify-content: space-evenly;
-    color: ${FontColor.default};
+    color: ${dynamicTheme((theme) => theme.fontColor.default)};
     display: flex;
+    transition: color ${TransitionEnum.THEME};
 
     ${ResponsiveBetween('sm', 'lg')} {
         padding: 10px;
     }
-`
+`)
 
 const animateProcessCirlce = (props: ProcessRingProp) => {
     const { circumference, offset } = utilProcessCircle(props)
@@ -36,9 +33,10 @@ const animateProcessCirlce = (props: ProcessRingProp) => {
 `
 }
 
-export const StyledProcessRing = styled(ProcessRing)`
+export const StyledProcessRing = CreateStyledComponent(styled(ProcessRing)`
     text {
         text-anchor: middle;
+        font-size: ${dynamicTheme((theme) => theme.fontColor.default)};
     }
     circle {
         transform: rotate(-90deg);
@@ -47,7 +45,7 @@ export const StyledProcessRing = styled(ProcessRing)`
     circle.processCircle {
         animation: ${(props) => animateProcessCirlce(props)} 1s linear 1;
     }
-`
+`)
 
 export const StyledWrapperProcessRing = styled.div`
     position: relative;
@@ -57,8 +55,9 @@ export const StyledWrapperProcessRing = styled.div`
     align-items: center;
 `
 
-export const StyledTitleProcessRing = styled.div`
-    color: ${FontColor.default};
+export const StyledTitleProcessRing = CreateStyledComponent(styled.div`
+    color: ${dynamicTheme((theme) => theme.fontColor.default)};
     margin: auto auto;
-    font-size: ${FontSize.xs};
-`
+    font-size: ${dynamicTheme((theme) => theme.fontSize.xs)};
+    transition: color ${TransitionEnum.THEME};
+`)

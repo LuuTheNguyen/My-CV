@@ -1,11 +1,7 @@
 import styled, { keyframes } from 'styled-components'
-import {
-    BackgroundColor,
-    FontColor,
-    GridBreakpoints,
-    ResponsiveBetween,
-} from 'style/Theme'
+import { ResponsiveBetween } from 'style/Theme'
 import { ProcessBar } from './ProcessBar'
+import { CreateStyledComponent, dynamicTheme } from 'style/ultis'
 
 export const StyledSkill = styled.div`
     ${ResponsiveBetween('sm', 'lg')} {
@@ -23,25 +19,25 @@ const animateWidthProcess = keyframes`
     }
 `
 
-export const StyledProcessBar = styled(ProcessBar)`
+export const StyledProcessBar = CreateStyledComponent(styled(ProcessBar)`
     margin-bottom: 10px;
     .label {
         display: flex;
         justify-content: space-between;
         span {
-            color: ${FontColor.default};
+            color: ${dynamicTheme((theme) => theme.fontColor.default)};
         }
         span + span {
-            color: ${FontColor.primary};
+            color: ${dynamicTheme((theme) => theme.fontColor.primary)};
         }
     }
     .progress {
         height: ${(props) => `${props.height}px`};
     }
     .progress-bar {
-        background-color: ${BackgroundColor.third};
+        background-color: ${dynamicTheme((theme) => theme.color.tertiary)};
         width: ${(props) => `${props.percent}%`};
         max-width: ${(props) => `${props.percent}%`};
         animation: ${animateWidthProcess} 1s linear 1;
     }
-`
+`)

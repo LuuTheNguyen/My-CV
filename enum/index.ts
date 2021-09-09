@@ -1,1 +1,1 @@
-export { ThemeEnum } from './common/Theme'
+export { ThemeEnum, TransitionEnum } from './common/Theme'

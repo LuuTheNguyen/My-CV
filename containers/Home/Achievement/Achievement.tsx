@@ -1,6 +1,6 @@
 import { StyledContainerAchievement, StyledAchievement } from './styles'
-import type { Props } from '.'
-import { ultiCountDown } from '.'
+import type { Props } from './interface'
+import { ultiCountDown } from './ulti'
 
 export const Achievement: React.FC<Props> = ({ achieve }) => {
     return (

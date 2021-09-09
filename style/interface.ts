@@ -1,34 +1,77 @@
-import { FontSize, FontColor } from './Theme'
 import { ThemeEnum } from '@enum/index'
+import { StyledComponent } from 'styled-components'
+import React from 'react'
 
 interface BackgroundColor {
-    default: string,
-    primary: string,
-    secondary: string,
-    third: string,
+    default: string
+    primary: string
+    secondary: string
+    tertiary: string
 }
 
-export interface BackgroundColorsProps{
-    [key:string]: BackgroundColor,
+export interface BackgroundColorsProps {
+    [key: string]: BackgroundColor
 }
 
-export interface Colors {
-    default: string,
-    primary: string,
-    secondary: string,
-    tertiary: string,
+export interface Color {
+    default: string
+    primary: string
+    secondary: string
+    tertiary: string
 }
 
+interface FontHover {
+    default: {
+        color: string
+        textShadow: string
+    }
+}
+interface ButtonHover {
+    default: {
+        transform: string
+    }
+}
+export interface Hover {
+    Font: FontHover
+    Button: ButtonHover
+}
+
+interface FontColor {
+    default: string
+    primary: string
+    secondary: string
+    tertiary: string
+}
+interface FontSize {
+    xs: string
+    sm: string
+    md: string
+    lg: string
+}
 
 export interface ThemeOptions {
-    fontSize: typeof FontSize
-    fontColor: typeof FontColor
-    Color: Colors
+    fontSize: FontSize
+    fontColor: FontColor
+    color: Color
+    hover: Hover
 }
 
-export type Callback = (activeTheme: ThemeOptions) => string
-export type SetAttributeFunc = (parameters: { theme: ThemeEnum }) => string
+type Callback = (activeTheme: ThemeOptions) => string
+type SetAttributeFunc = (attribute: { theme: ThemeEnum }) => string
 
-export type DynammicThemeDefault = (callback: Callback) => SetAttributeFunc
-export type DynammicThemeAlt = (darkModeCallback: Callback, lightModeCallback?: Callback) => SetAttributeFunc
+type DynammicThemeDefault = (callback: Callback) => SetAttributeFunc
+type DynammicThemeAlt = (
+    darkModeCallback: Callback,
+    lightModeCallback?: Callback
+) => SetAttributeFunc
+
 export type DynamicThemeFunc = DynammicThemeDefault | DynammicThemeAlt
+
+type OriginalComponent = keyof JSX.IntrinsicElements | React.ComponentType<any>
+
+export type CreateStyledComponentFunc = <
+    K extends OriginalComponent,
+    T extends StyledComponent<K, any, {}, never>
+>(
+    StyledComponentImp: T
+) => T

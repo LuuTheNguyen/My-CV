@@ -6,9 +6,9 @@ import {
     StyledCompany,
     StyledHeaderSubTitleService,
     StyledHeaderTitleService,
-} from '.'
+} from './styles'
 
-import type { Props } from '.'
+import type { Props } from './interface'
 import { useIsPrintMode } from 'hooks'
 
 export const Service: React.FC<Props> = ({ service }) => {

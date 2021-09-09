@@ -7,26 +7,29 @@ import {
     StyledAboutBody,
     StyledDownloadCV,
     StyledAboutFooter,
-} from '.'
+} from './styles'
 
 import { About } from './About'
 import { Contact } from './Contact'
 import { Language } from './Language'
 import { Lib } from './Lib'
 import { Skill } from './Skill'
-import type { HeadProps } from '.'
+import type { HeadProps } from './interface'
 
 import { useIsPrintMode } from 'hooks'
 
 export const SideBar: React.FC<HeadProps> = ({ data }) => {
     const isPrintMode = useIsPrintMode()
 
-
     return (
         <>
             <StyledAboutHead>
                 <StyledWrapperImage>
-                    <StyledIcon src="/logo.jpg" layout="fill" objectFit="cover" />
+                    <StyledIcon
+                        src="/logo.jpg"
+                        layout="fill"
+                        objectFit="cover"
+                    />
                 </StyledWrapperImage>
                 <StyledName>Nguyen Luu</StyledName>
                 <StyledDescription>Frontend Dev</StyledDescription>
@@ -38,7 +41,7 @@ export const SideBar: React.FC<HeadProps> = ({ data }) => {
 
                 <Skill skill={data.skills} />
 
-                <Lib lib={data.libs} />                
+                <Lib lib={data.libs} />
 
                 {!isPrintMode && (
                     <StyledDownloadCV>
@@ -48,7 +51,9 @@ export const SideBar: React.FC<HeadProps> = ({ data }) => {
                             rel="noreferrer">
                             <span>Download CV</span>
                             &nbsp;
-                            <span className="material-icons">file_download</span>
+                            <span className="material-icons">
+                                file_download
+                            </span>
                         </a>
                         <a
                             data-bs-dismiss="offcanvas"

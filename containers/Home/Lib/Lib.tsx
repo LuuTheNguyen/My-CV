@@ -1,5 +1,5 @@
-import { StyledLib, StyledListLib } from '.'
-import type { Props } from '.'
+import { StyledLib, StyledListLib } from './styles'
+import type { Props } from './interface'
 
 export const Lib: React.FC<Props> = ({ lib }) => {
     return (

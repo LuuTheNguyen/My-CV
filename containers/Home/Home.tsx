@@ -14,14 +14,14 @@ import {
     StyledContainerService,
     StyledContainerEducation,
     StyledWrapperCloseButtonOffCanvas,
-} from '.'
+} from './styles'
 
 import { Menu } from '@components/Menu/Menu'
 
 import { Achievement } from './Achievement'
 import { Service } from './Service'
 import { Education } from './Education'
-import { SideBar } from '.'
+import { SideBar } from './SideBar'
 
 import type { HeadProps } from './interface'
 

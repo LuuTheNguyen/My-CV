@@ -1,6 +1,6 @@
-import { ThemeEnum } from "@enum"
-import { useBrowserEffect } from "hooks/useBrowserEffect"
-import React, { useCallback, useState } from "react"
+import { ThemeEnum } from '@enum'
+import { useBrowserEffect } from 'hooks/useBrowserEffect'
+import React, { useCallback, useState } from 'react'
 
 interface ThemeContextProps {
     theme: ThemeEnum
@@ -8,22 +8,24 @@ interface ThemeContextProps {
     toggleTheme: () => void
 }
 
-const parseThemeName = (name: string | null, defaultTheme = ThemeEnum.DARK): ThemeEnum => {
+const parseThemeName = (
+    name: string | null,
+    defaultTheme = ThemeEnum.DARK
+): ThemeEnum => {
     switch (name) {
         case ThemeEnum.DARK:
             return ThemeEnum.DARK
         case ThemeEnum.LIGHT:
             return ThemeEnum.LIGHT
         default:
-            return defaultTheme;
+            return defaultTheme
     }
 }
 export const ThemeContext = React.createContext<ThemeContextProps>({
     theme: ThemeEnum.DARK,
-    setTheme: () => { },
-    toggleTheme: () => { }
+    setTheme: () => {},
+    toggleTheme: () => {},
 })
-
 
 export const ThemeProvider: React.FC = ({ children }) => {
     const [theme, _setTheme] = useState<ThemeEnum>(ThemeEnum.DARK)
@@ -34,7 +36,8 @@ export const ThemeProvider: React.FC = ({ children }) => {
     }, [theme])
 
     const toggleTheme = useCallback(() => {
-        const targetTheme = theme === ThemeEnum.DARK ? ThemeEnum.LIGHT : ThemeEnum.DARK
+        const targetTheme =
+            theme === ThemeEnum.DARK ? ThemeEnum.LIGHT : ThemeEnum.DARK
         _setTheme(targetTheme)
         localStorage.setItem('theme', targetTheme)
     }, [theme])
@@ -44,7 +47,9 @@ export const ThemeProvider: React.FC = ({ children }) => {
         localStorage.setItem('theme', targetTheme)
     }
 
-    return <ThemeContext.Provider value={{ theme, setTheme, toggleTheme }}>
-        {children}
-    </ThemeContext.Provider>
+    return (
+        <ThemeContext.Provider value={{ theme, setTheme, toggleTheme }}>
+            {children}
+        </ThemeContext.Provider>
+    )
 }

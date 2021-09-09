@@ -1,8 +1,7 @@
 import { useEffect, useState } from 'react'
-import { BackgroundColor, FontColor, GridBreakpoints } from 'style/Theme'
 
-import type { ProcessRingProp } from '.'
-import { utilProcessCircle } from '.'
+import type { ProcessRingProp } from './interface'
+import { utilProcessCircle } from './util'
 
 export const ProcessRing: React.FC<ProcessRingProp> = ({
     width = 10,
@@ -11,6 +10,7 @@ export const ProcessRing: React.FC<ProcessRingProp> = ({
     className,
     stroke = '10',
     strokeBackground,
+    fontColor,
 }) => {
     /**TODO: link for example processRing */
     /* https://codepen.io/jeremenichelli/pen/vegymB */
@@ -21,6 +21,7 @@ export const ProcessRing: React.FC<ProcessRingProp> = ({
         className,
         stroke,
         strokeBackground,
+        fontColor,
     })
     const [perValue, setPerValue] = useState(0)
     const [count, setCount] = useState(0)
@@ -37,13 +38,14 @@ export const ProcessRing: React.FC<ProcessRingProp> = ({
         }
     }, [count])
 
+    // const temp = dynamicTheme(theme => theme.fontColor.third)
     return (
         <svg className={className} width={width} height={width}>
             <text
                 x={width / 2}
                 y={width / 2 + width / 10}
                 fontSize={width / 4}
-                fill={`${FontColor.primary}`}>
+                fill={fontColor}>
                 {perValue}%
             </text>
 

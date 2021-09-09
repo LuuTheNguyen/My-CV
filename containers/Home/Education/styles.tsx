@@ -1,15 +1,13 @@
 import styled from 'styled-components'
-import {
-    FontColor,
-    GridBreakpoints,
-    ResponsiveMax,
-    FontSize,
-} from 'style/Theme'
+import { ResponsiveMax } from 'style/Theme'
+import { CreateStyledComponent, dynamicTheme, setTheme } from 'style/ultis'
+import { TransitionEnum } from '@enum'
 
-export const StyledEducationItem = styled.span`
-    font-size: ${FontSize.md};
-    color: ${FontColor.default};
-`
+export const StyledEducationItem = CreateStyledComponent(styled.span`
+    font-size: ${dynamicTheme((theme) => theme.fontSize.md)};
+    color: ${dynamicTheme((theme) => theme.fontColor.default)};
+    transition: color ${TransitionEnum.THEME};
+`)
 
 export const StyledEducations = styled.div`
     display: grid;

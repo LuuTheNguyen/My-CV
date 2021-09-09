@@ -1,11 +1,7 @@
 import styled from 'styled-components'
-import {
-    FontColor,
-    GridBreakpoints,
-    ResponsiveBetween,
-    ResponsiveMax,
-} from 'style/Theme'
+import { GridBreakpoints, ResponsiveBetween, ResponsiveMax } from 'style/Theme'
 import { ListLib } from './ListLib'
+import { CreateStyledComponent, dynamicTheme } from 'style/ultis'
 
 export const StyledLib = styled.div`
     ${ResponsiveBetween('sm', 'lg')} {
@@ -23,12 +19,12 @@ export const StyledLib = styled.div`
     }
 `
 
-export const StyledListLib = styled(ListLib)`
+export const StyledListLib = CreateStyledComponent(styled(ListLib)`
     margin-bottom: 5px;
     display: flex;
-    color: ${FontColor.primary};
+    color: ${dynamicTheme((theme) => theme.fontColor.primary)};
     & .material-icons {
-        color: ${(props) => props.color || FontColor.secondary};
+        color: ${dynamicTheme((theme) => theme.fontColor.secondary)};
         margin-right: 8px;
     }
 
@@ -43,4 +39,4 @@ export const StyledListLib = styled(ListLib)`
     i {
         margin-right: 5px;
     }
-`
+`)
