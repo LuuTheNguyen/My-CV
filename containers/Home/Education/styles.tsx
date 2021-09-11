@@ -6,7 +6,7 @@ import { TransitionEnum } from '@enum'
 export const StyledEducationItem = CreateStyledComponent(styled.span`
     font-size: ${dynamicTheme((theme) => theme.fontSize.md)};
     color: ${dynamicTheme((theme) => theme.fontColor.default)};
-    transition: color ${TransitionEnum.THEME};
+    transition: color ${TransitionEnum.DURATION};
 `)
 
 export const StyledEducations = styled.div`

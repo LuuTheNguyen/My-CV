@@ -21,10 +21,10 @@ export const StyledAbout = styled.div`
 
 export const StyledLabel = CreateStyledComponent(styled.span`
     color: ${dynamicTheme((theme) => theme.fontColor.default)};
-    transition: color ${TransitionEnum.THEME};
+    transition: color ${TransitionEnum.DURATION};
 `)
 
 export const StyledContent = CreateStyledComponent(styled.span`
     color: ${dynamicTheme((theme) => theme.fontColor.primary)};
-    transition: color ${TransitionEnum.THEME};
+    transition: color ${TransitionEnum.DURATION};
 `)

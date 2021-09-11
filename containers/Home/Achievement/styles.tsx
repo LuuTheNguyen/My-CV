@@ -17,14 +17,14 @@ export const StyledAchievement = CreateStyledComponent(styled.div`
         font-size: ${dynamicTheme((theme) => theme.fontSize.lg)};
         color: ${dynamicTheme((theme) => theme.fontColor.secondary)};
         font-weight: 600;
-        transition: color ${TransitionEnum.THEME};
+        transition: color ${TransitionEnum.DURATION};
     }
 
     span + span {
         font-size: ${dynamicTheme((theme) => theme.fontSize.md)};
         color: ${dynamicTheme((theme) => theme.fontColor.default)};
         margin-left: 0.4rem;
-        transition: color ${TransitionEnum.THEME};
+        transition: color ${TransitionEnum.DURATION};
     }
 
     ${ResponsiveMax('lg')} {

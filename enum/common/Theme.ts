@@ -4,5 +4,5 @@ export enum ThemeEnum {
 }
 
 export enum TransitionEnum {
-    THEME = '0.6s',
+    DURATION = '0.6s',
 }

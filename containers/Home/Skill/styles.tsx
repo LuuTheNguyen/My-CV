@@ -33,6 +33,7 @@ export const StyledProcessBar = CreateStyledComponent(styled(ProcessBar)`
     }
     .progress {
         height: ${(props) => `${props.height}px`};
+        background-color: ${dynamicTheme((theme) => theme.fontColor.tertiary)};
     }
     .progress-bar {
         background-color: ${dynamicTheme((theme) => theme.color.tertiary)};

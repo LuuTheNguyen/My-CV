@@ -10,7 +10,7 @@ export const StyledLanguage = CreateStyledComponent(styled.div`
     justify-content: space-evenly;
     color: ${dynamicTheme((theme) => theme.fontColor.default)};
     display: flex;
-    transition: color ${TransitionEnum.THEME};
+    transition: color ${TransitionEnum.DURATION};
 
     ${ResponsiveBetween('sm', 'lg')} {
         padding: 10px;
@@ -36,7 +36,7 @@ const animateProcessCirlce = (props: ProcessRingProp) => {
 export const StyledProcessRing = CreateStyledComponent(styled(ProcessRing)`
     text {
         text-anchor: middle;
-        font-size: ${dynamicTheme((theme) => theme.fontColor.default)};
+        font-size: ${dynamicTheme((theme) => theme.fontSize.sm)};
     }
     circle {
         transform: rotate(-90deg);
@@ -58,6 +58,6 @@ export const StyledWrapperProcessRing = styled.div`
 export const StyledTitleProcessRing = CreateStyledComponent(styled.div`
     color: ${dynamicTheme((theme) => theme.fontColor.default)};
     margin: auto auto;
-    font-size: ${dynamicTheme((theme) => theme.fontSize.xs)};
-    transition: color ${TransitionEnum.THEME};
+    font-size: ${dynamicTheme((theme) => theme.fontSize.sm)};
+    transition: color ${TransitionEnum.DURATION};
 `)

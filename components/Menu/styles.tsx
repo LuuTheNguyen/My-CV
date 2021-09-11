@@ -24,7 +24,7 @@ const StyledItemLinkImp = CreateStyledComponent(styled.a`
     color: ${dynamicTheme((theme) => theme.fontColor.default)};
     text-decoration: none;
     cursor: pointer;
-    transition: background-color ${TransitionEnum.THEME};
+    transition: background-color ${TransitionEnum.DURATION};
 
     &:hover {
         color: ${dynamicTheme((theme) => theme.fontColor.default)};
@@ -40,7 +40,7 @@ export const StyledWrapperMenuList = CreateStyledComponent(styled.div`
     flex-direction: column;
     justify-content: space-between;
     padding: 30px 0;
-    transition: background-color ${TransitionEnum.THEME};
+    transition: background-color ${TransitionEnum.DURATION};
 `)
 
 export const StyledContainerMenuList = styled.div`
@@ -60,7 +60,7 @@ export const StyledHeaderMenu = CreateStyledComponent(styled.div`
     justify-content: center;
     align-items: center;
     background-color: ${dynamicTheme((theme) => theme.color.primary)};
-    transition: background-color ${TransitionEnum.THEME};
+    transition: background-color ${TransitionEnum.DURATION};
     i {
         cursor: pointer;
     }
@@ -96,7 +96,7 @@ export const StyledWrapSwitchTheme = CreateStyledComponent(styled.div`
     transform: ${({ theme }) =>
         theme === ThemeEnum.DARK ? 'translateY(0)' : 'translateY(100%)'};
     cursor: pointer;
-    transition: ${TransitionEnum.THEME};
+    transition: ${TransitionEnum.DURATION};
 
     .material-icons {
         color: #fff;
@@ -110,5 +110,5 @@ export const StyledSlider = CreateStyledComponent(styled.div`
     border-radius: 20px;
     display: flex;
     justify-content: center;
-    transition: background-color ${TransitionEnum.THEME};
+    transition: background-color ${TransitionEnum.DURATION};
 `)

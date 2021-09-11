@@ -38,7 +38,7 @@ export const Theme: { [x in ThemeEnum]: ThemeOptions } = {
             default: '#fff',
             primary: '#adaea9',
             secondary: '#f5c147',
-            tertiary: '#e9ecef',
+            tertiary: '#c0c0ca',
         },
         color: {
             default: '#191923',
@@ -69,9 +69,9 @@ export const Theme: { [x in ThemeEnum]: ThemeOptions } = {
         },
         fontColor: {
             default: '#1e1e28',
-            primary: '#b9b9c1',
+            primary: '#7e7e8e',
             secondary: '#f46258',
-            tertiary: '#e9ecef',
+            tertiary: '#c0c0ca',
         },
         color: {
             default: '#f0f0f6',
