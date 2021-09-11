@@ -1,3 +1,2 @@
 export { About } from './About'
-export * from './interface'
-export * from './styles'
+export type { AboutProps } from './interface'

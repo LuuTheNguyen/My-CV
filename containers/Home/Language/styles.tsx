@@ -3,7 +3,7 @@ import { ResponsiveBetween } from 'style/Theme'
 import { ProcessRing } from './ProcessRing'
 import { ProcessRingProp } from './interface'
 import { utilProcessCircle } from './util'
-import { CreateStyledComponent, dynamicTheme, setTheme } from 'style/ultis'
+import { CreateStyledComponent, dynamicTheme } from 'style/ultis'
 import { TransitionEnum } from '@enum'
 
 export const StyledLanguage = CreateStyledComponent(styled.div`

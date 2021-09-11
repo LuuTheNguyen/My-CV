@@ -1,3 +1,2 @@
 export { Service } from './Service'
-export * from './interface'
-export * from './styles'
+export type { ServiceProps } from './interface'

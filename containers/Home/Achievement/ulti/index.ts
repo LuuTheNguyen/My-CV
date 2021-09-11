@@ -1,1 +1,1 @@
-export * from './countDown'
+export { ultiCountDown } from './countDown'

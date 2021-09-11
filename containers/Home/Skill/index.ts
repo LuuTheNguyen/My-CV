@@ -1,3 +1,2 @@
 export { Skill } from './Skill'
-export * from './styles'
-export * from './interface'
+export type { SkillProps } from './interface'

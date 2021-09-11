@@ -1,4 +1,4 @@
-import { Layout } from '@components/Layout/Layout'
+import { Layout } from '@components/Layout'
 import {
     StyledMain,
     StyledContainer,
@@ -16,7 +16,7 @@ import {
     StyledWrapperCloseButtonOffCanvas,
 } from './styles'
 
-import { Menu } from '@components/Menu/Menu'
+import { Menu } from '@components/Menu'
 
 import { Achievement } from './Achievement'
 import { Service } from './Service'

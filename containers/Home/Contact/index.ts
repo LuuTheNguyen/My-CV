@@ -1,3 +1,2 @@
 export { Contact } from './Contact'
-export * from './interface'
-export * from './styles'
+export type { ContactProps } from './interface'

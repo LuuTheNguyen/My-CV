@@ -1,4 +1,2 @@
 export { Achievement } from './Achievement'
-export * from './interface'
-export * from './styles'
-export * from './ulti'
+export type { AchievementProps } from './interface'
