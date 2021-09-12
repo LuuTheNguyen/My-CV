@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react'
+import { ultiCountDown } from '../Achievement/ulti'
 
-import type { ProcessRingProp } from './interface'
+import type { ProcessRingProps } from './interface'
 import { utilProcessCircle } from './util'
 
-export const ProcessRing: React.FC<ProcessRingProp> = ({
+export const ProcessRing: React.FC<ProcessRingProps> = ({
     width = 10,
     strokeWidth = 10,
     percent,
@@ -24,18 +25,10 @@ export const ProcessRing: React.FC<ProcessRingProp> = ({
         fontColor,
     })
     const [perValue, setPerValue] = useState(0)
-    const [count, setCount] = useState(0)
+    const count = ultiCountDown(percentValue)
 
     useEffect(() => {
-        setPerValue(count)
-
-        const countDown = setTimeout(() => {
-            setCount(count + 1)
-        }, 1000 / percentValue)
-
-        if (count == percentValue) {
-            clearTimeout(countDown)
-        }
+        setPerValue(count)       
     }, [count])
 
     // const temp = dynamicTheme(theme => theme.fontColor.third)

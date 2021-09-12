@@ -1,6 +1,6 @@
-import { ProcessRingProp } from '@containers/Home/Language'
+import { ProcessRingProps } from '@containers/Home/Language'
 
-export const utilProcessCircle = (props: ProcessRingProp) => {
+export const utilProcessCircle = (props: ProcessRingProps) => {
     const radius: number = props.width / 2 - props.strokeWidth * 2
     const circumference: number = radius * 2 * Math.PI
     const percentValue: number =

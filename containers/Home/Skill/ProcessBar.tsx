@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { ultiCountDown } from '../Achievement/ulti'
 import type { ProcessBarProps } from './interface'
 
 export const ProcessBar: React.FC<ProcessBarProps> = ({
@@ -7,15 +8,8 @@ export const ProcessBar: React.FC<ProcessBarProps> = ({
     percent = 100,
     height = 10,
 }) => {
-    const [count, setCount] = useState(0)
-    useEffect(() => {
-        const countDown = setTimeout(() => {
-            setCount(count + 1)
-        }, 1000 / percent)
-        if (count === percent) {
-            clearTimeout(countDown)
-        }
-    }, [count])
+    const count = ultiCountDown(percent)
+    
     return (
         <div className={className}>
             <div className="label">

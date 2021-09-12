@@ -1,7 +1,7 @@
 import styled, { css, keyframes } from 'styled-components'
 import { MediaPrint, ResponsiveBetween } from 'style/Theme'
 import { ProcessRing } from './ProcessRing'
-import { ProcessRingProp } from './interface'
+import { ProcessRingProps } from './interface'
 import { utilProcessCircle } from './util'
 import { CreateStyledComponent, dynamicTheme } from 'style/ultis'
 import { TransitionEnum } from '@enum'
@@ -17,7 +17,7 @@ export const StyledLanguage = CreateStyledComponent(styled.div`
     }
 `)
 
-const animateProcessCirlce = (props: ProcessRingProp) => {
+const animateProcessCirlce = (props: ProcessRingProps) => {
     const { circumference, offset } = utilProcessCircle(props)
 
     return keyframes`

@@ -1,8 +1,8 @@
 import Link from 'next/link'
-import type { StyledLinkProp } from './interface'
+import type { StyledLinkProps } from './interface'
 import { StyledItemLink } from './styles'
 
-export const StyledLink: React.FC<StyledLinkProp> = (props) => {
+export const StyledLink: React.FC<StyledLinkProps> = (props) => {
     return (
         <div className={props.className}>
             <Link href={props.href} passHref>

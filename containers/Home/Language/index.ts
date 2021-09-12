@@ -1,2 +1,2 @@
 export { Language } from './Language'
-export type { LanguageProps, ProcessRingProp } from './interface'
+export type { LanguageProps, ProcessRingProps } from './interface'

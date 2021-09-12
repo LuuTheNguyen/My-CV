@@ -9,7 +9,7 @@ export interface Props {
     language: LanguageProps[]
 }
 
-export interface ProcessRingProp {
+export interface ProcessRingProps {
     width: number
     strokeWidth: number
     percent?: number

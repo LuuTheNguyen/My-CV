@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 
-export const ultiCountDown = (counts: number) => {
+export const ultiCountDown = (counts: number = 1) => {
     const [count, setCount] = useState(0)
     useEffect(() => {
         const countDown = setTimeout(() => {
@@ -9,6 +9,7 @@ export const ultiCountDown = (counts: number) => {
         if (count === counts) {
             clearTimeout(countDown)
         }
+        return () => clearTimeout(countDown)
     }, [count])
     return count
 }

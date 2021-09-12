@@ -6,7 +6,7 @@ export interface Props {
     lib: LibProps[]
 }
 
-export interface ListLibProp {
+export interface ListLibProps {
     color?: string
     text: string
     className?: string
