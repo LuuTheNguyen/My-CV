@@ -3,7 +3,7 @@ import { StyledLink } from './StyledLink'
 import { CreateStyledComponent, dynamicTheme } from 'style/ultis'
 import { ThemeEnum, TransitionEnum, BoxShadowEnum } from '@enum/index'
 import React from 'react'
-import { Prop, Ref } from './interface'
+import { Props, Ref } from './interface'
 import { ResponsiveMax } from 'style/Theme'
 
 export const StyledMenuList = styled.div`
@@ -21,7 +21,7 @@ export const StyledMenuItem = styled(StyledLink)`
     font-weight: 600;
 `
 
-export const StyledItemLink = React.forwardRef<Ref, Prop>((props, ref) => {
+export const StyledItemLink = React.forwardRef<Ref, Props>((props, ref) => {
     return <StyledItemLinkImp {...props}> {props.children} </StyledItemLinkImp>
 })
 
@@ -55,8 +55,7 @@ export const StyledContainerMenuList = CreateStyledComponent(styled.div`
     width: fit-content;
     height: calc(100% - 20px);
     position: fixed;
-    box-shadow: ${BoxShadowEnum.SQUARE}
-        ${dynamicTheme((theme) => theme.color.default)};
+    box-shadow: ${BoxShadowEnum.SQUARE} ${dynamicTheme((theme) => theme.color.default)};
 `)
 
 export const StyledHeaderMenu = CreateStyledComponent(styled.div`
@@ -99,10 +98,8 @@ export const StyledWrapSwitchTheme = CreateStyledComponent(styled.div`
     justify-content: center;
     align-items: center;
     padding: 5px;
-    box-shadow: ${BoxShadowEnum.CIRCLE}
-        ${dynamicTheme((theme) => theme.fontColor.secondary)};
-    transform: ${({ theme }) =>
-        theme === ThemeEnum.DARK ? 'translateY(0)' : 'translateY(100%)'};
+    box-shadow: ${BoxShadowEnum.CIRCLE} ${dynamicTheme((theme) => theme.fontColor.secondary)};
+    transform: ${({ theme }) => theme === ThemeEnum.DARK ? 'translateY(0)' : 'translateY(100%)'};
     cursor: pointer;
     transition: ${TransitionEnum.DURATION};
 
@@ -119,8 +116,7 @@ export const StyledSlider = CreateStyledComponent(styled.div`
     display: flex;
     justify-content: center;
     transition: background-color ${TransitionEnum.DURATION};
-    box-shadow: ${BoxShadowEnum.CIRCLE}
-        ${dynamicTheme((theme) => theme.color.default)};
+    box-shadow: ${BoxShadowEnum.CIRCLE} ${dynamicTheme((theme) => theme.color.default)};
 `)
 
 export const StyledWrapperMenuItem = styled.div`
