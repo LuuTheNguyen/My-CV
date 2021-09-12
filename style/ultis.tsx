@@ -23,7 +23,7 @@ export const dynamicTheme: DynamicThemeFunc =
 export const CreateStyledComponent: CreateStyledComponentFunc = (
     StyledComponents
 ) => {
-    const result = (props: any, ref: any) => {
+    const result = (props: any) => {
         const { theme } = useContext(ThemeContext)
         const componentProps: any = {
             ...props,

@@ -1,5 +1,5 @@
-import styled, { keyframes } from 'styled-components'
-import { ResponsiveBetween } from 'style/Theme'
+import styled, { css, keyframes } from 'styled-components'
+import { MediaPrint, ResponsiveBetween } from 'style/Theme'
 import { ProcessRing } from './ProcessRing'
 import { ProcessRingProp } from './interface'
 import { utilProcessCircle } from './util'
@@ -43,7 +43,16 @@ export const StyledProcessRing = CreateStyledComponent(styled(ProcessRing)`
         transform-origin: 50% 50%;
     }
     circle.processCircle {
-        animation: ${(props) => animateProcessCirlce(props)} 1s linear 1;
+        animation: ${(props) =>
+            css`
+                ${animateProcessCirlce(props)} 1s linear 1
+            `};
+    }
+
+    ${MediaPrint} {
+        circle.processCircle {
+            animation: unset;
+        }
     }
 `)
 

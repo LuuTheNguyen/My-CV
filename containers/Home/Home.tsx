@@ -13,10 +13,12 @@ import {
     StyledSubTitleContent,
     StyledContainerService,
     StyledContainerEducation,
-    StyledWrapperCloseButtonOffCanvas,
+    StyledWrapperCloseButtonOffCanvasLeft,
+    StyledWrapperBtnNavBar,
+    StyledWrapperCloseButtonOffCanvasRight,
 } from './styles'
 
-import { Menu } from '@components/Menu'
+import { Menu, MenuList } from '@components/Menu'
 
 import { Achievement } from './Achievement'
 import { Service } from './Service'
@@ -40,23 +42,36 @@ export const HomePage: React.FC = () => {
                                 <>
                                     {!isPrintMode && (
                                         <StyledNavBar className="col-12">
-                                            <button
-                                                className="btn text-reset"
-                                                type="button"
-                                                data-bs-toggle="offcanvas"
-                                                data-bs-target="#offcanvasLeft"
-                                                aria-controls="offcanvasLeft">
-                                                <span className="material-icons">
-                                                    more_vert
-                                                </span>
-                                            </button>
+                                            <StyledWrapperBtnNavBar>
+                                                <button
+                                                    className="btn text-reset"
+                                                    type="button"
+                                                    data-bs-toggle="offcanvas"
+                                                    data-bs-target="#offcanvasLeft"
+                                                    aria-controls="offcanvasLeft">
+                                                    <span className="material-icons">
+                                                        more_vert
+                                                    </span>
+                                                </button>
+
+                                                <button
+                                                    className="btn text-reset"
+                                                    type="button"
+                                                    data-bs-toggle="offcanvas"
+                                                    data-bs-target="#offcanvasRight"
+                                                    aria-controls="offcanvasRight">
+                                                    <span className="material-icons">
+                                                        menu
+                                                    </span>
+                                                </button>
+                                            </StyledWrapperBtnNavBar>
 
                                             <div
                                                 className="offcanvas offcanvas-start"
                                                 tabIndex={-1}
                                                 id="offcanvasLeft"
                                                 aria-labelledby="offcanvasLeftLabel">
-                                                <StyledWrapperCloseButtonOffCanvas>
+                                                <StyledWrapperCloseButtonOffCanvasLeft>
                                                     <button
                                                         type="button"
                                                         className="btn text-reset"
@@ -66,8 +81,27 @@ export const HomePage: React.FC = () => {
                                                             more_vert
                                                         </span>
                                                     </button>
-                                                </StyledWrapperCloseButtonOffCanvas>
+                                                </StyledWrapperCloseButtonOffCanvasLeft>
                                                 <SideBar data={headData} />
+                                            </div>
+
+                                            <div
+                                                className="offcanvas offcanvas-end"
+                                                tabIndex={-1}
+                                                id="offcanvasRight"
+                                                aria-labelledby="offcanvasRightLabel">
+                                                <StyledWrapperCloseButtonOffCanvasRight>
+                                                    <button
+                                                        type="button"
+                                                        className="btn text-reset"
+                                                        data-bs-dismiss="offcanvas"
+                                                        aria-label="Close">
+                                                        <span className="material-icons">
+                                                            close
+                                                        </span>
+                                                    </button>
+                                                </StyledWrapperCloseButtonOffCanvasRight>
+                                                <MenuList />
                                             </div>
                                         </StyledNavBar>
                                     )}
@@ -129,7 +163,7 @@ export const HomePage: React.FC = () => {
                                 </StyledWrapperContent>
                             </StyledWrapperInfo>
                         </StyledInfo>
-                        <Menu />
+                        {!isPrintMode && <Menu />}
                     </div>
                 </StyledMain>
             </StyledContainer>

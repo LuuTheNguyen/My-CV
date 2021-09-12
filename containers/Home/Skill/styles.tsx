@@ -1,5 +1,5 @@
 import styled, { keyframes } from 'styled-components'
-import { ResponsiveBetween } from 'style/Theme'
+import { MediaPrint, ResponsiveBetween } from 'style/Theme'
 import { ProcessBar } from './ProcessBar'
 import { CreateStyledComponent, dynamicTheme } from 'style/ultis'
 
@@ -40,5 +40,11 @@ export const StyledProcessBar = CreateStyledComponent(styled(ProcessBar)`
         width: ${(props) => `${props.percent}%`};
         max-width: ${(props) => `${props.percent}%`};
         animation: ${animateWidthProcess} 1s linear 1;
+    }
+
+    ${MediaPrint} {
+        .progress-bar {
+            animation: unset;
+        }
     }
 `)

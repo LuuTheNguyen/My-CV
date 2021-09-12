@@ -74,7 +74,7 @@ export const Theme: { [x in ThemeEnum]: ThemeOptions } = {
             tertiary: '#c0c0ca',
         },
         color: {
-            default: '#f0f0f6',
+            default: '#e0e0e6',
             primary: '#ffffff',
             secondary: '#f4f4f6',
             tertiary: '#f46258',
@@ -82,7 +82,7 @@ export const Theme: { [x in ThemeEnum]: ThemeOptions } = {
         hover: {
             Font: {
                 default: {
-                    color: '#fafafc',
+                    color: '#1e1e28',
                     textShadow: '0 0 3px rgb(250 250 252 / 40%)',
                 },
             },

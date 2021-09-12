@@ -1,23 +1,28 @@
 import styled from 'styled-components'
 import { StyledLink } from './StyledLink'
 import { CreateStyledComponent, dynamicTheme } from 'style/ultis'
-import { ThemeEnum, TransitionEnum } from '@enum/index'
+import { ThemeEnum, TransitionEnum, BoxShadowEnum } from '@enum/index'
 import React from 'react'
 import { Prop, Ref } from './interface'
+import { ResponsiveMax } from 'style/Theme'
 
 export const StyledMenuList = styled.div`
     display: flex;
     justify-content: flex-end;
     height: 100vh;
     padding: 0;
+
+    ${ResponsiveMax('lg')} {
+        display: none;
+    }
 `
 
 export const StyledMenuItem = styled(StyledLink)`
-    transform: rotate(90deg);
+    font-weight: 600;
 `
 
 export const StyledItemLink = React.forwardRef<Ref, Prop>((props, ref) => {
-    return <StyledItemLinkImp> {props.children} </StyledItemLinkImp>
+    return <StyledItemLinkImp {...props}> {props.children} </StyledItemLinkImp>
 })
 
 const StyledItemLinkImp = CreateStyledComponent(styled.a`
@@ -43,15 +48,16 @@ export const StyledWrapperMenuList = CreateStyledComponent(styled.div`
     transition: background-color ${TransitionEnum.DURATION};
 `)
 
-export const StyledContainerMenuList = styled.div`
+export const StyledContainerMenuList = CreateStyledComponent(styled.div`
     display: flex;
     flex-direction: column;
     align-items: flex-end;
     width: fit-content;
-    height: 100%;
+    height: calc(100% - 20px);
     position: fixed;
-    box-shadow: 0 3px 8px 0 rgb(15 15 20 / 20%);
-`
+    box-shadow: ${BoxShadowEnum.SQUARE}
+        ${dynamicTheme((theme) => theme.color.default)};
+`)
 
 export const StyledHeaderMenu = CreateStyledComponent(styled.div`
     min-width: 50px;
@@ -74,6 +80,7 @@ export const StyledContainerMenuItem = styled.div`
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
+    position: relative;
 `
 
 export const StyledContainerSwitchTheme = styled.div`
@@ -92,7 +99,8 @@ export const StyledWrapSwitchTheme = CreateStyledComponent(styled.div`
     justify-content: center;
     align-items: center;
     padding: 5px;
-    box-shadow: 0 0px 15px ${dynamicTheme((theme) => theme.color.primary)};
+    box-shadow: ${BoxShadowEnum.CIRCLE}
+        ${dynamicTheme((theme) => theme.fontColor.secondary)};
     transform: ${({ theme }) =>
         theme === ThemeEnum.DARK ? 'translateY(0)' : 'translateY(100%)'};
     cursor: pointer;
@@ -111,4 +119,22 @@ export const StyledSlider = CreateStyledComponent(styled.div`
     display: flex;
     justify-content: center;
     transition: background-color ${TransitionEnum.DURATION};
+    box-shadow: ${BoxShadowEnum.CIRCLE}
+        ${dynamicTheme((theme) => theme.color.default)};
 `)
+
+export const StyledWrapperMenuItem = styled.div`
+    position: absolute;
+    transform: rotate(90deg) translateX(50%);
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-gap: 10px;
+    justify-content: flex-start;
+    align-items: center;
+    width: calc(100vh - 150px);
+    overflow: auto;
+
+    ::-webkit-scrollbar {
+        display: none;
+    }
+`

@@ -3,6 +3,7 @@ export interface StyledLinkProp {
     className?: string
     href: string
     text: string
+    ref: any
 }
 
 export type Prop = { children: ReactNode }

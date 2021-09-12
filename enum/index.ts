@@ -1,1 +1,1 @@
-export { ThemeEnum, TransitionEnum } from './common/Theme'
+export { ThemeEnum, TransitionEnum, BoxShadowEnum } from './common/Theme'

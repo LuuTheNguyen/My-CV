@@ -6,7 +6,7 @@ export const StyledLink: React.FC<StyledLinkProp> = (props) => {
     return (
         <div className={props.className}>
             <Link href={props.href} passHref>
-                <StyledItemLink>{props.text}</StyledItemLink>
+                <StyledItemLink ref={props.ref}>{props.text}</StyledItemLink>
             </Link>
         </div>
     )

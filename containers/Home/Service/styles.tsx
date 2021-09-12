@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 import { ResponsiveMax } from 'style/Theme'
 import { CreateStyledComponent, dynamicTheme } from 'style/ultis'
+import { BoxShadowEnum } from '@enum'
 
 export const StyledWrapperService = styled.div`
     display: grid;
@@ -22,6 +23,8 @@ export const StyledService = CreateStyledComponent(styled.div`
     justify-content: flex-start;
     background-color: ${dynamicTheme((theme) => theme.color.primary)};
     min-height: 250px;
+    box-shadow: ${BoxShadowEnum.SQUARE}
+        ${dynamicTheme((theme) => theme.color.default)};
 
     ${ResponsiveMax('lg')} {
         width: 100%;
