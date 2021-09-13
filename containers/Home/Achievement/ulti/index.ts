@@ -1,0 +1,1 @@
+export { ultiCountDown } from './countDown'

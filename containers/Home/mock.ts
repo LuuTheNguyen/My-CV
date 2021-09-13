@@ -1,6 +1,6 @@
 export const achieveData = [
-    { label: '2 +', content: 'Years Experience' },
-    { label: '9', content: 'Complete Projects' },
+    { counts: 2, label: '+', content: 'Years Experience' },
+    { counts: 9, content: 'Complete Projects' },
 ]
 
 export const serviceData = [
@@ -41,10 +41,10 @@ export const serviceData = [
 
 export const languageData = [
     { label: 'Viet Nam', percent: 100 },
-    { label: 'City', percent: 50 },
+    { label: 'English', percent: 50 },
 ]
 export const contactData = [
-    { label: 'Phone', content: '(+84)829549118' },
+    { label: 'Phone', content: '(+84) 829549118' },
     { label: 'Skype', content: 'nguyenluu121094' },
 ]
 export const libData = [
@@ -85,9 +85,9 @@ export const data = {
 }
 
 export const contentData = {
-    achieves: data.achieves,
-    services: data.services,
-    educations: data.educations,
+    achieve: data.achieves,
+    service: data.services,
+    education: data.educations,
 }
 export const headData = {
     languages: data.languages,

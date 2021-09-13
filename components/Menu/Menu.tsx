@@ -1,20 +1,19 @@
+import React from 'react'
 import {
     StyledMenuList,
-    StyledWrapperMenuList,
     StyledHeaderMenu,
     StyledContainerMenuList,
-    StyledMenuItem,
 } from './styles'
+
+import { MenuList } from './MenuList'
 export const Menu: React.FC = () => {
     return (
         <StyledMenuList className="col-1">
             <StyledContainerMenuList>
                 <StyledHeaderMenu>
-                    <i className="bi bi-list"></i>
+                    <span className="material-icons">menu</span>
                 </StyledHeaderMenu>
-                <StyledWrapperMenuList>
-                    <StyledMenuItem href="/" text="HOME" />
-                </StyledWrapperMenuList>
+                <MenuList />
             </StyledContainerMenuList>
         </StyledMenuList>
     )

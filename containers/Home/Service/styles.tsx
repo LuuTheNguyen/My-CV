@@ -1,11 +1,7 @@
 import styled from 'styled-components'
-import {
-    BackGroundColor,
-    FontColor,
-    GridBreakpoints,
-    FontSize,
-    ResponsiveMax,
-} from 'style/Theme'
+import { ResponsiveMax } from 'style/Theme'
+import { CreateStyledComponent, dynamicTheme } from 'style/ultis'
+import { BoxShadowEnum } from '@enum'
 
 export const StyledWrapperService = styled.div`
     display: grid;
@@ -20,25 +16,27 @@ export const StyledWrapperService = styled.div`
     }
 `
 
-export const StyledService = styled.div`
+export const StyledService = CreateStyledComponent(styled.div`
     padding: 15px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    background-color: ${BackGroundColor.primary};
+    background-color: ${dynamicTheme((theme) => theme.color.primary)};
     min-height: 250px;
+    box-shadow: ${BoxShadowEnum.SQUARE}
+        ${dynamicTheme((theme) => theme.color.default)};
 
     ${ResponsiveMax('lg')} {
         width: 100%;
     }
-`
+`)
 
-export const StyledHeaderService = styled.span`
-    color: ${FontColor.default};
+export const StyledHeaderService = CreateStyledComponent(styled.span`
+    color: ${dynamicTheme((theme) => theme.fontColor.default)};
     text-transform: capitalize;
     display: flex;
     flex-direction: column;
-`
+`)
 
 export const StyledHeaderTitleService = styled.span`
     font-weight: 600;
@@ -48,9 +46,9 @@ export const StyledHeaderSubTitleService = styled.span`
     font-weight: normal;
 `
 
-export const StyledContentService = styled.div`
-    color: ${FontColor.primary};
-    font-size: ${FontSize.sm};
+export const StyledContentService = CreateStyledComponent(styled.div`
+    color: ${dynamicTheme((theme) => theme.fontColor.primary)};
+    font-size: ${dynamicTheme((theme) => theme.fontSize.sm)};
     margin-top: 10px;
     span {
         text-transform: capitalize;
@@ -62,10 +60,10 @@ export const StyledContentService = styled.div`
         font-weight: normal;
         font-style: normal;
     }
-`
+`)
 
-export const StyledCompany = styled.div`
-    color: ${FontColor.secondary};
+export const StyledCompany = CreateStyledComponent(styled.div`
+    color: ${dynamicTheme((theme) => theme.fontColor.secondary)};
     font-weight: 600px;
     text-transform: uppercase;
     display: flex;
@@ -75,14 +73,14 @@ export const StyledCompany = styled.div`
         padding: 0;
     }
     & .material-icons {
-        font-size: ${FontSize.md};
+        font-size: ${dynamicTheme((theme) => theme.fontSize.md)};
         cursor: pointer;
     }
     & a {
         margin-left: 5px;
-        color: ${FontColor.secondary};
+        color: ${dynamicTheme((theme) => theme.fontColor.secondary)};
         display: flex;
         align-items: center;
         text-decoration: none;
     }
-`
+`)

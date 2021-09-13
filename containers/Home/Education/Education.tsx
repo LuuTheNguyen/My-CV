@@ -1,12 +1,16 @@
 import { StyledEducations, StyledEducationItem } from './styles'
-import { Prop } from './interface'
+import type { Props, EducationProps } from './interface'
 
-export const Education: React.FC<Prop> = ({ educations }) => {
+export const Education: React.FC<Props> = ({ education }) => {
     return (
         <StyledEducations>
-            <StyledEducationItem>{educations.graduated}</StyledEducationItem>
-            <StyledEducationItem>{educations.university}</StyledEducationItem>
-            <StyledEducationItem>{educations.majors}</StyledEducationItem>
+            {(Object.keys(education) as Array<keyof EducationProps>).map(
+                (key, index) => (
+                    <StyledEducationItem key={index}>
+                        {education[key]}
+                    </StyledEducationItem>
+                )
+            )}
         </StyledEducations>
     )
 }

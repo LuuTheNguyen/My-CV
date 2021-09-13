@@ -1,37 +1,58 @@
-import { BackGroundColor, FontColor, GridBreakpoints } from 'style/Theme'
+import { useEffect, useState } from 'react'
+import { ultiCountDown } from '../Achievement/ulti'
 
-interface ProcessRingProp {
-    width: number
-    strokeWidth: number
-    percent?: number
-    className?: string
-    stroke: string
-}
+import type { ProcessRingProps } from './interface'
+import { utilProcessCircle } from './util'
 
-export const ProcessRing: React.FC<ProcessRingProp> = ({
+export const ProcessRing: React.FC<ProcessRingProps> = ({
     width = 10,
     strokeWidth = 10,
     percent,
     className,
     stroke = '10',
+    strokeBackground,
+    fontColor,
 }) => {
     /**TODO: link for example processRing */
     /* https://codepen.io/jeremenichelli/pen/vegymB */
-    const radius: number = width / 2 - strokeWidth * 2
-    const circumference: number = radius * 2 * Math.PI
-    const percentValue: number =
-        percent && percent > 0 && percent < 101 ? percent : 100
-    const offset: number = circumference - (percentValue / 100) * circumference
+    const { radius, circumference, percentValue, offset } = utilProcessCircle({
+        width,
+        strokeWidth,
+        percent,
+        className,
+        stroke,
+        strokeBackground,
+        fontColor,
+    })
+    const [perValue, setPerValue] = useState(0)
+    const count = ultiCountDown(percentValue)
+
+    useEffect(() => {
+        setPerValue(count)       
+    }, [count])
+
+    // const temp = dynamicTheme(theme => theme.fontColor.third)
     return (
         <svg className={className} width={width} height={width}>
             <text
                 x={width / 2}
                 y={width / 2 + width / 10}
                 fontSize={width / 4}
-                fill={`${FontColor.default}`}>
-                {percentValue}%
+                fill={fontColor}>
+                {perValue}%
             </text>
+
             <circle
+                stroke={strokeBackground}
+                strokeWidth={strokeWidth}
+                fill="transparent"
+                r={radius}
+                cx={width / 2}
+                cy={width / 2}
+            />
+
+            <circle
+                className="processCircle"
                 stroke={stroke}
                 strokeWidth={strokeWidth}
                 fill="transparent"

@@ -11,7 +11,8 @@ module.exports = {
                     ...config.resolve.alias,
                     '@components': path.resolve((__dirname, 'components/')),
                     '@containers': path.resolve((__dirname, 'containers/')),
-                    '@utils': path.resolve((__dirname, 'utils/')),
+                    '@enum': path.resolve((__dirname, 'enum/')),
+                    '@context': path.resolve((__dirname, 'context/')),
                 },
             },
         }

@@ -1,9 +1,9 @@
-export interface EducationProp {
+export interface EducationProps {
     graduated: string
     university: string
     majors: string
 }
 
-export interface Prop {
-    educations: EducationProp
+export interface Props {
+    education: EducationProps
 }

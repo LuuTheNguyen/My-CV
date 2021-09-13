@@ -1,8 +1,12 @@
-import { useIsPrintMode } from 'hooks'
+import { ThemeProvider as CustomThemeProvider } from 'context/ThemeContext'
 import type { AppProps } from 'next/app'
-import '../style/style.css'
+import { ThemeProvider } from 'styled-components'
 
-function MyApp({ Component, pageProps }: AppProps) {
-    return <Component {...pageProps} />
+const MyApp = ({ Component, pageProps }: AppProps) => {
+    return (
+        <CustomThemeProvider>
+            <Component {...pageProps} />
+        </CustomThemeProvider>
+    )
 }
 export default MyApp

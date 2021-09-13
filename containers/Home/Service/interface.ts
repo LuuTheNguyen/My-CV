@@ -8,6 +8,6 @@ export interface ServiceProps {
     companyHref: string
 }
 
-export interface Prop {
-    services: ServiceProps[]
+export interface Props {
+    service: ServiceProps[]
 }

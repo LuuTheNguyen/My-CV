@@ -10,6 +10,6 @@ export interface SkillProps {
     percent: number
 }
 
-export interface Prop {
-    skills: SkillProps[]
+export interface Props {
+    skill: SkillProps[]
 }

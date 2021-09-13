@@ -1,10 +1,10 @@
 import { StyledContact } from './styles'
-import { ContactProps, Prop } from './interface'
+import type { Props } from './interface'
 
-export const Contact: React.FC<Prop> = ({ contacts }) => {
+export const Contact: React.FC<Props> = ({ contact }) => {
     return (
         <>
-            {contacts.map((item, index) => (
+            {contact.map((item, index) => (
                 <StyledContact key={index}>
                     <span>{item.label}:</span>
                     <span>{item.content}</span>

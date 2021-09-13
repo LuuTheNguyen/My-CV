@@ -1,10 +1,7 @@
 import styled from 'styled-components'
-import {
-    BackGroundColor,
-    FontColor,
-    GridBreakpoints,
-    ResponsiveBetween,
-} from 'style/Theme'
+import { ResponsiveBetween } from 'style/Theme'
+import { CreateStyledComponent, dynamicTheme } from 'style/ultis'
+import { TransitionEnum } from '@enum'
 
 export const StyledAbout = styled.div`
     display: flex;
@@ -20,12 +17,14 @@ export const StyledAbout = styled.div`
         display: flex;
         justify-content: space-between;
     }
-
-    & span {
-        color: ${FontColor.default};
-    }
-
-    & span + span {
-        color: ${FontColor.primary};
-    }
 `
+
+export const StyledLabel = CreateStyledComponent(styled.span`
+    color: ${dynamicTheme((theme) => theme.fontColor.default)};
+    transition: color ${TransitionEnum.DURATION};
+`)
+
+export const StyledContent = CreateStyledComponent(styled.span`
+    color: ${dynamicTheme((theme) => theme.fontColor.primary)};
+    transition: color ${TransitionEnum.DURATION};
+`)

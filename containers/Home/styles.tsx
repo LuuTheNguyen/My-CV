@@ -1,47 +1,69 @@
 import {
-    BackGroundColor,
-    FontColor,
-    GridBreakpoints,
-    FontSize,
     ResponsiveBetween,
     ResponsiveMax,
-    ResponsiveMin,
     MediaPrint,
+    ResponsiveMin,
 } from 'style/Theme'
 import styled from 'styled-components'
 import Image from 'next/image'
+import { CreateStyledComponent, dynamicTheme } from 'style/ultis'
+import {
+    StyledMenuItem,
+    StyledWrapperMenuItem,
+    StyledContainerSwitchTheme,
+} from '@components/Menu'
+import { BoxShadowEnum } from '@enum/index'
 
-export const StyledMain = styled.main`
+export const StyledMain = CreateStyledComponent(styled.main`
     height: auto;
     width: 100%;
-    background-color: ${BackGroundColor.default};
-    color: ${FontColor.default};
+    background-color: ${dynamicTheme((theme) => theme.color.secondary)};
+    color: ${dynamicTheme((theme) => theme.fontColor.default)};
     margin: 0;
-    padding: 10px;
+    padding: 0;
     align-items: center;
     justify-content: center;
 
     ${ResponsiveMax('lg')} {
         flex-direction: row;
         display: flex;
+        padding: 0;
     }
 
-    ${MediaPrint}{        
-        background-color: ${BackGroundColor.default};
-        color: ${FontColor.default};
+    ${MediaPrint} {
+        background-color: ${dynamicTheme((theme) => theme.color.default)};
+        color: ${dynamicTheme((theme) => theme.fontColor.default)};
     }
-`
 
-export const StyledContainer = styled.div`
+    .row {
+        margin: 0;
+    }
+`)
+
+export const StyledContainer = CreateStyledComponent(styled.div`
     min-height: 100vh;
     height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: ${BackGroundColor.default};
+    background-color: ${dynamicTheme((theme) => theme.color.default)};
+    ${ResponsiveMin('lg')} {
+        padding: 10px;
+    }
+`)
+
+export const StyledInfo = styled.div`
+    display: flex;
+    flex-direction: row;
+    padding: 0;
+
+    ${ResponsiveMax('lg')} {
+        flex-direction: column;
+        width: 100%;
+    }
 `
 
-const StyledInfo = styled.div`
+export const StyledWrapperInfo = styled.div`
     display: flex;
     flex-direction: row;
 
@@ -50,36 +72,28 @@ const StyledInfo = styled.div`
     }
 `
 
-const StyledWrapperInfo = styled.div`
-    display: flex;
-    flex-direction: row;
-
-    ${ResponsiveMax('lg')} {
-        flex-direction: column;
-    }
-`
-
-export { StyledInfo, StyledWrapperInfo }
-
-export const StyledWrapperHead = styled.div`
+export const StyledWrapperHead = CreateStyledComponent(styled.div`
+    box-shadow: ${BoxShadowEnum.SQUARE}
+        ${dynamicTheme((theme) => theme.color.default)};
+    padding: 0;
     ${ResponsiveMax('lg')} {
         width: auto;
         display: none;
 
-        &.show{
+        &.show {
             display: block;
         }
     }
-`
+`)
 
-export const StyledAboutHead = styled.div`
-    background-color: ${BackGroundColor.primary};
+export const StyledAboutHead = CreateStyledComponent(styled.div`
+    background-color: ${dynamicTheme((theme) => theme.color.primary)};
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 20px;
     flex-direction: column;
-`
+`)
 
 export const StyledWrapperImage = styled.div`
     width: 80px;
@@ -95,70 +109,127 @@ export const StyledIcon = styled(Image)`
     }
     position: relative;
 `
-export const StyledName = styled.span`
-    font-size: ${FontSize.sm};
-    color: ${FontColor.default};
+export const StyledName = CreateStyledComponent(styled.span`
+    font-size: ${dynamicTheme((theme) => theme.fontSize.sm)};
+    color: ${dynamicTheme((theme) => theme.fontColor.default)};
     font-weight: 600;
-`
+`)
 
-export const StyledDescription = styled.span`
-    font-size: ${FontSize.xs};
-    color: ${FontColor.primary};
-`
+export const StyledDescription = CreateStyledComponent(styled.span`
+    font-size: ${dynamicTheme((theme) => theme.fontSize.xs)};
+    color: ${dynamicTheme((theme) => theme.fontColor.primary)};
+`)
 
-export const StyledAboutBody = styled.div`
-    background-color: ${BackGroundColor.secondary};
+export const StyledAboutBody = CreateStyledComponent(styled.div`
+    background-color: ${dynamicTheme((theme) => theme.color.secondary)};
     padding: 20px;
     display: grid;
     ${ResponsiveBetween('sm', 'lg')} {
-        grid-template-columns: 50% 50%
+        grid-template-columns: auto;
     }
-`
+`)
 
-export const StyledDownloadCV = styled.div`
-    color: ${FontColor.primary};
+export const StyledDownloadCV = CreateStyledComponent(styled.div`
+    color: ${dynamicTheme((theme) => theme.fontColor.primary)};
     text-transform: uppercase;
     font-weight: 600;
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-gap: 10px;
 
     ${ResponsiveBetween('sm', 'lg')} {
         padding: 10px;
     }
 
-    i {
-        font-size: ${FontSize.xs};
+    a {
+        text-decoration: none;
+        color: ${dynamicTheme((theme) => theme.fontColor.primary)};
+        display: flex;
+        align-items: center;
+        font-size: ${dynamicTheme((theme) => theme.fontSize.xs)};
     }
-`
 
-export const StyledAboutFooter = styled.div`
-    background-color: ${BackGroundColor.primary};
+    a:hover {
+        color: ${dynamicTheme((theme) => theme.hover.Font.default.color)};
+        text-shadow: ${dynamicTheme(
+            (theme) => theme.hover.Font.default.textShadow
+        )};
+    }
+
+    i {
+        font-size: ${dynamicTheme((theme) => theme.fontSize.xs)};
+    }
+
+    .material-icons {
+        font-size: ${dynamicTheme((theme) => theme.fontSize.md)};
+    }
+`)
+
+export const StyledAboutFooter = CreateStyledComponent(styled.div`
+    background-color: ${dynamicTheme((theme) => theme.color.primary)};
     display: flex;
     align-items: center;
     flex-wrap: wrap;
-`
+    padding: 20px;
+`)
 
-export const StyledNavBar = styled.div`
+export const StyledNavBar = CreateStyledComponent(styled.div`
     display: none;
-    background-color: ${BackGroundColor.default};
+    background-color: ${dynamicTheme((theme) => theme.color.default)};
 
     ${ResponsiveMax('lg')} {
         display: block;
+        position: fixed;
     }
 
     .offcanvas {
-        background-color: ${BackGroundColor.primary};
-        .material-icons {
-            color: ${FontColor.default};
+        height: 100vh;
+        overflow-y: auto;
+        background-color: ${dynamicTheme((theme) => theme.color.secondary)};
+    }
+
+    ${StyledDownloadCV} {
+        a {
+            color: ${dynamicTheme((theme) => theme.fontColor.primary)};
+            font-size: ${dynamicTheme((theme) => theme.fontSize.xs)};
         }
-        .text-reset {
-            text-align: end;
+
+        a:hover {
+            color: ${dynamicTheme((theme) => theme.hover.Font.default.color)};
+            text-shadow: ${dynamicTheme(
+                (theme) => theme.hover.Font.default.textShadow
+            )};
+        }
+
+        .material-icons {
+            color: ${dynamicTheme((theme) => theme.fontColor.primary)};
         }
     }
-`
+
+    #offcanvasRight {
+        ${StyledWrapperMenuItem} {
+            transform: rotate(0deg);
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            padding: 10px;
+        }
+
+        ${StyledMenuItem} {
+            font-weight: 600;
+        }
+
+        ${StyledContainerSwitchTheme} {
+            transform: rotate(90deg);
+        }
+    }
+`)
 
 export const StyledWrapperContent = styled.div`
     padding: 30px;
-    ${ResponsiveBetween('sm', 'lg')} {
+    ${ResponsiveMax('lg')} {
         width: auto;
+        padding-top: 60px;
     }
 `
 
@@ -170,21 +241,30 @@ export const StyledBannerContent = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    ${ResponsiveBetween('sm', 'lg')} {
+        padding: 0;
+    }
 `
 
-export const StyledTitleContent = styled.h4`
-    color: ${FontColor.default};
+export const StyledTitleContent = CreateStyledComponent(styled.h4`
+    color: ${dynamicTheme((theme) => theme.fontColor.default)};
     text-transform: uppercase;
     font-weight: 600;
-`
+`)
 
-export const StyledSubTitleContent = styled.div`
-    color: ${FontColor.default};
+export const StyledSubTitleContent = CreateStyledComponent(styled.div`
+    color: ${dynamicTheme((theme) => theme.fontColor.default)};
     .code {
-        color: ${FontColor.secondary};
+        color: ${dynamicTheme((theme) => theme.fontColor.secondary)};
     }
     button {
-        background-color: ${BackGroundColor.third};
+        background-color: ${dynamicTheme((theme) => theme.color.tertiary)};
+    }
+
+    button:hover {
+        transform: ${dynamicTheme(
+            (theme) => theme.hover.Button.default.transform
+        )};
     }
 
     a {
@@ -192,7 +272,7 @@ export const StyledSubTitleContent = styled.div`
         color: inherit;
         font-weight: 600;
     }
-`
+`)
 
 export const StyledContainerService = styled.div`
     display: flex;
@@ -209,4 +289,23 @@ export const StyledWrapperMain = styled.div`
 export const StyledContainerEducation = styled.div`
     display: flex;
     flex-direction: column;
+`
+
+export const StyledWrapperCloseButtonOffCanvasLeft =
+    CreateStyledComponent(styled.div`
+        display: flex;
+        justify-content: flex-end;
+        background-color: ${dynamicTheme((theme) => theme.color.primary)};
+    `)
+
+export const StyledWrapperCloseButtonOffCanvasRight =
+    CreateStyledComponent(styled.div`
+        display: flex;
+        justify-content: flex-start;
+        background-color: ${dynamicTheme((theme) => theme.color.primary)};
+    `)
+
+export const StyledWrapperBtnNavBar = styled.div`
+    display: flex;
+    justify-content: space-between;
 `

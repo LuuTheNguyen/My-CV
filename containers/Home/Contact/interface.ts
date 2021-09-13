@@ -3,6 +3,6 @@ export interface ContactProps {
     content: string
 }
 
-export interface Prop {
-    contacts: ContactProps[]
+export interface Props {
+    contact: ContactProps[]
 }

@@ -1,8 +1,9 @@
 export interface AchievementProps {
-    label: string
+    label?: string
     content: string
+    counts: number
 }
 
-export interface Prop {
-    achieves: AchievementProps[]
+export interface Props {
+    achieve: AchievementProps[]
 }
