@@ -1,17 +1,8 @@
-import {
-    ResponsiveBetween,
-    ResponsiveMax,
-    MediaPrint,
-    ResponsiveMin,
-} from 'style/Theme'
+import { ResponsiveBetween, ResponsiveMax, MediaPrint, ResponsiveMin } from 'style/Theme'
 import styled from 'styled-components'
 import Image from 'next/image'
 import { CreateStyledComponent, dynamicTheme } from 'style/ultis'
-import {
-    StyledMenuItem,
-    StyledWrapperMenuItem,
-    StyledContainerSwitchTheme,
-} from '@components/Menu'
+import { StyledMenuItem, StyledWrapperMenuItem, StyledContainerSwitchTheme } from '@components/Menu'
 import { BoxShadowEnum } from '@enum/index'
 
 export const StyledMain = CreateStyledComponent(styled.main`
@@ -73,16 +64,15 @@ export const StyledWrapperInfo = styled.div`
 `
 
 export const StyledWrapperHead = CreateStyledComponent(styled.div`
-    box-shadow: ${BoxShadowEnum.SQUARE}
-        ${dynamicTheme((theme) => theme.color.default)};
+    box-shadow: ${BoxShadowEnum.SQUARE} ${dynamicTheme((theme) => theme.color.default)};
     padding: 0;
     ${ResponsiveMax('lg')} {
         width: auto;
-        display: none;
-
-        &.show {
-            display: block;
-        }
+        display: block;
+        padding-top: 30px;
+    }
+    ${MediaPrint} {
+        padding-top: 0;
     }
 `)
 
@@ -96,16 +86,16 @@ export const StyledAboutHead = CreateStyledComponent(styled.div`
 `)
 
 export const StyledWrapperImage = styled.div`
-    width: 80px;
-    height: 80px;
+    width: 160px;
+    height: 160px;
     position: relative;
 `
 
 export const StyledIcon = styled(Image)`
-    border-radius: 40px;
+    border-radius: 80px;
     img {
-        width: 100px;
-        height: 100px;
+        width: 160px;
+        height: 160px;
     }
     position: relative;
 `
@@ -113,6 +103,7 @@ export const StyledName = CreateStyledComponent(styled.span`
     font-size: ${dynamicTheme((theme) => theme.fontSize.sm)};
     color: ${dynamicTheme((theme) => theme.fontColor.default)};
     font-weight: 600;
+    text-transform: uppercase;
 `)
 
 export const StyledDescription = CreateStyledComponent(styled.span`
@@ -120,12 +111,13 @@ export const StyledDescription = CreateStyledComponent(styled.span`
     color: ${dynamicTheme((theme) => theme.fontColor.primary)};
 `)
 
-export const StyledAboutBody = CreateStyledComponent(styled.div`
+export const StyledAboutBody = CreateStyledComponent(styled.div.attrs(() => ({ className: 'StyledAboutBody' }))`
     background-color: ${dynamicTheme((theme) => theme.color.secondary)};
     padding: 20px;
     display: grid;
     ${ResponsiveBetween('sm', 'lg')} {
-        grid-template-columns: auto;
+        grid-template-columns: 50% 50%;
+        grid-gap: 20px;
     }
 `)
 
@@ -151,9 +143,7 @@ export const StyledDownloadCV = CreateStyledComponent(styled.div`
 
     a:hover {
         color: ${dynamicTheme((theme) => theme.hover.Font.default.color)};
-        text-shadow: ${dynamicTheme(
-            (theme) => theme.hover.Font.default.textShadow
-        )};
+        text-shadow: ${dynamicTheme((theme) => theme.hover.Font.default.textShadow)};
     }
 
     i {
@@ -180,11 +170,11 @@ export const StyledNavBar = CreateStyledComponent(styled.div`
     ${ResponsiveMax('lg')} {
         display: block;
         position: fixed;
+        z-index: 1;
     }
 
     .offcanvas {
         height: 100vh;
-        overflow-y: auto;
         background-color: ${dynamicTheme((theme) => theme.color.secondary)};
     }
 
@@ -196,9 +186,7 @@ export const StyledNavBar = CreateStyledComponent(styled.div`
 
         a:hover {
             color: ${dynamicTheme((theme) => theme.hover.Font.default.color)};
-            text-shadow: ${dynamicTheme(
-                (theme) => theme.hover.Font.default.textShadow
-            )};
+            text-shadow: ${dynamicTheme((theme) => theme.hover.Font.default.textShadow)};
         }
 
         .material-icons {
@@ -213,6 +201,7 @@ export const StyledNavBar = CreateStyledComponent(styled.div`
             display: flex;
             flex-direction: column;
             padding: 10px;
+            width: 100%;
         }
 
         ${StyledMenuItem} {
@@ -257,20 +246,16 @@ export const StyledSubTitleContent = CreateStyledComponent(styled.div`
     .code {
         color: ${dynamicTheme((theme) => theme.fontColor.secondary)};
     }
-    button {
-        background-color: ${dynamicTheme((theme) => theme.color.tertiary)};
-    }
-
-    button:hover {
-        transform: ${dynamicTheme(
-            (theme) => theme.hover.Button.default.transform
-        )};
-    }
 
     a {
         text-decoration: none;
         color: inherit;
         font-weight: 600;
+        background-color: ${dynamicTheme((theme) => theme.color.tertiary)};
+    }
+
+    a:hover {
+        transform: ${dynamicTheme((theme) => theme.hover.Button.default.transform)};
     }
 `)
 
@@ -291,21 +276,24 @@ export const StyledContainerEducation = styled.div`
     flex-direction: column;
 `
 
-export const StyledWrapperCloseButtonOffCanvasLeft =
-    CreateStyledComponent(styled.div`
-        display: flex;
-        justify-content: flex-end;
-        background-color: ${dynamicTheme((theme) => theme.color.primary)};
-    `)
+export const StyledWrapperCloseButtonOffCanvasLeft = CreateStyledComponent(styled.div`
+    display: flex;
+    justify-content: flex-end;
+    background-color: ${dynamicTheme((theme) => theme.color.primary)};
+`)
 
-export const StyledWrapperCloseButtonOffCanvasRight =
-    CreateStyledComponent(styled.div`
-        display: flex;
-        justify-content: flex-start;
-        background-color: ${dynamicTheme((theme) => theme.color.primary)};
-    `)
+export const StyledWrapperCloseButtonOffCanvasRight = CreateStyledComponent(styled.div`
+    display: flex;
+    justify-content: flex-end;
+    background-color: ${dynamicTheme((theme) => theme.color.primary)};
+`)
 
 export const StyledWrapperBtnNavBar = styled.div`
     display: flex;
     justify-content: space-between;
 `
+export const StyledTitleItems = CreateStyledComponent(styled.h5`
+    color: ${dynamicTheme((theme) => theme.fontColor.default)};
+    text-transform: uppercase;
+    font-weight: 600;
+`)

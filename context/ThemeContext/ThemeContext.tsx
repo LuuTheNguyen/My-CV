@@ -8,10 +8,7 @@ interface ThemeContextProps {
     toggleTheme: () => void
 }
 
-const parseThemeName = (
-    name: string | null,
-    defaultTheme = ThemeEnum.DARK
-): ThemeEnum => {
+const parseThemeName = (name: string | null, defaultTheme = ThemeEnum.DARK): ThemeEnum => {
     switch (name) {
         case ThemeEnum.DARK:
             return ThemeEnum.DARK
@@ -36,8 +33,7 @@ export const ThemeProvider: React.FC = ({ children }) => {
     }, [theme])
 
     const toggleTheme = useCallback(() => {
-        const targetTheme =
-            theme === ThemeEnum.DARK ? ThemeEnum.LIGHT : ThemeEnum.DARK
+        const targetTheme = theme === ThemeEnum.DARK ? ThemeEnum.LIGHT : ThemeEnum.DARK
         _setTheme(targetTheme)
         localStorage.setItem('theme', targetTheme)
     }, [theme])
@@ -47,9 +43,5 @@ export const ThemeProvider: React.FC = ({ children }) => {
         localStorage.setItem('theme', targetTheme)
     }
 
-    return (
-        <ThemeContext.Provider value={{ theme, setTheme, toggleTheme }}>
-            {children}
-        </ThemeContext.Provider>
-    )
+    return <ThemeContext.Provider value={{ theme, setTheme, toggleTheme }}>{children}</ThemeContext.Provider>
 }

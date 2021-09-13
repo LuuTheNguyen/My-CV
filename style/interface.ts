@@ -60,18 +60,12 @@ type Callback = (activeTheme: ThemeOptions) => string
 type SetAttributeFunc = (attribute: { theme: ThemeEnum }) => string
 
 type DynammicThemeDefault = (callback: Callback) => SetAttributeFunc
-type DynammicThemeAlt = (
-    darkModeCallback: Callback,
-    lightModeCallback?: Callback
-) => SetAttributeFunc
+type DynammicThemeAlt = (darkModeCallback: Callback, lightModeCallback?: Callback) => SetAttributeFunc
 
 export type DynamicThemeFunc = DynammicThemeDefault | DynammicThemeAlt
 
 type OriginalComponent = keyof JSX.IntrinsicElements | React.ComponentType<any>
 
-export type CreateStyledComponentFunc = <
-    K extends OriginalComponent,
-    T extends StyledComponent<K, any, {}, never>
->(
+export type CreateStyledComponentFunc = <K extends OriginalComponent, T extends StyledComponent<K, any, {}, never>>(
     StyledComponentImp: T
 ) => T

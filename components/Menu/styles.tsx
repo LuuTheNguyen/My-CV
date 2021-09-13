@@ -99,7 +99,7 @@ export const StyledWrapSwitchTheme = CreateStyledComponent(styled.div`
     align-items: center;
     padding: 5px;
     box-shadow: ${BoxShadowEnum.CIRCLE} ${dynamicTheme((theme) => theme.fontColor.secondary)};
-    transform: ${({ theme }) => theme === ThemeEnum.DARK ? 'translateY(0)' : 'translateY(100%)'};
+    transform: ${({ theme }) => (theme === ThemeEnum.DARK ? 'translateY(0)' : 'translateY(100%)')};
     cursor: pointer;
     transition: ${TransitionEnum.DURATION};
 

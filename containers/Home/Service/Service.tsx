@@ -18,23 +18,14 @@ export const Service: React.FC<Props> = ({ service }) => {
             {service.map((item, index) => (
                 <StyledService key={index}>
                     <StyledHeaderService>
-                        <StyledHeaderTitleService>
-                            {item.time}
-                        </StyledHeaderTitleService>
-                        <StyledHeaderSubTitleService>
-                            {item.project}
-                        </StyledHeaderSubTitleService>
+                        <StyledHeaderTitleService>{item.time}</StyledHeaderTitleService>
+                        <StyledHeaderSubTitleService>{item.project}</StyledHeaderSubTitleService>
                         {item.company && (
                             <StyledCompany>
                                 <span>{item.company}</span>
                                 {!isPrintMode && (
-                                    <a
-                                        target="_blank"
-                                        rel="noreferrer"
-                                        href={item.companyHref}>
-                                        <span className="material-icons">
-                                            open_in_new
-                                        </span>
+                                    <a target="_blank" rel="noreferrer" href={item.companyHref}>
+                                        <span className="material-icons">open_in_new</span>
                                     </a>
                                 )}
                             </StyledCompany>
@@ -43,15 +34,13 @@ export const Service: React.FC<Props> = ({ service }) => {
                     <StyledContentService>
                         {item.responsibilities && (
                             <div>
-                                <span>Main responsibilities:</span>{' '}
-                                <span>{item.responsibilities}</span>
+                                <span>Main responsibilities:</span> <span>{item.responsibilities}</span>
                             </div>
                         )}
                         <hr />
                         {item.tech && (
                             <div>
-                                <span>Tech stack:</span>{' '}
-                                <span>{item.tech}</span>
+                                <span>Tech stack:</span> <span>{item.tech}</span>
                             </div>
                         )}
                         <hr />

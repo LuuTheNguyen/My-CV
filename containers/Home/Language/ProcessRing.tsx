@@ -28,17 +28,13 @@ export const ProcessRing: React.FC<ProcessRingProps> = ({
     const count = ultiCountDown(percentValue)
 
     useEffect(() => {
-        setPerValue(count)       
+        setPerValue(count)
     }, [count])
 
     // const temp = dynamicTheme(theme => theme.fontColor.third)
     return (
         <svg className={className} width={width} height={width}>
-            <text
-                x={width / 2}
-                y={width / 2 + width / 10}
-                fontSize={width / 4}
-                fill={fontColor}>
+            <text x={width / 2} y={width / 2 + width / 10} fontSize={width / 4} fill={fontColor}>
                 {perValue}%
             </text>
 

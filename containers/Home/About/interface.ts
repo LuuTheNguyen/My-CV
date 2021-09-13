@@ -1,6 +1,6 @@
 export interface AboutProps {
     label: string
-    content: string
+    content: string | number
 }
 
 export interface Props {

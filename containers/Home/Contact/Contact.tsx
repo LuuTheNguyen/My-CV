@@ -7,7 +7,7 @@ export const Contact: React.FC<Props> = ({ contact }) => {
             {contact.map((item, index) => (
                 <StyledContact key={index}>
                     <span>{item.label}:</span>
-                    <span>{item.content}</span>
+                    <span>{item.type !== 'phone' ? item.content : <a href="tel:+84829549118">{item.content}</a>}</span>
                 </StyledContact>
             ))}
         </>

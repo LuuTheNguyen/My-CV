@@ -20,9 +20,7 @@ export const dynamicTheme: DynamicThemeFunc =
         return darkModeCallback(themeOptions)
     }
 
-export const CreateStyledComponent: CreateStyledComponentFunc = (
-    StyledComponents
-) => {
+export const CreateStyledComponent: CreateStyledComponentFunc = (StyledComponents) => {
     const result = (props: any) => {
         const { theme } = useContext(ThemeContext)
         const componentProps: any = {

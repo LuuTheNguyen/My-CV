@@ -1,9 +1,4 @@
-import {
-    StyledLanguage,
-    StyledProcessRing,
-    StyledWrapperProcessRing,
-    StyledTitleProcessRing,
-} from './styles'
+import { StyledLanguage, StyledProcessRing, StyledWrapperProcessRing, StyledTitleProcessRing } from './styles'
 import { Theme } from 'style/Theme'
 
 import type { Props } from './interface'
@@ -27,9 +22,7 @@ export const Language: React.FC<Props> = ({ language }) => {
                         percent={item.percent}
                         fontColor={currentTheme.fontColor.primary}
                     />
-                    <StyledTitleProcessRing>
-                        {item.label}
-                    </StyledTitleProcessRing>
+                    <StyledTitleProcessRing>{item.label}</StyledTitleProcessRing>
                 </StyledWrapperProcessRing>
             ))}
         </StyledLanguage>

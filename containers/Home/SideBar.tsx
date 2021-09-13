@@ -4,34 +4,27 @@ import {
     StyledIcon,
     StyledName,
     StyledDescription,
+    StyledAboutFooter,
     StyledAboutBody,
     StyledDownloadCV,
-    StyledAboutFooter,
 } from './styles'
-
-import { About } from './About'
 import { Contact } from './Contact'
+import type { HeadProps } from './interface'
+import { About } from './About'
 import { Language } from './Language'
 import { Lib } from './Lib'
 import { Skill } from './Skill'
-import type { HeadProps } from './interface'
-
 import { useIsPrintMode } from 'hooks'
 
 export const SideBar: React.FC<HeadProps> = ({ data }) => {
     const isPrintMode = useIsPrintMode()
-
     return (
         <>
             <StyledAboutHead>
                 <StyledWrapperImage>
-                    <StyledIcon
-                        src="/logo.jpg"
-                        layout="fill"
-                        objectFit="cover"
-                    />
+                    <StyledIcon src="/logo.jpg" layout="fill" objectFit="cover" />
                 </StyledWrapperImage>
-                <StyledName>Nguyen Luu</StyledName>
+                <StyledName>Luu The Nguyen</StyledName>
                 <StyledDescription>Frontend Dev</StyledDescription>
             </StyledAboutHead>
             <StyledAboutBody>
@@ -45,16 +38,6 @@ export const SideBar: React.FC<HeadProps> = ({ data }) => {
 
                 {!isPrintMode && (
                     <StyledDownloadCV>
-                        <a
-                            href="https://docs.google.com/document/d/14X8C4riPiht4rjOFozMJyHOeDnpRsScCYbLD8gY-rYA/edit?usp=sharing"
-                            target="_blank"
-                            rel="noreferrer">
-                            <span>Download CV</span>
-                            &nbsp;
-                            <span className="material-icons">
-                                file_download
-                            </span>
-                        </a>
                         <a
                             data-bs-dismiss="offcanvas"
                             aria-label="Close"
