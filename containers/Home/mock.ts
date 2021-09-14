@@ -1,17 +1,16 @@
-export const achieveData = [
+const achieveData = [
     { counts: 2, label: '+', content: 'Years Experience' },
     { counts: 9, content: 'Complete Projects' },
 ]
 
-export const serviceData = [
+const serviceData = [
     {
         time: 'April 2017 - February 2018',
         project: 'Saddlier Connect',
         responsibilities:
             'Using HTML, Javascript and CSS to bring concert to life, Implementing design on mobile websites, Fixing bugs and testing for usability',
         tech: 'JQuery',
-        description:
-            'A leading e-learning platform in US',
+        description: 'A leading e-learning platform in US',
         company: 'Ban Vien Company',
         companyHref: 'https://banvien.com/',
     },
@@ -24,8 +23,7 @@ export const serviceData = [
         project: 'Running365',
         responsibilities: 'Fixing bugs and testing for usability',
         tech: 'Material UI, Redux, Redux Saga, Jira, Git Kraken, Slack',
-        description:
-            'Website manage group and challenge of jogging, sync data with Strava',
+        description: 'Website manage group and challenge of jogging, sync data with Strava',
         company: 'Intelin Company',
         companyHref: 'https://www.intelin.vn/',
     },
@@ -35,8 +33,7 @@ export const serviceData = [
         responsibilities:
             'Fixing bugs and testing for usability, Bring concepts to life, Implementing design on mobile websites, Developing and maintaining the user interface, Managing software workflow',
         tech: 'Material UI, Redux, Redux Saga, Jira, Git Kraken, Slack',
-        description:
-            'Website manage store and cards discount of store, with many package service',
+        description: 'Website manage store and cards discount of store, with many package service',
         company: 'Intelin Company',
         companyHref: 'https://www.intelin.vn/',
     },
@@ -56,35 +53,32 @@ export const serviceData = [
         project: 'NamA',
         responsibilities: 'Fixing bugs and testing for usability, Bring concepts to life',
         tech: 'Material UI, Redux, Redux Saga, React Core UI, Jira, Git Kraken, Slack',
-        description:
-            'Website manage infomation of user for Nam A Bank',
+        description: 'Website manage infomation of user for Nam A Bank',
         company: 'Intelin Company',
         companyHref: 'https://www.intelin.vn/',
     },
     {
         time: 'February 2020 - April 2021',
         project: 'Payment',
-        responsibilities: 'Fixing bugs and testing for usability, Bring concepts to life, ',
+        responsibilities: 'Fixing bugs and testing for usability, Bring concepts to life',
         tech: 'React Core UI, AngularJs, BEM, Jira, Git Kraken, Slack',
-        description:
-            'Website manage a payment online of user',
+        description: 'Website manage a payment online of user',
         company: 'Intelin Company',
         companyHref: 'https://www.intelin.vn/',
     },
     {
         time: 'April 2021 - June 2021',
         project: 'iPortal',
-        responsibilities: 'Fixing bugs and testing for usability, Fixing bugs and testing for usability',
+        responsibilities: 'Fixing bugs and testing for usability, Managing software workflow',
         tech: 'React Core UI, Jira, Git Kraken, Slack',
-        description:
-            'Website for create template web online',
+        description: 'Website for create template web online',
         company: 'Intelin Company',
         companyHref: 'https://www.intelin.vn/',
     },
     {
         time: 'March 2021 - April 2021',
         project: 'Web builder for real estate agency',
-        responsibilities: 'Fixing bugs and testing for usability, Fixing bugs and testing for usability',
+        responsibilities: 'Fixing bugs and testing for usability',
         tech: 'Material UI, Trello, Git Kraken',
         description:
             'A system support real estate agency to build their own website. Based on Next.JS and ReactJS we delivered a handy system support user to manage their estate as well as content with built-in themes',
@@ -96,16 +90,15 @@ export const serviceData = [
         responsibilities:
             'Bring concepts to life, Developing and maintaining the user interface, Managing software workflow.',
         tech: 'React Core UI, AngularJs, BEM, Jira, Git Kraken, Slack',
-        description:
-            'Website manage a infomation of mom and baby',
+        description: 'Website manage a infomation of mom and baby',
         company: 'Intelin Company',
         companyHref: 'https://www.intelin.vn/',
     },
 ]
 
-export const languageData = [
+const languageData = [
     {
-        name: "English",
+        name: 'English',
         skills: [
             { label: 'Reading', percent: 50 },
             { label: 'Writting', percent: 40 },
@@ -114,11 +107,14 @@ export const languageData = [
         ],
     },
 ]
-export const contactData = [
+
+const contactData = [
     { label: 'Phone', content: '+84829549118', type: 'phone' },
-    { label: 'Skype', content: 'nguyenluu121094' },
+    { label: 'Skype', content: 'nguyenluu121094', type: 'skype' },
+    { label: 'Email', content: 'nin.luu94@gmail.com', type: 'mail' },
 ]
-export const libData = [
+
+const libData = [
     { label: 'Boostrap' },
     { label: 'SCSS' },
     { label: 'Webpack' },
@@ -126,19 +122,21 @@ export const libData = [
     { label: 'Nextjs' },
     { label: 'Reactjs/ React Native' },
 ]
-export const aboutData = [
+
+const aboutData = [
     { label: 'Residence', content: 'Viet Nam' },
     { label: 'City', content: 'Ho Chi Minh City' },
     { label: 'Age', content: 781894800000 },
 ]
-export const skillData = [
+
+const skillData = [
     { label: 'HTML', percent: 80 },
     { label: 'CSS', percent: 70 },
     { label: 'JS', percent: 70 },
     { label: 'TS', percent: 60 },
 ]
 
-export const educationsData = {
+const educationsData = {
     graduated: '2013 - 2017',
     university: 'University Ho Chi Minh City - University of Science',
     majors: 'Information Technology',
@@ -160,6 +158,7 @@ export const contentData = {
     service: data.services,
     education: data.educations,
 }
+
 export const headData = {
     languages: data.languages,
     contacts: data.contacts,
@@ -167,3 +166,6 @@ export const headData = {
     abouts: data.abouts,
     skills: data.skills,
 }
+
+export const summaryData =
+    'I build web interfaces with more then 2 years of experience with latest technology such as React, Sass, TypeScript, NextJS. Specialize in using React to build web applications.'

@@ -1,7 +1,7 @@
 import { ThemeEnum } from '@enum'
 
 interface Skill {
-    label: string,
+    label: string
     percent: number
 }
 

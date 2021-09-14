@@ -15,8 +15,8 @@ export const StyledWrapperService = styled.div`
         grid-template-columns: auto;
     }
 
-    ${MediaPrint}{
-        display: block
+    ${MediaPrint} {
+        display: block;
     }
 `
 
@@ -33,7 +33,7 @@ export const StyledService = CreateStyledComponent(styled.div`
         width: 100%;
     }
 
-    ${MediaPrint}{
+    ${MediaPrint} {
         display: block;
         break-inside: avoid;
         margin-bottom: 20px;
@@ -58,7 +58,7 @@ export const StyledHeaderSubTitleService = styled.span`
 export const StyledContentService = CreateStyledComponent(styled.div`
     color: ${dynamicTheme((theme) => theme.fontColor.primary)};
     font-size: ${dynamicTheme((theme) => theme.fontSize.md)};
-    margin-top: 10px;    
+    margin-top: 10px;
 `)
 
 export const StyledCompany = CreateStyledComponent(styled.div`

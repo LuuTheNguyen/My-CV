@@ -1,5 +1,33 @@
 import { StyledContact } from './styles'
-import type { Props } from './interface'
+import type { Props, ContactProps } from './interface'
+import React from 'react'
+
+const handleType: React.FC<ContactProps> = ({ label, content, type }) => {
+    switch (type) {
+        case 'phone':
+            return (
+                <span>
+                    <a href={`tel:${content}`}>{content}</a>
+                </span>
+            )
+        case 'mail':
+            return (
+                <span>
+                    <a href={`mailto:${content}`} target="_blank" rel="noreferrer">
+                        {content}
+                    </a>
+                </span>
+            )
+        case 'skype':
+            return (
+                <span>
+                    <a href={`skype:${content}?chat`}>{content}</a>
+                </span>
+            )
+        default:
+            return <span>{content}</span>
+    }
+}
 
 export const Contact: React.FC<Props> = ({ contact }) => {
     return (
@@ -7,7 +35,7 @@ export const Contact: React.FC<Props> = ({ contact }) => {
             {contact.map((item, index) => (
                 <StyledContact key={index}>
                     <span>{item.label}:</span>
-                    <span>{item.type !== 'phone' ? item.content : <a href="tel:+84829549118">{item.content}</a>}</span>
+                    {handleType({ ...item })}
                 </StyledContact>
             ))}
         </>

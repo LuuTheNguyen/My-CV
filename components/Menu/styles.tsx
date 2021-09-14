@@ -36,7 +36,9 @@ const StyledItemLinkImp = CreateStyledComponent(styled.a`
     }
 `)
 
-export const StyledWrapperMenuList = CreateStyledComponent(styled.div`
+export const StyledWrapperMenuList = CreateStyledComponent(styled.div.attrs(() => ({
+    className: 'StyledWrapperMenuList',
+}))`
     position: relative;
     background-color: ${dynamicTheme((theme) => theme.color.secondary)};
     width: 100%;
@@ -46,6 +48,8 @@ export const StyledWrapperMenuList = CreateStyledComponent(styled.div`
     justify-content: space-between;
     padding: 30px 0;
     transition: background-color ${TransitionEnum.DURATION};
+    align-items: center;
+    overflow: auto;
 `)
 
 export const StyledContainerMenuList = CreateStyledComponent(styled.div`

@@ -84,7 +84,7 @@ export const StyledContainerProcessRings = styled.div`
     grid-template-columns: auto auto;
     grid-gap: 10px;
 
-    ${ResponsiveMax('lg')}{
+    ${ResponsiveMax('lg')} {
         grid-template-columns: auto auto auto auto;
     }
 `

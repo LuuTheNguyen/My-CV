@@ -4,7 +4,7 @@ import {
     StyledWrapperProcessRing,
     StyledTitleProcessRing,
     StyledWrapperLanguage,
-    StyledContainerProcessRings
+    StyledContainerProcessRings,
 } from './styles'
 import { Theme } from 'style/Theme'
 

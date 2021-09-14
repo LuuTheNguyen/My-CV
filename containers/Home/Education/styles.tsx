@@ -24,7 +24,7 @@ export const StyledEducations = styled.div`
         grid-template-columns: auto;
     }
 
-    ${MediaPrint}{
+    ${MediaPrint} {
         grid-template-columns: auto auto auto;
         grid-column-gap: 10px;
     }

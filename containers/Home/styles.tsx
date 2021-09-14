@@ -1,8 +1,13 @@
 import { ResponsiveBetween, ResponsiveMax, MediaPrint, ResponsiveMin } from 'style/Theme'
-import styled from 'styled-components'
+import styled, { keyframes } from 'styled-components'
 import Image from 'next/image'
 import { CreateStyledComponent, dynamicTheme } from 'style/ultis'
-import { StyledMenuItem, StyledWrapperMenuItem, StyledContainerSwitchTheme } from '@components/Menu'
+import {
+    StyledMenuItem,
+    StyledWrapperMenuItem,
+    StyledContainerSwitchTheme,
+    StyledWrapperMenuList,
+} from '@components/Menu'
 import { BoxShadowEnum } from '@enum/index'
 
 export const StyledMain = CreateStyledComponent(styled.main`
@@ -121,20 +126,20 @@ export const StyledAboutBody = CreateStyledComponent(styled.div.attrs(() => ({ c
         grid-gap: 20px;
     }
 
-    > div{
+    > div {
         position: relative;
     }
 
-    > div:not(:first-child)::before{
-        content: "";
+    > div:not(:first-child)::before {
+        content: '';
         position: absolute;
         width: 100%;
         height: 1px;
         display: block;
-        background:  ${dynamicTheme((theme) => theme.fontColor.primary)};
+        background: ${dynamicTheme((theme) => theme.fontColor.primary)};
         top: 0;
         transform: translateY(-10px);
-     
+
         ${ResponsiveBetween('sm', 'lg')} {
             display: none;
         }
@@ -150,11 +155,11 @@ export const StyledDownloadCV = CreateStyledComponent(styled.div`
     grid-gap: 10px;
 
     ${ResponsiveBetween('sm', 'lg')} {
-        padding: 10px;    
+        padding: 10px;
         display: none;
     }
 
-    ${ResponsiveMax('sm')} {  
+    ${ResponsiveMax('sm')} {
         display: none;
     }
 
@@ -201,6 +206,10 @@ export const StyledNavBar = CreateStyledComponent(styled.div`
     .offcanvas {
         height: 100vh;
         background-color: ${dynamicTheme((theme) => theme.color.secondary)};
+        width: 50%;
+        .StyledWrapperMenuList {
+            justify-content: space-around;
+        }
     }
 
     ${StyledDownloadCV} {
@@ -235,6 +244,7 @@ export const StyledNavBar = CreateStyledComponent(styled.div`
 
         ${StyledContainerSwitchTheme} {
             transform: rotate(90deg);
+            width: fit-content;
         }
     }
 `)
@@ -245,18 +255,29 @@ export const StyledWrapperContent = styled.div`
         width: auto;
         padding-top: 60px;
     }
+
+    ${MediaPrint} {
+        display: block;
+    }
 `
 
 export const StyleBanner = styled.div`
     display: flex;
+
+    ${MediaPrint} {
+        display: block;
+    }
 `
 
 export const StyledBannerContent = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    ${ResponsiveBetween('sm', 'lg')} {
-        padding: 0;
+    padding: 0;
+
+    ${MediaPrint} {
+        display: inline-block;
+        break-inside: avoid;
     }
 `
 
@@ -299,8 +320,8 @@ export const StyledWrapperMain = styled.div`
 export const StyledContainerEducation = styled.div`
     display: flex;
     flex-direction: column;
-    
-    ${MediaPrint}{
+
+    ${MediaPrint} {
         display: block;
         break-inside: avoid;
         margin: 10px 0;

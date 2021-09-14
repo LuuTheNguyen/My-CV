@@ -26,7 +26,7 @@ import { Service } from './Service'
 import { Education } from './Education'
 import { SideBar } from './SideBar'
 
-import { contentData, headData } from './mock'
+import { contentData, headData, summaryData } from './mock'
 import React from 'react'
 import { useIsPrintMode } from 'hooks'
 
@@ -79,13 +79,11 @@ export const HomePage: React.FC = () => {
                                         <StyledBannerContent className="col-sm-12 col-lg-12">
                                             <StyledTitleContent>Discoverd my Amazing Art Space!</StyledTitleContent>
                                             <StyledSubTitleContent>
-                                                <p>
-                                                    &lt;
-                                                    <span className="code">code</span>
-                                                    &gt; I build web interfaces &lt;/
-                                                    <span className="code">code</span>
-                                                    &gt;
-                                                </p>
+                                                &lt;
+                                                <span className="code">code</span>
+                                                &gt; {summaryData} &lt;/
+                                                <span className="code">code</span>
+                                                &gt;
                                             </StyledSubTitleContent>
                                         </StyledBannerContent>
                                     </StyleBanner>
