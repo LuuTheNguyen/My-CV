@@ -28,10 +28,6 @@ export const StyledService = CreateStyledComponent(styled.div`
     ${ResponsiveMax('lg')} {
         width: 100%;
     }
-
-    ${MediaPrint}{
-        display: inline-block; width: 100%; page-break-inside: avoid;
-    }
 `)
 
 export const StyledHeaderService = CreateStyledComponent(styled.span`

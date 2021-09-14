@@ -9,7 +9,7 @@ export const ProcessBar: React.FC<ProcessBarProps> = ({ className, label = '-', 
         <div className={className}>
             <div className="label">
                 <span>{label}</span>
-                <span>{count}</span>
+                <span>{count}%</span>
             </div>
             <div className="progress">
                 <div
