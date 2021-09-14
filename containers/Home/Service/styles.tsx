@@ -22,12 +22,15 @@ export const StyledService = CreateStyledComponent(styled.div`
     flex-direction: column;
     justify-content: flex-start;
     background-color: ${dynamicTheme((theme) => theme.color.primary)};
-    min-height: 250px;
     box-shadow: ${`${BoxShadowEnum.SQUARE} ${dynamicTheme((theme) => theme.color.default)}`};
     height: 100%;
 
     ${ResponsiveMax('lg')} {
         width: 100%;
+    }
+
+    ${MediaPrint}{
+        display: inline-block; width: 100%; page-break-inside: avoid;
     }
 `)
 
@@ -49,17 +52,7 @@ export const StyledHeaderSubTitleService = styled.span`
 export const StyledContentService = CreateStyledComponent(styled.div`
     color: ${dynamicTheme((theme) => theme.fontColor.primary)};
     font-size: ${dynamicTheme((theme) => theme.fontSize.md)};
-    margin-top: 10px;
-    span {
-        text-transform: capitalize;
-        font-style: italic;
-        font-weight: 600;
-    }
-    span + span {
-        text-transform: none;
-        font-weight: normal;
-        font-style: normal;
-    }
+    margin-top: 10px;    
 `)
 
 export const StyledCompany = CreateStyledComponent(styled.div`

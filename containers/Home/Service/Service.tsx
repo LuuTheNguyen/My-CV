@@ -46,7 +46,7 @@ export const Service: React.FC<Props> = ({ service }) => {
                         <hr />
                         {item.description && (
                             <div>
-                                <span>{item.description}</span>
+                                <span>Desciption:</span>  <span>{item.description}</span>
                             </div>
                         )}
                     </StyledContentService>
