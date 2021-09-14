@@ -8,5 +8,11 @@ export const StyledContainerLayout = styled.div`
         hr {
             opacity: unset;
         }
+        
+    }
+
+    @page{
+        size: a4;
+        margin-bottom: 30mm !important;
     }
 `

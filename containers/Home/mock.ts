@@ -104,8 +104,15 @@ export const serviceData = [
 ]
 
 export const languageData = [
-    { label: 'VietNamese', percent: 100 },
-    { label: 'English', percent: 50 },
+    {
+        name: "English",
+        skills: [
+            { label: 'Reading', percent: 50 },
+            { label: 'Writting', percent: 40 },
+            { label: 'Speaking', percent: 40 },
+            { label: 'Listening', percent: 50 },
+        ],
+    },
 ]
 export const contactData = [
     { label: 'Phone', content: '+84829549118', type: 'phone' },

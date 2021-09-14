@@ -82,15 +82,10 @@ export const HomePage: React.FC = () => {
                                                 <p>
                                                     &lt;
                                                     <span className="code">code</span>
-                                                    &gt; I build website &lt;/
+                                                    &gt; I build web interfaces &lt;/
                                                     <span className="code">code</span>
                                                     &gt;
                                                 </p>
-                                                {!isPrintMode && (
-                                                    <a href="#service" className="btn">
-                                                        Explore Now
-                                                    </a>
-                                                )}
                                             </StyledSubTitleContent>
                                         </StyledBannerContent>
                                     </StyleBanner>

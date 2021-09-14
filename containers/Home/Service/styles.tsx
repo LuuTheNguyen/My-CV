@@ -14,6 +14,10 @@ export const StyledWrapperService = styled.div`
     ${ResponsiveMax('sm')} {
         grid-template-columns: auto;
     }
+
+    ${MediaPrint}{
+        display: block
+    }
 `
 
 export const StyledService = CreateStyledComponent(styled.div`
@@ -27,6 +31,12 @@ export const StyledService = CreateStyledComponent(styled.div`
 
     ${ResponsiveMax('lg')} {
         width: 100%;
+    }
+
+    ${MediaPrint}{
+        display: block;
+        break-inside: avoid;
+        margin-bottom: 20px;
     }
 `)
 

@@ -115,9 +115,29 @@ export const StyledAboutBody = CreateStyledComponent(styled.div.attrs(() => ({ c
     background-color: ${dynamicTheme((theme) => theme.color.secondary)};
     padding: 20px;
     display: grid;
+    grid-row-gap: 20px;
     ${ResponsiveBetween('sm', 'lg')} {
         grid-template-columns: 50% 50%;
         grid-gap: 20px;
+    }
+
+    > div{
+        position: relative;
+    }
+
+    > div:not(:first-child)::before{
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 1px;
+        display: block;
+        background:  ${dynamicTheme((theme) => theme.fontColor.primary)};
+        top: 0;
+        transform: translateY(-10px);
+     
+        ${ResponsiveBetween('sm', 'lg')} {
+            display: none;
+        }
     }
 `)
 
@@ -130,7 +150,12 @@ export const StyledDownloadCV = CreateStyledComponent(styled.div`
     grid-gap: 10px;
 
     ${ResponsiveBetween('sm', 'lg')} {
-        padding: 10px;
+        padding: 10px;    
+        display: none;
+    }
+
+    ${ResponsiveMax('sm')} {  
+        display: none;
     }
 
     a {
@@ -274,6 +299,12 @@ export const StyledWrapperMain = styled.div`
 export const StyledContainerEducation = styled.div`
     display: flex;
     flex-direction: column;
+    
+    ${MediaPrint}{
+        display: block;
+        break-inside: avoid;
+        margin: 10px 0;
+    }
 `
 
 export const StyledWrapperCloseButtonOffCanvasLeft = CreateStyledComponent(styled.div`
