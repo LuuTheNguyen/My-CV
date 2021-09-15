@@ -2,6 +2,7 @@ import styled from 'styled-components'
 import { GridBreakpoints, ResponsiveBetween, ResponsiveMax } from 'style/Theme'
 import { ListLib } from './ListLib'
 import { CreateStyledComponent, dynamicTheme } from 'style/ultis'
+import { TransitionEnum } from '@enum'
 
 export const StyledLib = styled.div`
     ${ResponsiveBetween('sm', 'lg')} {
@@ -23,9 +24,11 @@ export const StyledListLib = CreateStyledComponent(styled(ListLib)`
     margin-bottom: 5px;
     display: flex;
     color: ${dynamicTheme((theme) => theme.fontColor.primary)};
+    transition: ${TransitionEnum.DURATION};
     & .material-icons {
         color: ${dynamicTheme((theme) => theme.fontColor.secondary)};
         margin-right: 8px;
+        transition: ${TransitionEnum.DURATION};
     }
 
     ${ResponsiveBetween('sm', 'lg')} {

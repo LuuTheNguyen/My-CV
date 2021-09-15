@@ -21,7 +21,7 @@ export const dynamicTheme: DynamicThemeFunc =
     }
 
 export const CreateStyledComponent: CreateStyledComponentFunc = (StyledComponents) => {
-    const result = (props: any) => {
+    const Result = (props: any) => {
         const { theme } = useContext(ThemeContext)
         const componentProps: any = {
             ...props,
@@ -29,5 +29,5 @@ export const CreateStyledComponent: CreateStyledComponentFunc = (StyledComponent
         }
         return (<StyledComponents {...componentProps} />) as any
     }
-    return result as any
+    return Result as any
 }

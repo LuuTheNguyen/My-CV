@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import { MediaPrint, ResponsiveMax } from 'style/Theme'
 import { CreateStyledComponent, dynamicTheme } from 'style/ultis'
-import { BoxShadowEnum } from '@enum'
+import { BoxShadowEnum, TransitionEnum } from '@enum'
 
 export const StyledWrapperService = styled.div`
     display: grid;
@@ -28,6 +28,7 @@ export const StyledService = CreateStyledComponent(styled.div`
     background-color: ${dynamicTheme((theme) => theme.color.primary)};
     box-shadow: ${`${BoxShadowEnum.SQUARE} ${dynamicTheme((theme) => theme.color.default)}`};
     height: 100%;
+    transition: ${TransitionEnum.DURATION};
 
     ${ResponsiveMax('lg')} {
         width: 100%;
@@ -45,6 +46,7 @@ export const StyledHeaderService = CreateStyledComponent(styled.span`
     text-transform: capitalize;
     display: flex;
     flex-direction: column;
+    transition: ${TransitionEnum.DURATION};
 `)
 
 export const StyledHeaderTitleService = styled.span`
@@ -59,6 +61,7 @@ export const StyledContentService = CreateStyledComponent(styled.div`
     color: ${dynamicTheme((theme) => theme.fontColor.primary)};
     font-size: ${dynamicTheme((theme) => theme.fontSize.md)};
     margin-top: 10px;
+    transition: ${TransitionEnum.DURATION};
 `)
 
 export const StyledCompany = CreateStyledComponent(styled.div`
@@ -67,6 +70,7 @@ export const StyledCompany = CreateStyledComponent(styled.div`
     text-transform: uppercase;
     display: flex;
     align-items: center;
+    transition: ${TransitionEnum.DURATION};
     & button {
         border: none;
         padding: 0;
@@ -74,6 +78,7 @@ export const StyledCompany = CreateStyledComponent(styled.div`
     & .material-icons {
         font-size: ${dynamicTheme((theme) => theme.fontSize.md)};
         cursor: pointer;
+        transition: ${TransitionEnum.DURATION};
     }
     & a {
         margin-left: 5px;
@@ -81,5 +86,6 @@ export const StyledCompany = CreateStyledComponent(styled.div`
         display: flex;
         align-items: center;
         text-decoration: none;
+        transition: ${TransitionEnum.DURATION};
     }
 `)

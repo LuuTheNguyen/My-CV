@@ -152,29 +152,18 @@ const educationsData = [
     },
 ]
 
-export const data = {
+export const contentData = {
     achieves: achieveData,
     services: serviceData,
+    educations: educationsData,
+}
+
+export const headData = {
     languages: languageData,
     contacts: contactData,
     libs: libData,
     abouts: aboutData,
     skills: skillData,
-    educations: educationsData,
-}
-
-export const contentData = {
-    achieves: data.achieves,
-    services: data.services,
-    educations: data.educations,
-}
-
-export const headData = {
-    languages: data.languages,
-    contacts: data.contacts,
-    libs: data.libs,
-    abouts: data.abouts,
-    skills: data.skills,
 }
 
 export const summaryData =

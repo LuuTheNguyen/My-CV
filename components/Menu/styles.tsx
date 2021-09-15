@@ -60,6 +60,7 @@ export const StyledContainerMenuList = CreateStyledComponent(styled.div`
     height: calc(100% - 20px);
     position: fixed;
     box-shadow: ${BoxShadowEnum.SQUARE} ${dynamicTheme((theme) => theme.color.default)};
+    transition: box-shadow ${TransitionEnum.DURATION};
 `)
 
 export const StyledHeaderMenu = CreateStyledComponent(styled.div`
@@ -75,6 +76,7 @@ export const StyledHeaderMenu = CreateStyledComponent(styled.div`
     }
     .material-icons {
         color: ${dynamicTheme((theme) => theme.fontColor.default)};
+        transition: color ${TransitionEnum.DURATION};
     }
 `)
 
