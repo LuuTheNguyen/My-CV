@@ -31,7 +31,6 @@ export const ProcessRing: React.FC<ProcessRingProps> = ({
         setPerValue(count)
     }, [count])
 
-    // const temp = dynamicTheme(theme => theme.fontColor.third)
     return (
         <svg className={className} width={width} height={width}>
             <text x={width / 2} y={width / 2 + width / 10} fontSize={width / 4} fill={fontColor}>

@@ -2,31 +2,35 @@ import { StyledContact } from './styles'
 import type { Props, ContactProps } from './interface'
 import React from 'react'
 
-const handleType: React.FC<ContactProps> = ({ label, content, type }) => {
-    switch (type) {
-        case 'phone':
-            return (
-                <span>
-                    <a href={`tel:${content}`}>{content}</a>
-                </span>
-            )
-        case 'mail':
-            return (
-                <span>
-                    <a href={`mailto:${content}`} target="_blank" rel="noreferrer">
-                        {content}
-                    </a>
-                </span>
-            )
-        case 'skype':
-            return (
-                <span>
-                    <a href={`skype:${content}?chat`}>{content}</a>
-                </span>
-            )
-        default:
-            return <span>{content}</span>
+const propsBuilder = {
+    phone(content: string) {
+        return { href: `tel:${content}` }
+    },
+    mail(content: string) {
+        return {
+            href: `mailto:${content}`,
+            target: '_blank',
+            rel: 'noreferrer',
+        }
+    },
+    skype(content: string) {
+        return {
+            href: `skype:${content}?chat`,
+        }
+    },
+}
+
+const HandleOnType: React.FC<ContactProps> = ({ label, content, type }) => {
+    const linkPropsBuilder = propsBuilder[type]
+    if (linkPropsBuilder) {
+        const props = linkPropsBuilder(content)
+        return (
+            <span>
+                <a {...props}> {content} </a>
+            </span>
+        )
     }
+    return <span>{content}</span>
 }
 
 export const Contact: React.FC<Props> = ({ contact }) => {
@@ -35,7 +39,7 @@ export const Contact: React.FC<Props> = ({ contact }) => {
             {contact.map((item, index) => (
                 <StyledContact key={index}>
                     <span>{item.label}:</span>
-                    {handleType({ ...item })}
+                    <HandleOnType {...item} />
                 </StyledContact>
             ))}
         </>

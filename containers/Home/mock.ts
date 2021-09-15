@@ -5,7 +5,8 @@ const achieveData = [
 
 const serviceData = [
     {
-        time: 'April 2017 - February 2018',
+        from: 1490893200000,
+        to: 1517331600000,
         project: 'Saddlier Connect',
         responsibilities:
             'Using HTML, Javascript and CSS to bring concert to life, Implementing design on mobile websites, Fixing bugs and testing for usability',
@@ -14,12 +15,9 @@ const serviceData = [
         company: 'Ban Vien Company',
         companyHref: 'https://banvien.com/',
     },
-    // {
-    //     time: 'February 2018 - January 2020',
-    //     project: 'Perform military service',
-    // },
     {
-        time: 'May 2020 - September 2020',
+        from: 1588179600000,
+        to: 1598806800000,
         project: 'Running365',
         responsibilities: 'Fixing bugs and testing for usability',
         tech: 'Material UI, Redux, Redux Saga, Jira, Git Kraken, Slack',
@@ -28,7 +26,8 @@ const serviceData = [
         companyHref: 'https://www.intelin.vn/',
     },
     {
-        time: 'August 2020 - June 2020',
+        from: 1596128400000,
+        to: 1622394000000,
         project: 'TikTik',
         responsibilities:
             'Fixing bugs and testing for usability, Bring concepts to life, Implementing design on mobile websites, Developing and maintaining the user interface, Managing software workflow',
@@ -38,7 +37,8 @@ const serviceData = [
         companyHref: 'https://www.intelin.vn/',
     },
     {
-        time: 'July 2020 - February 2020',
+        from: 1593450000000,
+        to: 1612026000000,
         project: 'IHP',
         responsibilities:
             'Fixing bugs and testing for usability, Bring concepts to life, Implementing design on mobile websites, Managing software workflow',
@@ -49,7 +49,8 @@ const serviceData = [
         companyHref: 'https://www.intelin.vn/',
     },
     {
-        time: 'October 2020 - December 2021',
+        from: 1601398800000,
+        to: 1606669200000,
         project: 'NamA',
         responsibilities: 'Fixing bugs and testing for usability, Bring concepts to life',
         tech: 'Material UI, Redux, Redux Saga, React Core UI, Jira, Git Kraken, Slack',
@@ -58,7 +59,8 @@ const serviceData = [
         companyHref: 'https://www.intelin.vn/',
     },
     {
-        time: 'February 2020 - April 2021',
+        from: 1612026000000,
+        to: 1617123600000,
         project: 'Payment',
         responsibilities: 'Fixing bugs and testing for usability, Bring concepts to life',
         tech: 'React Core UI, AngularJs, BEM, Jira, Git Kraken, Slack',
@@ -67,7 +69,8 @@ const serviceData = [
         companyHref: 'https://www.intelin.vn/',
     },
     {
-        time: 'April 2021 - June 2021',
+        from: 1617123600000,
+        to: 1622394000000,
         project: 'iPortal',
         responsibilities: 'Fixing bugs and testing for usability, Managing software workflow',
         tech: 'React Core UI, Jira, Git Kraken, Slack',
@@ -76,7 +79,8 @@ const serviceData = [
         companyHref: 'https://www.intelin.vn/',
     },
     {
-        time: 'March 2021 - April 2021',
+        from: 1614445200000,
+        to: 1619715600000,
         project: 'Web builder for real estate agency',
         responsibilities: 'Fixing bugs and testing for usability',
         tech: 'Material UI, Trello, Git Kraken',
@@ -85,7 +89,8 @@ const serviceData = [
         companyHref: '',
     },
     {
-        time: 'April 2020 - july 2021',
+        from: 1617123600000,
+        to: 1624986000000,
         project: 'Meiji',
         responsibilities:
             'Bring concepts to life, Developing and maintaining the user interface, Managing software workflow.',
@@ -136,11 +141,16 @@ const skillData = [
     { label: 'TS', percent: 60 },
 ]
 
-const educationsData = {
-    graduated: '2013 - 2017',
-    university: 'University Ho Chi Minh City - University of Science',
-    majors: 'Information Technology',
-}
+const educationsData = [
+    {
+        period: {
+            from: 1380474000000,
+            to: 1490893200000,
+        },
+        organziner: 'University Ho Chi Minh City - University of Science',
+        majors: 'Information Technology',
+    },
+]
 
 export const data = {
     achieves: achieveData,
@@ -154,9 +164,9 @@ export const data = {
 }
 
 export const contentData = {
-    achieve: data.achieves,
-    service: data.services,
-    education: data.educations,
+    achieves: data.achieves,
+    services: data.services,
+    educations: data.educations,
 }
 
 export const headData = {

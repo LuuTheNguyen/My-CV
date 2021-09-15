@@ -10,6 +10,7 @@ import {
 
 import type { Props } from './interface'
 import { useIsPrintMode } from 'hooks'
+import moment from 'moment'
 
 export const Service: React.FC<Props> = ({ service }) => {
     const isPrintMode = useIsPrintMode()
@@ -22,7 +23,9 @@ export const Service: React.FC<Props> = ({ service }) => {
                             <tr>
                                 <td>
                                     <StyledHeaderService>
-                                        <StyledHeaderTitleService>{item.time}</StyledHeaderTitleService>
+                                        <StyledHeaderTitleService>
+                                            {moment(item.from).format('MM/YYYY')} - {moment(item.to).format('MM/YYYY')}
+                                        </StyledHeaderTitleService>
                                         <StyledHeaderSubTitleService>{item.project}</StyledHeaderSubTitleService>
                                         {item.company && (
                                             <StyledCompany>

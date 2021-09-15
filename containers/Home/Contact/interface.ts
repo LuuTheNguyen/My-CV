@@ -1,7 +1,7 @@
 export interface ContactProps {
     label: string
     content: string
-    type?: string
+    type: 'phone' | 'skype' | 'mail'
 }
 
 export interface Props {

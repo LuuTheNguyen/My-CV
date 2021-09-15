@@ -25,12 +25,11 @@ import { Achievement } from './Achievement'
 import { Service } from './Service'
 import { Education } from './Education'
 import { SideBar } from './SideBar'
-
-import { contentData, headData, summaryData } from './mock'
-import React from 'react'
 import { useIsPrintMode } from 'hooks'
+import type { HomeProps } from './interface'
 
-export const HomePage: React.FC = () => {
+export const HomePage: React.FC<HomeProps> = ({ data }) => {
+    const { contentData, headData, summaryData } = data
     const isPrintMode = useIsPrintMode()
     return (
         <Layout name="Home">
@@ -88,16 +87,16 @@ export const HomePage: React.FC = () => {
                                         </StyledBannerContent>
                                     </StyleBanner>
 
-                                    <Achievement achieve={contentData.achieve} />
+                                    <Achievement achieve={contentData.achieves} />
 
                                     <StyledContainerEducation id="education">
                                         <StyledTitleItems>EDUCATION</StyledTitleItems>
-                                        <Education education={contentData.education} />
+                                        <Education educations={contentData.educations} />
                                     </StyledContainerEducation>
 
                                     <StyledContainerService id="service">
                                         <StyledTitleItems>WORKS EXPERIENCE</StyledTitleItems>
-                                        <Service service={contentData.service} />
+                                        <Service service={contentData.services} />
                                     </StyledContainerService>
                                 </StyledWrapperContent>
                             </StyledWrapperInfo>
