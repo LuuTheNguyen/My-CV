@@ -1,9 +1,13 @@
+interface Period {
+    from: number
+    to: number
+}
 export interface EducationProps {
-    graduated: string
-    university: string
+    period: Period
+    organziner: string
     majors: string
 }
 
 export interface Props {
-    education: EducationProps
+    educations: EducationProps[]
 }

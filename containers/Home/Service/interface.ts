@@ -1,5 +1,6 @@
 export interface ServiceProps {
-    time: string
+    from: number
+    to: number
     project: string
     responsibilities?: string
     tech?: string

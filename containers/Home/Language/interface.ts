@@ -1,8 +1,13 @@
 import { ThemeEnum } from '@enum'
 
-export interface LanguageProps {
+interface Skill {
     label: string
     percent: number
+}
+
+export interface LanguageProps {
+    name: string
+    skills: Skill[]
 }
 
 export interface Props {

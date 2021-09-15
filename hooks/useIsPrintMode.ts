@@ -5,8 +5,7 @@ export const useIsPrintMode = () => {
     const [isPrintMode, setIsPrintMode] = useState<boolean>(false)
     const isBrowser = useIsBrowser()
 
-    const printModeEventHandler = (ev: MediaQueryListEvent) =>
-        setIsPrintMode(!!ev.matches)
+    const printModeEventHandler = (ev: MediaQueryListEvent) => setIsPrintMode(!!ev.matches)
 
     useEffect(() => {
         if (!isBrowser) {

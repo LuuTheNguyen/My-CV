@@ -13,10 +13,7 @@ import { ThemeContext } from '@context/ThemeContext'
 
 export const MenuList: React.FC = () => {
     const { toggleTheme, theme } = useContext(ThemeContext)
-    const themeIcon = useMemo(
-        () => (theme === ThemeEnum.DARK ? 'dark_mode' : 'light_mode'),
-        [theme]
-    )
+    const themeIcon = useMemo(() => (theme === ThemeEnum.DARK ? 'dark_mode' : 'light_mode'), [theme])
     return (
         <StyledWrapperMenuList>
             <StyledContainerMenuItem>

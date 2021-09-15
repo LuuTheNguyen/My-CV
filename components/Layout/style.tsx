@@ -9,4 +9,9 @@ export const StyledContainerLayout = styled.div`
             opacity: unset;
         }
     }
+
+    @page {
+        size: a4;
+        margin-bottom: 30mm !important;
+    }
 `

@@ -1,5 +1,5 @@
 import styled, { css, keyframes } from 'styled-components'
-import { MediaPrint, ResponsiveBetween } from 'style/Theme'
+import { MediaPrint, ResponsiveBetween, ResponsiveMax } from 'style/Theme'
 import { ProcessRing } from './ProcessRing'
 import { ProcessRingProps } from './interface'
 import { utilProcessCircle } from './util'
@@ -7,9 +7,11 @@ import { CreateStyledComponent, dynamicTheme } from 'style/ultis'
 import { TransitionEnum } from '@enum'
 
 export const StyledLanguage = CreateStyledComponent(styled.div`
-    justify-content: space-evenly;
+    justify-content: center;
+    align-items: flex-start;
     color: ${dynamicTheme((theme) => theme.fontColor.default)};
     display: flex;
+    flex-direction: column;
     transition: color ${TransitionEnum.DURATION};
 
     ${ResponsiveBetween('sm', 'lg')} {
@@ -70,3 +72,19 @@ export const StyledTitleProcessRing = CreateStyledComponent(styled.div`
     font-size: ${dynamicTheme((theme) => theme.fontSize.sm)};
     transition: color ${TransitionEnum.DURATION};
 `)
+
+export const StyledWrapperLanguage = styled.div`
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+`
+
+export const StyledContainerProcessRings = styled.div`
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-gap: 10px;
+
+    ${ResponsiveMax('lg')} {
+        grid-template-columns: auto auto auto auto;
+    }
+`

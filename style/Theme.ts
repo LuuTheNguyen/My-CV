@@ -38,7 +38,7 @@ export const Theme: { [x in ThemeEnum]: ThemeOptions } = {
             default: '#fff',
             primary: '#adaea9',
             secondary: '#f5c147',
-            tertiary: '#c0c0ca',
+            tertiary: '#191923',
         },
         color: {
             default: '#191923',
@@ -100,10 +100,8 @@ type GridList = keyof typeof GridBreakpoints
 export const ResponsiveBetween = (from: GridList, to: GridList) =>
     `@media (min-width: ${GridBreakpoints[from]}) and (max-width: ${GridBreakpoints[to]})`
 
-export const ResponsiveMax = (to: GridList) =>
-    `@media (max-width: ${GridBreakpoints[to]})`
+export const ResponsiveMax = (to: GridList) => `@media (max-width: ${GridBreakpoints[to]})`
 
-export const ResponsiveMin = (from: GridList) =>
-    `@media (min-width: ${GridBreakpoints[from]})`
+export const ResponsiveMin = (from: GridList) => `@media (min-width: ${GridBreakpoints[from]})`
 
 export const MediaPrint = () => `@media print`

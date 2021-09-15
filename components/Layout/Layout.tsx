@@ -8,10 +8,7 @@ export const Layout: React.FC<Props> = ({ children, name }) => {
             <Head>
                 <title>{name}</title>
                 <meta name="description" content={name} />
-                <meta
-                    name="viewport"
-                    content="initial-scale=1.0, width=device-width"
-                />
+                <meta name="viewport" content="initial-scale=1.0, width=device-width" />
             </Head>
             {children}
             <footer />

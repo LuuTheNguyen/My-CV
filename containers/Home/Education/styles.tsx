@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { ResponsiveMax } from 'style/Theme'
+import { MediaPrint, ResponsiveMax } from 'style/Theme'
 import { CreateStyledComponent, dynamicTheme, setTheme } from 'style/ultis'
 import { TransitionEnum } from '@enum'
 
@@ -22,5 +22,10 @@ export const StyledEducations = styled.div`
 
     ${ResponsiveMax('sm')} {
         grid-template-columns: auto;
+    }
+
+    ${MediaPrint} {
+        grid-template-columns: auto auto auto;
+        grid-column-gap: 10px;
     }
 `
