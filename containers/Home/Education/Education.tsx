@@ -8,11 +8,11 @@ export const Education: React.FC<Props> = ({ educations }) => {
         <StyledEducations>
             {educations.map((item, index) => (
                 <React.Fragment key={index}>
-                    <StyledEducationItem key={index}>
+                    <StyledEducationItem>
                         {moment(item.period.from).format('YYYY')} - {moment(item.period.to).format('YYYY')}
                     </StyledEducationItem>
-                    <StyledEducationItem key={index}>{item.organziner}</StyledEducationItem>
-                    <StyledEducationItem key={index}>{item.majors}</StyledEducationItem>
+                    <StyledEducationItem>{item.organziner}</StyledEducationItem>
+                    <StyledEducationItem>{item.majors}</StyledEducationItem>
                 </React.Fragment>
             ))}
         </StyledEducations>

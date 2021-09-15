@@ -8,7 +8,7 @@ import {
     StyledContainerSwitchTheme,
     StyledWrapperMenuList,
 } from '@components/Menu'
-import { BoxShadowEnum } from '@enum/index'
+import { BoxShadowEnum, TransitionEnum } from '@enum/index'
 
 export const StyledMain = CreateStyledComponent(styled.main`
     height: auto;
@@ -19,6 +19,7 @@ export const StyledMain = CreateStyledComponent(styled.main`
     padding: 0;
     align-items: center;
     justify-content: center;
+    transition: ${TransitionEnum.DURATION};
 
     ${ResponsiveMax('lg')} {
         flex-direction: row;
@@ -43,6 +44,7 @@ export const StyledContainer = CreateStyledComponent(styled.div`
     flex-direction: column;
     align-items: center;
     background-color: ${dynamicTheme((theme) => theme.color.default)};
+    transition: ${TransitionEnum.DURATION};
     ${ResponsiveMin('lg')} {
         padding: 10px;
     }
@@ -71,6 +73,7 @@ export const StyledWrapperInfo = styled.div`
 export const StyledWrapperHead = CreateStyledComponent(styled.div`
     box-shadow: ${BoxShadowEnum.SQUARE} ${dynamicTheme((theme) => theme.color.default)};
     padding: 0;
+    transition: ${TransitionEnum.DURATION};
     ${ResponsiveMax('lg')} {
         width: auto;
         display: block;
@@ -88,6 +91,7 @@ export const StyledAboutHead = CreateStyledComponent(styled.div`
     justify-content: center;
     padding: 20px;
     flex-direction: column;
+    transition: ${TransitionEnum.DURATION};
 `)
 
 export const StyledWrapperImage = styled.div`
@@ -109,11 +113,13 @@ export const StyledName = CreateStyledComponent(styled.span`
     color: ${dynamicTheme((theme) => theme.fontColor.default)};
     font-weight: 600;
     text-transform: uppercase;
+    transition: ${TransitionEnum.DURATION};
 `)
 
 export const StyledDescription = CreateStyledComponent(styled.span`
     font-size: ${dynamicTheme((theme) => theme.fontSize.xs)};
     color: ${dynamicTheme((theme) => theme.fontColor.primary)};
+    transition: ${TransitionEnum.DURATION};
 `)
 
 export const StyledAboutBody = CreateStyledComponent(styled.div.attrs(() => ({ className: 'StyledAboutBody' }))`
@@ -121,6 +127,7 @@ export const StyledAboutBody = CreateStyledComponent(styled.div.attrs(() => ({ c
     padding: 20px;
     display: grid;
     grid-row-gap: 20px;
+    transition: ${TransitionEnum.DURATION};
     ${ResponsiveBetween('sm', 'lg')} {
         grid-template-columns: 50% 50%;
         grid-gap: 20px;
@@ -139,6 +146,7 @@ export const StyledAboutBody = CreateStyledComponent(styled.div.attrs(() => ({ c
         background: ${dynamicTheme((theme) => theme.fontColor.primary)};
         top: 0;
         transform: translateY(-10px);
+        transition: ${TransitionEnum.DURATION};
 
         ${ResponsiveBetween('sm', 'lg')} {
             display: none;
@@ -153,6 +161,7 @@ export const StyledDownloadCV = CreateStyledComponent(styled.div`
     display: grid;
     grid-template-columns: auto auto;
     grid-gap: 10px;
+    transition: ${TransitionEnum.DURATION};
 
     ${ResponsiveBetween('sm', 'lg')} {
         padding: 10px;
@@ -169,19 +178,23 @@ export const StyledDownloadCV = CreateStyledComponent(styled.div`
         display: flex;
         align-items: center;
         font-size: ${dynamicTheme((theme) => theme.fontSize.xs)};
+        transition: ${TransitionEnum.DURATION};
     }
 
     a:hover {
         color: ${dynamicTheme((theme) => theme.hover.Font.default.color)};
         text-shadow: ${dynamicTheme((theme) => theme.hover.Font.default.textShadow)};
+        transition: ${TransitionEnum.DURATION};
     }
 
     i {
         font-size: ${dynamicTheme((theme) => theme.fontSize.xs)};
+        transition: ${TransitionEnum.DURATION};
     }
 
     .material-icons {
         font-size: ${dynamicTheme((theme) => theme.fontSize.md)};
+        transition: ${TransitionEnum.DURATION};
     }
 `)
 
@@ -191,11 +204,13 @@ export const StyledAboutFooter = CreateStyledComponent(styled.div`
     align-items: center;
     flex-wrap: wrap;
     padding: 20px;
+    transition: ${TransitionEnum.DURATION};
 `)
 
 export const StyledNavBar = CreateStyledComponent(styled.div`
     display: none;
     background-color: ${dynamicTheme((theme) => theme.color.default)};
+    transition: ${TransitionEnum.DURATION};
 
     ${ResponsiveMax('lg')} {
         display: block;
@@ -207,6 +222,7 @@ export const StyledNavBar = CreateStyledComponent(styled.div`
         height: 100vh;
         background-color: ${dynamicTheme((theme) => theme.color.secondary)};
         width: 50%;
+        transition: ${TransitionEnum.DURATION};
         .StyledWrapperMenuList {
             justify-content: space-around;
         }
@@ -216,15 +232,18 @@ export const StyledNavBar = CreateStyledComponent(styled.div`
         a {
             color: ${dynamicTheme((theme) => theme.fontColor.primary)};
             font-size: ${dynamicTheme((theme) => theme.fontSize.xs)};
+            transition: ${TransitionEnum.DURATION};
         }
 
         a:hover {
             color: ${dynamicTheme((theme) => theme.hover.Font.default.color)};
             text-shadow: ${dynamicTheme((theme) => theme.hover.Font.default.textShadow)};
+            transition: ${TransitionEnum.DURATION};
         }
 
         .material-icons {
             color: ${dynamicTheme((theme) => theme.fontColor.primary)};
+            transition: ${TransitionEnum.DURATION};
         }
     }
 
@@ -285,12 +304,15 @@ export const StyledTitleContent = CreateStyledComponent(styled.h4`
     color: ${dynamicTheme((theme) => theme.fontColor.default)};
     text-transform: uppercase;
     font-weight: 600;
+    transition: ${TransitionEnum.DURATION};
 `)
 
 export const StyledSubTitleContent = CreateStyledComponent(styled.div`
     color: ${dynamicTheme((theme) => theme.fontColor.default)};
+    transition: ${TransitionEnum.DURATION};
     .code {
         color: ${dynamicTheme((theme) => theme.fontColor.secondary)};
+        transition: ${TransitionEnum.DURATION};
     }
 
     a {
@@ -298,10 +320,12 @@ export const StyledSubTitleContent = CreateStyledComponent(styled.div`
         color: inherit;
         font-weight: 600;
         background-color: ${dynamicTheme((theme) => theme.color.tertiary)};
+        transition: ${TransitionEnum.DURATION};
     }
 
     a:hover {
         transform: ${dynamicTheme((theme) => theme.hover.Button.default.transform)};
+        transition: ${TransitionEnum.DURATION};
     }
 `)
 
@@ -332,12 +356,14 @@ export const StyledWrapperCloseButtonOffCanvasLeft = CreateStyledComponent(style
     display: flex;
     justify-content: flex-end;
     background-color: ${dynamicTheme((theme) => theme.color.primary)};
+    transition: ${TransitionEnum.DURATION};
 `)
 
 export const StyledWrapperCloseButtonOffCanvasRight = CreateStyledComponent(styled.div`
     display: flex;
     justify-content: flex-end;
     background-color: ${dynamicTheme((theme) => theme.color.primary)};
+    transition: ${TransitionEnum.DURATION};
 `)
 
 export const StyledWrapperBtnNavBar = styled.div`
@@ -348,4 +374,5 @@ export const StyledTitleItems = CreateStyledComponent(styled.h5`
     color: ${dynamicTheme((theme) => theme.fontColor.default)};
     text-transform: uppercase;
     font-weight: 600;
+    transition: ${TransitionEnum.DURATION};
 `)

@@ -39,10 +39,12 @@ export const StyledProcessRing = CreateStyledComponent(styled(ProcessRing)`
     text {
         text-anchor: middle;
         font-size: ${dynamicTheme((theme) => theme.fontSize.sm)};
+        transition: ${TransitionEnum.DURATION};
     }
     circle {
         transform: rotate(-90deg);
         transform-origin: 50% 50%;
+        transition: ${TransitionEnum.DURATION};
     }
     circle.processCircle {
         animation: ${(props) =>
