@@ -48,12 +48,24 @@ interface FontSize {
     md: string
     lg: string
 }
+interface GitHoverProps {
+    filter: string
+}
 
+interface GitProps {
+    src: string
+    filter: string
+    hover: GitHoverProps
+}
+interface Image {
+    git: GitProps
+}
 export interface ThemeOptions {
     fontSize: FontSize
     fontColor: FontColor
     color: Color
     hover: Hover
+    images: Image
 }
 
 type Callback = (activeTheme: ThemeOptions) => string
