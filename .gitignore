@@ -35,3 +35,7 @@ yarn-error.log*
 
 # evn
 .evn
+
+#site-map, robots
+/pages/robots.txt.ts
+/pages/sitemap.xmls.ts
