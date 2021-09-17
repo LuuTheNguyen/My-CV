@@ -16,10 +16,15 @@ import { Language } from './Language'
 import { Lib } from './Lib'
 import { Skill } from './Skill'
 import { useIsPrintMode } from 'hooks'
-import Image from 'next/image'
 import { useContext } from 'react'
 import { ThemeContext } from '@context/ThemeContext'
 import { Theme } from 'style/Theme'
+
+const handlePrint = () => {
+    setTimeout(() => {
+        window.print()
+    }, 0)
+}
 
 export const SideBar: React.FC<HeadProps> = ({ data }) => {
     const { theme } = useContext(ThemeContext)
@@ -37,24 +42,16 @@ export const SideBar: React.FC<HeadProps> = ({ data }) => {
             </StyledAboutHead>
             <StyledAboutBody>
                 <About about={data.abouts} />
-
                 <Language language={data.languages} />
-
                 <Skill skill={data.skills} />
-
                 <Lib lib={data.libs} />
-
                 {!isPrintMode && (
                     <StyledContainerTool>
                         <a
                             data-bs-dismiss="offcanvas"
                             aria-label="Print"
                             href="#"
-                            onClick={() => {
-                                setTimeout(() => {
-                                    window.print()
-                                }, 0)
-                            }}>
+                            onClick={handlePrint}>
                             <span>Print</span>
                             &nbsp;
                             <span className="material-icons">print</span>
@@ -65,7 +62,7 @@ export const SideBar: React.FC<HeadProps> = ({ data }) => {
                             href="https://github.com/LuuTheNguyen/My-CV"
                             rel="noreferrer"
                             target="_blank">
-                            <span>Print</span>
+                            <span>GitHub</span>
                             &nbsp;
                             <StyledImageGit src={currentTheme.images.git.src} alt="gitIcon" width={13} height={13} />
                         </a>
