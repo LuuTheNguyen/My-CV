@@ -7,7 +7,7 @@ const Home: React.FC<HomeProps> = ({ data }) => {
     return <HomePage data={data} />
 }
 
-export const getStaticProps = async () => {
+export const getServerSideProps = async () => {
     let response = null
 
     response = await getUserData()
