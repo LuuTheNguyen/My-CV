@@ -13,6 +13,7 @@ module.exports = {
                     '@containers': path.resolve((__dirname, 'containers/')),
                     '@enum': path.resolve((__dirname, 'enum/')),
                     '@context': path.resolve((__dirname, 'context/')),
+                    '@api': path.resolve((__dirname, 'api/')),
                 },
             },
         }

@@ -32,7 +32,7 @@ export const HomePage: React.FC<HomeProps> = ({ data }) => {
     const { contentData, headData, summaryData } = data
     const isPrintMode = useIsPrintMode()
     return (
-        <Layout name="Home">
+        <Layout name="Nguyên Lưu">
             <StyledContainer>
                 <StyledMain className="container-xxl">
                     <div className="row">

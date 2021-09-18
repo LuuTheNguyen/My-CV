@@ -59,6 +59,15 @@ export const Theme: { [x in ThemeEnum]: ThemeOptions } = {
                 },
             },
         },
+        images: {
+            git: {
+                src: '/images/GitHub-Mark-32px.png',
+                filter: 'invert(64%) sepia(29%) saturate(13%) hue-rotate(32deg) brightness(102%) contrast(92%)',
+                hover: {
+                    filter: 'invert(93%) sepia(1%) saturate(397%) hue-rotate(201deg) brightness(106%) contrast(98%)',
+                },
+            },
+        },
     },
     [ThemeEnum.LIGHT]: {
         fontSize: {
@@ -75,7 +84,7 @@ export const Theme: { [x in ThemeEnum]: ThemeOptions } = {
         },
         color: {
             default: '#e0e0e6',
-            primary: '#ffffff',
+            primary: '#f8f9fa',
             secondary: '#f4f4f6',
             tertiary: '#f46258',
         },
@@ -89,6 +98,15 @@ export const Theme: { [x in ThemeEnum]: ThemeOptions } = {
             Button: {
                 default: {
                     transform: 'translateY(-2px)',
+                },
+            },
+        },
+        images: {
+            git: {
+                src: '/images/GitHub-Mark-32px.png',
+                filter: 'invert(58%) sepia(9%) saturate(336%) hue-rotate(201deg) brightness(95%) contrast(92%)',
+                hover: {
+                    filter: 'invert(9%) sepia(5%) saturate(3052%) hue-rotate(202deg) brightness(92%) contrast(91%)',
                 },
             },
         },

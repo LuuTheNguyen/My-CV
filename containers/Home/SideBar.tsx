@@ -6,7 +6,8 @@ import {
     StyledDescription,
     StyledAboutFooter,
     StyledAboutBody,
-    StyledDownloadCV,
+    StyledContainerTool,
+    StyledImageGit,
 } from './styles'
 import { Contact } from './Contact'
 import type { HeadProps } from './interface'
@@ -15,8 +16,20 @@ import { Language } from './Language'
 import { Lib } from './Lib'
 import { Skill } from './Skill'
 import { useIsPrintMode } from 'hooks'
+import { useContext } from 'react'
+import { ThemeContext } from '@context/ThemeContext'
+import { Theme } from 'style/Theme'
+
+const handlePrint = () => {
+    setTimeout(() => {
+        window.print()
+    }, 0)
+}
 
 export const SideBar: React.FC<HeadProps> = ({ data }) => {
+    const { theme } = useContext(ThemeContext)
+    const currentTheme = Theme[theme]
+
     const isPrintMode = useIsPrintMode()
     return (
         <>
@@ -29,29 +42,31 @@ export const SideBar: React.FC<HeadProps> = ({ data }) => {
             </StyledAboutHead>
             <StyledAboutBody>
                 <About about={data.abouts} />
-
                 <Language language={data.languages} />
-
                 <Skill skill={data.skills} />
-
                 <Lib lib={data.libs} />
-
                 {!isPrintMode && (
-                    <StyledDownloadCV>
+                    <StyledContainerTool>
                         <a
                             data-bs-dismiss="offcanvas"
-                            aria-label="Close"
+                            aria-label="Print"
                             href="#"
-                            onClick={() => {
-                                setTimeout(() => {
-                                    window.print()
-                                }, 0)
-                            }}>
+                            onClick={handlePrint}>
                             <span>Print</span>
                             &nbsp;
                             <span className="material-icons">print</span>
                         </a>
-                    </StyledDownloadCV>
+                        <a
+                            data-bs-dismiss="offcanvas"
+                            aria-label="Print"
+                            href="https://github.com/LuuTheNguyen/My-CV"
+                            rel="noreferrer"
+                            target="_blank">
+                            <span>GitHub</span>
+                            &nbsp;
+                            <StyledImageGit src={currentTheme.images.git.src} alt="gitIcon" width={13} height={13} />
+                        </a>
+                    </StyledContainerTool>
                 )}
             </StyledAboutBody>
             <StyledAboutFooter>

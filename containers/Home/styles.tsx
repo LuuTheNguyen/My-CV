@@ -154,7 +154,7 @@ export const StyledAboutBody = CreateStyledComponent(styled.div.attrs(() => ({ c
     }
 `)
 
-export const StyledDownloadCV = CreateStyledComponent(styled.div`
+export const StyledContainerTool = CreateStyledComponent(styled.div.attrs(() => ({ className: 'StyledContainerTool' }))`
     color: ${dynamicTheme((theme) => theme.fontColor.primary)};
     text-transform: uppercase;
     font-weight: 600;
@@ -184,7 +184,11 @@ export const StyledDownloadCV = CreateStyledComponent(styled.div`
     a:hover {
         color: ${dynamicTheme((theme) => theme.hover.Font.default.color)};
         text-shadow: ${dynamicTheme((theme) => theme.hover.Font.default.textShadow)};
-        transition: ${TransitionEnum.DURATION};
+        transition: color ${TransitionEnum.DURATION};
+
+        .StyledImageGit {
+            filter: ${dynamicTheme((theme) => theme.images.git.hover.filter)};
+        }
     }
 
     i {
@@ -207,6 +211,11 @@ export const StyledAboutFooter = CreateStyledComponent(styled.div`
     transition: ${TransitionEnum.DURATION};
 `)
 
+export const StyledImageGit = CreateStyledComponent(styled(Image).attrs(() => ({ className: 'StyledImageGit' }))`
+    filter: ${dynamicTheme((theme) => theme.images.git.filter)};
+    transition: ${TransitionEnum.DURATION};
+`)
+
 export const StyledNavBar = CreateStyledComponent(styled.div`
     display: none;
     background-color: ${dynamicTheme((theme) => theme.color.default)};
@@ -225,25 +234,6 @@ export const StyledNavBar = CreateStyledComponent(styled.div`
         transition: ${TransitionEnum.DURATION};
         .StyledWrapperMenuList {
             justify-content: space-around;
-        }
-    }
-
-    ${StyledDownloadCV} {
-        a {
-            color: ${dynamicTheme((theme) => theme.fontColor.primary)};
-            font-size: ${dynamicTheme((theme) => theme.fontSize.xs)};
-            transition: ${TransitionEnum.DURATION};
-        }
-
-        a:hover {
-            color: ${dynamicTheme((theme) => theme.hover.Font.default.color)};
-            text-shadow: ${dynamicTheme((theme) => theme.hover.Font.default.textShadow)};
-            transition: ${TransitionEnum.DURATION};
-        }
-
-        .material-icons {
-            color: ${dynamicTheme((theme) => theme.fontColor.primary)};
-            transition: ${TransitionEnum.DURATION};
         }
     }
 
