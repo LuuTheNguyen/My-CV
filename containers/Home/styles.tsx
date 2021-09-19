@@ -210,7 +210,7 @@ export const StyledAboutFooter = CreateStyledComponent(styled.div`
     padding: 20px;
     transition: ${TransitionEnum.DURATION};
 
-    ${ResponsiveMax('lg')}{
+    ${ResponsiveMax('lg')} {
         justify-content: space-around;
     }
 `)

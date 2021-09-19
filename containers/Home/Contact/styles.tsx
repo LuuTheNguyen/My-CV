@@ -37,11 +37,11 @@ export const StyledIcon = CreateStyledComponent(styled(animated.a)`
     align-items: center;
 `)
 
-export const StyledWrapCircle =  CreateStyledComponent(styled(animated.span)`
+export const StyledWrapCircle = CreateStyledComponent(styled(animated.span)`
     width: 40px;
     height: 40px;
     border-radius: 20px;
     background-color: ${dynamicTheme((theme) => theme.fontColor.secondary)};
     display: block;
-    position: absolute
+    position: absolute;
 `)
