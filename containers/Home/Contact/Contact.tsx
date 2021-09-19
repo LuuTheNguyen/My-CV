@@ -15,7 +15,7 @@ const RenderType: React.FC<ContactProps> = ({ label, content, type }) => {
             case 'phone':
                 return (
                     <span>
-                        <a {...props}> {!isPrintMode ? handlePhoneNumber(content) : content} </a>
+                        <a {...props}> {handlePhoneNumber(content)} </a>
                     </span>
                 )
             default:
@@ -53,6 +53,9 @@ const RenderTypeOnMobile: React.FC<ContactProps> = ({ label, content, type }) =>
                 return <Image src="/images/gmailIcon.svg" alt="gitIcon" width={18} height={18} />
         }
     }
+    const [state, setState] = useState(true)
+    const prop = useSpring({ x: state ? 0.2 : 0, onRest: () => setState(!state) })
+
     const linkPropsBuilder = propsBuilder[type]
     if (linkPropsBuilder) {
         const props = linkPropsBuilder(content)
@@ -60,7 +63,16 @@ const RenderTypeOnMobile: React.FC<ContactProps> = ({ label, content, type }) =>
             case 'phone':
                 return (
                     <span style={{ position: 'relative' }}>
-                        <StyledWrapCircle style={{ ...stylesCircle }} />
+                        <StyledWrapCircle
+                            style={{
+                                transform: prop.x
+                                    .to({
+                                        range: [0, 0.25, 0.35, 0.45, 0.55, 0.65, 0.75, 1],
+                                        output: [1, 1.3, 1.2, 1.1, 1.2, 1.1, 1.03, 1],
+                                    })
+                                    .to((x) => `scale(${x})`),
+                            }}
+                        />
                         <StyledIcon style={{ ...stylesIcon }} className="material-icons" {...props}>
                             call
                         </StyledIcon>
