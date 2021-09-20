@@ -56,6 +56,7 @@ export default class MyDocument extends Document {
                 </Head>
                 <body>
                     <Main />
+                    <p style={{display: 'none'}}>Version: {process.env.VERSION}</p>
                     <NextScript />
                 </body>
             </Html>
