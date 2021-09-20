@@ -64,14 +64,7 @@ const RenderTypeOnMobile: React.FC<ContactProps> = ({ label, content, type }) =>
                 return (
                     <span style={{ position: 'relative' }}>
                         <StyledWrapCircle
-                            style={{
-                                transform: prop.x
-                                    .to({
-                                        range: [0, 0.25, 0.35, 0.45, 0.55, 0.65, 0.75, 1],
-                                        output: [1, 1.3, 1.2, 1.1, 1.2, 1.1, 1.03, 1],
-                                    })
-                                    .to((x) => `scale(${x})`),
-                            }}
+                            style={{...stylesCircle}}
                         />
                         <StyledIcon style={{ ...stylesIcon }} className="material-icons" {...props}>
                             call
