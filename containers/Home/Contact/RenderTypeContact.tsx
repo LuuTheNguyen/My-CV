@@ -1,13 +1,22 @@
 import { StyledIcon, StyledWrapCircle } from './styles'
-import type { ContactProps } from './interface'
+import type { ContactProps, RenderTypeProps } from './interface'
 import React, { useState } from 'react'
 
-import { propsBuilder } from './ultis'
-import { useIsMobile } from 'hooks'
+import { handlePhoneNumber, propsBuilder } from './ultis'
+import { useIsMobile, useIsPrintMode } from 'hooks'
 import { useSpring } from 'react-spring'
 import Image from 'next/image'
 
-export const RenderTypeOnMobile: React.FC<ContactProps> = ({ label, content, type }) => {
+const HandleRenderTypeOnPrintMode: React.FC<RenderTypeProps> = ({ label, type, linkProps, content }) => {
+    switch (type) {
+        case 'phone':
+            return <a {...linkProps}> {handlePhoneNumber(content)} </a>
+        default:
+            return <a {...linkProps}> {content} </a>
+    }
+}
+
+const HandleRenderTypeOnDesktop: React.FC<RenderTypeProps> = ({ type, linkProps, content }) => {
     const isMobile = useIsMobile()
 
     const propStyleCircleMobile = useSpring({ from: { scale: 0, opacity: 0.6 }, scale: 1.2, opacity: 1, reset: true })
@@ -49,7 +58,7 @@ export const RenderTypeOnMobile: React.FC<ContactProps> = ({ label, content, typ
             })
             .to((opacity) => opacity),
     }
-    
+
     const handleIcon = (type: string) => {
         switch (type) {
             case 'skype':
@@ -60,40 +69,50 @@ export const RenderTypeOnMobile: React.FC<ContactProps> = ({ label, content, typ
                 return 'call'
         }
     }
+    switch (type) {
+        case 'phone':
+        case 'skype':
+        case 'mail':
+            return (
+                <span style={{ position: 'relative' }}>
+                    <StyledWrapCircle style={{ ...stylesCircle }} />
+                    <StyledIcon
+                        style={{ ...stylesIcon }}
+                        className="material-icons"
+                        {...linkProps}
+                        onMouseEnter={() => {
+                            setPropStyleCircle({ scale: 1.2, opacity: 1, reset: true, loop: true })
+                            setPropStyleIcon({ rotateZ: 1, loop: true })
+                        }}
+                        onMouseLeave={() => {
+                            setPropStyleCircle({ scale: 0, opacity: 0.6, reset: false, loop: false })
+                            setPropStyleIcon({ rotateZ: 0, loop: false })
+                        }}>
+                        {handleIcon(type)}
+                    </StyledIcon>
+                </span>
+            )
+        default:
+            return (
+                <span>
+                    <a {...linkProps}> {content} </a>
+                </span>
+            )
+    }
+}
+
+export const RenderOnType: React.FC<ContactProps> = ({ label, content, type }) => {
+    const isPrintMode = useIsPrintMode()
 
     const linkPropsBuilder = propsBuilder[type]
     if (linkPropsBuilder) {
-        const props = linkPropsBuilder(content)
-        switch (type) {
-            case 'phone':
-            case 'skype':
-            case 'mail':
-                return (
-                    <span style={{ position: 'relative' }}>
-                        <StyledWrapCircle style={{ ...stylesCircle }} />
-                        <StyledIcon
-                            style={{ ...stylesIcon }}
-                            className="material-icons"
-                            {...props}
-                            onMouseEnter={() => {
-                                setPropStyleCircle({ scale: 1.2, opacity: 1, reset: true, loop: true })
-                                setPropStyleIcon({ rotateZ: 1, loop: true })
-                            }}
-                            onMouseLeave={() => {
-                                setPropStyleCircle({ scale: 0, opacity: 0.6, reset: false, loop: false })
-                                setPropStyleIcon({ rotateZ: 0, loop: false })
-                            }}>
-                            {handleIcon(type)}
-                        </StyledIcon>
-                    </span>
-                )
-            default:
-                return (
-                    <span>
-                        <a {...props}> {content} </a>
-                    </span>
-                )
-        }
+        const linkProps = linkPropsBuilder(content)
+        return isPrintMode ? <>
+                <span>{label}:</span>
+                <span>
+                    <HandleRenderTypeOnPrintMode label={label} type={type} linkProps={linkProps} content={content} />
+                </span>
+            </> : <HandleRenderTypeOnDesktop type={type} linkProps={linkProps} content={content} />
     }
     return <span>{content}</span>
 }
