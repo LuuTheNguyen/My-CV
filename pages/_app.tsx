@@ -6,7 +6,7 @@ import { handlePreventCopyCutContent, handlePreventInspectElement } from './ulti
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
     useBrowserEffect(() => {
-        if(process.env.NODE_ENV){
+        if(process.env.NODE_ENV === 'production'){
             const self = document
             handlePreventCopyCutContent(self)
             handlePreventInspectElement(self)
