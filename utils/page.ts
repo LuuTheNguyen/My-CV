@@ -15,7 +15,6 @@ export const handlePreventInspectElement = (document: Document) => {
                 (event.ctrlKey && (event.shiftKey ? [73, 76, 74].indexOf(event.keyCode) > -1 : event.keyCode === 85))
             ) {
                 event.preventDefault()
-                return false
             }
         },
         false
