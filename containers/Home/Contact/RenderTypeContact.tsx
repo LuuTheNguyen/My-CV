@@ -7,7 +7,7 @@ import { useIsMobile, useIsPrintMode } from 'hooks'
 import { useSpring } from 'react-spring'
 import Image from 'next/image'
 
-const RenderTypeOnPrintMode: React.FC<RenderTypeProps> = ({ label, type, linkProps, content }) => {
+const RenderTypeOnPrintMode: React.FC<RenderTypeProps> = ({ type, linkProps, content }) => {
     const renderContent = type === 'phone' ? decodePhoneNumber(content) : content
     return <a {...linkProps}> {renderContent} </a>
 }
