@@ -11,3 +11,5 @@ export interface RenderTypeProps extends ContactProps{
 export interface Props {
     contact: ContactProps[]
 }
+
+export type TypesProps = Pick<ContactProps, 'type'>

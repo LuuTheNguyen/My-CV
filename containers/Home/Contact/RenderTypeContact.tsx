@@ -1,5 +1,5 @@
 import { StyledIcon, StyledWrapCircle } from './styles'
-import type { ContactProps, RenderTypeProps } from './interface'
+import type { ContactProps, RenderTypeProps, TypesProps } from './interface'
 import React, { useState } from 'react'
 
 import { decodePhoneNumber, propsBuilder } from './ultis'
@@ -7,7 +7,7 @@ import { useIsMobile, useIsPrintMode } from 'hooks'
 import { useSpring } from 'react-spring'
 import Image from 'next/image'
 
-const HandleRenderTypeOnPrintMode: React.FC<RenderTypeProps> = ({ label, type, linkProps, content }) => {
+const RenderTypeOnPrintMode: React.FC<RenderTypeProps> = ({ label, type, linkProps, content }) => {
     switch (type) {
         case 'phone':
             return <a {...linkProps}> {decodePhoneNumber(content)} </a>
@@ -16,7 +16,22 @@ const HandleRenderTypeOnPrintMode: React.FC<RenderTypeProps> = ({ label, type, l
     }
 }
 
-const HandleRenderTypeOnDesktop: React.FC<RenderTypeProps> = ({ type, linkProps, content }) => {
+const RenderIcon: React.FC<TypesProps> = ({ type }) => {
+    const temp = typeof type
+    switch (type) {
+        case 'skype':
+            return <Image src="/images/skype.svg" alt="skypeIcon" width={18} height={18} />
+        case 'mail':
+            return <Image src="/images/gmailIcon.svg" alt="mailIcon" width={18} height={18} />
+        case 'phone':
+            return <span>call</span>
+        default:
+            return <Image src="/images/error.svg" alt="error" width={18} height={18} />
+
+    }
+}
+
+const RenderTypeOnDesktop: React.FC<RenderTypeProps> = ({ type, linkProps, content }) => {
     const isMobile = useIsMobile()
 
     const propStyleCircleMobile = useSpring({ from: { scale: 0, opacity: 0.6 }, scale: 1.2, opacity: 1, reset: true })
@@ -58,17 +73,6 @@ const HandleRenderTypeOnDesktop: React.FC<RenderTypeProps> = ({ type, linkProps,
             })
             .to((opacity) => opacity),
     }
-
-    const handleIcon = (type: string) => {
-        switch (type) {
-            case 'skype':
-                return <Image src="/images/skype.svg" alt="gitIcon" width={18} height={18} />
-            case 'mail':
-                return <Image src="/images/gmailIcon.svg" alt="gitIcon" width={18} height={18} />
-            case 'phone':
-                return 'call'
-        }
-    }
     const handleOnMouseEnter = () => {
         setPropStyleCircle({ scale: 1.2, opacity: 1, reset: true, loop: true })
         setPropStyleIcon({ rotateZ: 1, loop: true })
@@ -89,7 +93,7 @@ const HandleRenderTypeOnDesktop: React.FC<RenderTypeProps> = ({ type, linkProps,
                     className="material-icons"
                     onMouseEnter={handleOnMouseEnter}
                     onMouseLeave={handleOnMouseLeave}>
-                    {handleIcon(type)}
+                    <RenderIcon type={type} />
                 </StyledIcon>
             </span>
         )
@@ -108,12 +112,16 @@ export const RenderOnType: React.FC<ContactProps> = ({ label, content, type }) =
     const linkPropsBuilder = propsBuilder[type]
     if (linkPropsBuilder) {
         const linkProps = linkPropsBuilder(content)
-        return isPrintMode ? <>
+        return isPrintMode ? (
+            <>
                 <span>{label}:</span>
                 <span>
-                    <HandleRenderTypeOnPrintMode label={label} type={type} linkProps={linkProps} content={content} />
+                    <RenderTypeOnPrintMode label={label} type={type} linkProps={linkProps} content={content} />
                 </span>
-            </> : <HandleRenderTypeOnDesktop type={type} linkProps={linkProps} content={content} />
+            </>
+        ) : (
+            <RenderTypeOnDesktop type={type} linkProps={linkProps} content={content} />
+        )
     }
     return <span>{content}</span>
 }
