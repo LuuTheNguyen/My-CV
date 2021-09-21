@@ -19,7 +19,7 @@ export const propsBuilder = {
 const reverseChunkArry = (array: string[], chunk = 2) => {
     let i,
         j,
-        arrayChunk = []        
+        arrayChunk = []
     for (i = 0, j = array.length; i < j; i += chunk) {
         arrayChunk.push(array.slice(i, i + chunk).reverse())
     }

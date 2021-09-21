@@ -29,8 +29,12 @@ export const handlePreventInspectElement = (document: Document) => {
             if (event.keyCode == 123) {
                 preventInspectElement(event)
             }
-            if(event.ctrlKey && event.shiftKey){
-                if (event.keyCode == 'I'.charCodeAt(0) || event.keyCode == 'C'.charCodeAt(0) || event.keyCode == 'J'.charCodeAt(0)) {
+            if (event.ctrlKey && event.shiftKey) {
+                if (
+                    event.keyCode == 'I'.charCodeAt(0) ||
+                    event.keyCode == 'C'.charCodeAt(0) ||
+                    event.keyCode == 'J'.charCodeAt(0)
+                ) {
                     preventInspectElement(event)
                 }
             }

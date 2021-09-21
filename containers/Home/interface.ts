@@ -31,6 +31,7 @@ export interface DataHomeProps {
     contentData: DataContentProps
     headData: DataHeadProps
     summaryData: string
+    version: string
 }
 export interface HomeProps {
     data: DataHomeProps

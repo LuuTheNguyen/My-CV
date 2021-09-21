@@ -27,7 +27,6 @@ const RenderIcon: React.FC<TypesProps> = ({ type }) => {
             return <span>call</span>
         default:
             return <Image src="/images/error.svg" alt="error" width={18} height={18} />
-
     }
 }
 
