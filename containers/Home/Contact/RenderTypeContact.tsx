@@ -2,22 +2,17 @@ import { StyledIcon, StyledWrapCircle } from './styles'
 import type { ContactProps, RenderTypeProps, TypesProps } from './interface'
 import React, { useState } from 'react'
 
-import { decodePhoneNumber, propsBuilder } from './ultis'
+import { decodePhoneNumber, propsBuilder } from './utils'
 import { useIsMobile, useIsPrintMode } from 'hooks'
 import { useSpring } from 'react-spring'
 import Image from 'next/image'
 
 const RenderTypeOnPrintMode: React.FC<RenderTypeProps> = ({ label, type, linkProps, content }) => {
-    switch (type) {
-        case 'phone':
-            return <a {...linkProps}> {decodePhoneNumber(content)} </a>
-        default:
-            return <a {...linkProps}> {content} </a>
-    }
+    const renderContent = type === 'phone' ? decodePhoneNumber(content) : content
+    return <a {...linkProps}> {renderContent} </a>
 }
 
 const RenderIcon: React.FC<TypesProps> = ({ type }) => {
-    const temp = typeof type
     switch (type) {
         case 'skype':
             return <Image src="/images/skype.svg" alt="skypeIcon" width={18} height={18} />
@@ -26,7 +21,7 @@ const RenderIcon: React.FC<TypesProps> = ({ type }) => {
         case 'phone':
             return <span>call</span>
         default:
-            return <Image src="/images/error.svg" alt="error" width={18} height={18} />
+            return <Image src="/images/warning-error.svg" alt="error" width={18} height={18} />
     }
 }
 
@@ -73,8 +68,8 @@ const RenderTypeOnDesktop: React.FC<RenderTypeProps> = ({ type, linkProps, conte
             .to((opacity) => opacity),
     }
     const handleOnMouseEnter = () => {
-        setPropStyleCircle({ scale: 1.2, opacity: 1, reset: true, loop: true })
-        setPropStyleIcon({ rotateZ: 1, loop: true })
+        setPropStyleCircle({ scale: 1.2, opacity: 1, config: { duration: 600 }, reset: true, loop: true })
+        setPropStyleIcon({ rotateZ: 1, loop: true, config: { duration: 600 } })
     }
     const handleOnMouseLeave = () => {
         setPropStyleCircle({ scale: 0, opacity: 0.6, reset: false, loop: false })
@@ -96,13 +91,12 @@ const RenderTypeOnDesktop: React.FC<RenderTypeProps> = ({ type, linkProps, conte
                 </StyledIcon>
             </span>
         )
-    } else {
-        return (
-            <span>
-                <a {...linkProps}> {content} </a>
-            </span>
-        )
     }
+    return (
+        <span>
+            <a {...linkProps}> {content} </a>
+        </span>
+    )
 }
 
 export const RenderOnType: React.FC<ContactProps> = ({ label, content, type }) => {

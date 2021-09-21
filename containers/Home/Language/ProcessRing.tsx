@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { ultiCountDown } from '../Achievement/ulti'
+import { useCount } from '../Achievement/util'
 
 import type { ProcessRingProps } from './interface'
 import { utilProcessCircle } from './util'
@@ -25,7 +25,7 @@ export const ProcessRing: React.FC<ProcessRingProps> = ({
         fontColor,
     })
     const [perValue, setPerValue] = useState(0)
-    const count = ultiCountDown(percentValue)
+    const count = useCount(percentValue)
 
     useEffect(() => {
         setPerValue(count)

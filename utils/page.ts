@@ -26,20 +26,20 @@ export const handlePreventInspectElement = (document: Document) => {
     document.addEventListener(
         'keydown',
         (event) => {
-            if (event.keyCode == 123) {
+            if (event.keyCode === 123) {
                 preventInspectElement(event)
             }
-            if (event.ctrlKey && event.shiftKey) {
+            if (event.ctrlKey) {
                 if (
-                    event.keyCode == 'I'.charCodeAt(0) ||
-                    event.keyCode == 'C'.charCodeAt(0) ||
-                    event.keyCode == 'J'.charCodeAt(0)
+                    (event.shiftKey && event.keyCode === 73) ||
+                    (event.shiftKey && event.keyCode === 67) ||
+                    (event.shiftKey && event.keyCode === 74)
                 ) {
                     preventInspectElement(event)
                 }
-            }
-            if (event.ctrlKey && event.keyCode == 'U'.charCodeAt(0)) {
-                preventInspectElement(event)
+                if (event.keyCode === 85) {
+                    preventInspectElement(event)
+                }
             }
         },
         false

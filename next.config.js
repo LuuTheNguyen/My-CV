@@ -14,7 +14,7 @@ module.exports = {
                     '@enum': path.resolve((__dirname, 'enum/')),
                     '@context': path.resolve((__dirname, 'context/')),
                     '@api': path.resolve((__dirname, 'api/')),
-                    '@ultis': path.resolve((__dirname, 'ultis/')),
+                    '@utils': path.resolve((__dirname, 'utils/')),
                 },
             },
         }

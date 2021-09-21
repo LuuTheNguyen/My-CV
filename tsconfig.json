@@ -21,7 +21,7 @@
             "@enum/*": ["enum/*"],
             "@context/*": ["context/*"],
             "@api/*": ["api/*"],
-            "@ultis/*": ["ultis/*"]
+            "@ultis/*": ["utils/*"]
         }
     },
     "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
