@@ -5,7 +5,7 @@ export interface ContactProps {
 }
 
 export interface RenderTypeProps extends ContactProps{
-    linkProps: object;
+    linkProps: Record<any, any>;
 }
 
 export interface Props {

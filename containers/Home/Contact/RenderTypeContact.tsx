@@ -2,7 +2,7 @@ import { StyledIcon, StyledWrapCircle } from './styles'
 import type { ContactProps, RenderTypeProps } from './interface'
 import React, { useState } from 'react'
 
-import { handlePhoneNumber, propsBuilder } from './ultis'
+import { decodePhoneNumber, propsBuilder } from './ultis'
 import { useIsMobile, useIsPrintMode } from 'hooks'
 import { useSpring } from 'react-spring'
 import Image from 'next/image'
@@ -10,7 +10,7 @@ import Image from 'next/image'
 const HandleRenderTypeOnPrintMode: React.FC<RenderTypeProps> = ({ label, type, linkProps, content }) => {
     switch (type) {
         case 'phone':
-            return <a {...linkProps}> {handlePhoneNumber(content)} </a>
+            return <a {...linkProps}> {decodePhoneNumber(content)} </a>
         default:
             return <a {...linkProps}> {content} </a>
     }
@@ -69,35 +69,36 @@ const HandleRenderTypeOnDesktop: React.FC<RenderTypeProps> = ({ type, linkProps,
                 return 'call'
         }
     }
-    switch (type) {
-        case 'phone':
-        case 'skype':
-        case 'mail':
-            return (
-                <span style={{ position: 'relative' }}>
-                    <StyledWrapCircle style={{ ...stylesCircle }} />
-                    <StyledIcon
-                        style={{ ...stylesIcon }}
-                        className="material-icons"
-                        {...linkProps}
-                        onMouseEnter={() => {
-                            setPropStyleCircle({ scale: 1.2, opacity: 1, reset: true, loop: true })
-                            setPropStyleIcon({ rotateZ: 1, loop: true })
-                        }}
-                        onMouseLeave={() => {
-                            setPropStyleCircle({ scale: 0, opacity: 0.6, reset: false, loop: false })
-                            setPropStyleIcon({ rotateZ: 0, loop: false })
-                        }}>
-                        {handleIcon(type)}
-                    </StyledIcon>
-                </span>
-            )
-        default:
-            return (
-                <span>
-                    <a {...linkProps}> {content} </a>
-                </span>
-            )
+    const handleOnMouseEnter = () => {
+        setPropStyleCircle({ scale: 1.2, opacity: 1, reset: true, loop: true })
+        setPropStyleIcon({ rotateZ: 1, loop: true })
+    }
+    const handleOnMouseLeave = () => {
+        setPropStyleCircle({ scale: 0, opacity: 0.6, reset: false, loop: false })
+        setPropStyleIcon({ rotateZ: 0, loop: false })
+    }
+
+    const isAnimatedContent = ['phone', 'skype', 'mail'].indexOf(type) > -1
+    if (isAnimatedContent) {
+        return (
+            <span style={{ position: 'relative' }}>
+                <StyledWrapCircle style={stylesCircle} />
+                <StyledIcon
+                    {...linkProps}
+                    style={stylesIcon}
+                    className="material-icons"
+                    onMouseEnter={handleOnMouseEnter}
+                    onMouseLeave={handleOnMouseLeave}>
+                    {handleIcon(type)}
+                </StyledIcon>
+            </span>
+        )
+    } else {
+        return (
+            <span>
+                <a {...linkProps}> {content} </a>
+            </span>
+        )
     }
 }
 

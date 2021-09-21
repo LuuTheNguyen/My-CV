@@ -5,15 +5,13 @@ export const useIsMobile = () => {
 
     useEffect(() => {
         const handleIsMobile = () => {
-            if (window.innerWidth <= 1024) {
-                setIsMobile(true)
-            } else {
-                setIsMobile(false)
-            }
+                setIsMobile(window.innerWidth <= 1024)
         }
-        window.addEventListener('resize', handleIsMobile)
         handleIsMobile()
-        return () => window.removeEventListener('resize', handleIsMobile)
+        if(process.env.NODE_ENV === 'development'){
+            window.addEventListener('resize', handleIsMobile)
+            return () => window.removeEventListener('resize', handleIsMobile)
+        }
     }, [])
 
     return isMobile

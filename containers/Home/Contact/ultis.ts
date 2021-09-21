@@ -1,6 +1,6 @@
 export const propsBuilder = {
     phone(content: string) {
-        return { href: `tel:${handlePhoneNumber(content)}` }
+        return { href: `tel:${decodePhoneNumber(content)}` }
     },
     mail(content: string) {
         return {
@@ -16,21 +16,20 @@ export const propsBuilder = {
     },
 }
 
-const handleReverseChunkArry = (array: string[]) => {
+const reverseChunkArry = (array: string[], chunk = 2) => {
     let i,
         j,
-        arrayChunk = [],
-        chunk = 2
+        arrayChunk = []        
     for (i = 0, j = array.length; i < j; i += chunk) {
         arrayChunk.push(array.slice(i, i + chunk).reverse())
     }
     return arrayChunk
 }
 
-export const handlePhoneNumber = (phoneNumber: string) => {
+export const decodePhoneNumber = (phoneNumber: string) => {
     const arr = phoneNumber.split('')
     const arrReverse = arr.reverse()
-    const arrChunk = handleReverseChunkArry(arrReverse)
+    const arrChunk = reverseChunkArry(arrReverse, 2)
     const result = arrChunk.join('').replace(/\,/g, '')
     return result
 }

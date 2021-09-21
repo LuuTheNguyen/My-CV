@@ -11,7 +11,9 @@ export const Layout: React.FC<Props> = ({ children, name }) => {
                 <meta name="viewport" content="initial-scale=1.0, width=device-width" />
             </Head>
             {children}
-            <footer />
+            <footer>                
+                <p style={{display: 'none'}}>Version: {process.env.VERSION}</p>
+            </footer>
         </StyledContainerLayout>
     )
 }
