@@ -7,7 +7,7 @@ import {
     StyledWrapperHead,
     StyledNavBar,
     StyledWrapperContent,
-    StyleBanner,
+    StyledBanner,
     StyledBannerContent,
     StyledTitleContent,
     StyledSubTitleContent,
@@ -74,7 +74,7 @@ export const HomePage: React.FC<HomeProps> = ({ data }) => {
                                     </StyledWrapperHead>
                                 </>
                                 <StyledWrapperContent className="col-sm-12 col-lg-9">
-                                    <StyleBanner className="row">
+                                    <StyledBanner className="row">
                                         <StyledBannerContent className="col-sm-12 col-lg-12">
                                             <StyledTitleContent>Discoverd my Amazing Art Space!</StyledTitleContent>
                                             <StyledSubTitleContent>
@@ -85,7 +85,7 @@ export const HomePage: React.FC<HomeProps> = ({ data }) => {
                                                 &gt;
                                             </StyledSubTitleContent>
                                         </StyledBannerContent>
-                                    </StyleBanner>
+                                    </StyledBanner>
 
                                     <Achievement achieve={contentData.achieves} />
 

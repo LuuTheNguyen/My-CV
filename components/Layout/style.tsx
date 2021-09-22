@@ -12,6 +12,5 @@ export const StyledContainerLayout = styled.div`
 
     @page {
         size: a4;
-        margin-bottom: 30mm !important;
     }
 `

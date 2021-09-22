@@ -32,14 +32,26 @@ const handleOnClick = (event: React.MouseEvent<HTMLAnchorElement, MouseEvent>, l
 export const RenderTypeOnDesktop: React.FC<RenderTypeProps> = ({ type, linkProps, content }) => {
     const isMobile = useIsMobile()
 
-    const propStyleCircleMobile = useSpring({ from: { scale: 0, opacity: 0.6 }, scale: 1.2, opacity: 1, reset: true })
+    const propStyleCircleMobile = useSpring({
+        from: { scale: 0, opacity: 0.6 },
+        config: { duration: 600 },
+        scale: 1.2,
+        opacity: 1,
+        reset: true,
+    })
     const [{ scale, opacity }, setPropStyleCircle] = useSpring(() => ({
         from: { scale: 0, opacity: 0.6 },
         scale: 1.2,
         opacity: 1,
     }))
     const [flip, set] = useState(false)
-    const propStyleIconMobile = useSpring({ from: { rotateZ: 0 }, rotateZ: 1, reverse: flip, onRest: () => set(!flip) })
+    const propStyleIconMobile = useSpring({
+        from: { rotateZ: 0 },
+        config: { duration: 600 },
+        rotateZ: 1,
+        reverse: flip,
+        onRest: () => set(!flip),
+    })
     const [{ rotateZ }, setPropStyleIcon] = useSpring(() => ({
         from: { rotateZ: 0 },
         rotateZ: 1,

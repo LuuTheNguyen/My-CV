@@ -37,6 +37,7 @@ export const StyledService = CreateStyledComponent(styled.div`
     ${MediaPrint} {
         display: block;
         break-inside: avoid;
+        margin-top: 20px;
         margin-bottom: 20px;
     }
 `)
