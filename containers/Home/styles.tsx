@@ -68,6 +68,10 @@ export const StyledWrapperInfo = styled.div`
     ${ResponsiveMax('lg')} {
         flex-direction: column;
     }
+
+    ${MediaPrint} {
+        display: block;
+    }
 `
 
 export const StyledWrapperHead = CreateStyledComponent(styled.div`
@@ -133,6 +137,11 @@ export const StyledAboutBody = CreateStyledComponent(styled.div.attrs(() => ({ c
         grid-gap: 20px;
     }
 
+    ${MediaPrint} {
+        grid-template-columns: 50% 50%;
+        grid-gap: 20px;
+    }
+
     > div {
         position: relative;
     }
@@ -149,6 +158,10 @@ export const StyledAboutBody = CreateStyledComponent(styled.div.attrs(() => ({ c
         transition: ${TransitionEnum.DURATION};
 
         ${ResponsiveBetween('sm', 'lg')} {
+            display: none;
+        }
+
+        ${MediaPrint} {
             display: none;
         }
     }
@@ -271,12 +284,8 @@ export const StyledWrapperContent = styled.div`
     }
 `
 
-export const StyleBanner = styled.div`
+export const StyledBanner = styled.div`
     display: flex;
-
-    ${MediaPrint} {
-        display: block;
-    }
 `
 
 export const StyledBannerContent = styled.div`
@@ -286,7 +295,7 @@ export const StyledBannerContent = styled.div`
     padding: 0;
 
     ${MediaPrint} {
-        display: inline-block;
+        display: block;
         break-inside: avoid;
     }
 `
@@ -306,23 +315,20 @@ export const StyledSubTitleContent = CreateStyledComponent(styled.div`
         transition: ${TransitionEnum.DURATION};
     }
 
-    a {
-        text-decoration: none;
-        color: inherit;
-        font-weight: 600;
-        background-color: ${dynamicTheme((theme) => theme.color.tertiary)};
-        transition: ${TransitionEnum.DURATION};
-    }
-
-    a:hover {
-        transform: ${dynamicTheme((theme) => theme.hover.Button.default.transform)};
-        transition: ${TransitionEnum.DURATION};
+    ${MediaPrint} {
+        display: block;
+        break-inside: avoid;
     }
 `)
 
 export const StyledContainerService = styled.div`
     display: flex;
     flex-direction: column;
+
+    ${MediaPrint} {
+        break-inside: avoid;
+        display: block;
+    }
 `
 
 export const StyledWrapperMain = styled.div`

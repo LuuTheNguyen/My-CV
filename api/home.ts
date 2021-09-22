@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-export const getUserData = async (id = 1) => {
+export const getUserData = async () => {
     const response = await axios.post(
         `${process.env.API_ENDPOINT}/user`,
         {
