@@ -5,6 +5,7 @@ import { StyledIcon, StyledWrapCircle } from './styles'
 import type { TypesProps } from './interface'
 import React, { useState } from 'react'
 import type { RenderTypeProps } from './interface'
+import * as ga from 'utils/ga'
 
 const RenderIcon: React.FC<TypesProps> = ({ type }) => {
     switch (type) {
@@ -19,15 +20,34 @@ const RenderIcon: React.FC<TypesProps> = ({ type }) => {
     }
 }
 
-const handleOnClick = (event: React.MouseEvent<HTMLAnchorElement, MouseEvent>, linkProps: Record<any, any>) => {
-    const link = document.createElement('a')
-    Object.keys(linkProps).forEach((prop) => {
-        link.setAttribute(prop, linkProps[prop])
-    })
 
-    document.body.appendChild(link)
-    link.click()
+
+const handleOnClick = (event: React.MouseEvent<HTMLAnchorElement, MouseEvent>, linkProps: Record<any, any>, type: string) => {
+    if(event){
+        event.preventDefault()
+    }
+    const link = document.createElement('a');
+    const contactAction = () => {
+        ga.event({
+          action: "contact",
+          category : type,
+          label: "contact",
+        })
+      }
+    Object.keys(linkProps).forEach(
+        prop => {
+            link.setAttribute(
+                prop,
+                linkProps[prop]
+            );
+        }
+    )
+    
+    document.body.appendChild(link);
+    link.click();
+
 }
+
 
 export const RenderTypeOnDesktop: React.FC<RenderTypeProps> = ({ type, linkProps, content }) => {
     const isMobile = useIsMobile()
@@ -102,7 +122,8 @@ export const RenderTypeOnDesktop: React.FC<RenderTypeProps> = ({ type, linkProps
                     className="material-icons"
                     onMouseEnter={handleOnMouseEnter}
                     onMouseLeave={handleOnMouseLeave}
-                    onClick={(event) => handleOnClick(event, linkProps)}>
+                    onClick={(event) => handleOnClick(event, linkProps, type)}
+                    >
                     <RenderIcon type={type} />
                 </StyledIcon>
             </span>
@@ -110,7 +131,7 @@ export const RenderTypeOnDesktop: React.FC<RenderTypeProps> = ({ type, linkProps
     }
     return (
         <span>
-            <a onClick={(event) => handleOnClick(event, linkProps)}> {content} </a>
+            <a onClick={(event) => handleOnClick(event, linkProps, type)}> {content} </a>
         </span>
     )
 }
