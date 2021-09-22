@@ -1,4 +1,3 @@
-
 import { useSpring } from 'react-spring'
 import Image from 'next/image'
 import { useIsMobile } from 'hooks'
@@ -21,19 +20,13 @@ const RenderIcon: React.FC<TypesProps> = ({ type }) => {
 }
 
 const handleOnClick = (event: React.MouseEvent<HTMLAnchorElement, MouseEvent>, linkProps: Record<any, any>) => {
-    const link = document.createElement('a');
-    Object.keys(linkProps).forEach(
-        prop => {
-            link.setAttribute(
-                prop,
-                linkProps[prop]
-            );
-        }
-    )
-    
-    document.body.appendChild(link);
-    link.click();
+    const link = document.createElement('a')
+    Object.keys(linkProps).forEach((prop) => {
+        link.setAttribute(prop, linkProps[prop])
+    })
 
+    document.body.appendChild(link)
+    link.click()
 }
 
 export const RenderTypeOnDesktop: React.FC<RenderTypeProps> = ({ type, linkProps, content }) => {
@@ -97,8 +90,7 @@ export const RenderTypeOnDesktop: React.FC<RenderTypeProps> = ({ type, linkProps
                     className="material-icons"
                     onMouseEnter={handleOnMouseEnter}
                     onMouseLeave={handleOnMouseLeave}
-                    onClick={(event) => handleOnClick(event, linkProps)}
-                    >
+                    onClick={(event) => handleOnClick(event, linkProps)}>
                     <RenderIcon type={type} />
                 </StyledIcon>
             </span>
