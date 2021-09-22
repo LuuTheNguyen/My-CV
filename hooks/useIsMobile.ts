@@ -10,7 +10,11 @@ export const useIsMobile = () => {
         handleIsMobile()
         if (process.env.NODE_ENV === 'development') {
             window.addEventListener('resize', handleIsMobile)
-            return () => window.removeEventListener('resize', handleIsMobile)
+        }
+        return () => {
+            if (process.env.NODE_ENV === 'development') {
+                window.removeEventListener('resize', handleIsMobile)
+            }
         }
     }, [])
 
