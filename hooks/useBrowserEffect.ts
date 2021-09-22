@@ -7,5 +7,6 @@ export const useBrowserEffect = (callback: EffectCallback, deps: DependencyList 
         if (isBrowser) {
             callback()
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, deps)
 }

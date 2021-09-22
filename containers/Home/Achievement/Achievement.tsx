@@ -1,22 +1,29 @@
 import { StyledContainerAchievement, StyledAchievement } from './styles'
-import type { Props } from './interface'
-import { ultiCountDown } from './ulti'
+import type { Props, AchievementProps } from './interface'
+import { useCount } from './util'
+import { Fragment } from 'react'
+
+export const RenderAchievementItem: React.FC<AchievementProps> = (item) => {
+    const countValue = useCount(item.counts)
+    return (
+        <StyledAchievement>
+            <span>
+                {countValue}
+                {item.label}
+            </span>
+            <span>{item.content}</span>
+        </StyledAchievement>
+    )
+}
 
 export const Achievement: React.FC<Props> = ({ achieve }) => {
     return (
         <StyledContainerAchievement>
-            {achieve.map((item, index) => {
-                let countValue = ultiCountDown(item.counts)
-                return (
-                    <StyledAchievement key={index}>
-                        <span>
-                            {countValue}
-                            {item.label}
-                        </span>
-                        <span>{item.content}</span>
-                    </StyledAchievement>
-                )
-            })}
+            {achieve.map((item, index) => (
+                <Fragment key={index}>
+                    <RenderAchievementItem {...item} />
+                </Fragment>
+            ))}
         </StyledContainerAchievement>
     )
 }

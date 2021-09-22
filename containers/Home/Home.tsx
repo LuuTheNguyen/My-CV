@@ -29,10 +29,10 @@ import { useIsPrintMode } from 'hooks'
 import type { HomeProps } from './interface'
 
 export const HomePage: React.FC<HomeProps> = ({ data }) => {
-    const { contentData, headData, summaryData } = data
+    const { contentData, headData, summaryData, version } = data
     const isPrintMode = useIsPrintMode()
     return (
-        <Layout name="Nguyên Lưu">
+        <Layout name="Nguyên Lưu" version={version}>
             <StyledContainer>
                 <StyledMain className="container-xxl">
                     <div className="row">

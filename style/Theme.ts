@@ -1,7 +1,5 @@
 import { ThemeEnum } from '@enum/index'
-import type { BackgroundColorsProps, ThemeOptions } from './interface'
-
-// export const BackgroundColorV2 = (theme: ThemeEnum) => BackgroundColors[theme]
+import type { ThemeOptions } from './interface'
 
 export const GridBreakpoints = {
     xs: 0,

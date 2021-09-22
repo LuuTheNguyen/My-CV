@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 
-export const ultiCountDown = (counts: number = 1) => {
+export const useCount = (counts: number = 1) => {
     const [count, setCount] = useState(0)
     useEffect(() => {
         const countDown = setTimeout(() => {
@@ -10,6 +10,7 @@ export const ultiCountDown = (counts: number = 1) => {
             clearTimeout(countDown)
         }
         return () => clearTimeout(countDown)
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [count])
     return count
 }

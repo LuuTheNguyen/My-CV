@@ -209,6 +209,7 @@ export const StyledAboutFooter = CreateStyledComponent(styled.div`
     flex-wrap: wrap;
     padding: 20px;
     transition: ${TransitionEnum.DURATION};
+    justify-content: space-around;
 `)
 
 export const StyledImageGit = CreateStyledComponent(styled(Image).attrs(() => ({ className: 'StyledImageGit' }))`

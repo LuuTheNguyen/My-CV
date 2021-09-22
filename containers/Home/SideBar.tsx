@@ -47,11 +47,7 @@ export const SideBar: React.FC<HeadProps> = ({ data }) => {
                 <Lib lib={data.libs} />
                 {!isPrintMode && (
                     <StyledContainerTool>
-                        <a
-                            data-bs-dismiss="offcanvas"
-                            aria-label="Print"
-                            href="#"
-                            onClick={handlePrint}>
+                        <a data-bs-dismiss="offcanvas" aria-label="Print" href="#" onClick={handlePrint}>
                             <span>Print</span>
                             &nbsp;
                             <span className="material-icons">print</span>

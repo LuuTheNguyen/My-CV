@@ -2,7 +2,7 @@ import Head from 'next/head'
 import { StyledContainerLayout } from './style'
 import type { Props } from './interface'
 
-export const Layout: React.FC<Props> = ({ children, name }) => {
+export const Layout: React.FC<Props> = ({ children, name, version }) => {
     return (
         <StyledContainerLayout>
             <Head>
@@ -11,7 +11,9 @@ export const Layout: React.FC<Props> = ({ children, name }) => {
                 <meta name="viewport" content="initial-scale=1.0, width=device-width" />
             </Head>
             {children}
-            <footer />
+            <footer>
+                <p style={{ display: 'none' }}>Version: {version}</p>
+            </footer>
         </StyledContainerLayout>
     )
 }
