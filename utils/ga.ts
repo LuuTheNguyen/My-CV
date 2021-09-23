@@ -1,23 +1,22 @@
-declare global { interface Window { gtag: any; } }
+declare global {
+    interface Window {
+        gtag: Gtag.Gtag
+    }
+}
 // https://developers.google.com/analytics/devguides/collection/gtagjs/pages
 export const pageview = (url: URL): void => {
-    window.gtag("config", process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS, {
-      page_path: url,
-    });
-  };
-  
-  type GTagEvent = {
-    action: string;
-    category: string;
-    label: string;
-    value?: number;
-  };
-  
-  // https://developers.google.com/analytics/devguides/collection/gtagjs/events
-  export const event = ({ action, category, label, value }: GTagEvent): void => {
-    window.gtag("event", action, {
-      event_category: category,
-      event_label: label,
-      value,
-    });
-  };
+    const targetId = process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS || ''
+    window.gtag('config', targetId, {
+        page_path: url,
+    })
+}
+
+type GTagEvent = {
+    eventName: string
+    eventParams: Gtag.EventParams
+}
+
+// https://developers.google.com/analytics/devguides/collection/gtagjs/events
+export const event = ({ eventName, eventParams }: GTagEvent): void => {
+    window.gtag('event', eventName, eventParams)
+}
