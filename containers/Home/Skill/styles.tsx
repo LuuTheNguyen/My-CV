@@ -46,10 +46,4 @@ export const StyledProcessBar = CreateStyledComponent(styled(ProcessBar)`
         animation: ${animateWidthProcess} 1s linear 1;
         transition: ${TransitionEnum.DURATION};
     }
-
-    ${MediaPrint} {
-        .progress-bar {
-            animation: unset;
-        }
-    }
 `)

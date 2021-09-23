@@ -52,12 +52,6 @@ export const StyledProcessRing = CreateStyledComponent(styled(ProcessRing)`
                 ${animateProcessCirlce(props)} 1s linear 1
             `};
     }
-
-    ${MediaPrint} {
-        circle.processCircle {
-            animation: unset;
-        }
-    }
 `)
 
 export const StyledWrapperProcessRing = styled.div`

@@ -1,12 +1,11 @@
-import { ResponsiveBetween, ResponsiveMax, MediaPrint, ResponsiveMin } from 'style/Theme'
-import styled, { keyframes } from 'styled-components'
+import { ResponsiveBetween, ResponsiveMax, MediaPrint } from 'style/Theme'
+import styled from 'styled-components'
 import Image from 'next/image'
 import { CreateStyledComponent, dynamicTheme } from 'style/ultis'
 import {
     StyledMenuItem,
     StyledWrapperMenuItem,
     StyledContainerSwitchTheme,
-    StyledWrapperMenuList,
 } from '@components/Menu'
 import { BoxShadowEnum, TransitionEnum } from '@enum/index'
 
@@ -45,9 +44,6 @@ export const StyledContainer = CreateStyledComponent(styled.div`
     align-items: center;
     background-color: ${dynamicTheme((theme) => theme.color.default)};
     transition: ${TransitionEnum.DURATION};
-    ${ResponsiveMin('lg')} {
-        padding: 10px;
-    }
 `)
 
 export const StyledInfo = styled.div`
@@ -81,7 +77,6 @@ export const StyledWrapperHead = CreateStyledComponent(styled.div`
     ${ResponsiveMax('lg')} {
         width: auto;
         display: block;
-        padding-top: 30px;
     }
     ${MediaPrint} {
         padding-top: 0;
@@ -93,7 +88,7 @@ export const StyledAboutHead = CreateStyledComponent(styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 20px;
+    padding: 50px 20px 20px;
     flex-direction: column;
     transition: ${TransitionEnum.DURATION};
 `)
