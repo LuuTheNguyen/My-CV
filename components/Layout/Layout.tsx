@@ -1,8 +1,14 @@
 import Head from 'next/head'
 import { StyledContainerLayout } from './style'
 import type { Props } from './interface'
+import { useEffect } from 'react'
 
 export const Layout: React.FC<Props> = ({ children, name, version }) => {
+    useEffect(
+        () => { 
+            window.scrollTo(0,0)
+        },[]
+    )
     return (
         <StyledContainerLayout>
             <Head>

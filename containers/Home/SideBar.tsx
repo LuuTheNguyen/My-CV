@@ -23,7 +23,7 @@ import { Theme } from 'style/Theme'
 const handlePrint = () => {
     setTimeout(() => {
         window.print()
-    }, 0)
+    }, 1000)
 }
 
 export const SideBar: React.FC<HeadProps> = ({ data }) => {
@@ -47,7 +47,12 @@ export const SideBar: React.FC<HeadProps> = ({ data }) => {
                 <Lib lib={data.libs} />
                 {!isPrintMode && (
                     <StyledContainerTool>
-                        <a data-bs-dismiss="offcanvas" aria-label="Print" href="#" onClick={handlePrint}>
+                        <a
+                            data-bs-dismiss="offcanvas"
+                            aria-label="Print"
+                            href="#"
+                            rel="noreferrer"
+                            onClick={handlePrint}>
                             <span>Print</span>
                             &nbsp;
                             <span className="material-icons">print</span>
