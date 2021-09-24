@@ -1,5 +1,4 @@
-import { useEffect, useState } from 'react'
-import { useCount } from '../Achievement/util'
+import { useCount } from '@hooks'
 import type { ProcessBarProps } from './interface'
 
 export const ProcessBar: React.FC<ProcessBarProps> = ({ className, label = '-', percent = 100, height = 10 }) => {

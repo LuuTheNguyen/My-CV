@@ -1,6 +1,6 @@
 import { StyledContainerAchievement, StyledAchievement } from './styles'
 import type { Props, AchievementProps } from './interface'
-import { useCount } from './util'
+import { useCount } from '@hooks'
 import { Fragment } from 'react'
 
 export const RenderAchievementItem: React.FC<AchievementProps> = (item) => {

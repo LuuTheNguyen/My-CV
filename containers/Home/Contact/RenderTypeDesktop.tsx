@@ -2,10 +2,10 @@ import { useSpring } from 'react-spring'
 import Image from 'next/image'
 import { useIsMobile } from 'hooks'
 import { StyledIcon, StyledWrapCircle } from './styles'
-import type { TypesProps } from './interface'
+import { event as GaEvent } from '@utils/google-analytic'
 import React, { useEffect, useState } from 'react'
+import type { TypesProps } from './interface'
 import type { RenderTypeProps } from './interface'
-import * as ga from 'utils/ga'
 
 const RenderIcon: React.FC<TypesProps> = ({ type }) => {
     switch (type) {
@@ -28,7 +28,7 @@ const handleOnClick = (
     if (event) {
         event.preventDefault()
     }
-    ga.event({
+    GaEvent({
         eventName: 'contact',
         eventParams: {
             event_category: type,
@@ -96,6 +96,7 @@ export const RenderTypeOnDesktop: React.FC<RenderTypeProps> = ({ type, linkProps
         return () => {
             window.addEventListener('resize', restartStyleAnimation)
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
     const stylesIcon = {
