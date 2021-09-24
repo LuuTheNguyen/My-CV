@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { useCount } from '../Achievement/util'
+import { useCount } from '@hooks'
 
 import type { ProcessRingProps } from './interface'
 import { utilProcessCircle } from './util'

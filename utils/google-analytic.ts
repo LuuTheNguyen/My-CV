@@ -1,7 +1,7 @@
-declare global {
-    interface Window {
-        gtag: Gtag.Gtag
-    }
+
+type GTagEvent = {
+    eventName: string
+    eventParams: Gtag.EventParams
 }
 // https://developers.google.com/analytics/devguides/collection/gtagjs/pages
 export const pageview = (url: URL): void => {
@@ -10,12 +10,6 @@ export const pageview = (url: URL): void => {
         page_path: url,
     })
 }
-
-type GTagEvent = {
-    eventName: string
-    eventParams: Gtag.EventParams
-}
-
 // https://developers.google.com/analytics/devguides/collection/gtagjs/events
 export const event = ({ eventName, eventParams }: GTagEvent): void => {
     window.gtag('event', eventName, eventParams)
