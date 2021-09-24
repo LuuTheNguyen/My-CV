@@ -35,6 +35,7 @@ export const StyledIcon = CreateStyledComponent(styled(animated.a)`
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
 `)
 
 export const StyledWrapCircle = CreateStyledComponent(styled(animated.span)`

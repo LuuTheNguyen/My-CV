@@ -3,8 +3,9 @@ import Image from 'next/image'
 import { useIsMobile } from 'hooks'
 import { StyledIcon, StyledWrapCircle } from './styles'
 import type { TypesProps } from './interface'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import type { RenderTypeProps } from './interface'
+import * as ga from 'utils/ga'
 
 const RenderIcon: React.FC<TypesProps> = ({ type }) => {
     switch (type) {
@@ -19,14 +20,31 @@ const RenderIcon: React.FC<TypesProps> = ({ type }) => {
     }
 }
 
-const handleOnClick = (event: React.MouseEvent<HTMLAnchorElement, MouseEvent>, linkProps: Record<any, any>) => {
-    const link = document.createElement('a')
+const handleOnClick = (
+    event: React.MouseEvent<HTMLAnchorElement, MouseEvent>,
+    linkProps: Record<any, any>,
+    type: string
+) => {
+    if (event) {
+        event.preventDefault()
+    }
+    ;(() => {
+        ga.event({
+            eventName: 'contact',
+            eventParams: {
+                event_category: type,
+                event_label: 'contact',
+            },
+        })
+    })()
     Object.keys(linkProps).forEach((prop) => {
         link.setAttribute(prop, linkProps[prop])
     })
 
+    const link = document.createElement('a')
     document.body.appendChild(link)
     link.click()
+    document.body.removeChild(link)
 }
 
 export const RenderTypeOnDesktop: React.FC<RenderTypeProps> = ({ type, linkProps, content }) => {
@@ -61,6 +79,27 @@ export const RenderTypeOnDesktop: React.FC<RenderTypeProps> = ({ type, linkProps
     const propStyleCircle = isMobile ? propStyleCircleMobile : { scale, opacity }
     const propStyleIcon = isMobile ? propStyleIconMobile : { rotateZ }
 
+    useEffect(() => {
+        const restartStyleAnimation = () => {
+            setPropStyleIcon({
+                from: { rotateZ: 0 },
+                rotateZ: 1,
+                reverse: flip,
+                onRest: () => set(!flip),
+            })
+            setPropStyleCircle({
+                from: { scale: 0, opacity: 0.6 },
+                scale: 1.2,
+                opacity: 1,
+            })
+        }
+        window.addEventListener('resize', restartStyleAnimation)
+
+        return () => {
+            window.addEventListener('resize', restartStyleAnimation)
+        }
+    }, [])
+
     const stylesIcon = {
         transform: propStyleIcon.rotateZ
             .to({
@@ -84,12 +123,16 @@ export const RenderTypeOnDesktop: React.FC<RenderTypeProps> = ({ type, linkProps
             .to((opacity) => opacity),
     }
     const handleOnMouseEnter = () => {
-        setPropStyleCircle({ scale: 1.2, opacity: 1, config: { duration: 600 }, reset: true, loop: true })
-        setPropStyleIcon({ rotateZ: 1, loop: true, config: { duration: 600 } })
+        if (!isMobile) {
+            setPropStyleCircle({ scale: 1.2, opacity: 1, config: { duration: 600 }, reset: true, loop: true })
+            setPropStyleIcon({ rotateZ: 1, loop: true, config: { duration: 600 } })
+        }
     }
     const handleOnMouseLeave = () => {
-        setPropStyleCircle({ scale: 0, opacity: 0.6, reset: false, loop: false })
-        setPropStyleIcon({ rotateZ: 0, loop: false })
+        if (!isMobile) {
+            setPropStyleCircle({ scale: 0, opacity: 0.6, reset: false, loop: false })
+            setPropStyleIcon({ rotateZ: 0, loop: false })
+        }
     }
 
     const isAnimatedContent = ['phone', 'skype', 'mail'].indexOf(type) > -1
@@ -102,7 +145,7 @@ export const RenderTypeOnDesktop: React.FC<RenderTypeProps> = ({ type, linkProps
                     className="material-icons"
                     onMouseEnter={handleOnMouseEnter}
                     onMouseLeave={handleOnMouseLeave}
-                    onClick={(event) => handleOnClick(event, linkProps)}>
+                    onClick={(event) => handleOnClick(event, linkProps, type)}>
                     <RenderIcon type={type} />
                 </StyledIcon>
             </span>
@@ -110,7 +153,7 @@ export const RenderTypeOnDesktop: React.FC<RenderTypeProps> = ({ type, linkProps
     }
     return (
         <span>
-            <a onClick={(event) => handleOnClick(event, linkProps)}> {content} </a>
+            <a onClick={(event) => handleOnClick(event, linkProps, type)}> {content} </a>
         </span>
     )
 }

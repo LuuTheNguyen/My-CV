@@ -3,6 +3,9 @@ import { useBrowserEffect } from 'hooks/useBrowserEffect'
 import type { AppProps } from 'next/app'
 import 'style/global.css'
 import { handlePreventCopyCutContent, handlePreventInspectElement } from 'utils/page'
+import { useRouter } from 'next/router'
+import * as ga from 'utils/ga'
+import { useEffect } from 'react'
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
     useBrowserEffect(() => {
@@ -14,6 +17,19 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
             })()
         }
     }, [])
+
+    const router = useRouter()
+
+    useEffect(() => {
+        const handleRouteChange = (url: URL) => {
+            ga.pageview(url)
+        }
+        router.events.on('routeChangeComplete', handleRouteChange)
+
+        return () => {
+            router.events.off('routeChangeComplete', handleRouteChange)
+        }
+    }, [router.events])
 
     return (
         <CustomThemeProvider>
