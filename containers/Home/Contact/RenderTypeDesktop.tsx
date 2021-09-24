@@ -28,15 +28,13 @@ const handleOnClick = (
     if (event) {
         event.preventDefault()
     }
-    (() => {
-        ga.event({
-            eventName: 'contact',
-            eventParams: {
-                event_category: type,
-                event_label: 'contact',
-            },
-        })
-    })()
+    ga.event({
+        eventName: 'contact',
+        eventParams: {
+            event_category: type,
+            event_label: 'contact',
+        },
+    })
 
     const link = document.createElement('a')
     Object.keys(linkProps).forEach((prop) => {
