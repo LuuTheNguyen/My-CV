@@ -28,7 +28,7 @@ const handleOnClick = (
     if (event) {
         event.preventDefault()
     }
-    ;(() => {
+    (() => {
         ga.event({
             eventName: 'contact',
             eventParams: {
@@ -37,11 +37,11 @@ const handleOnClick = (
             },
         })
     })()
+
+    const link = document.createElement('a')
     Object.keys(linkProps).forEach((prop) => {
         link.setAttribute(prop, linkProps[prop])
     })
-
-    const link = document.createElement('a')
     document.body.appendChild(link)
     link.click()
     document.body.removeChild(link)
