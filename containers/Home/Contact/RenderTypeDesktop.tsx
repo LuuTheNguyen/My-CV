@@ -28,20 +28,18 @@ const handleOnClick = (
     if (event) {
         event.preventDefault()
     }
-    ;(() => {
-        ga.event({
-            eventName: 'contact',
-            eventParams: {
-                event_category: type,
-                event_label: 'contact',
-            },
-        })
-    })()
-    Object.keys(linkProps).forEach((prop) => {
-        link.setAttribute(prop, linkProps[prop])
+    ga.event({
+        eventName: 'contact',
+        eventParams: {
+            event_category: type,
+            event_label: 'contact',
+        },
     })
 
     const link = document.createElement('a')
+    Object.keys(linkProps).forEach((prop) => {
+        link.setAttribute(prop, linkProps[prop])
+    })
     document.body.appendChild(link)
     link.click()
     document.body.removeChild(link)
