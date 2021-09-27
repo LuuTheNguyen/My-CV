@@ -12,6 +12,7 @@ import {
     StyledWrapperZoomImage,
     StyledContainerOpacity,
     StyledContainerZoomImage,
+    StyledSkeletonImg,
 } from './style'
 import { Contact } from '@containers/Home/Contact'
 import type { HeadProps } from '@containers/Home/interface'
@@ -37,13 +38,24 @@ export const SideBar: React.FC<HeadProps> = ({ data }) => {
 
     const [isZoomIcon, setIsZoomIcon] = useState(false)
     const resizeImg = () => {
+        if (!isZoomIcon) {
+            document.body.style.overflow = 'hidden'
+        } else {
+            document.body.style.overflow = 'inherit'
+        }
         setIsZoomIcon(!isZoomIcon)
     }
+    const [isImageReady, setIsImageReady] = useState(false)
+    const onHandleLoadImg = () => {
+        setIsImageReady(true)
+    }
+
     return (
         <>
             <StyledAboutHead>
                 <StyledWrapperImage onClick={resizeImg}>
-                    <StyledIcon src="/logo.jpg" layout="fill" objectFit="cover" />
+                    <StyledIcon src="/logo.jpg" layout="fill" objectFit="cover" onLoadingComplete={onHandleLoadImg} />
+                    {!isImageReady && <StyledSkeletonImg />}
                 </StyledWrapperImage>
                 <StyledName>Luu The Nguyen</StyledName>
                 <StyledDescription>Frontend Dev</StyledDescription>

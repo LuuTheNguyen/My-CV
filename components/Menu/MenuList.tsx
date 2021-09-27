@@ -18,6 +18,7 @@ export const MenuList: React.FC = () => {
         <StyledWrapperMenuList>
             <StyledContainerMenuItem>
                 <StyledWrapperMenuItem>
+                    <StyledMenuItem href="#summary" text="Summary" />
                     <StyledMenuItem href="#education" text="Education" />
                     <StyledMenuItem href="#service" text="Experience" />
                 </StyledWrapperMenuItem>

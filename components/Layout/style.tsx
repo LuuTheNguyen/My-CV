@@ -1,5 +1,5 @@
 import { ResponsiveBetween, ResponsiveMax, MediaPrint, ResponsiveMin } from 'style/Theme'
-import styled from 'styled-components'
+import styled, { keyframes } from 'styled-components'
 import Image from 'next/image'
 import { CreateStyledComponent, dynamicTheme } from 'style/ultis'
 import { StyledMenuItem, StyledWrapperMenuItem, StyledContainerSwitchTheme } from '@components/Menu'
@@ -51,28 +51,28 @@ export const StyledWrapperImage = CreateStyledComponent(styled.div`
     width: 160px;
     height: 160px;
     position: relative;
-       
-    &:hover{
-            cursor: pointer;
-            ::before{
-                font-family: 'Material Icons';
-                content: "zoom_out_map";
-                display: inline-block;
-                width: 100%;
-                height: 100%;
-                position: absolute;
-                left: 50%;
-                z-index: 1;
-                top: 50%;
-                transform: translate(-50%, -50%);
-                font-size: 100px;
-                opacity: 0.6;
-                text-align: center;
-                vertical-align: middle;
-                transition: ${TransitionEnum.DURATION};
-                color: ${dynamicTheme((theme) => theme.fontColor.secondary)};
-            }
+
+    &:hover {
+        cursor: pointer;
+        ::before {
+            font-family: 'Material Icons';
+            content: 'zoom_out_map';
+            display: inline-block;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            left: 50%;
+            z-index: 1;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 100px;
+            opacity: 0.6;
+            text-align: center;
+            vertical-align: middle;
+            transition: ${TransitionEnum.DURATION};
+            color: ${dynamicTheme((theme) => theme.fontColor.secondary)};
         }
+    }
 `)
 
 const RADIUS_ICON = 80
@@ -86,6 +86,24 @@ export const StyledIcon = styled(Image)`
     position: relative;
 `
 
+const animateSkeletonImg = keyframes`
+    0% {
+        background-color: #f0f0f6;
+    }
+
+    100% {
+        background-color: #c0c0ca;
+    }
+`
+
+export const StyledSkeletonImg = styled.div`
+    border-radius: ${RADIUS_ICON}px;
+    width: ${RADIUS_ICON * 2}px;
+    height: ${RADIUS_ICON * 2}px;
+    position: absolute;
+    animation: ${animateSkeletonImg} 0.8s linear infinite;
+`
+
 export const StyledZoomIcon = styled(Image)`
     border-radius: ${RADIUS_ICON}px;
     z-index: 999999;
@@ -96,38 +114,38 @@ export const StyledZoomIcon = styled(Image)`
     position: relative;
 `
 
-export const StyledWrapperZoomImage = styled.div`    
-    width: 600px;
-    ${MediaPrint}{
-        display: none
+export const StyledWrapperZoomImage = styled.div`
+    width: 500px;
+    ${MediaPrint} {
+        display: none;
     }
 `
 export const StyledContainerZoomImage = styled.div`
     position: absolute;
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     top: 0;
     transition: ${TransitionEnum.DURATION};
-    
-    ${MediaPrint}{
-        display: none
+
+    ${MediaPrint} {
+        display: none;
     }
 `
 
 export const StyledContainerOpacity = styled.div`
     position: absolute;
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
     top: 0;
     opacity: 0.8;
     background: #000000;
     z-index: 999999;
-    
-    ${MediaPrint}{
-        display: none
+
+    ${MediaPrint} {
+        display: none;
     }
 `
 
@@ -177,8 +195,8 @@ export const StyledWrapperBtnNavBar = CreateStyledComponent(styled.div`
     display: flex;
     justify-content: space-between;
 
-    .material-icons{
-        color: ${dynamicTheme((theme) => theme.fontColor.default)}
+    .material-icons {
+        color: ${dynamicTheme((theme) => theme.fontColor.default)};
     }
 `)
 
@@ -188,8 +206,8 @@ export const StyledWrapperCloseButtonOffCanvasRight = CreateStyledComponent(styl
     background-color: ${dynamicTheme((theme) => theme.color.primary)};
     transition: ${TransitionEnum.DURATION};
 
-    .material-icons{
-        color: ${dynamicTheme((theme) => theme.fontColor.default)}
+    .material-icons {
+        color: ${dynamicTheme((theme) => theme.fontColor.default)};
     }
 `)
 
@@ -213,7 +231,7 @@ export const StyledAboutBody = CreateStyledComponent(styled.div.attrs(() => ({ c
     display: grid;
     grid-row-gap: 20px;
     transition: ${TransitionEnum.DURATION};
-    height: calc(100vh - 320px);
+    height: 100%;
     overflow: auto;
 
     ${ResponsiveBetween('sm', 'lg')} {
@@ -338,9 +356,9 @@ export const StyledContainer = CreateStyledComponent(styled.div`
     align-items: center;
     background-color: ${dynamicTheme((theme) => theme.color.secondary)};
     transition: ${TransitionEnum.DURATION};
-        
-    .container-xxl{
-        ${ResponsiveMin('xxl')}{            
+
+    .container-xxl {
+        ${ResponsiveMin('xxl')} {
             max-width: 1990px !important;
         }
     }

@@ -8,7 +8,7 @@ export const StyledMain = CreateStyledComponent(styled.main`
     background-color: ${dynamicTheme((theme) => theme.color.secondary)};
     color: ${dynamicTheme((theme) => theme.fontColor.default)};
     margin: 0;
-    padding: 0;
+    padding: 0 50px 0 0;
     align-items: center;
     justify-content: center;
     transition: ${TransitionEnum.DURATION};
@@ -22,6 +22,7 @@ export const StyledMain = CreateStyledComponent(styled.main`
     ${MediaPrint} {
         background-color: ${dynamicTheme((theme) => theme.color.default)};
         color: ${dynamicTheme((theme) => theme.fontColor.default)};
+        padding: 0;
     }
 
     .row {
@@ -56,7 +57,7 @@ export const StyledWrapperInfo = styled.div`
 export const StyledWrapperContent = styled.div`
     padding: 30px;
     overflow: auto;
-    height: 100vh;
+    height: 100%;
 
     ${ResponsiveMax('lg')} {
         width: auto;

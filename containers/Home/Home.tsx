@@ -24,12 +24,12 @@ export const HomePage: React.FC<HomeProps> = ({ data }) => {
     const isPrintMode = useIsPrintMode()
     return (
         <Layout name="Nguyên Lưu" version={version} headData={headData}>
-            <StyledMain className="col-sm-12 col-lg-8">
+            <StyledMain className="col-sm-12 col-lg-9">
                 <div className="row">
                     <StyledInfo className="col-12">
                         <StyledWrapperInfo>
                             <StyledWrapperContent>
-                                <StyledBanner className="row">
+                                <StyledBanner className="row" id="summary">
                                     <StyledBannerContent className="col-sm-12 col-lg-12">
                                         <StyledTitleContent>Discoverd my Amazing Art Space!</StyledTitleContent>
                                         <StyledSubTitleContent>
