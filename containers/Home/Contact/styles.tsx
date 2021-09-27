@@ -12,6 +12,7 @@ export const StyledContact = CreateStyledComponent(styled.div`
         font-weight: 600;
         color: ${dynamicTheme((theme) => theme.fontColor.default)};
         transition: color ${TransitionEnum.DURATION};
+        cursor: pointer;
     }
     span + span {
         margin-left: 10px;

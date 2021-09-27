@@ -47,10 +47,10 @@ const handleOnClick = (
 
 export const RenderTypeOnDesktop: React.FC<RenderTypeProps> = ({ type, linkProps, content }) => {
     const isMobile = useIsMobile()
-
+    const duration = 1000
     const propStyleCircleMobile = useSpring({
         from: { scale: 0, opacity: 0.6 },
-        config: { duration: 600 },
+        config: { duration: duration },
         scale: 1.2,
         opacity: 1,
         reset: true,
@@ -59,11 +59,12 @@ export const RenderTypeOnDesktop: React.FC<RenderTypeProps> = ({ type, linkProps
         from: { scale: 0, opacity: 0.6 },
         scale: 1.2,
         opacity: 1,
+        config: { duration: duration },
     }))
     const [flip, set] = useState(false)
     const propStyleIconMobile = useSpring({
         from: { rotateZ: 0 },
-        config: { duration: 600 },
+        config: { duration: duration },
         rotateZ: 1,
         reverse: flip,
         onRest: () => set(!flip),
@@ -72,6 +73,7 @@ export const RenderTypeOnDesktop: React.FC<RenderTypeProps> = ({ type, linkProps
         from: { rotateZ: 0 },
         rotateZ: 1,
         reverse: flip,
+        config: { duration: duration },
         onRest: () => set(!flip),
     }))
     const propStyleCircle = isMobile ? propStyleCircleMobile : { scale, opacity }
@@ -123,8 +125,8 @@ export const RenderTypeOnDesktop: React.FC<RenderTypeProps> = ({ type, linkProps
     }
     const handleOnMouseEnter = () => {
         if (!isMobile) {
-            setPropStyleCircle({ scale: 1.2, opacity: 1, config: { duration: 600 }, reset: true, loop: true })
-            setPropStyleIcon({ rotateZ: 1, loop: true, config: { duration: 600 } })
+            setPropStyleCircle({ scale: 1.2, opacity: 1, config: { duration: duration }, reset: true, loop: true })
+            setPropStyleIcon({ rotateZ: 1, loop: true, config: { duration: duration } })
         }
     }
     const handleOnMouseLeave = () => {

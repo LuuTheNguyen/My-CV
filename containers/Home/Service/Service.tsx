@@ -9,15 +9,33 @@ import {
 } from './styles'
 
 import type { Props } from './interface'
-import { useIsPrintMode } from 'hooks'
 import moment from 'moment'
+import { useIsPrintMode } from 'hooks'
+import { useChain, useSpringRef, useTransition } from '@react-spring/core'
 
 export const Service: React.FC<Props> = ({ service }) => {
-    const isPrintMode = useIsPrintMode()
+    const isPrintMode = useIsPrintMode()    
+    service = service.sort((current, next) => current.from - next.from )
+
+    const transApi = useSpringRef()
+    const transition = useTransition(service, {
+        ref: transApi,
+        trail: 1000 / service.length,
+        from: { opacity: 0, scale: 0 },
+        enter: { opacity: 1, scale: 1 },
+        leave: { opacity: 0, scale: 0 },
+    })
+
+    useChain([transApi], [
+        0,
+        0.1,
+      ])
+
     return (
         <StyledWrapperService>
-            {service.map((item, index) => (
-                <StyledService key={index}>
+            {transition((style, item) => (
+                <StyledService key={item.project} 
+                style={{ ...style }}>
                     <StyledHeaderService>
                         <StyledHeaderTitleService>
                             {moment(item.from).format('MM/YYYY')} - {moment(item.to).format('MM/YYYY')}
@@ -25,7 +43,7 @@ export const Service: React.FC<Props> = ({ service }) => {
                         <StyledHeaderSubTitleService>{item.project}</StyledHeaderSubTitleService>
                         {item.company && (
                             <StyledCompany>
-                                <span>{item.company}</span>
+                                <span>{item.company}</span>   
                                 {!isPrintMode && (
                                     <a target="_blank" rel="noreferrer" href={item.companyHref}>
                                         <span className="material-icons">open_in_new</span>

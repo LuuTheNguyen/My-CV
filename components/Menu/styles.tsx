@@ -9,7 +9,7 @@ import { ResponsiveMax } from 'style/Theme'
 export const StyledMenuList = styled.div`
     display: flex;
     justify-content: flex-end;
-    height: 100vh;
+    height: calc(100vh - 20px);
     padding: 0;
 
     ${ResponsiveMax('lg')} {

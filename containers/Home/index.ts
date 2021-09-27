@@ -1,3 +1,2 @@
 export { HomePage } from './Home'
-export { SideBar } from './SideBar'
-export type { HomeProps } from './interface'
+export type { HomeProps, DataHeadProps } from './interface'
