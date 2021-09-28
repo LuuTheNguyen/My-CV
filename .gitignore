@@ -39,4 +39,5 @@ yarn-error.log*
 #site-map, robots
 /pages/robots.txt.ts
 /pages/sitemap.xmls.ts
+
 desktop.ini
