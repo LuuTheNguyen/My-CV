@@ -38,11 +38,7 @@ export const SideBar: React.FC<HeadProps> = ({ data }) => {
 
     const [isZoomIcon, setIsZoomIcon] = useState(false)
     const resizeImg = () => {
-        if (!isZoomIcon) {
-            document.body.style.overflow = 'hidden'
-        } else {
-            document.body.style.overflow = 'inherit'
-        }
+        document.body.style.overflow = isZoomIcon ? 'inherit' : 'hidden'
         setIsZoomIcon(!isZoomIcon)
     }
     const [isImageReady, setIsImageReady] = useState(false)

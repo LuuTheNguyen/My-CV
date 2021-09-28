@@ -16,7 +16,6 @@
         "next": "^11.1.0",
         "react": "^17.0.2",
         "react-dom": "17.0.2",
-        "react-isotope": "^1.0.7",
         "react-spring": "^9.2.4",
         "sharp": "^0.29.1",
         "styled-components": "^5.3.0"

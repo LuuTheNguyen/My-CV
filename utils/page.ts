@@ -1,5 +1,5 @@
 export const handlePreventCopyCutContent = (document: Document) => {
-    ;['copy', 'cut', 'contextmenu', 'dragstart'].forEach((ev) => {
+    ['copy', 'cut', 'contextmenu', 'dragstart'].forEach((ev) => {
         document.addEventListener(ev, (event) => {
             event.preventDefault()
         })
