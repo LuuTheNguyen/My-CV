@@ -26,8 +26,6 @@ export const StyledWrapperHead = CreateStyledComponent(styled.div`
     transition: ${TransitionEnum.DURATION};
     height: 100%;
     ${ResponsiveMax('lg')} {
-        width: auto;
-        display: block;
         padding-top: 30px;
         z-index: unset;
     }
