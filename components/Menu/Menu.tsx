@@ -4,7 +4,7 @@ import { StyledMenuList, StyledHeaderMenu, StyledContainerMenuList } from './sty
 import { MenuList } from './MenuList'
 export const Menu: React.FC = () => {
     return (
-        <StyledMenuList className="col-1">
+        <StyledMenuList>
             <StyledContainerMenuList>
                 {/** TO DO: Refactor Menu */}
                 <StyledHeaderMenu>{/* <span className="material-icons">menu</span> */}</StyledHeaderMenu>

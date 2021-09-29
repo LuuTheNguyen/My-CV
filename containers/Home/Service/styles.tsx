@@ -1,7 +1,8 @@
-import styled from 'styled-components'
+import styled, { keyframes } from 'styled-components'
 import { MediaPrint, ResponsiveMax } from 'style/Theme'
 import { CreateStyledComponent, dynamicTheme } from 'style/ultis'
 import { BoxShadowEnum, TransitionEnum } from '@enum'
+import { animated } from '@react-spring/web'
 
 export const StyledWrapperService = styled.div`
     display: grid;
@@ -20,7 +21,7 @@ export const StyledWrapperService = styled.div`
     }
 `
 
-export const StyledService = CreateStyledComponent(styled.div`
+export const StyledService = CreateStyledComponent(styled(animated.div)`
     padding: 15px;
     display: flex;
     flex-direction: column;

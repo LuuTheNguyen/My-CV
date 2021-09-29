@@ -9,8 +9,11 @@ import { ResponsiveMax } from 'style/Theme'
 export const StyledMenuList = styled.div`
     display: flex;
     justify-content: flex-end;
-    height: 100vh;
+    height: calc(100vh - 20px);
     padding: 0;
+    position: absolute;
+    width: auto;
+    right: 0;
 
     ${ResponsiveMax('lg')} {
         display: none;
@@ -19,6 +22,11 @@ export const StyledMenuList = styled.div`
 
 export const StyledMenuItem = styled(StyledLink)`
     font-weight: 600;
+    padding-right: 10px;
+
+    ${ResponsiveMax('lg')} {
+        padding-right: 0;
+    }
 `
 
 export const StyledItemLink = React.forwardRef<Ref, Props>((props, ref) => {
@@ -128,9 +136,7 @@ export const StyledSlider = CreateStyledComponent(styled.div`
 export const StyledWrapperMenuItem = styled.div`
     position: absolute;
     transform: rotate(90deg) translateX(50%);
-    display: grid;
-    grid-template-columns: auto auto;
-    grid-gap: 10px;
+    display: flex;
     justify-content: flex-start;
     align-items: center;
     width: calc(100vh - 150px);
