@@ -89,7 +89,7 @@ export const SideBar: React.FC<HeadProps> = ({ data }) => {
             <StyledAboutFooter>
                 <Contact contact={data.contacts} />
             </StyledAboutFooter>
-            {isZoomIcon && (
+            {!!isZoomIcon && (
                 <>
                     <StyledContainerOpacity onClick={resizeImg} />
                     <StyledContainerZoomImage onClick={resizeImg}>
