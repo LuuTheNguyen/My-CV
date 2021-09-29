@@ -42,36 +42,37 @@ export const StyledService = CreateStyledComponent(styled.div`
     }
 `)
 
-export const StyledHeaderService = CreateStyledComponent(styled.span`
-    color: ${dynamicTheme((theme) => theme.fontColor.default)};
-    text-transform: capitalize;
+export const StyledHeaderService = CreateStyledComponent(styled.div`
     display: flex;
     flex-direction: column;
     transition: ${TransitionEnum.DURATION};
+
+    .StyledContent3{        
+        display: inline;
+        margin: 0;
+    }
+
+    .StyledContent1{    
+        display: inline;
+        margin: 0;
+    }
 `)
 
-export const StyledHeaderTitleService = styled.span`
-    font-weight: 600;
-`
-
-export const StyledHeaderSubTitleService = styled.span`
-    font-weight: normal;
-`
-
 export const StyledContentService = CreateStyledComponent(styled.div`
-    color: ${dynamicTheme((theme) => theme.fontColor.primary)};
-    font-size: ${dynamicTheme((theme) => theme.fontSize.md)};
     margin-top: 10px;
-    transition: ${TransitionEnum.DURATION};
+    .StyledContent5{
+        display: inline;
+    }
 `)
 
 export const StyledCompany = CreateStyledComponent(styled.div`
-    color: ${dynamicTheme((theme) => theme.fontColor.secondary)};
-    font-weight: 600px;
-    text-transform: uppercase;
     display: flex;
     align-items: center;
     transition: ${TransitionEnum.DURATION};
+    .StyledContent4{
+        display: inline;
+        margin: 0;
+    }
     & button {
         border: none;
         padding: 0;

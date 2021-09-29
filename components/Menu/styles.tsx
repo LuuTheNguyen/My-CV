@@ -19,6 +19,7 @@ export const StyledMenuList = styled.div`
 
 export const StyledMenuItem = styled(StyledLink)`
     font-weight: 600;
+    font-family: 'Source Sans Pro', sans-serif;
 `
 
 export const StyledItemLink = React.forwardRef<Ref, Props>((props, ref) => {

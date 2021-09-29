@@ -1,7 +1,5 @@
 import styled from 'styled-components'
 import { ResponsiveBetween } from 'style/Theme'
-import { CreateStyledComponent, dynamicTheme } from 'style/ultis'
-import { TransitionEnum } from '@enum'
 
 export const StyledAbout = styled.div`
     display: flex;
@@ -17,14 +15,14 @@ export const StyledAbout = styled.div`
         display: flex;
         justify-content: space-between;
     }
+
+    .StyledContent1{
+        display: inline;
+        margin: 0;
+    }
+
+    .StyledContent5{
+        display: inline;
+        margin: 0;
+    }
 `
-
-export const StyledLabel = CreateStyledComponent(styled.span`
-    color: ${dynamicTheme((theme) => theme.fontColor.default)};
-    transition: color ${TransitionEnum.DURATION};
-`)
-
-export const StyledContent = CreateStyledComponent(styled.span`
-    color: ${dynamicTheme((theme) => theme.fontColor.primary)};
-    transition: color ${TransitionEnum.DURATION};
-`)

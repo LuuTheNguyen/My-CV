@@ -1,5 +1,5 @@
 import styled, { css, keyframes } from 'styled-components'
-import { MediaPrint, ResponsiveBetween, ResponsiveMax } from 'style/Theme'
+import { ResponsiveBetween, ResponsiveMax } from 'style/Theme'
 import { ProcessRing } from './ProcessRing'
 import { ProcessRingProps } from './interface'
 import { utilProcessCircle } from './util'
@@ -40,6 +40,7 @@ export const StyledProcessRing = CreateStyledComponent(styled(ProcessRing)`
         text-anchor: middle;
         font-size: ${dynamicTheme((theme) => theme.fontSize.sm)};
         transition: ${TransitionEnum.DURATION};
+        font-family: 'Source Sans Pro', sans-serif;
     }
     circle {
         transform: rotate(-90deg);
@@ -54,19 +55,18 @@ export const StyledProcessRing = CreateStyledComponent(styled(ProcessRing)`
     }
 `)
 
-export const StyledWrapperProcessRing = styled.div`
+export const StyledWrapperProcessRing = CreateStyledComponent(styled.div`
     position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-`
 
-export const StyledTitleProcessRing = CreateStyledComponent(styled.div`
-    color: ${dynamicTheme((theme) => theme.fontColor.default)};
-    margin: auto auto;
-    font-size: ${dynamicTheme((theme) => theme.fontSize.sm)};
-    transition: color ${TransitionEnum.DURATION};
+    .StyledContent1{
+        display: inline;        
+        margin: auto auto;
+        font-size: ${dynamicTheme((theme) => theme.fontSize.sm)};
+    }
 `)
 
 export const StyledWrapperLanguage = styled.div`

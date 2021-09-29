@@ -1,13 +1,5 @@
 import styled from 'styled-components'
 import { MediaPrint, ResponsiveMax } from 'style/Theme'
-import { CreateStyledComponent, dynamicTheme, setTheme } from 'style/ultis'
-import { TransitionEnum } from '@enum'
-
-export const StyledEducationItem = CreateStyledComponent(styled.span`
-    font-size: ${dynamicTheme((theme) => theme.fontSize.md)};
-    color: ${dynamicTheme((theme) => theme.fontColor.default)};
-    transition: color ${TransitionEnum.DURATION};
-`)
 
 export const StyledEducations = styled.div`
     display: grid;

@@ -2,11 +2,7 @@ import { ResponsiveBetween, ResponsiveMax, MediaPrint } from 'style/Theme'
 import styled from 'styled-components'
 import Image from 'next/image'
 import { CreateStyledComponent, dynamicTheme } from 'style/ultis'
-import {
-    StyledMenuItem,
-    StyledWrapperMenuItem,
-    StyledContainerSwitchTheme,
-} from '@components/Menu'
+import { StyledMenuItem, StyledWrapperMenuItem, StyledContainerSwitchTheme } from '@components/Menu'
 import { BoxShadowEnum, TransitionEnum } from '@enum/index'
 
 export const StyledMain = CreateStyledComponent(styled.main`
@@ -74,6 +70,7 @@ export const StyledWrapperHead = CreateStyledComponent(styled.div`
     box-shadow: ${BoxShadowEnum.SQUARE} ${dynamicTheme((theme) => theme.color.default)};
     padding: 0;
     transition: ${TransitionEnum.DURATION};
+    font-family: 'Source Sans Pro', sans-serif;
     ${ResponsiveMax('lg')} {
         width: auto;
         display: block;
@@ -91,6 +88,20 @@ export const StyledAboutHead = CreateStyledComponent(styled.div`
     padding: 50px 20px 20px;
     flex-direction: column;
     transition: ${TransitionEnum.DURATION};
+
+    .StyledContent2 {
+        display: inline;
+        font-size: ${dynamicTheme((theme) => theme.fontSize.sm)};
+        text-transform: uppercase;
+        margin: 0;
+    }
+
+    .StyledContent5 {
+        display: inline;
+        font-size: ${dynamicTheme((theme) => theme.fontSize.xs)};
+        margin: 0;
+    }
+
 `)
 
 export const StyledWrapperImage = styled.div`
@@ -107,19 +118,6 @@ export const StyledIcon = styled(Image)`
     }
     position: relative;
 `
-export const StyledName = CreateStyledComponent(styled.span`
-    font-size: ${dynamicTheme((theme) => theme.fontSize.sm)};
-    color: ${dynamicTheme((theme) => theme.fontColor.default)};
-    font-weight: 600;
-    text-transform: uppercase;
-    transition: ${TransitionEnum.DURATION};
-`)
-
-export const StyledDescription = CreateStyledComponent(styled.span`
-    font-size: ${dynamicTheme((theme) => theme.fontSize.xs)};
-    color: ${dynamicTheme((theme) => theme.fontColor.primary)};
-    transition: ${TransitionEnum.DURATION};
-`)
 
 export const StyledAboutBody = CreateStyledComponent(styled.div.attrs(() => ({ className: 'StyledAboutBody' }))`
     background-color: ${dynamicTheme((theme) => theme.color.secondary)};
@@ -295,16 +293,13 @@ export const StyledBannerContent = styled.div`
     }
 `
 
-export const StyledTitleContent = CreateStyledComponent(styled.h4`
-    color: ${dynamicTheme((theme) => theme.fontColor.default)};
-    text-transform: uppercase;
-    font-weight: 600;
-    transition: ${TransitionEnum.DURATION};
-`)
-
 export const StyledSubTitleContent = CreateStyledComponent(styled.div`
-    color: ${dynamicTheme((theme) => theme.fontColor.default)};
     transition: ${TransitionEnum.DURATION};
+
+    .StyledContent1 {
+        display: inline;
+    }
+
     .code {
         color: ${dynamicTheme((theme) => theme.fontColor.secondary)};
         transition: ${TransitionEnum.DURATION};
@@ -362,9 +357,3 @@ export const StyledWrapperBtnNavBar = styled.div`
     display: flex;
     justify-content: space-between;
 `
-export const StyledTitleItems = CreateStyledComponent(styled.h5`
-    color: ${dynamicTheme((theme) => theme.fontColor.default)};
-    text-transform: uppercase;
-    font-weight: 600;
-    transition: ${TransitionEnum.DURATION};
-`)

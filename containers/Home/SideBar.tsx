@@ -2,8 +2,6 @@ import {
     StyledAboutHead,
     StyledWrapperImage,
     StyledIcon,
-    StyledName,
-    StyledDescription,
     StyledAboutFooter,
     StyledAboutBody,
     StyledContainerTool,
@@ -19,6 +17,7 @@ import { useIsPrintMode } from 'hooks'
 import { useContext } from 'react'
 import { ThemeContext } from '@context/ThemeContext'
 import { Theme } from 'style/Theme'
+import { TypoComponent } from '@components/Typo'
 
 const handlePrint = () => {
     setTimeout(() => {
@@ -37,8 +36,8 @@ export const SideBar: React.FC<HeadProps> = ({ data }) => {
                 <StyledWrapperImage>
                     <StyledIcon src="/logo.jpg" layout="fill" objectFit="cover" />
                 </StyledWrapperImage>
-                <StyledName>Luu The Nguyen</StyledName>
-                <StyledDescription>Frontend Dev</StyledDescription>
+                <TypoComponent type="content2">Luu The Nguyen</TypoComponent>
+                <TypoComponent type="content5">Frontend Dev</TypoComponent>
             </StyledAboutHead>
             <StyledAboutBody>
                 <About about={data.abouts} />

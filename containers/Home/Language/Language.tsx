@@ -2,7 +2,6 @@ import {
     StyledLanguage,
     StyledProcessRing,
     StyledWrapperProcessRing,
-    StyledTitleProcessRing,
     StyledWrapperLanguage,
     StyledContainerProcessRings,
 } from './styles'
@@ -11,6 +10,7 @@ import { Theme } from 'style/Theme'
 import type { Props } from './interface'
 import { useContext } from 'react'
 import { ThemeContext } from '@context/ThemeContext'
+import { TypoComponent } from '@components/Typo'
 
 export const Language: React.FC<Props> = ({ language }) => {
     const { theme } = useContext(ThemeContext)
@@ -21,7 +21,7 @@ export const Language: React.FC<Props> = ({ language }) => {
         <StyledLanguage>
             {language.map((item, idx) => (
                 <StyledWrapperLanguage key={idx}>
-                    <p>{item.name}</p>
+                    <TypoComponent type="content1">{item.name}</TypoComponent>
                     <StyledContainerProcessRings>
                         {item.skills.map((skill, index) => (
                             <StyledWrapperProcessRing key={index}>
@@ -33,7 +33,7 @@ export const Language: React.FC<Props> = ({ language }) => {
                                     percent={skill.percent}
                                     fontColor={currentTheme.fontColor.primary}
                                 />
-                                <StyledTitleProcessRing>{skill.label}</StyledTitleProcessRing>
+                                <TypoComponent type="content1">{skill.label}</TypoComponent>
                             </StyledWrapperProcessRing>
                         ))}{' '}
                     </StyledContainerProcessRings>

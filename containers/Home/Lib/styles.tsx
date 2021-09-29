@@ -23,8 +23,6 @@ export const StyledLib = styled.div`
 export const StyledListLib = CreateStyledComponent(styled(ListLib)`
     margin-bottom: 5px;
     display: flex;
-    color: ${dynamicTheme((theme) => theme.fontColor.primary)};
-    transition: ${TransitionEnum.DURATION};
     & .material-icons {
         color: ${dynamicTheme((theme) => theme.fontColor.secondary)};
         margin-right: 8px;
@@ -41,5 +39,10 @@ export const StyledListLib = CreateStyledComponent(styled(ListLib)`
 
     i {
         margin-right: 5px;
+    }
+
+    .StyledContent5{
+        display: inline;
+        margin: 0;
     }
 `)
