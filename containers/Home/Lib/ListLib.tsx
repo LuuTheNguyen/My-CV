@@ -3,9 +3,9 @@ import type { ListLibProps } from './interface'
 
 export const ListLib: React.FC<ListLibProps> = ({ className, text = '-' }) => {
     return (
-        <p className={className}>
+        <div className={className}>
             <span className="material-icons">done</span>
             <TypoComponent type="content5">{text}</TypoComponent>
-        </p>
+        </div>
     )
 }
