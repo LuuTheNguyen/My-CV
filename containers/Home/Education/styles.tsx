@@ -14,10 +14,15 @@ export const StyledEducations = styled.div`
 
     ${ResponsiveMax('sm')} {
         grid-template-columns: auto;
+        grid-row-gap: 10px;
     }
 
     ${MediaPrint} {
         grid-template-columns: auto auto auto;
         grid-column-gap: 10px;
+    }
+
+    .StyledContent1{
+        margin:0;
     }
 `
