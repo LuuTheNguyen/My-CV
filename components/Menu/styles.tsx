@@ -8,9 +8,12 @@ import { ResponsiveMax } from 'style/Theme'
 
 export const StyledMenuList = styled.div`
     display: flex;
-    justify-content: flex-end;
     height: 100vh;
-    padding: 0;
+    justify-content: flex-end;
+    padding: 0;    
+    position: absolute;
+    right: 0;
+    width: auto;
 
     ${ResponsiveMax('lg')} {
         display: none;
@@ -20,6 +23,7 @@ export const StyledMenuList = styled.div`
 export const StyledMenuItem = styled(StyledLink)`
     font-weight: 600;
     font-family: 'Source Sans Pro', sans-serif;
+    margin-right: 10px;
 `
 
 export const StyledItemLink = React.forwardRef<Ref, Props>((props, ref) => {
@@ -129,15 +133,9 @@ export const StyledSlider = CreateStyledComponent(styled.div`
 export const StyledWrapperMenuItem = styled.div`
     position: absolute;
     transform: rotate(90deg) translateX(50%);
-    display: grid;
-    grid-template-columns: auto auto;
-    grid-gap: 10px;
+    display: flex;
     justify-content: flex-start;
     align-items: center;
     width: calc(100vh - 150px);
     overflow: auto;
-
-    ::-webkit-scrollbar {
-        display: none;
-    }
 `

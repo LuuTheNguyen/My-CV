@@ -1,5 +1,4 @@
 import Head from 'next/head'
-import { StyledContainerLayout } from './style'
 import type { Props } from './interface'
 import { useEffect } from 'react'
 import {
@@ -9,7 +8,8 @@ import {
     StyledWrapperCloseButtonOffCanvasRight,
     StyledWrapper,
     StyledContainer,
-} from './style'
+    StyledContainerLayout
+} from './styles'
 import { Menu, MenuList } from '@components/Menu'
 import { SideBar } from './SideBar'
 import { useIsPrintMode } from 'hooks'
