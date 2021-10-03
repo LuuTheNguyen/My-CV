@@ -6,15 +6,20 @@ import {
     StyledAboutBody,
     StyledContainerTool,
     StyledImageGit,
+    StyledZoomIcon,
+    StyledWrapperZoomImage,
+    StyledContainerOpacity,
+    StyledContainerZoomImage,
+    StyledSkeletonImg,
 } from './styles'
-import { Contact } from './Contact'
-import type { HeadProps } from './interface'
-import { About } from './About'
-import { Language } from './Language'
-import { Lib } from './Lib'
-import { Skill } from './Skill'
+import { Contact } from '@containers/Home/Contact'
+import type { HeadProps } from '@containers/Home/interface'
+import { About } from '@containers/Home/About'
+import { Language } from '@containers/Home/Language'
+import { Lib } from '@containers/Home/Lib'
+import { Skill } from '@containers/Home/Skill'
 import { useIsPrintMode } from 'hooks'
-import { useContext } from 'react'
+import { useContext, useState } from 'react'
 import { ThemeContext } from '@context/ThemeContext'
 import { Theme } from 'style/Theme'
 import { TypoComponent } from '@components/Typo'
@@ -28,13 +33,24 @@ const handlePrint = () => {
 export const SideBar: React.FC<HeadProps> = ({ data }) => {
     const { theme } = useContext(ThemeContext)
     const currentTheme = Theme[theme]
-
     const isPrintMode = useIsPrintMode()
+
+    const [isZoomIcon, setIsZoomIcon] = useState(false)
+    const resizeImg = () => {
+        document.body.style.overflow = isZoomIcon ? 'inherit' : 'hidden'
+        setIsZoomIcon(!isZoomIcon)
+    }
+    const [isImageReady, setIsImageReady] = useState(false)
+    const onHandleLoadImg = () => {
+        setIsImageReady(true)
+    }
+
     return (
         <>
             <StyledAboutHead>
-                <StyledWrapperImage>
-                    <StyledIcon src="/logo.jpg" layout="fill" objectFit="cover" />
+                <StyledWrapperImage onClick={resizeImg}>
+                    <StyledIcon src="/logo.jpg" layout="fill" objectFit="cover" onLoadingComplete={onHandleLoadImg} />
+                    {!isImageReady && <StyledSkeletonImg />}
                 </StyledWrapperImage>
                 <TypoComponent type="content2">Luu The Nguyen</TypoComponent>
                 <TypoComponent type="content5">Frontend Dev</TypoComponent>
@@ -72,6 +88,23 @@ export const SideBar: React.FC<HeadProps> = ({ data }) => {
             <StyledAboutFooter>
                 <Contact contact={data.contacts} />
             </StyledAboutFooter>
+            {!!isZoomIcon && (
+                <>
+                    <StyledContainerOpacity onClick={resizeImg} />
+                    <StyledContainerZoomImage onClick={resizeImg}>
+                        <StyledWrapperZoomImage>
+                            <StyledZoomIcon
+                                src="/logo.jpg"
+                                layout="responsive"
+                                objectFit="cover"
+                                width="30vw"
+                                height="30vh"
+                                sizes="32w"
+                            />
+                        </StyledWrapperZoomImage>
+                    </StyledContainerZoomImage>
+                </>
+            )}
         </>
     )
 }

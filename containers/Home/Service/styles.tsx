@@ -1,7 +1,8 @@
-import styled from 'styled-components'
+import styled, { keyframes } from 'styled-components'
 import { MediaPrint, ResponsiveMax } from 'style/Theme'
 import { CreateStyledComponent, dynamicTheme } from 'style/ultis'
 import { BoxShadowEnum, TransitionEnum } from '@enum'
+import { animated } from '@react-spring/web'
 
 export const StyledWrapperService = styled.div`
     display: grid;
@@ -20,7 +21,7 @@ export const StyledWrapperService = styled.div`
     }
 `
 
-export const StyledService = CreateStyledComponent(styled.div`
+export const StyledService = CreateStyledComponent(styled(animated.div)`
     padding: 15px;
     display: flex;
     flex-direction: column;
@@ -42,37 +43,36 @@ export const StyledService = CreateStyledComponent(styled.div`
     }
 `)
 
-export const StyledHeaderService = CreateStyledComponent(styled.div`
+export const StyledHeaderService = CreateStyledComponent(styled.span`
+    color: ${dynamicTheme((theme) => theme.fontColor.default)};
+    text-transform: capitalize;
     display: flex;
     flex-direction: column;
     transition: ${TransitionEnum.DURATION};
-
-    .StyledContent3{        
-        display: inline;
-        margin: 0;
-    }
-
-    .StyledContent1{    
-        display: inline;
-        margin: 0;
-    }
 `)
 
+export const StyledHeaderTitleService = styled.span`
+    font-weight: 600;
+`
+
+export const StyledHeaderSubTitleService = styled.span`
+    font-weight: normal;
+`
+
 export const StyledContentService = CreateStyledComponent(styled.div`
+    color: ${dynamicTheme((theme) => theme.fontColor.primary)};
+    font-size: ${dynamicTheme((theme) => theme.fontSize.md)};
     margin-top: 10px;
-    .StyledContent5{
-        display: inline;
-    }
+    transition: ${TransitionEnum.DURATION};
 `)
 
 export const StyledCompany = CreateStyledComponent(styled.div`
+    color: ${dynamicTheme((theme) => theme.fontColor.secondary)};
+    font-weight: 600px;
+    text-transform: uppercase;
     display: flex;
     align-items: center;
     transition: ${TransitionEnum.DURATION};
-    .StyledContent4{
-        display: inline;
-        margin: 0;
-    }
     & button {
         border: none;
         padding: 0;

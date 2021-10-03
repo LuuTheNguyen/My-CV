@@ -21,7 +21,7 @@ import { Menu, MenuList } from '@components/Menu'
 import { Achievement } from './Achievement'
 import { Service } from './Service'
 import { Education } from './Education'
-import { SideBar } from './SideBar'
+import { SideBar } from '@components/Layout/SideBar'
 import { useIsPrintMode } from 'hooks'
 import type { HomeProps } from './interface'
 import { TypoComponent } from '@components/Typo'
@@ -30,7 +30,7 @@ export const HomePage: React.FC<HomeProps> = ({ data }) => {
     const { contentData, headData, summaryData, version } = data
     const isPrintMode = useIsPrintMode()
     return (
-        <Layout name="Nguyên Lưu" version={version}>
+        <Layout name="Nguyên Lưu" version={version} headData={headData}>
             <StyledContainer>
                 <StyledMain className="container-xxl">
                     <div className="row">

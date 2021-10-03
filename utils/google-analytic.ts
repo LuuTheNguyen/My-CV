@@ -1,4 +1,3 @@
-
 type GTagEvent = {
     eventName: string
     eventParams: Gtag.EventParams
