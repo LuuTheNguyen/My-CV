@@ -100,6 +100,11 @@ export const StyledSubTitleContent = CreateStyledComponent(styled.div`
         transition: ${TransitionEnum.DURATION};
     }
 
+    .StyledContent1{
+        margin: 0;
+        display: inline;
+    }
+
     ${MediaPrint} {
         display: block;
         break-inside: avoid;
