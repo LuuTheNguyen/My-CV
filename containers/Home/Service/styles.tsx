@@ -49,6 +49,10 @@ export const StyledHeaderService = CreateStyledComponent(styled.span`
     display: flex;
     flex-direction: column;
     transition: ${TransitionEnum.DURATION};
+
+    .StyledContent3, .StyledContent1{
+        margin: 0;
+    }
 `)
 
 export const StyledHeaderTitleService = styled.span`
@@ -64,6 +68,11 @@ export const StyledContentService = CreateStyledComponent(styled.div`
     font-size: ${dynamicTheme((theme) => theme.fontSize.md)};
     margin-top: 10px;
     transition: ${TransitionEnum.DURATION};
+
+    .StyledContent5{
+        margin: 0;
+        display: inline;
+    }
 `)
 
 export const StyledCompany = CreateStyledComponent(styled.div`
@@ -89,5 +98,9 @@ export const StyledCompany = CreateStyledComponent(styled.div`
         align-items: center;
         text-decoration: none;
         transition: ${TransitionEnum.DURATION};
+    }
+
+    .StyledContent4{
+        margin: 0;
     }
 `)

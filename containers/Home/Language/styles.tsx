@@ -73,6 +73,10 @@ export const StyledWrapperLanguage = styled.div`
     display: flex;
     flex-direction: column;
     width: 100%;
+
+    .StyledContent1{
+        margin: 0;
+    }
 `
 
 export const StyledContainerProcessRings = styled.div`
