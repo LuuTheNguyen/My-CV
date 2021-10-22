@@ -26,23 +26,27 @@ export const StyledProcessBar = CreateStyledComponent(styled(ProcessBar)`
         display: flex;
         justify-content: space-between;
         span {
-            color: ${dynamicTheme((theme) => theme.fontColor.default)};
+            color: ${dynamicTheme((dataTheme) => dataTheme.fontColor.default)};
             transition: ${TransitionEnum.DURATION};
         }
         span + span {
-            color: ${dynamicTheme((theme) => theme.fontColor.primary)};
+            color: ${dynamicTheme((dataTheme) => dataTheme.fontColor.primary)};
             transition: ${TransitionEnum.DURATION};
         }
     }
-    .progress {
+    .progressBar {
         height: ${(props) => `${props.height}px`};
-        background-color: ${dynamicTheme((theme) => theme.fontColor.tertiary)};
+        background-color: ${dynamicTheme((dataTheme) => dataTheme.fontColor.tertiary)};
         transition: ${TransitionEnum.DURATION};
+        position: relative;
     }
-    .progress-bar {
-        background-color: ${dynamicTheme((theme) => theme.color.tertiary)};
+    .progressBar::before {
+        content: "";
+        position: absolute;
+        background-color: ${dynamicTheme((dataTheme) => dataTheme.color.tertiary)};
         width: ${(props) => `${props.percent}%`};
         max-width: ${(props) => `${props.percent}%`};
+        height: 100%;
         animation: ${animateWidthProcess} 1s linear 1;
         transition: ${TransitionEnum.DURATION};
     }

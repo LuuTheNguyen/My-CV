@@ -9,7 +9,7 @@ import { TransitionEnum } from '@enum'
 export const StyledLanguage = CreateStyledComponent(styled.div`
     justify-content: center;
     align-items: flex-start;
-    color: ${dynamicTheme((theme) => theme.fontColor.default)};
+    color: ${dynamicTheme((dataTheme) => dataTheme.fontColor.default)};
     display: flex;
     flex-direction: column;
     transition: color ${TransitionEnum.DURATION};
@@ -24,8 +24,8 @@ const animateProcessCirlce = (props: ProcessRingProps) => {
 
     return keyframes`
     0%{
-        stroke-dasharray: 100 100;
-        stroke-dashoffset: 100;
+        stroke-dasharray: 100 ${circumference};
+        stroke-dashoffset: ${offset};
     }
 
     100%{
@@ -38,7 +38,7 @@ const animateProcessCirlce = (props: ProcessRingProps) => {
 export const StyledProcessRing = CreateStyledComponent(styled(ProcessRing)`
     text {
         text-anchor: middle;
-        font-size: ${dynamicTheme((theme) => theme.fontSize.sm)};
+        font-size: ${dynamicTheme((dataTheme) => dataTheme.fontSize.sm)};
         transition: ${TransitionEnum.DURATION};
     }
     circle {
@@ -63,9 +63,9 @@ export const StyledWrapperProcessRing = styled.div`
 `
 
 export const StyledTitleProcessRing = CreateStyledComponent(styled.div`
-    color: ${dynamicTheme((theme) => theme.fontColor.default)};
+    color: ${dynamicTheme((dataTheme) => dataTheme.fontColor.default)};
     margin: auto auto;
-    font-size: ${dynamicTheme((theme) => theme.fontSize.sm)};
+    font-size: ${dynamicTheme((dataTheme) => dataTheme.fontSize.sm)};
     transition: color ${TransitionEnum.DURATION};
 `)
 

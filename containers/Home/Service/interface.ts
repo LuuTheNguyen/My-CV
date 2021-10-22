@@ -12,3 +12,8 @@ export interface ServiceProps {
 export interface Props {
     service: ServiceProps[]
 }
+
+export interface RenderServiceProps{
+    item: ServiceProps;
+    style?: any;
+}

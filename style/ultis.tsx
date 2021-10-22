@@ -4,15 +4,14 @@ import type { DynamicThemeFunc, CreateStyledComponentFunc } from './interface'
 import React, { useContext } from 'react'
 import { ThemeContext } from '@context/ThemeContext'
 
-export const setTheme =
-    (otherProps: Record<any, any> = {}) =>
-    ({ theme }: Record<any, any>) => ({ ...otherProps, theme })
-
 export const dynamicTheme: DynamicThemeFunc =
     (darkModeCallback, lightModeCallback) =>
-    ({ theme }) => {
-        const isLightMode = theme === ThemeEnum.LIGHT
-        const themeOptions = Theme[theme]
+    ({ dataTheme }) => {
+        if(!dataTheme) {
+            return darkModeCallback(Theme[ThemeEnum.DARK])
+        }
+        const isLightMode = dataTheme === ThemeEnum.LIGHT
+        const themeOptions = Theme[dataTheme]
 
         if (isLightMode && lightModeCallback) {
             return lightModeCallback(themeOptions)
@@ -25,7 +24,7 @@ export const CreateStyledComponent: CreateStyledComponentFunc = (StyledComponent
         const { theme } = useContext(ThemeContext)
         const componentProps: any = {
             ...props,
-            theme,
+            ['data-theme']: theme,
         }
         return (<StyledComponents {...componentProps} />) as any
     }

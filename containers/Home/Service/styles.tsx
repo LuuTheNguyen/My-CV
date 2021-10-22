@@ -26,8 +26,8 @@ export const StyledService = CreateStyledComponent(styled(animated.div)`
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    background-color: ${dynamicTheme((theme) => theme.color.primary)};
-    box-shadow: ${`${BoxShadowEnum.SQUARE} ${dynamicTheme((theme) => theme.color.default)}`};
+    background-color: ${dynamicTheme((dataTheme) => dataTheme.color.primary)};
+    box-shadow: ${`${BoxShadowEnum.SQUARE} ${dynamicTheme((dataTheme) => dataTheme.color.default)}`};
     height: 100%;
     transition: ${TransitionEnum.DURATION};
 
@@ -44,7 +44,7 @@ export const StyledService = CreateStyledComponent(styled(animated.div)`
 `)
 
 export const StyledHeaderService = CreateStyledComponent(styled.span`
-    color: ${dynamicTheme((theme) => theme.fontColor.default)};
+    color: ${dynamicTheme((dataTheme) => dataTheme.fontColor.default)};
     text-transform: capitalize;
     display: flex;
     flex-direction: column;
@@ -60,14 +60,14 @@ export const StyledHeaderSubTitleService = styled.span`
 `
 
 export const StyledContentService = CreateStyledComponent(styled.div`
-    color: ${dynamicTheme((theme) => theme.fontColor.primary)};
-    font-size: ${dynamicTheme((theme) => theme.fontSize.md)};
+    color: ${dynamicTheme((dataTheme) => dataTheme.fontColor.primary)};
+    font-size: ${dynamicTheme((dataTheme) => dataTheme.fontSize.md)};
     margin-top: 10px;
     transition: ${TransitionEnum.DURATION};
 `)
 
 export const StyledCompany = CreateStyledComponent(styled.div`
-    color: ${dynamicTheme((theme) => theme.fontColor.secondary)};
+    color: ${dynamicTheme((dataTheme) => dataTheme.fontColor.secondary)};
     font-weight: 600px;
     text-transform: uppercase;
     display: flex;
@@ -78,13 +78,13 @@ export const StyledCompany = CreateStyledComponent(styled.div`
         padding: 0;
     }
     & .material-icons {
-        font-size: ${dynamicTheme((theme) => theme.fontSize.md)};
+        font-size: ${dynamicTheme((dataTheme) => dataTheme.fontSize.md)};
         cursor: pointer;
         transition: ${TransitionEnum.DURATION};
     }
     & a {
         margin-left: 5px;
-        color: ${dynamicTheme((theme) => theme.fontColor.secondary)};
+        color: ${dynamicTheme((dataTheme) => dataTheme.fontColor.secondary)};
         display: flex;
         align-items: center;
         text-decoration: none;

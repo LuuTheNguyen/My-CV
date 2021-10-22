@@ -7,8 +7,8 @@ import { BoxShadowEnum, TransitionEnum } from '@enum/index'
 
 export const StyledContainerLayout = styled.div`
     * {
-        -webkit-print-color-adjust: exact !important; /* Chrome, Safari, Edge */
-        color-adjust: exact !important; /*Firefox*/
+        -webkit-print-color-adjust: exact; /* Chrome, Safari, Edge */
+        color-adjust: exact; /*Firefox*/
 
         hr {
             opacity: unset;
@@ -20,7 +20,7 @@ export const StyledContainerLayout = styled.div`
     }
 `
 export const StyledWrapperHead = CreateStyledComponent(styled.div`
-    box-shadow: ${BoxShadowEnum.SQUARE} ${dynamicTheme((theme) => theme.color.default)};
+    box-shadow: ${BoxShadowEnum.SQUARE} ${dynamicTheme((dataTheme) => dataTheme.color.default)};
     padding: 0;
     z-index: 1;
     transition: ${TransitionEnum.DURATION};
@@ -36,7 +36,7 @@ export const StyledWrapperHead = CreateStyledComponent(styled.div`
 `)
 
 export const StyledAboutHead = CreateStyledComponent(styled.div`
-    background-color: ${dynamicTheme((theme) => theme.color.primary)};
+    background-color: ${dynamicTheme((dataTheme) => dataTheme.color.primary)};
     display: flex;
     align-items: center;
     justify-content: center;
@@ -68,7 +68,7 @@ export const StyledWrapperImage = CreateStyledComponent(styled.div`
             text-align: center;
             vertical-align: middle;
             transition: ${TransitionEnum.DURATION};
-            color: ${dynamicTheme((theme) => theme.fontColor.secondary)};
+            color: ${dynamicTheme((dataTheme) => dataTheme.fontColor.secondary)};
         }
     }
 `)
@@ -149,7 +149,7 @@ export const StyledContainerOpacity = styled.div`
 
 export const StyledNavBar = CreateStyledComponent(styled.div`
     display: none;
-    background-color: ${dynamicTheme((theme) => theme.color.default)};
+    background-color: ${dynamicTheme((dataTheme) => dataTheme.color.default)};
     transition: ${TransitionEnum.DURATION};
 
     ${ResponsiveMax('lg')} {
@@ -160,7 +160,7 @@ export const StyledNavBar = CreateStyledComponent(styled.div`
 
     .offcanvas {
         height: 100vh;
-        background-color: ${dynamicTheme((theme) => theme.color.secondary)};
+        background-color: ${dynamicTheme((dataTheme) => dataTheme.color.secondary)};
         width: 50%;
         transition: ${TransitionEnum.DURATION};
         .StyledWrapperMenuList {
@@ -194,37 +194,37 @@ export const StyledWrapperBtnNavBar = CreateStyledComponent(styled.div`
     justify-content: space-between;
 
     .material-icons {
-        color: ${dynamicTheme((theme) => theme.fontColor.default)};
+        color: ${dynamicTheme((dataTheme) => dataTheme.fontColor.default)};
     }
 `)
 
 export const StyledWrapperCloseButtonOffCanvasRight = CreateStyledComponent(styled.div`
     display: flex;
     justify-content: flex-end;
-    background-color: ${dynamicTheme((theme) => theme.color.primary)};
+    background-color: ${dynamicTheme((dataTheme) => dataTheme.color.primary)};
     transition: ${TransitionEnum.DURATION};
 
     .material-icons {
-        color: ${dynamicTheme((theme) => theme.fontColor.default)};
+        color: ${dynamicTheme((dataTheme) => dataTheme.fontColor.default)};
     }
 `)
 
 export const StyledName = CreateStyledComponent(styled.span`
-    font-size: ${dynamicTheme((theme) => theme.fontSize.sm)};
-    color: ${dynamicTheme((theme) => theme.fontColor.default)};
+    font-size: ${dynamicTheme((dataTheme) => dataTheme.fontSize.sm)};
+    color: ${dynamicTheme((dataTheme) => dataTheme.fontColor.default)};
     font-weight: 600;
     text-transform: uppercase;
     transition: ${TransitionEnum.DURATION};
 `)
 
 export const StyledDescription = CreateStyledComponent(styled.span`
-    font-size: ${dynamicTheme((theme) => theme.fontSize.xs)};
-    color: ${dynamicTheme((theme) => theme.fontColor.primary)};
+    font-size: ${dynamicTheme((dataTheme) => dataTheme.fontSize.xs)};
+    color: ${dynamicTheme((dataTheme) => dataTheme.fontColor.primary)};
     transition: ${TransitionEnum.DURATION};
 `)
 
 export const StyledAboutBody = CreateStyledComponent(styled.div.attrs(() => ({ className: 'StyledAboutBody' }))`
-    background-color: ${dynamicTheme((theme) => theme.color.secondary)};
+    background-color: ${dynamicTheme((dataTheme) => dataTheme.color.secondary)};
     padding: 20px;
     display: grid;
     grid-row-gap: 20px;
@@ -255,7 +255,7 @@ export const StyledAboutBody = CreateStyledComponent(styled.div.attrs(() => ({ c
         width: 100%;
         height: 1px;
         display: block;
-        background: ${dynamicTheme((theme) => theme.fontColor.primary)};
+        background: ${dynamicTheme((dataTheme) => dataTheme.fontColor.primary)};
         top: 0;
         transform: translateY(-10px);
         transition: ${TransitionEnum.DURATION};
@@ -271,7 +271,7 @@ export const StyledAboutBody = CreateStyledComponent(styled.div.attrs(() => ({ c
 `)
 
 export const StyledAboutFooter = CreateStyledComponent(styled.div`
-    background-color: ${dynamicTheme((theme) => theme.color.primary)};
+    background-color: ${dynamicTheme((dataTheme) => dataTheme.color.primary)};
     display: flex;
     align-items: center;
     flex-wrap: wrap;
@@ -281,7 +281,7 @@ export const StyledAboutFooter = CreateStyledComponent(styled.div`
 `)
 
 export const StyledContainerTool = CreateStyledComponent(styled.div.attrs(() => ({ className: 'StyledContainerTool' }))`
-    color: ${dynamicTheme((theme) => theme.fontColor.primary)};
+    color: ${dynamicTheme((dataTheme) => dataTheme.fontColor.primary)};
     text-transform: uppercase;
     font-weight: 600;
     display: grid;
@@ -300,36 +300,36 @@ export const StyledContainerTool = CreateStyledComponent(styled.div.attrs(() => 
 
     a {
         text-decoration: none;
-        color: ${dynamicTheme((theme) => theme.fontColor.primary)};
+        color: ${dynamicTheme((dataTheme) => dataTheme.fontColor.primary)};
         display: flex;
         align-items: center;
-        font-size: ${dynamicTheme((theme) => theme.fontSize.xs)};
+        font-size: ${dynamicTheme((dataTheme) => dataTheme.fontSize.xs)};
         transition: ${TransitionEnum.DURATION};
     }
 
     a:hover {
-        color: ${dynamicTheme((theme) => theme.hover.Font.default.color)};
-        text-shadow: ${dynamicTheme((theme) => theme.hover.Font.default.textShadow)};
+        color: ${dynamicTheme((dataTheme) => dataTheme.hover.Font.default.color)};
+        text-shadow: ${dynamicTheme((dataTheme) => dataTheme.hover.Font.default.textShadow)};
         transition: color ${TransitionEnum.DURATION};
 
         .StyledImageGit {
-            filter: ${dynamicTheme((theme) => theme.images.git.hover.filter)};
+            filter: ${dynamicTheme((dataTheme) => dataTheme.images.git.hover.filter)};
         }
     }
 
     i {
-        font-size: ${dynamicTheme((theme) => theme.fontSize.xs)};
+        font-size: ${dynamicTheme((dataTheme) => dataTheme.fontSize.xs)};
         transition: ${TransitionEnum.DURATION};
     }
 
     .material-icons {
-        font-size: ${dynamicTheme((theme) => theme.fontSize.md)};
+        font-size: ${dynamicTheme((dataTheme) => dataTheme.fontSize.md)};
         transition: ${TransitionEnum.DURATION};
     }
 `)
 
 export const StyledImageGit = CreateStyledComponent(styled(Image).attrs(() => ({ className: 'StyledImageGit' }))`
-    filter: ${dynamicTheme((theme) => theme.images.git.filter)};
+    filter: ${dynamicTheme((dataTheme) => dataTheme.images.git.filter)};
     transition: ${TransitionEnum.DURATION};
 `)
 
@@ -352,12 +352,13 @@ export const StyledContainer = CreateStyledComponent(styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: ${dynamicTheme((theme) => theme.color.secondary)};
+    background-color: ${dynamicTheme((dataTheme) => dataTheme.color.secondary)};
     transition: ${TransitionEnum.DURATION};
 
     .container-xxl {
         ${ResponsiveMin('xxl')} {
-            max-width: 1990px !important;
+            max-width: 1990px;
+            position: relative;
         }
     }
 `)

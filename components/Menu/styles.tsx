@@ -34,13 +34,13 @@ export const StyledItemLink = React.forwardRef<Ref, Props>((props, ref) => {
 })
 
 const StyledItemLinkImp = CreateStyledComponent(styled.a`
-    color: ${dynamicTheme((theme) => theme.fontColor.default)};
+    color: ${dynamicTheme((dataTheme) => dataTheme.fontColor.default)};
     text-decoration: none;
     cursor: pointer;
     transition: background-color ${TransitionEnum.DURATION};
 
     &:hover {
-        color: ${dynamicTheme((theme) => theme.fontColor.default)};
+        color: ${dynamicTheme((dataTheme) => dataTheme.fontColor.default)};
     }
 `)
 
@@ -48,7 +48,7 @@ export const StyledWrapperMenuList = CreateStyledComponent(styled.div.attrs(() =
     className: 'StyledWrapperMenuList',
 }))`
     position: relative;
-    background-color: ${dynamicTheme((theme) => theme.color.secondary)};
+    background-color: ${dynamicTheme((dataTheme) => dataTheme.color.secondary)};
     width: 100%;
     height: 100%;
     display: flex;
@@ -67,7 +67,7 @@ export const StyledContainerMenuList = CreateStyledComponent(styled.div`
     width: fit-content;
     height: calc(100% - 20px);
     position: fixed;
-    box-shadow: ${BoxShadowEnum.SQUARE} ${dynamicTheme((theme) => theme.color.default)};
+    box-shadow: ${BoxShadowEnum.SQUARE} ${dynamicTheme((dataTheme) => dataTheme.color.default)};
     transition: box-shadow ${TransitionEnum.DURATION};
 `)
 
@@ -77,13 +77,13 @@ export const StyledHeaderMenu = CreateStyledComponent(styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: ${dynamicTheme((theme) => theme.color.primary)};
+    background-color: ${dynamicTheme((dataTheme) => dataTheme.color.primary)};
     transition: background-color ${TransitionEnum.DURATION};
     i {
         cursor: pointer;
     }
     .material-icons {
-        color: ${dynamicTheme((theme) => theme.fontColor.default)};
+        color: ${dynamicTheme((dataTheme) => dataTheme.fontColor.default)};
         transition: color ${TransitionEnum.DURATION};
     }
 `)
@@ -107,13 +107,13 @@ export const StyledWrapSwitchTheme = CreateStyledComponent(styled.div`
     width: fit-content;
     height: fit-content;
     border-radius: 20px;
-    background-color: ${dynamicTheme((theme) => theme.color.tertiary)};
+    background-color: ${dynamicTheme((dataTheme) => dataTheme.color.tertiary)};
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 5px;
-    box-shadow: ${BoxShadowEnum.CIRCLE} ${dynamicTheme((theme) => theme.fontColor.secondary)};
-    transform: ${({ theme }) => (theme === ThemeEnum.DARK ? 'translateY(0)' : 'translateY(100%)')};
+    box-shadow: ${BoxShadowEnum.CIRCLE} ${dynamicTheme((dataTheme) => dataTheme.fontColor.secondary)};
+    transform: ${({ dataTheme }) => (dataTheme === ThemeEnum.DARK ? 'translateY(0)' : 'translateY(100%)')};
     cursor: pointer;
     transition: ${TransitionEnum.DURATION};
 
@@ -125,12 +125,12 @@ export const StyledWrapSwitchTheme = CreateStyledComponent(styled.div`
 export const StyledSlider = CreateStyledComponent(styled.div`
     width: 30px;
     height: 60px;
-    background-color: ${dynamicTheme((theme) => theme.color.primary)};
+    background-color: ${dynamicTheme((dataTheme) => dataTheme.color.primary)};
     border-radius: 20px;
     display: flex;
     justify-content: center;
     transition: background-color ${TransitionEnum.DURATION};
-    box-shadow: ${BoxShadowEnum.CIRCLE} ${dynamicTheme((theme) => theme.color.default)};
+    box-shadow: ${BoxShadowEnum.CIRCLE} ${dynamicTheme((dataTheme) => dataTheme.color.default)};
 `)
 
 export const StyledWrapperMenuItem = styled.div`

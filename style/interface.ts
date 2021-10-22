@@ -69,7 +69,7 @@ export interface ThemeOptions {
 }
 
 type Callback = (activeTheme: ThemeOptions) => string
-type SetAttributeFunc = (attribute: { theme: ThemeEnum }) => string
+type SetAttributeFunc = (attribute: { dataTheme?: ThemeEnum }) => string
 
 type DynammicThemeDefault = (callback: Callback) => SetAttributeFunc
 type DynammicThemeAlt = (darkModeCallback: Callback, lightModeCallback?: Callback) => SetAttributeFunc

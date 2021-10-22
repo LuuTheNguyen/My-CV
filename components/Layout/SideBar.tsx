@@ -24,6 +24,10 @@ import { useIsPrintMode } from 'hooks'
 import { useContext, useState } from 'react'
 import { ThemeContext } from '@context/ThemeContext'
 import { Theme } from 'style/Theme'
+import { useIsAmpAdapter } from 'hooks/useIsAMP'
+import { useAmp } from 'next/amp'
+import Head from "next/head"
+import { TransitionEnum } from '@enum'
 
 const handlePrint = () => {
     setTimeout(() => {
@@ -35,6 +39,8 @@ export const SideBar: React.FC<HeadProps> = ({ data }) => {
     const { theme } = useContext(ThemeContext)
     const currentTheme = Theme[theme]
     const isPrintMode = useIsPrintMode()
+    const isAmpAdapter = useIsAmpAdapter()
+    const isAmp = useAmp()
 
     const [isZoomIcon, setIsZoomIcon] = useState(false)
     const resizeImg = () => {
@@ -48,10 +54,38 @@ export const SideBar: React.FC<HeadProps> = ({ data }) => {
 
     return (
         <>
+            {isAmp && (
+                <Head>
+                    <style amp-custom>
+                        {`amp-img.Sidbar_Icon{
+                            border-radius: 80px;
+                        }
+                        amp-img.Tool_Icon{
+                            filter: ${currentTheme.images.git.filter};
+                            transition: ${TransitionEnum.DURATION};
+                        }
+                        `}
+                    </style>
+                </Head>
+            )}
             <StyledAboutHead>
                 <StyledWrapperImage onClick={resizeImg}>
-                    <StyledIcon src="/logo.jpg" layout="fill" objectFit="cover" onLoadingComplete={onHandleLoadImg} />
-                    {!isImageReady && <StyledSkeletonImg />}
+                    {isAmpAdapter.imgAdapter(
+                        {
+                            src: '/logo.jpg',
+                            layout: 'fixed',
+                            width: '160px',
+                            height: '160px',
+                            class: 'Sidbar_Icon',
+                        },
+                        <StyledIcon
+                            src="/logo.jpg"
+                            layout="fill"
+                            objectFit="cover"
+                            onLoadingComplete={onHandleLoadImg}
+                        />
+                    )}
+                    {!isImageReady && !isAmp && <StyledSkeletonImg />}
                 </StyledWrapperImage>
                 <StyledName>Luu The Nguyen</StyledName>
                 <StyledDescription>Frontend Dev</StyledDescription>
@@ -81,7 +115,21 @@ export const SideBar: React.FC<HeadProps> = ({ data }) => {
                             target="_blank">
                             <span>GitHub</span>
                             &nbsp;
-                            <StyledImageGit src={currentTheme.images.git.src} alt="gitIcon" width={13} height={13} />
+                            {isAmpAdapter.imgAdapter(
+                                {
+                                    src: currentTheme.images.git.src,
+                                    layout: 'fixed',
+                                    width: '13px',
+                                    height: '13px',
+                                    class: 'Tool_Icon',
+                                },
+                                <StyledImageGit
+                                    src={currentTheme.images.git.src}
+                                    alt="gitIcon"
+                                    width={13}
+                                    height={13}
+                                />
+                            )}
                         </a>
                     </StyledContainerTool>
                 )}
@@ -94,14 +142,16 @@ export const SideBar: React.FC<HeadProps> = ({ data }) => {
                     <StyledContainerOpacity onClick={resizeImg} />
                     <StyledContainerZoomImage onClick={resizeImg}>
                         <StyledWrapperZoomImage>
-                            <StyledZoomIcon
-                                src="/logo.jpg"
-                                layout="responsive"
-                                objectFit="cover"
-                                width="30vw"
-                                height="30vh"
-                                sizes="32w"
-                            />
+                            {!isAmp && (
+                                <StyledZoomIcon
+                                    src="/logo.jpg"
+                                    layout="responsive"
+                                    objectFit="cover"
+                                    width="30vw"
+                                    height="30vh"
+                                    sizes="32w"
+                                />
+                            )}
                         </StyledWrapperZoomImage>
                     </StyledContainerZoomImage>
                 </>

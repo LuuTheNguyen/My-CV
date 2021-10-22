@@ -6,17 +6,47 @@ import { event as GaEvent } from '@utils/google-analytic'
 import React, { useEffect, useState } from 'react'
 import type { TypesProps } from './interface'
 import type { RenderTypeProps } from './interface'
+import { useIsAmpAdapter } from 'hooks/useIsAMP'
 
 const RenderIcon: React.FC<TypesProps> = ({ type }) => {
+    const isAmpAdapter = useIsAmpAdapter()
+
     switch (type) {
         case 'skype':
-            return <Image src="/images/skype.svg" alt="skypeIcon" width={18} height={18} />
+            return isAmpAdapter.imgAdapter(
+                {
+                    src: '/images/skype.svg',
+                    layout: 'fixed',
+                    width: '18px',
+                    height: '18px',
+                    class: 'Contact_Icon-Skype',
+                },
+                <Image src="/images/skype.svg" alt="skypeIcon" width={18} height={18} />
+            )
         case 'mail':
-            return <Image src="/images/gmailIcon.svg" alt="mailIcon" width={18} height={18} />
+            return isAmpAdapter.imgAdapter(
+                {
+                    src: '/images/gmailIcon.svg',
+                    layout: 'fixed',
+                    width: '18px',
+                    height: '18px',
+                    class: 'Contact_Icon-Skype',
+                },
+                <Image src="/images/gmailIcon.svg" alt="mailIcon" width={18} height={18} />
+            )
         case 'phone':
             return <span>call</span>
-        default:
-            return <Image src="/images/warning-error.svg" alt="error" width={18} height={18} />
+        default:            
+            return isAmpAdapter.imgAdapter(
+                {
+                    src: '/images/warning-error.svg',
+                    layout: 'fixed',
+                    width: '18px',
+                    height: '18px',
+                    class: 'Contact_Icon-Skype',
+                },
+                <Image src="/images/warning-error.svg" alt="error" width={18} height={18} />
+            )
     }
 }
 

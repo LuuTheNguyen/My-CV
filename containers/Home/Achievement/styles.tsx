@@ -14,15 +14,15 @@ export const StyledAchievement = CreateStyledComponent(styled.div`
     padding: 20px 0;
 
     span {
-        font-size: ${dynamicTheme((theme) => theme.fontSize.lg)};
-        color: ${dynamicTheme((theme) => theme.fontColor.secondary)};
+        font-size: ${dynamicTheme((dataTheme) => dataTheme.fontSize.lg)};
+        color: ${dynamicTheme((dataTheme) => dataTheme.fontColor.secondary)};
         font-weight: 600;
         transition: color ${TransitionEnum.DURATION};
     }
 
     span + span {
-        font-size: ${dynamicTheme((theme) => theme.fontSize.md)};
-        color: ${dynamicTheme((theme) => theme.fontColor.default)};
+        font-size: ${dynamicTheme((dataTheme) => dataTheme.fontSize.md)};
+        color: ${dynamicTheme((dataTheme) => dataTheme.fontColor.default)};
         margin-left: 0.4rem;
         transition: color ${TransitionEnum.DURATION};
     }

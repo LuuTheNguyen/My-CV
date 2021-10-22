@@ -10,7 +10,7 @@ export const StyledContact = CreateStyledComponent(styled.div`
 
     span {
         font-weight: 600;
-        color: ${dynamicTheme((theme) => theme.fontColor.default)};
+        color: ${dynamicTheme((dataTheme) => dataTheme.fontColor.default)};
         transition: color ${TransitionEnum.DURATION};
         cursor: pointer;
     }
@@ -21,7 +21,7 @@ export const StyledContact = CreateStyledComponent(styled.div`
 
     a {
         text-decoration: none;
-        color: ${dynamicTheme((theme) => theme.fontColor.default)};
+        color: ${dynamicTheme((dataTheme) => dataTheme.fontColor.default)};
         transition: color ${TransitionEnum.DURATION};
     }
 `)
@@ -32,18 +32,22 @@ export const StyledIcon = CreateStyledComponent(styled(animated.a)`
     height: 40px;
     padding: 5px;
     border-radius: 20px;
-    background-color: ${dynamicTheme((theme) => theme.fontColor.tertiary)};
+    background-color: ${dynamicTheme((dataTheme) => dataTheme.fontColor.tertiary)};
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
+    
+    span{
+        font-family: 'Material Icons';
+    }
 `)
 
 export const StyledWrapCircle = CreateStyledComponent(styled(animated.span)`
     width: 40px;
     height: 40px;
     border-radius: 20px;
-    background-color: ${dynamicTheme((theme) => theme.fontColor.secondary)};
+    background-color: ${dynamicTheme((dataTheme) => dataTheme.fontColor.secondary)};
     display: block;
     position: absolute;
 `)

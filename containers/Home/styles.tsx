@@ -5,8 +5,8 @@ import { CreateStyledComponent, dynamicTheme } from 'style/ultis'
 
 export const StyledMain = CreateStyledComponent(styled.main`
     height: auto;
-    background-color: ${dynamicTheme((theme) => theme.color.secondary)};
-    color: ${dynamicTheme((theme) => theme.fontColor.default)};
+    background-color: ${dynamicTheme((dataTheme) => dataTheme.color.secondary)};
+    color: ${dynamicTheme((dataTheme) => dataTheme.fontColor.default)};
     margin: 0;
     padding: 0 50px 0 0;
     align-items: center;
@@ -20,8 +20,8 @@ export const StyledMain = CreateStyledComponent(styled.main`
     }
 
     ${MediaPrint} {
-        background-color: ${dynamicTheme((theme) => theme.color.default)};
-        color: ${dynamicTheme((theme) => theme.fontColor.default)};
+        background-color: ${dynamicTheme((dataTheme) => dataTheme.color.default)};
+        color: ${dynamicTheme((dataTheme) => dataTheme.fontColor.default)};
         padding: 0;
     }
 
@@ -44,6 +44,7 @@ export const StyledInfo = styled.div`
 export const StyledWrapperInfo = styled.div`
     display: flex;
     flex-direction: row;
+    overflow: hidden;
 
     ${ResponsiveMax('lg')} {
         flex-direction: column;
@@ -86,17 +87,17 @@ export const StyledBannerContent = styled.div`
 `
 
 export const StyledTitleContent = CreateStyledComponent(styled.h4`
-    color: ${dynamicTheme((theme) => theme.fontColor.default)};
+    color: ${dynamicTheme((dataTheme) => dataTheme.fontColor.default)};
     text-transform: uppercase;
     font-weight: 600;
     transition: ${TransitionEnum.DURATION};
 `)
 
 export const StyledSubTitleContent = CreateStyledComponent(styled.div`
-    color: ${dynamicTheme((theme) => theme.fontColor.default)};
+    color: ${dynamicTheme((dataTheme) => dataTheme.fontColor.default)};
     transition: ${TransitionEnum.DURATION};
     .code {
-        color: ${dynamicTheme((theme) => theme.fontColor.secondary)};
+        color: ${dynamicTheme((dataTheme) => dataTheme.fontColor.secondary)};
         transition: ${TransitionEnum.DURATION};
     }
 
@@ -135,7 +136,7 @@ export const StyledContainerEducation = styled.div`
 `
 
 export const StyledTitleItems = CreateStyledComponent(styled.h5`
-    color: ${dynamicTheme((theme) => theme.fontColor.default)};
+    color: ${dynamicTheme((dataTheme) => dataTheme.fontColor.default)};
     text-transform: uppercase;
     font-weight: 600;
     transition: ${TransitionEnum.DURATION};

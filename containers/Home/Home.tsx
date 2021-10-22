@@ -14,14 +14,12 @@ import {
 } from './styles'
 
 import { Achievement } from './Achievement'
-import { Service } from './Service'
+import { ServiceList } from './Service'
 import { Education } from './Education'
-import { useIsPrintMode } from 'hooks'
 import type { HomeProps } from './interface'
 
 export const HomePage: React.FC<HomeProps> = ({ data }) => {
     const { contentData, headData, summaryData, version } = data
-    const isPrintMode = useIsPrintMode()
     return (
         <Layout name="Nguyên Lưu" version={version} headData={headData}>
             <StyledMain className="col-sm-12 col-lg-9">
@@ -51,7 +49,7 @@ export const HomePage: React.FC<HomeProps> = ({ data }) => {
 
                                 <StyledContainerService id="service">
                                     <StyledTitleItems>WORKS EXPERIENCE</StyledTitleItems>
-                                    <Service service={contentData.services} />
+                                    <ServiceList service={contentData.services} />
                                 </StyledContainerService>
                             </StyledWrapperContent>
                         </StyledWrapperInfo>

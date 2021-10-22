@@ -20,11 +20,11 @@ export const StyledAbout = styled.div`
 `
 
 export const StyledLabel = CreateStyledComponent(styled.span`
-    color: ${dynamicTheme((theme) => theme.fontColor.default)};
+    color: ${dynamicTheme((dataTheme) => dataTheme.fontColor.default)};
     transition: color ${TransitionEnum.DURATION};
 `)
 
 export const StyledContent = CreateStyledComponent(styled.span`
-    color: ${dynamicTheme((theme) => theme.fontColor.primary)};
+    color: ${dynamicTheme((dataTheme) => dataTheme.fontColor.primary)};
     transition: color ${TransitionEnum.DURATION};
 `)
