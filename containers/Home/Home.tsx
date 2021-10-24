@@ -22,13 +22,13 @@ export const HomePage: React.FC<HomeProps> = ({ data }) => {
     const { contentData, headData, summaryData, version } = data
     return (
         <Layout name="Nguyên Lưu" version={version} headData={headData}>
-            <StyledMain className="col-sm-12 col-lg-9">
+            <StyledMain>
                 <div className="row">
-                    <StyledInfo className="col-12">
+                    <StyledInfo>
                         <StyledWrapperInfo>
                             <StyledWrapperContent>
                                 <StyledBanner className="row" id="summary">
-                                    <StyledBannerContent className="col-sm-12 col-lg-12">
+                                    <StyledBannerContent>
                                         <StyledTitleContent>Discoverd my Amazing Art Space!</StyledTitleContent>
                                         <StyledSubTitleContent>
                                             &lt;

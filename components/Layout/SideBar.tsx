@@ -26,7 +26,7 @@ import { ThemeContext } from '@context/ThemeContext'
 import { Theme } from 'style/Theme'
 import { useIsAmpAdapter } from 'hooks/useIsAMP'
 import { useAmp } from 'next/amp'
-import Head from "next/head"
+import Head from 'next/head'
 import { TransitionEnum } from '@enum'
 
 const handlePrint = () => {
@@ -97,16 +97,30 @@ export const SideBar: React.FC<HeadProps> = ({ data }) => {
                 <Lib lib={data.libs} />
                 {!isPrintMode && (
                     <StyledContainerTool>
-                        <a
-                            data-bs-dismiss="offcanvas"
-                            aria-label="Print"
-                            href="#"
-                            rel="noreferrer"
-                            onClick={handlePrint}>
-                            <span>Print</span>
-                            &nbsp;
-                            <span className="material-icons">print</span>
-                        </a>
+                        {isAmp ? (
+                                <a
+                                    data-bs-dismiss="offcanvas"
+                                    aria-label="Print"
+                                    href="#"
+                                    rel="noreferrer"
+                                    on="tap:AMP.print"
+                                    id="buttonPrint">
+                                    <span>Print</span>
+                                    &nbsp;
+                                    <span className="material-icons">print</span>
+                                </a>
+                        ) : (
+                            <a
+                                data-bs-dismiss="offcanvas"
+                                aria-label="Print"
+                                href="#"
+                                rel="noreferrer"
+                                onClick={handlePrint}>
+                                <span>Print</span>
+                                &nbsp;
+                                <span className="material-icons">print</span>
+                            </a>
+                        )}
                         <a
                             data-bs-dismiss="offcanvas"
                             aria-label="Print"

@@ -25,9 +25,17 @@ export const StyledWrapperHead = CreateStyledComponent(styled.div`
     z-index: 1;
     transition: ${TransitionEnum.DURATION};
     height: 100%;
+    flex: 0 0 auto;
+
     ${ResponsiveMax('lg')} {
         padding-top: 30px;
         z-index: unset;
+    }
+    ${ResponsiveMin('lg')} {
+        width: 25%;
+    }
+    ${ResponsiveMax('sm')} {
+        width: 100%;
     }
     ${MediaPrint} {
         padding-top: 0;
@@ -151,6 +159,8 @@ export const StyledNavBar = CreateStyledComponent(styled.div`
     display: none;
     background-color: ${dynamicTheme((dataTheme) => dataTheme.color.default)};
     transition: ${TransitionEnum.DURATION};
+    width: 100%;
+    flex: 0 0 auto;
 
     ${ResponsiveMax('lg')} {
         display: block;

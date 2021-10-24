@@ -1,5 +1,5 @@
 import { TransitionEnum } from '@enum/index'
-import { ResponsiveMax, MediaPrint } from 'style/Theme'
+import { ResponsiveMax, MediaPrint, ResponsiveMin } from 'style/Theme'
 import styled from 'styled-components'
 import { CreateStyledComponent, dynamicTheme } from 'style/ultis'
 
@@ -11,12 +11,21 @@ export const StyledMain = CreateStyledComponent(styled.main`
     padding: 0 50px 0 0;
     align-items: center;
     justify-content: center;
-    transition: ${TransitionEnum.DURATION};
+    transition: ${TransitionEnum.DURATION};    
+    flex: 0 0 auto;
 
     ${ResponsiveMax('lg')} {
         flex-direction: row;
         display: flex;
         padding: 0;
+    }
+
+    ${ResponsiveMin('lg')} {
+        width: 75%;
+    }
+
+    ${ResponsiveMax('sm')} {
+        width: 100%;
     }
 
     ${MediaPrint} {
@@ -79,6 +88,7 @@ export const StyledBannerContent = styled.div`
     flex-direction: column;
     justify-content: space-around;
     padding: 0;
+    width: 100%;
 
     ${MediaPrint} {
         display: block;

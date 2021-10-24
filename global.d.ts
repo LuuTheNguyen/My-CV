@@ -20,11 +20,16 @@ declare namespace JSX {
         ['min-font-size']?: string;
         children: string
     }
+    interface AmpAnalytics{
+		type?: string;
+        ['data-credentials']?: string;
+        children: any;
+    }
 	interface IntrinsicElements {
 		'amp-img': AmpImg;
         'amp-fit-text': AmpFitText;
+		'amp-analytics': AmpAnalytics;
 		'amp-script': any;
-		'amp-analytics': any;
 		'script': any;
 	}
 }
