@@ -6,12 +6,12 @@ import { ThemeContext } from '@context/ThemeContext'
 
 export const dynamicTheme: DynamicThemeFunc =
     (darkModeCallback, lightModeCallback) =>
-    ({ dataTheme }) => {
-        if(!dataTheme) {
+    ( attribute ) => {
+        if(!attribute['data-theme']) {
             return darkModeCallback(Theme[ThemeEnum.DARK])
         }
-        const isLightMode = dataTheme === ThemeEnum.LIGHT
-        const themeOptions = Theme[dataTheme]
+        const isLightMode = attribute === ThemeEnum.LIGHT
+        const themeOptions = Theme[attribute['data-theme']]
 
         if (isLightMode && lightModeCallback) {
             return lightModeCallback(themeOptions)

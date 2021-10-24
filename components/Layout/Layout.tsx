@@ -38,7 +38,7 @@ const MenuMobileMode: React.FC = ({ children }) => {
     const isAmp = useAmp()
 
     return isAmp ? (
-        <div id="offcanvasRight" style={{width: '300px'}} className="offcanvas offcanvas-start">
+        <div id="offcanvasRight" style={{width: '300px'}} className="offcanvas offcanvas-start" hidden>
             <StyledWrapperCloseButtonOffCanvasRight>
                 <button className="buttonMenu" on="tap:offcanvasRight.hide" aria-label="Close">
                     {children}

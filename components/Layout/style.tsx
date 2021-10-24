@@ -23,7 +23,7 @@ export const StyledWrapperHead = CreateStyledComponent(styled.div`
     box-shadow: ${BoxShadowEnum.SQUARE} ${dynamicTheme((dataTheme) => dataTheme.color.default)};
     padding: 0;
     z-index: 1;
-    transition: ${TransitionEnum.DURATION};
+    transition: box-shadow ${TransitionEnum.DURATION};
     height: 100%;
     flex: 0 0 auto;
 
@@ -197,6 +197,11 @@ export const StyledNavBar = CreateStyledComponent(styled.div`
             width: fit-content;
         }
     }
+
+    
+    ${MediaPrint} {
+            display: none;
+        }
 `)
 
 export const StyledWrapperBtnNavBar = CreateStyledComponent(styled.div`

@@ -1,5 +1,5 @@
 import styled, { css, keyframes } from 'styled-components'
-import { MediaPrint, ResponsiveBetween, ResponsiveMax } from 'style/Theme'
+import { ResponsiveBetween, ResponsiveMax } from 'style/Theme'
 import { ProcessRing } from './ProcessRing'
 import { ProcessRingProps } from './interface'
 import { utilProcessCircle } from './util'
