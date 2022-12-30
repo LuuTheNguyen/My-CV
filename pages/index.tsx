@@ -11,10 +11,10 @@ const Home: React.FC<HomeProps> = ({ data }) => {
 export const getServerSideProps = async () => {
     let response = null
 
-    response = await getUserData()
-    if (!response) {
-        return <ErrorPage />
-    }
+    // response = await getUserData()
+    // if (!response) {
+    //     return <ErrorPage />
+    // }
     return {
         props: {
             // data: response,
