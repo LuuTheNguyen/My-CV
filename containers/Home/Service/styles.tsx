@@ -4,7 +4,7 @@ import { CreateStyledComponent, dynamicTheme } from 'style/ultis'
 import { BoxShadowEnum, TransitionEnum } from '@enum'
 import { animated } from '@react-spring/web'
 
-export const StyledWrapperService = styled.div`
+export const StyledWrapperService = styled.section`
     display: grid;
     grid-template-columns: auto auto;
     justify-content: center;
@@ -50,7 +50,8 @@ export const StyledHeaderService = CreateStyledComponent(styled.span`
     flex-direction: column;
     transition: ${TransitionEnum.DURATION};
 
-    .StyledContent3, .StyledContent1{
+    .StyledContent3,
+    .StyledContent1 {
         margin: 0;
     }
 `)
@@ -69,7 +70,7 @@ export const StyledContentService = CreateStyledComponent(styled.div`
     margin-top: 10px;
     transition: ${TransitionEnum.DURATION};
 
-    .StyledContent5{
+    .StyledContent5 {
         margin: 0;
         display: inline;
     }
@@ -100,7 +101,7 @@ export const StyledCompany = CreateStyledComponent(styled.div`
         transition: ${TransitionEnum.DURATION};
     }
 
-    .StyledContent4{
+    .StyledContent4 {
         margin: 0;
     }
 `)

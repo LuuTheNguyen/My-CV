@@ -62,6 +62,7 @@ export const StyledWrapperContent = styled.div`
     ${ResponsiveMax('lg')} {
         width: auto;
         padding-top: 60px;
+        height: auto;
     }
 
     ${MediaPrint} {
@@ -100,7 +101,7 @@ export const StyledSubTitleContent = CreateStyledComponent(styled.div`
         transition: ${TransitionEnum.DURATION};
     }
 
-    .StyledContent1{
+    .StyledContent1 {
         margin: 0;
         display: inline;
     }
@@ -128,7 +129,7 @@ export const StyledWrapperMain = styled.div`
     }
 `
 
-export const StyledContainerEducation = styled.div`
+export const StyledContainerEducation = styled.section`
     display: flex;
     flex-direction: column;
 

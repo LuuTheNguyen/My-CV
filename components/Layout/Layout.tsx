@@ -8,7 +8,7 @@ import {
     StyledWrapperCloseButtonOffCanvasRight,
     StyledWrapper,
     StyledContainer,
-    StyledContainerLayout
+    StyledContainerLayout,
 } from './styles'
 import { Menu, MenuList } from '@components/Menu'
 import { SideBar } from './SideBar'

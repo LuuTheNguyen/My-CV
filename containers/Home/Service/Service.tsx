@@ -1,10 +1,4 @@
-import {
-    StyledWrapperService,
-    StyledService,
-    StyledHeaderService,
-    StyledContentService,
-    StyledCompany,
-} from './styles'
+import { StyledWrapperService, StyledService, StyledHeaderService, StyledContentService, StyledCompany } from './styles'
 
 import type { Props } from './interface'
 import moment from 'moment'
@@ -14,7 +8,7 @@ import { TypoComponent } from '@components/Typo'
 
 export const Service: React.FC<Props> = ({ service }) => {
     const isPrintMode = useIsPrintMode()
-    service = service.sort((current, next) => current.from - next.from)
+    service = service.sort((current, next) => next.from - current.from)
 
     const transApi = useSpringRef()
     const transition = useTransition(service, {
@@ -29,16 +23,16 @@ export const Service: React.FC<Props> = ({ service }) => {
 
     return (
         <StyledWrapperService>
-            {transition((style, item) => (
-                <StyledService key={item.project} style={{ ...style }}>
+            {service.map((item) => (
+                <StyledService key={item.project}>
                     <StyledHeaderService>
-                    <TypoComponent type="content3">
+                        <TypoComponent type="content3">
                             {moment(item.from).format('MM/YYYY')} - {moment(item.to).format('MM/YYYY')}
                         </TypoComponent>
                         <TypoComponent type="content1">{item.project}</TypoComponent>
                         {item.company && (
                             <StyledCompany>
-                                 <TypoComponent type="content4">{item.company}</TypoComponent>
+                                <TypoComponent type="content4">{item.company}</TypoComponent>
                                 {!isPrintMode && (
                                     <a target="_blank" rel="noreferrer" href={item.companyHref}>
                                         <span className="material-icons">open_in_new</span>
@@ -48,21 +42,24 @@ export const Service: React.FC<Props> = ({ service }) => {
                         )}
                     </StyledHeaderService>
                     <StyledContentService>
-                    {item.responsibilities && (
+                        {item.responsibilities && (
                             <div>
-                                <TypoComponent type="content5">Main responsibilities:</TypoComponent> <TypoComponent type="content5">{item.responsibilities}</TypoComponent>
+                                <TypoComponent type="content5">Main responsibilities:</TypoComponent>{' '}
+                                <TypoComponent type="content5">{item.responsibilities}</TypoComponent>
                             </div>
                         )}
                         <hr />
                         {item.tech && (
                             <div>
-                                <TypoComponent type="content5">Tech stack:</TypoComponent> <TypoComponent type="content5">{item.tech}</TypoComponent>
+                                <TypoComponent type="content5">Tech stack:</TypoComponent>{' '}
+                                <TypoComponent type="content5">{item.tech}</TypoComponent>
                             </div>
                         )}
                         <hr />
                         {item.description && (
                             <div>
-                                <TypoComponent type="content5">Description:</TypoComponent> <TypoComponent type="content5">{item.description}</TypoComponent>
+                                <TypoComponent type="content5">Description:</TypoComponent>{' '}
+                                <TypoComponent type="content5">{item.description}</TypoComponent>
                             </div>
                         )}
                     </StyledContentService>

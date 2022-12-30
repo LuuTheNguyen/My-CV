@@ -17,9 +17,9 @@ import { Education } from './Education'
 import { useIsPrintMode } from 'hooks'
 import type { HomeProps } from './interface'
 import { TypoComponent } from '@components/Typo'
+import { contentData, headData, summaryData, version } from './mock.json'
 
-export const HomePage: React.FC<HomeProps> = ({ data }) => {
-    const { contentData, headData, summaryData, version } = data
+export const HomePage: React.FC<HomeProps> = () => {
     const isPrintMode = useIsPrintMode()
     return (
         <Layout name="Nguyên Lưu" version={version} headData={headData}>
@@ -45,7 +45,7 @@ export const HomePage: React.FC<HomeProps> = ({ data }) => {
 
                                 <Achievement achieve={contentData.achieves} />
 
-                                <StyledContainerEducation id="education">                                    
+                                <StyledContainerEducation id="education">
                                     <TypoComponent type="title2">EDUCATION</TypoComponent>
                                     <Education educations={contentData.educations} />
                                 </StyledContainerEducation>
