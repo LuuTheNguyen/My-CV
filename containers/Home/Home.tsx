@@ -17,10 +17,10 @@ import { Education } from './Education'
 import { useIsPrintMode } from 'hooks'
 import type { HomeProps } from './interface'
 import { TypoComponent } from '@components/Typo'
-import { contentData, headData, summaryData, version } from './mock.json'
 
-export const HomePage: React.FC<HomeProps> = () => {
+export const HomePage: React.FC<HomeProps> = ({ data }) => {
     const isPrintMode = useIsPrintMode()
+    const { contentData, headData, summaryData, version } = data
     return (
         <Layout name="Nguyên Lưu" version={version} headData={headData}>
             <StyledMain className="col-sm-12 col-lg-9">
