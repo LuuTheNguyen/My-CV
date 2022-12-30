@@ -1,7 +1,7 @@
 export interface ContactProps {
     label?: string
     content: string
-    type: 'phone' | 'skype' | 'mail'
+    type: string
 }
 
 export interface RenderTypeProps extends ContactProps {
