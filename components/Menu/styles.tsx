@@ -8,12 +8,12 @@ import { ResponsiveMax } from 'style/Theme'
 
 export const StyledMenuList = styled.div`
     display: flex;
+    height: 100vh;
     justify-content: flex-end;
-    height: calc(100vh - 20px);
-    padding: 0;
+    padding: 0;    
     position: absolute;
-    width: auto;
     right: 0;
+    width: auto;
 
     ${ResponsiveMax('lg')} {
         display: none;
@@ -22,11 +22,8 @@ export const StyledMenuList = styled.div`
 
 export const StyledMenuItem = styled(StyledLink)`
     font-weight: 600;
-    padding-right: 10px;
-
-    ${ResponsiveMax('lg')} {
-        padding-right: 0;
-    }
+    font-family: 'Source Sans Pro', sans-serif;
+    margin-right: 10px;
 `
 
 export const StyledItemLink = React.forwardRef<Ref, Props>((props, ref) => {
@@ -141,8 +138,4 @@ export const StyledWrapperMenuItem = styled.div`
     align-items: center;
     width: calc(100vh - 150px);
     overflow: auto;
-
-    ::-webkit-scrollbar {
-        display: none;
-    }
 `

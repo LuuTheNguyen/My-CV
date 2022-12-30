@@ -2,16 +2,17 @@ import { StyledContainerAchievement, StyledAchievement } from './styles'
 import type { Props, AchievementProps } from './interface'
 import { useCount } from '@hooks'
 import { Fragment } from 'react'
+import { TypoComponent } from '@components/Typo'
 
 export const RenderAchievementItem: React.FC<AchievementProps> = (item) => {
     const countValue = useCount(item.counts)
     return (
         <StyledAchievement>
-            <span>
+            <TypoComponent type='content2'>
                 {countValue}
                 {item.label}
-            </span>
-            <span>{item.content}</span>
+            </TypoComponent> &nbsp;
+            <TypoComponent type='content2'>{item.content}</TypoComponent>
         </StyledAchievement>
     )
 }

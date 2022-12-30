@@ -1,21 +1,14 @@
-import {
-    StyledWrapperService,
-    StyledService,
-    StyledHeaderService,
-    StyledContentService,
-    StyledCompany,
-    StyledHeaderSubTitleService,
-    StyledHeaderTitleService,
-} from './styles'
+import { StyledWrapperService, StyledService, StyledHeaderService, StyledContentService, StyledCompany } from './styles'
 
 import type { Props } from './interface'
 import moment from 'moment'
 import { useIsPrintMode } from 'hooks'
 import { useChain, useSpringRef, useTransition } from '@react-spring/core'
+import { TypoComponent } from '@components/Typo'
 
 export const Service: React.FC<Props> = ({ service }) => {
     const isPrintMode = useIsPrintMode()
-    service = service.sort((current, next) => current.from - next.from)
+    service = service.sort((current, next) => next.from - current.from)
 
     const transApi = useSpringRef()
     const transition = useTransition(service, {
@@ -30,16 +23,16 @@ export const Service: React.FC<Props> = ({ service }) => {
 
     return (
         <StyledWrapperService>
-            {transition((style, item) => (
-                <StyledService key={item.project} style={{ ...style }}>
+            {service.map((item) => (
+                <StyledService key={item.project}>
                     <StyledHeaderService>
-                        <StyledHeaderTitleService>
+                        <TypoComponent type="content3">
                             {moment(item.from).format('MM/YYYY')} - {moment(item.to).format('MM/YYYY')}
-                        </StyledHeaderTitleService>
-                        <StyledHeaderSubTitleService>{item.project}</StyledHeaderSubTitleService>
+                        </TypoComponent>
+                        <TypoComponent type="content1">{item.project}</TypoComponent>
                         {item.company && (
                             <StyledCompany>
-                                <span>{item.company}</span>
+                                <TypoComponent type="content4">{item.company}</TypoComponent>
                                 {!isPrintMode && (
                                     <a target="_blank" rel="noreferrer" href={item.companyHref}>
                                         <span className="material-icons">open_in_new</span>
@@ -51,19 +44,22 @@ export const Service: React.FC<Props> = ({ service }) => {
                     <StyledContentService>
                         {item.responsibilities && (
                             <div>
-                                <span>Main responsibilities:</span> <span>{item.responsibilities}</span>
+                                <TypoComponent type="content5">Main responsibilities:</TypoComponent>{' '}
+                                <TypoComponent type="content5">{item.responsibilities}</TypoComponent>
                             </div>
                         )}
                         <hr />
                         {item.tech && (
                             <div>
-                                <span>Tech stack:</span> <span>{item.tech}</span>
+                                <TypoComponent type="content5">Tech stack:</TypoComponent>{' '}
+                                <TypoComponent type="content5">{item.tech}</TypoComponent>
                             </div>
                         )}
                         <hr />
                         {item.description && (
                             <div>
-                                <span>Description:</span> <span>{item.description}</span>
+                                <TypoComponent type="content5">Description:</TypoComponent>{' '}
+                                <TypoComponent type="content5">{item.description}</TypoComponent>
                             </div>
                         )}
                     </StyledContentService>

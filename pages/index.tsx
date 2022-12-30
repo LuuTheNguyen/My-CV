@@ -7,18 +7,18 @@ const Home: React.FC<HomeProps> = ({ data }) => {
     return <HomePage data={data} />
 }
 
-export const getServerSideProps = async () => {
-    let response = null
+// export const getServerSideProps = async () => {
+//     let response = null
 
-    response = await getUserData()
-    if (!response) {
-        return <ErrorPage />
-    }
-    return {
-        props: {
-            data: response,
-        },
-    }
-}
+//     response = await getUserData()
+//     if (!response) {
+//         return <ErrorPage />
+//     }
+//     return {
+//         props: {
+//             data: response,
+//         },
+//     }
+// }
 
 export default Home

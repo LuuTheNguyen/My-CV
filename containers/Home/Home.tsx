@@ -6,11 +6,9 @@ import {
     StyledWrapperContent,
     StyledBanner,
     StyledBannerContent,
-    StyledTitleContent,
     StyledSubTitleContent,
     StyledContainerService,
     StyledContainerEducation,
-    StyledTitleItems,
 } from './styles'
 
 import { Achievement } from './Achievement'
@@ -18,9 +16,10 @@ import { Service } from './Service'
 import { Education } from './Education'
 import { useIsPrintMode } from 'hooks'
 import type { HomeProps } from './interface'
+import { TypoComponent } from '@components/Typo'
+import { contentData, headData, summaryData, version } from './mock.json'
 
-export const HomePage: React.FC<HomeProps> = ({ data }) => {
-    const { contentData, headData, summaryData, version } = data
+export const HomePage: React.FC<HomeProps> = () => {
     const isPrintMode = useIsPrintMode()
     return (
         <Layout name="Nguyên Lưu" version={version} headData={headData}>
@@ -31,11 +30,13 @@ export const HomePage: React.FC<HomeProps> = ({ data }) => {
                             <StyledWrapperContent>
                                 <StyledBanner className="row" id="summary">
                                     <StyledBannerContent className="col-sm-12 col-lg-12">
-                                        <StyledTitleContent>Discoverd my Amazing Art Space!</StyledTitleContent>
+                                        <TypoComponent type="title1">Discoverd my Amazing Art Space!</TypoComponent>
                                         <StyledSubTitleContent>
                                             &lt;
                                             <span className="code">code</span>
-                                            &gt; {summaryData} &lt;/
+                                            &gt;
+                                            <TypoComponent type="content1">{summaryData}</TypoComponent>
+                                            &lt;/
                                             <span className="code">code</span>
                                             &gt;
                                         </StyledSubTitleContent>
@@ -45,12 +46,12 @@ export const HomePage: React.FC<HomeProps> = ({ data }) => {
                                 <Achievement achieve={contentData.achieves} />
 
                                 <StyledContainerEducation id="education">
-                                    <StyledTitleItems>EDUCATION</StyledTitleItems>
+                                    <TypoComponent type="title2">EDUCATION</TypoComponent>
                                     <Education educations={contentData.educations} />
                                 </StyledContainerEducation>
 
                                 <StyledContainerService id="service">
-                                    <StyledTitleItems>WORKS EXPERIENCE</StyledTitleItems>
+                                    <TypoComponent type="title2">WORKS EXPERIENCE</TypoComponent>
                                     <Service service={contentData.services} />
                                 </StyledContainerService>
                             </StyledWrapperContent>

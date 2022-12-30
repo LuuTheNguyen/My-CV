@@ -25,13 +25,9 @@ export const StyledProcessBar = CreateStyledComponent(styled(ProcessBar)`
     .label {
         display: flex;
         justify-content: space-between;
-        span {
-            color: ${dynamicTheme((theme) => theme.fontColor.default)};
-            transition: ${TransitionEnum.DURATION};
-        }
-        span + span {
-            color: ${dynamicTheme((theme) => theme.fontColor.primary)};
-            transition: ${TransitionEnum.DURATION};
+        .StyledContent1, .StyledContent5 {
+            display: inline;
+            margin: 0;
         }
     }
     .progress {

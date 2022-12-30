@@ -2,8 +2,6 @@ import {
     StyledAboutHead,
     StyledWrapperImage,
     StyledIcon,
-    StyledName,
-    StyledDescription,
     StyledAboutFooter,
     StyledAboutBody,
     StyledContainerTool,
@@ -13,7 +11,7 @@ import {
     StyledContainerOpacity,
     StyledContainerZoomImage,
     StyledSkeletonImg,
-} from './style'
+} from './styles'
 import { Contact } from '@containers/Home/Contact'
 import type { HeadProps } from '@containers/Home/interface'
 import { About } from '@containers/Home/About'
@@ -24,6 +22,7 @@ import { useIsPrintMode } from 'hooks'
 import { useContext, useState } from 'react'
 import { ThemeContext } from '@context/ThemeContext'
 import { Theme } from 'style/Theme'
+import { TypoComponent } from '@components/Typo'
 
 const handlePrint = () => {
     setTimeout(() => {
@@ -53,8 +52,8 @@ export const SideBar: React.FC<HeadProps> = ({ data }) => {
                     <StyledIcon src="/logo.jpg" layout="fill" objectFit="cover" onLoadingComplete={onHandleLoadImg} />
                     {!isImageReady && <StyledSkeletonImg />}
                 </StyledWrapperImage>
-                <StyledName>Luu The Nguyen</StyledName>
-                <StyledDescription>Frontend Dev</StyledDescription>
+                <TypoComponent type="content2">Luu The Nguyen</TypoComponent>
+                <TypoComponent type="content5">Frontend Dev</TypoComponent>
             </StyledAboutHead>
             <StyledAboutBody>
                 <About about={data.abouts} />

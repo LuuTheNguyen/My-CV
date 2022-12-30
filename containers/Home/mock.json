@@ -1,0 +1,128 @@
+{
+    "contentData": {
+        "achieves": [
+            { "counts": 3, "label": "+", "content": "Years Experience" },
+            { "counts": 10, "content": "Complete Projects" }
+        ],
+        "services": [
+            {
+                "from": 1640304000000,
+                "to": 1671840000000,
+                "project": "Finbase Website",
+                "responsibilities": "Developing and maintaining the user interface, features and services in strong collaboration with internal partners. Managing software workflow.",
+                "tech": "ReactJS, React Admin, Jest, NextJs, Jira, Gitlab, Microsoft Teams",
+                "description": "Finance tech website for buy and sell bonds",
+                "company": "Finbase Company",
+                "companyHref": "https://www.finbase.vn/"
+            },
+            {
+                "from": 1617123600000,
+                "to": 1624986000000,
+                "project": "Meiji",
+                "responsibilities": "Bring concepts to life, Developing and maintaining the user interface, Managing software workflow.",
+                "tech": "React Core UI, AngularJs, BEM, Jira, Git Kraken, Slack",
+                "description": "Website manage a infomation of mom and baby",
+                "company": "Intelin Company",
+                "companyHref": "https://www.intelin.vn/"
+            },
+            {
+                "from": 1612026000000,
+                "to": 1617123600000,
+                "project": "Payment",
+                "responsibilities": "Fixing bugs and testing for usability, Bring concepts to life",
+                "tech": "React Core UI, AngularJs, BEM, Jira, Git Kraken, Slack",
+                "description": "Website manage a payment online of user",
+                "company": "Intelin Company",
+                "companyHref": "https://www.intelin.vn/"
+            },
+            {
+                "from": 1593450000000,
+                "to": 1612026000000,
+                "project": "IHP",
+                "responsibilities": "Fixing bugs and testing for usability, Bring concepts to life, Implementing design on mobile websites, Managing software workflow",
+                "tech": "Material UI, Redux, Redux Saga, Jira, Git Kraken, Slack",
+                "description": "Website manage blood donation of user, statistical account register, create and notice for user about schedule of donate",
+                "company": "Intelin Company",
+                "companyHref": "https://www.intelin.vn/"
+            },
+            {
+                "from": 1596128400000,
+                "to": 1622394000000,
+                "project": "TikTik",
+                "responsibilities": "Fixing bugs and testing for usability, Bring concepts to life, Implementing design on mobile websites, Developing and maintaining the user interface, Managing software workflow",
+                "tech": "Material UI, Redux, Redux Saga, Jira, Git Kraken, Slack",
+                "description": "Website manage store and cards discount of store, with many package service",
+                "company": "Intelin Company",
+                "companyHref": "https://www.intelin.vn/"
+            },
+            {
+                "from": 1588179600000,
+                "to": 1598806800000,
+                "project": "Running365",
+                "responsibilities": "Fixing bugs and testing for usability",
+                "tech": "Material UI, Redux, Redux Saga, Jira, Git Kraken, Slack",
+                "description": "Website manage group and challenge of jogging, sync data with Strava",
+                "company": "Intelin Company",
+                "companyHref": "https://www.intelin.vn/"
+            },
+            {
+                "from": 1490893200000,
+                "to": 1517331600000,
+                "project": "Saddlier Connect",
+                "responsibilities": "Using HTML, Javascript and CSS to bring concert to life, Implementing design on mobile websites, Fixing bugs and testing for usability",
+                "tech": "JQuery",
+                "description": "A leading e-learning platform in US",
+                "company": "Ban Vien Company",
+                "companyHref": "https://banvien.com/"
+            }
+        ],
+        "educations": [
+            {
+                "period": { "from": 1380474000000, "to": 1490893200000 },
+                "organziner": "University Ho Chi Minh City - University of Science",
+                "majors": "Information Technology"
+            }
+        ]
+    },
+    "headData": {
+        "languages": [
+            {
+                "name": "English",
+                "skills": [
+                    { "label": "Reading", "percent": 60 },
+                    { "label": "Writing", "percent": 30 },
+                    { "label": "Speaking", "percent": 40 },
+                    { "label": "Listening", "percent": 50 }
+                ]
+            }
+        ],
+        "contacts": [
+            { "label": "Phone", "content": "0829549118", "type": "phone" },
+            { "label": "Skype", "content": "nguyenluu121094", "type": "skype" },
+            { "label": "Email", "content": "nin.luu94@gmail.com", "type": "mail" }
+        ],
+        "libs": [
+            { "label": "Boostrap" },
+            { "label": "SCSS" },
+            { "label": "Ant Design" },
+            { "label": "Material UI" },
+            { "label": "Webpack" },
+            { "label": "Git knowledge" },
+            { "label": "Nextjs" },
+            { "label": "Reactjs/ React Native" }
+        ],
+        "abouts": [
+            { "label": "Residence", "content": "Viet Nam" },
+            { "label": "City", "content": "Ho Chi Minh City" },
+            { "label": "Age", "content": 781894800000 }
+        ],
+        "skills": [
+            { "label": "HTML", "percent": 90 },
+            { "label": "CSS", "percent": 80 },
+            { "label": "JS", "percent": 80 },
+            { "label": "TS", "percent": 50 }
+        ]
+    },
+    "summaryData": "I build web interfaces with more than 3 years experience, in which more than 2 years of experience with latest technology such as React, Sass, TypeScript, NextJS. Specialize in using React to build web applications. Participating in interesting projects and working with people that I can learn from",
+    "version": "1"
+}
