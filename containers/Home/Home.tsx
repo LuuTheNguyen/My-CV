@@ -30,7 +30,7 @@ export const HomePage: React.FC<HomeProps> = ({ data }) => {
                             <StyledWrapperContent>
                                 <StyledBanner className="row" id="summary">
                                     <StyledBannerContent className="col-sm-12 col-lg-12">
-                                        <TypoComponent type="title1">Discoverd my Amazing Art Space!</TypoComponent>
+                                        <TypoComponent type="title1">Discovered my Amazing Art Space!</TypoComponent>
                                         <StyledSubTitleContent>
                                             &lt;
                                             <span className="code">code</span>
