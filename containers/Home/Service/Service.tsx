@@ -33,7 +33,7 @@ export const Service: React.FC<Props> = ({ service }) => {
                         {item.company && (
                             <StyledCompany>
                                 <TypoComponent type="content4">{item.company}</TypoComponent>
-                                {!isPrintMode && (
+                                {!isPrintMode && item.companyHref && (
                                     <a target="_blank" rel="noreferrer" href={item.companyHref}>
                                         <span className="material-icons">open_in_new</span>
                                     </a>
@@ -41,28 +41,30 @@ export const Service: React.FC<Props> = ({ service }) => {
                             </StyledCompany>
                         )}
                     </StyledHeaderService>
-                    <StyledContentService>
-                        {item.responsibilities && (
-                            <div>
-                                <TypoComponent type="content5">Main responsibilities:</TypoComponent>{' '}
-                                <TypoComponent type="content5">{item.responsibilities}</TypoComponent>
-                            </div>
-                        )}
-                        <hr />
-                        {item.tech && (
-                            <div>
-                                <TypoComponent type="content5">Tech stack:</TypoComponent>{' '}
-                                <TypoComponent type="content5">{item.tech}</TypoComponent>
-                            </div>
-                        )}
-                        <hr />
-                        {item.description && (
-                            <div>
-                                <TypoComponent type="content5">Description:</TypoComponent>{' '}
-                                <TypoComponent type="content5">{item.description}</TypoComponent>
-                            </div>
-                        )}
-                    </StyledContentService>
+                    {(item.responsibilities || item.tech || item.description) && (
+                        <StyledContentService>
+                            {item.responsibilities && (
+                                <div>
+                                    <TypoComponent type="content5">Main responsibilities:</TypoComponent>{' '}
+                                    <TypoComponent type="content5">{item.responsibilities}</TypoComponent>
+                                </div>
+                            )}
+                            <hr />
+                            {item.tech && (
+                                <div>
+                                    <TypoComponent type="content5">Tech stack:</TypoComponent>{' '}
+                                    <TypoComponent type="content5">{item.tech}</TypoComponent>
+                                </div>
+                            )}
+                            <hr />
+                            {item.description && (
+                                <div>
+                                    <TypoComponent type="content5">Description:</TypoComponent>{' '}
+                                    <TypoComponent type="content5">{item.description}</TypoComponent>
+                                </div>
+                            )}
+                        </StyledContentService>
+                    )}
                 </StyledService>
             ))}
         </StyledWrapperService>

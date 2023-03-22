@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { ResponsiveBetween } from 'style/Theme'
+import { MediaPrint, ResponsiveBetween } from 'style/Theme'
 
 export const StyledAbout = styled.div`
     display: flex;
@@ -16,13 +16,22 @@ export const StyledAbout = styled.div`
         justify-content: space-between;
     }
 
-    .StyledContent1{
+    .StyledContent1 {
         display: inline;
         margin: 0;
     }
 
-    .StyledContent5{
+    .StyledContent5 {
         display: inline;
         margin: 0;
+    }
+
+    ${MediaPrint} {
+        flex-direction: row;
+        justify-content: space-between;
+
+        .StyledContent1 {
+            margin: 0 10px 0 0;
+        }
     }
 `

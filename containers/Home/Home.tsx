@@ -43,7 +43,7 @@ export const HomePage: React.FC<HomeProps> = ({ data }) => {
                                     </StyledBannerContent>
                                 </StyledBanner>
 
-                                <Achievement achieve={contentData.achieves} />
+                                {!isPrintMode && <Achievement achieve={contentData.achieves} />}
 
                                 <StyledContainerEducation id="education">
                                     <TypoComponent type="title2">EDUCATION</TypoComponent>

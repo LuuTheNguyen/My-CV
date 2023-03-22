@@ -67,6 +67,7 @@ export const StyledWrapperContent = styled.div`
 
     ${MediaPrint} {
         display: block;
+        padding-top: 30px;
     }
 `
 
@@ -117,7 +118,6 @@ export const StyledContainerService = styled.div`
     flex-direction: column;
 
     ${MediaPrint} {
-        break-inside: avoid;
         display: block;
     }
 `

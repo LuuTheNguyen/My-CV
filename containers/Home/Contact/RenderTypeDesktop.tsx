@@ -7,14 +7,16 @@ import React, { useEffect, useState } from 'react'
 import type { TypesProps } from './interface'
 import type { RenderTypeProps } from './interface'
 
-const RenderIcon: React.FC<TypesProps> = ({ type }) => {
+export const RenderIcon: React.FC<TypesProps> = ({ type }) => {
     switch (type) {
         case 'skype':
             return <Image src="/images/skype.svg" alt="skypeIcon" width={18} height={18} />
         case 'mail':
             return <Image src="/images/gmailIcon.svg" alt="mailIcon" width={18} height={18} />
         case 'phone':
-            return <span>call</span>
+            return <Image src="/images/phone.svg" alt="phoneIcon" width={18} height={18} />
+        case 'linkedin':
+            return <Image src="/images/linkedin.svg" alt="linkedinIcon" width={22} height={22} />
         default:
             return <Image src="/images/warning-error.svg" alt="error" width={18} height={18} />
     }
@@ -136,7 +138,7 @@ export const RenderTypeOnDesktop: React.FC<RenderTypeProps> = ({ type, linkProps
         }
     }
 
-    const isAnimatedContent = ['phone', 'skype', 'mail'].indexOf(type) > -1
+    const isAnimatedContent = ['phone', 'skype', 'mail', 'linkedin'].indexOf(type) > -1
     if (isAnimatedContent) {
         return (
             <span style={{ position: 'relative' }}>

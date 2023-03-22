@@ -1,22 +1,24 @@
 import styled from 'styled-components'
-import { GridBreakpoints, ResponsiveBetween, ResponsiveMax } from 'style/Theme'
+import { GridBreakpoints, MediaPrint, ResponsiveBetween, ResponsiveMax } from 'style/Theme'
 import { ListLib } from './ListLib'
 import { CreateStyledComponent, dynamicTheme } from 'style/ultis'
 import { TransitionEnum } from '@enum'
 
 export const StyledLib = styled.div`
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    grid-gap: 10px;
+
     ${ResponsiveBetween('sm', 'lg')} {
         justify-content: center;
-        display: flex;
         flex-direction: row;
         flex-wrap: wrap;
         padding: 10px;
     }
 
-    ${ResponsiveMax('sm')} {
-        display: grid;
-        grid-template-columns: 50% 50%;
-        grid-gap: 10px;
+    ${MediaPrint} {
+        padding: 5px;
+        grid-template-columns: repeat(5, auto);
     }
 `
 
@@ -41,7 +43,7 @@ export const StyledListLib = CreateStyledComponent(styled(ListLib)`
         margin-right: 5px;
     }
 
-    .StyledContent5{
+    .StyledContent5 {
         display: inline;
         margin: 0;
     }

@@ -1,6 +1,6 @@
 export const propsBuilder = {
     phone(content: string) {
-        return { href: `tel:${decodePhoneNumber(content)}` }
+        return { href: `tel:${content}` }
     },
     mail(content: string) {
         return {
@@ -12,6 +12,11 @@ export const propsBuilder = {
     skype(content: string) {
         return {
             href: `skype:${content}?chat`,
+        }
+    },
+    linkedin(content: string) {
+        return {
+            href: `https://www.linkedin.com/in/${content}/`,
         }
     },
 }

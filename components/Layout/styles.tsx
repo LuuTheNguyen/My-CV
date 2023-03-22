@@ -44,7 +44,8 @@ export const StyledAboutHead = CreateStyledComponent(styled.div`
     flex-direction: column;
     transition: ${TransitionEnum.DURATION};
 
-    .StyledContent2, .StyledContent5{
+    .StyledContent2,
+    .StyledContent5 {
         display: inline;
         margin: 0;
     }
@@ -231,7 +232,6 @@ export const StyledAboutBody = CreateStyledComponent(styled.div.attrs(() => ({ c
     }
 
     ${MediaPrint} {
-        grid-template-columns: 50% 50%;
         grid-gap: 20px;
         overflow: unset;
     }

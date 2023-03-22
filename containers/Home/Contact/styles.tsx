@@ -2,11 +2,12 @@ import { TransitionEnum } from '@enum'
 import { CreateStyledComponent, dynamicTheme } from 'style/ultis'
 import styled from 'styled-components'
 import { animated } from 'react-spring'
+import { MediaPrint } from 'style/Theme'
 
 export const StyledContact = CreateStyledComponent(styled.div`
     display: flex;
     flex-direction: row;
-    padding: 10px;
+    padding: 10px 0;
 
     span {
         font-weight: 600;
@@ -23,6 +24,10 @@ export const StyledContact = CreateStyledComponent(styled.div`
         text-decoration: none;
         color: ${dynamicTheme((theme) => theme.fontColor.default)};
         transition: color ${TransitionEnum.DURATION};
+    }
+
+    ${MediaPrint} {
+        padding: 5px;
     }
 `)
 

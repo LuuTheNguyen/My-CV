@@ -48,17 +48,29 @@ export const SideBar: React.FC<HeadProps> = ({ data }) => {
     return (
         <>
             <StyledAboutHead>
-                <StyledWrapperImage onClick={resizeImg}>
-                    <StyledIcon src="/logo.jpg" layout="fill" objectFit="cover" onLoadingComplete={onHandleLoadImg} />
-                    {!isImageReady && <StyledSkeletonImg />}
-                </StyledWrapperImage>
+                {!isPrintMode && (
+                    <StyledWrapperImage onClick={resizeImg}>
+                        <StyledIcon
+                            src="/logo.jpg"
+                            layout="fill"
+                            objectFit="cover"
+                            onLoadingComplete={onHandleLoadImg}
+                        />
+                        {!isImageReady && <StyledSkeletonImg />}
+                    </StyledWrapperImage>
+                )}
                 <TypoComponent type="content2">Luu The Nguyen</TypoComponent>
                 <TypoComponent type="content5">Frontend Dev</TypoComponent>
+                {isPrintMode && <About about={data.abouts} />}
             </StyledAboutHead>
             <StyledAboutBody>
-                <About about={data.abouts} />
-                <Language language={data.languages} />
-                <Skill skill={data.skills} />
+                {!isPrintMode && (
+                    <>
+                        <About about={data.abouts} />
+                        <Language language={data.languages} />
+                        <Skill skill={data.skills} />
+                    </>
+                )}
                 <Lib lib={data.libs} />
                 {!isPrintMode && (
                     <StyledContainerTool>
