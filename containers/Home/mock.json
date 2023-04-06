@@ -1,16 +1,16 @@
 {
     "contentData": {
         "achieves": [
-            { "counts": 3, "label": "+", "content": "Years Experience" },
+            { "counts": 4, "label": "+", "content": "Years Experience" },
             { "counts": 7, "content": "Complete Projects" }
         ],
         "services": [
             {
-                "from": 1640304000000,
+                "from": 1635072000000,
                 "to": 1672560000000,
                 "project": "Finbase Website",
-                "responsibilities": "Experiencing in agile ways of working directly with the Product Owner and the Design Team to define the product's road map. Build and improvements features, review code and support member. Ensure unit test of features about to 90%. Make the deadline on time with limited time",
-                "tech": "ReactJS, Jest, NextJs, CleverTap, Jest, React Admin, Ant Design, Material UI, Jira, Gitlab, Microsoft Teams",
+                "responsibilities": "Experiencing in agile ways of working directly with the Product Owner, Developer Team and the Design Team to define the product's road map. Build and improvements features, review code and support member. Ensure unit test of features about to 90%. Make the deadline on time with little time",
+                "tech": "ReactJS, Jest, NextJs, CleverTap, Jest, React Admin, Ant Design, Material UI, Jira, Gitlab, Microsoft Teams, Javascript, TypeScript",
                 "description": "Finance tech website for buy and sell bonds",
                 "company": "Finbase Company",
                 "companyHref": "https://www.finbase.vn/"
@@ -19,8 +19,8 @@
                 "from": 1588179600000,
                 "to": 1627776000000,
                 "project": "Running365, Meiji, Payment, IHP, TikTik",
-                "responsibilities": "Developing and maintaining the user interface, features and services in strong collaboration with partners. Working closely with developer teams to deliver with quick time-to-market and optimal resource",
-                "tech": "Material UI, Redux, Redux Saga, Jira, Git Kraken, Slack, Firebase, React Core UI, AngularJs, MongoDB, PostgreSQL, BEM",
+                "responsibilities": "Developing and maintaining the user interface, features and services in strong collaboration with partners. Working closely with developer teams to deliver with quick time-to-market and optimal resource. Create CRUD features, landing page, handle pagination, chart, upload PDF file, image",
+                "tech": "Material UI, Redux, Redux Saga, Jira, Git Kraken, Slack, Firebase, React Core UI, AngularJs, MongoDB, PostgreSQL, BEM, NodeJS, Jest, StoryBook, Javascript",
                 "description": "An outsource company in many fields: finance, bank, medical, fitness tracking social",
                 "company": "Intelin Company",
                 "companyHref": "https://www.intelin.vn/"
@@ -35,7 +35,7 @@
                 "to": 1517331600000,
                 "project": "Saddlier Connect",
                 "responsibilities": "Using HTML, Javascript and CSS to bring concert to life. Implementing design on mobile websites. Fixing bugs and testing for usability",
-                "tech": "JQuery, VanillaJS",
+                "tech": "JQuery, VanillaJS, HTML, CSS, Bootstrap",
                 "description": "A leading e-learning platform in US",
                 "company": "Ban Vien Company",
                 "companyHref": "https://banvien.com/"
@@ -93,6 +93,6 @@
             { "label": "TypeScript", "percent": 70 }
         ]
     },
-    "summaryData": "I build web interfaces with more than 3 years experience, which more than 2 years of experience with React to build web applications. Long-term dedicating and becoming a core staff of the organization. Participating in interesting projects and working with people that I can learn from",
+    "summaryData": "Desire to become a professional Web Developer, experience to create layout and functional of website, high spirit of learning. Long-term dedicating and becoming a core staff of the organization. Participating in interesting projects and working with people that I can learn from",
     "version": "2"
 }

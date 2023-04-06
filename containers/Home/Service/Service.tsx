@@ -46,7 +46,13 @@ export const Service: React.FC<Props> = ({ service }) => {
                             {item.responsibilities && (
                                 <div>
                                     <TypoComponent type="content5">Main responsibilities:</TypoComponent>{' '}
-                                    <TypoComponent type="content5">{item.responsibilities}</TypoComponent>
+                                    <TypoComponent type="content5">
+                                        {item.responsibilities.split('.').map((responsibility, index) => (
+                                            <span
+                                                key={index}
+                                                style={{ whiteSpace: 'pre-line' }}>{`\n- ${responsibility}`}</span>
+                                        ))}
+                                    </TypoComponent>
                                 </div>
                             )}
                             <hr />

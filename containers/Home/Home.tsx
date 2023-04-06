@@ -32,13 +32,19 @@ export const HomePage: React.FC<HomeProps> = ({ data }) => {
                                     <StyledBannerContent className="col-sm-12 col-lg-12">
                                         <TypoComponent type="title1">Discovered my Amazing Art Space!</TypoComponent>
                                         <StyledSubTitleContent>
-                                            &lt;
-                                            <span className="code">code</span>
-                                            &gt;
+                                            {!isPrintMode && (
+                                                <>
+                                                    &lt;<span className="code">code</span>&gt;
+                                                </>
+                                            )}
                                             <TypoComponent type="content1">{summaryData}</TypoComponent>
-                                            &lt;/
-                                            <span className="code">code</span>
-                                            &gt;
+                                            {!isPrintMode && (
+                                                <>
+                                                    &lt;/
+                                                    <span className="code">code</span>
+                                                    &gt;
+                                                </>
+                                            )}
                                         </StyledSubTitleContent>
                                     </StyledBannerContent>
                                 </StyledBanner>
