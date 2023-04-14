@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { ResponsiveMax } from 'style/Theme'
+import { MediaPrint, ResponsiveMax } from 'style/Theme'
 import { CreateStyledComponent, dynamicTheme } from 'style/ultis'
 
 export const StyledContainerAchievement = styled.div`
@@ -26,5 +26,9 @@ export const StyledAchievement = CreateStyledComponent(styled.div`
     ${ResponsiveMax('lg')} {
         padding: 10px 0;
         margin-right: 10px;
+    }
+
+    ${MediaPrint} {
+        color: ${dynamicTheme((theme) => theme.fontColor.tertiary)};
     }
 `)

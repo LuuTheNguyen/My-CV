@@ -9,8 +9,8 @@
                 "from": 1635072000000,
                 "to": 1672560000000,
                 "project": "Finbase Website",
-                "responsibilities": "Experiencing in agile ways of working directly with the Product Owner, Developer Team and the Design Team to define the product's road map. Build and improvements features, review code and support member. Ensure unit test of features about to 90%. Make the deadline on time with little time",
-                "tech": "ReactJS, Jest, NextJs, CleverTap, Jest, React Admin, Ant Design, Material UI, Jira, Gitlab, Microsoft Teams, Javascript, TypeScript",
+                "responsibilities": "Experiencing in agile ways of working directly with the Product Owner, Developer Team and the Design Team to define the product's road map. Build and improvements features, website layout, review code and support member. Increase coverage unit test of project from 50% to 90%. Handle multi of issues at the time, make the deadline on time with little time",
+                "tech": "ReactJS, Jest, NextJs, CleverTap, Jest, React Testing Library, React Admin, Ant Design, Material UI, Jira, Gitlab, Microsoft Teams, Javascript, TypeScript, RestAPI, Postman, StoryBook, Gitlab",
                 "description": "Finance tech website for buy and sell bonds",
                 "company": "Finbase Company",
                 "companyHref": "https://www.finbase.vn/"
@@ -18,10 +18,10 @@
             {
                 "from": 1588179600000,
                 "to": 1627776000000,
-                "project": "Running365, Meiji, Payment, IHP, TikTik",
-                "responsibilities": "Developing and maintaining the user interface, features and services in strong collaboration with partners. Working closely with developer teams to deliver with quick time-to-market and optimal resource. Create CRUD features, landing page, handle pagination, chart, upload PDF file, image",
-                "tech": "Material UI, Redux, Redux Saga, Jira, Git Kraken, Slack, Firebase, React Core UI, AngularJs, MongoDB, PostgreSQL, BEM, NodeJS, Jest, StoryBook, Javascript",
-                "description": "An outsource company in many fields: finance, bank, medical, fitness tracking social",
+                "project": "giotmauvang, TikTik, Running365, Meiji",
+                "responsibilities": "Developing and maintaining the user interface, features and services in strong collaboration with partners, such as: CRUD features, landing page, admin page, upload file and image, etc. Working closely with developer teams to deliver with quick time-to-market and optimal resource in Agile. Quickly learn new technology and apply it fluently in new projects",
+                "tech": "Material UI, Redux, Redux Saga, Jira, Git Kraken, Slack, Firebase, React Core UI, AngularJs, MongoDB, PostgreSQL, BEM, NodeJS, Jest, StoryBook, Javascript, TypeScript, RestAPI, Postman",
+                "description": "An outsource company in many fields: e-loyalty, bank, telecom, etc",
                 "company": "Intelin Company",
                 "companyHref": "https://www.intelin.vn/"
             },
@@ -79,7 +79,13 @@
             { "label": "Nextjs" },
             { "label": "React Query" },
             { "label": "React Admin" },
-            { "label": "Jest" }
+            { "label": "Jest" },
+            { "label": "RESTful API" },
+            { "label": "Postman" },
+            { "label": "Redux" },
+            { "label": "Redux Saga" },
+            { "label": "Javascript" },
+            { "label": "TypeScript" }
         ],
         "abouts": [
             { "label": "Residence", "content": "Viet Nam" },

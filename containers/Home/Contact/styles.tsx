@@ -27,7 +27,19 @@ export const StyledContact = CreateStyledComponent(styled.div`
     }
 
     ${MediaPrint} {
-        padding: 5px;
+        padding: 0 4px;
+
+        span {
+            ${MediaPrint} {
+                color: ${dynamicTheme((theme) => theme.fontColor.tertiary)};
+            }
+        }
+
+        a {
+            ${MediaPrint} {
+                color: ${dynamicTheme((theme) => theme.fontColor.tertiary)};
+            }
+        }
     }
 `)
 

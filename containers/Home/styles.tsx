@@ -20,8 +20,8 @@ export const StyledMain = CreateStyledComponent(styled.main`
     }
 
     ${MediaPrint} {
-        background-color: ${dynamicTheme((theme) => theme.color.default)};
-        color: ${dynamicTheme((theme) => theme.fontColor.default)};
+        background-color: ${dynamicTheme((theme) => theme.fontColor.default)};
+        color: ${dynamicTheme((theme) => theme.fontColor.tertiary)};
         padding: 0;
     }
 
@@ -67,7 +67,7 @@ export const StyledWrapperContent = styled.div`
 
     ${MediaPrint} {
         display: block;
-        padding-top: 30px;
+        padding-top: 1rem;
     }
 `
 
@@ -92,6 +92,10 @@ export const StyledTitleContent = CreateStyledComponent(styled.h4`
     text-transform: uppercase;
     font-weight: 600;
     transition: ${TransitionEnum.DURATION};
+
+    ${MediaPrint} {
+        color: ${dynamicTheme((theme) => theme.fontColor.tertiary)};
+    }
 `)
 
 export const StyledSubTitleContent = CreateStyledComponent(styled.div`
@@ -110,6 +114,7 @@ export const StyledSubTitleContent = CreateStyledComponent(styled.div`
     ${MediaPrint} {
         display: block;
         break-inside: avoid;
+        color: ${dynamicTheme((theme) => theme.fontColor.tertiary)};
     }
 `)
 
@@ -136,7 +141,7 @@ export const StyledContainerEducation = styled.section`
     ${MediaPrint} {
         display: block;
         break-inside: avoid;
-        margin: 10px 0;
+        margin: 4px 0;
     }
 `
 
@@ -145,4 +150,8 @@ export const StyledTitleItems = CreateStyledComponent(styled.h5`
     text-transform: uppercase;
     font-weight: 600;
     transition: ${TransitionEnum.DURATION};
+
+    ${MediaPrint} {
+        color: ${dynamicTheme((theme) => theme.fontColor.tertiary)};
+    }
 `)

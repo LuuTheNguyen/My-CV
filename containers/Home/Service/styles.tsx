@@ -18,6 +18,8 @@ export const StyledWrapperService = styled.section`
 
     ${MediaPrint} {
         display: block;
+        grid-column-gap: 8px;
+        grid-row-gap: 8px;
     }
 `
 
@@ -38,8 +40,10 @@ export const StyledService = CreateStyledComponent(styled(animated.div)`
     ${MediaPrint} {
         display: block;
         break-inside: avoid;
-        margin-top: 20px;
-        margin-bottom: 20px;
+        margin-top: 0.5rem;
+        margin-bottom: 0.5rem;
+        padding: 0.5rem;
+        background-color: ${dynamicTheme((theme) => theme.fontColor.default)};
     }
 `)
 
@@ -53,6 +57,12 @@ export const StyledHeaderService = CreateStyledComponent(styled.span`
     .StyledContent3,
     .StyledContent1 {
         margin: 0;
+    }
+
+    ${MediaPrint} {
+        flex-direction: row-reverse;
+        justify-content: flex-end;
+        gap: 2rem;
     }
 `)
 
@@ -73,6 +83,12 @@ export const StyledContentService = CreateStyledComponent(styled.div`
     .StyledContent5 {
         margin: 0;
         display: inline;
+    }
+
+    ${MediaPrint} {
+        hr {
+            margin: 6px;
+        }
     }
 `)
 

@@ -19,6 +19,7 @@ export const StyledLib = styled.div`
     ${MediaPrint} {
         padding: 5px;
         grid-template-columns: repeat(5, auto);
+        grid-gap: 4px;
     }
 `
 
@@ -46,5 +47,9 @@ export const StyledListLib = CreateStyledComponent(styled(ListLib)`
     .StyledContent5 {
         display: inline;
         margin: 0;
+    }
+
+    ${MediaPrint} {
+        margin-bottom: 2px;
     }
 `)

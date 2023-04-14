@@ -44,6 +44,7 @@ export const SideBar: React.FC<HeadProps> = ({ data }) => {
     const onHandleLoadImg = () => {
         setIsImageReady(true)
     }
+    const about = isPrintMode ? data.abouts.filter((item) => item.label !== 'Age') : data.abouts
 
     return (
         <>
@@ -61,7 +62,7 @@ export const SideBar: React.FC<HeadProps> = ({ data }) => {
                 )}
                 <TypoComponent type="content2">Luu The Nguyen</TypoComponent>
                 <TypoComponent type="content5">Frontend Dev</TypoComponent>
-                {isPrintMode && <About about={data.abouts} />}
+                {isPrintMode && <About about={about} />}
             </StyledAboutHead>
             <StyledAboutBody>
                 {!isPrintMode && (

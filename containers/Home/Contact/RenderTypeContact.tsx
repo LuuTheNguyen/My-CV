@@ -12,7 +12,6 @@ export const RenderOnType: React.FC<ContactProps> = ({ label, content, type }) =
     const linkPropsBuilder = propsBuilder[type]
     if (linkPropsBuilder) {
         const linkProps = linkPropsBuilder(content)
-        console.log({ linkProps })
         return isPrintMode ? (
             <RenderTypeOnPrintMode label={label} type={type} linkProps={linkProps} content={content} />
         ) : (

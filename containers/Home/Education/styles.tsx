@@ -8,6 +8,10 @@ export const StyledEducations = styled.div`
     grid-row-gap: 20px;
     margin-bottom: 30px;
 
+    .StyledContent1 {
+        margin: 0;
+    }
+
     ${ResponsiveMax('md')} {
         grid-template-columns: auto auto;
     }
@@ -20,9 +24,6 @@ export const StyledEducations = styled.div`
     ${MediaPrint} {
         grid-template-columns: auto auto auto;
         grid-column-gap: 10px;
-    }
-
-    .StyledContent1{
-        margin:0;
+        margin-bottom: 10px;
     }
 `

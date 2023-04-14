@@ -25,10 +25,12 @@ export const StyledWrapperHead = CreateStyledComponent(styled.div`
     z-index: 1;
     transition: ${TransitionEnum.DURATION};
     height: 100%;
+
     ${ResponsiveMax('lg')} {
         padding-top: 30px;
         z-index: unset;
     }
+
     ${MediaPrint} {
         padding-top: 0;
         z-index: unset;

@@ -49,6 +49,11 @@ export const StyledAboutHead = CreateStyledComponent(styled.div`
         display: inline;
         margin: 0;
     }
+
+    ${MediaPrint} {
+        padding: 0px;
+        background-color: ${dynamicTheme((theme) => theme.fontColor.default)};
+    }
 `)
 
 export const StyledWrapperImage = CreateStyledComponent(styled.div`
@@ -217,7 +222,7 @@ export const StyledWrapperCloseButtonOffCanvasRight = CreateStyledComponent(styl
 
 export const StyledAboutBody = CreateStyledComponent(styled.div.attrs(() => ({ className: 'StyledAboutBody' }))`
     background-color: ${dynamicTheme((theme) => theme.color.secondary)};
-    padding: 20px;
+    c
     display: grid;
     grid-row-gap: 20px;
     transition: ${TransitionEnum.DURATION};
@@ -232,8 +237,10 @@ export const StyledAboutBody = CreateStyledComponent(styled.div.attrs(() => ({ c
     }
 
     ${MediaPrint} {
-        grid-gap: 20px;
+        grid-gap: 8px;
         overflow: unset;
+        padding: 8px;
+        background-color: ${dynamicTheme((theme) => theme.fontColor.default)};
     }
 
     > div {
@@ -269,6 +276,10 @@ export const StyledAboutFooter = CreateStyledComponent(styled.div`
     padding: 0;
     transition: ${TransitionEnum.DURATION};
     justify-content: space-around;
+
+    ${MediaPrint} {
+        background-color: ${dynamicTheme((theme) => theme.fontColor.default)};
+    }
 `)
 
 export const StyledContainerTool = CreateStyledComponent(styled.div.attrs(() => ({ className: 'StyledContainerTool' }))`

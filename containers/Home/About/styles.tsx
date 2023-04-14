@@ -28,7 +28,7 @@ export const StyledAbout = styled.div`
 
     ${MediaPrint} {
         flex-direction: row;
-        justify-content: space-between;
+        justify-content: space-around;
 
         .StyledContent1 {
             margin: 0 10px 0 0;
