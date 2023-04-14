@@ -222,7 +222,7 @@ export const StyledWrapperCloseButtonOffCanvasRight = CreateStyledComponent(styl
 
 export const StyledAboutBody = CreateStyledComponent(styled.div.attrs(() => ({ className: 'StyledAboutBody' }))`
     background-color: ${dynamicTheme((theme) => theme.color.secondary)};
-    c
+    padding: 20px;
     display: grid;
     grid-row-gap: 20px;
     transition: ${TransitionEnum.DURATION};
